@@ -1,6 +1,6 @@
 get:
   tags:
-    - XXXAPI
+    - XXX
   summary: Finds the XXX by ID
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
@@ -10,7 +10,7 @@ get:
   parameters:
     - description: ID of the XXX to return
       in: path
-      name: XXXId
+      name: id
       required: true
       schema:
         format: int64
@@ -32,7 +32,7 @@ get:
       $ref: '../components/responses/ServerError.yaml'
 put:
   tags:
-    - XXXAPI
+    - XXX
   summary: Update the XXX by ID
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
@@ -77,7 +77,7 @@ put:
       $ref: '../components/responses/ServerError.yaml'
 delete:
   tags:
-    - XXXAPI
+    - XXX
   summary: Delete the XXX by ID
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)

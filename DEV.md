@@ -18,6 +18,9 @@ Bundles the definition to the dist folder.
 #### `npm test`
 Validates the definition.
 
+#### `npm run postman`
+Generate postman collections that can imported and runned against a Bonita instance.
+
 ## Contribution Guide
 
 Below is a sample contribution guide. The tools
