@@ -1,0 +1,48 @@
+put:
+  tags:
+    - CustomUserValue
+  summary: Update the CustomUserValue by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Update the CustomUserValue for the given ID
+  operationId: updateCustomUserValueById
+  parameters:
+    - description: User ID
+      in: path
+      name: userId
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: definition ID
+      in: path
+      name: definitionId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            value:
+              description: new value to set
+              type: string
+        example:
+          value: "My new value"
+    description: Custom user defition Value
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

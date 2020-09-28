@@ -1,0 +1,68 @@
+type: object
+description: "Use this resource to send BPM message events. Message events are caught by processes using `catch message event` flow nodes (Start, intermediate, boundary or receive tasks)."
+properties:
+  messageName:
+    description: "the message name"
+    type: string
+  targetProcess:
+    description: "the target process name"
+    type: string
+  targetFlowNode:
+    description: "the target FlowNode name"
+    type: string
+  messageContent:
+    description: "the message content"
+    type: object
+    additionalProperties:
+      type: object
+      required:
+        - value
+      properties:
+        value:
+          description: ""
+          type: string
+        type:
+          description: |
+            Date types must be in the ISO-8601 format. When not set, the type is guessed using the value.
+            Be careful as it can lead to type inconsistency in the target process (eg: a java.lang.Long is expected and the guessed type is a java.lang.Integer)
+          type: string
+          enum:
+            - java.lang.String
+            - java.lang.Boolean
+            - java.lang.Integer
+            - java.lang.Double
+            - java.lang.Float
+            - java.lang.Long
+            - java.util.Date
+            - java.time.LocalDate
+            - java.time.LocalDateTime
+            - java.time.OffsetDateTime
+  correlations:
+    description: "the message correlations"
+    type: object
+    maxItems: 5
+    additionalProperties:
+      type: object
+      required:
+        - value
+      properties:
+        value:
+          description: ""
+          type: string
+        type:
+          description: |
+            Date types must be in the ISO-8601 format. When not set, the type is guessed using the value.
+            Be careful as it can lead to type inconsistency in the target process (eg: a java.lang.Long is expected and the guessed type is a java.lang.Integer)
+          type: string
+          enum:
+            - java.lang.String
+            - java.lang.Boolean
+            - java.lang.Integer
+            - java.lang.Double
+            - java.lang.Float
+            - java.lang.Long
+            - java.util.Date
+            - java.time.LocalDate
+            - java.time.LocalDateTime
+            - java.time.OffsetDateTime
+

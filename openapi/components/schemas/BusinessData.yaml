@@ -1,0 +1,80 @@
+type: object
+additionalProperties: true
+description: |
+  Retrieve business data value. Depending on the object attribute loading policy,
+  the API returns either the full object in JSON representation or the HATEOAS links to the object attributes.
+
+  Long attributes use a string representation added in 7.0.1 as a workaround for the JavaScript integer spectrum issue.
+
+  Representation of object attributes with an _always load_ policy:
+
+  ```json
+  {
+    "persistenceId": _number_, // <-- deprecated
+    "persistenceId_string": "_number_"
+    "persistenceVersion": _number_, // <-- deprecated
+    "persistenceVersion_string": "_number_"
+    "attributeName":_attributeType_
+    ...
+  }
+  ```
+
+  The string representation added in 7.0.1 for Long attributes is a workaround for the JavaScript integer spectrum issue.
+
+  HATEOAS representation of object attribute with a _load when needed_ policy:
+  ```json
+  "links":[
+     {
+     "rel":_string_
+     "href":_uri_
+     }
+  ]
+  ```
+properties:
+  persistenceId_string:
+    description: Id of the business data object
+    type: string
+  persistenceVersion_string:
+    description: Version of the business data object instance
+    type: string
+
+example:
+  "persistenceId_string": "1"
+  "persistenceVersion_string": "0"
+  "contractName": "contract for Netcom3"
+  "terms": [ {
+    "persistenceId": 1,
+    "persistenceId_string": "1",
+    "persistenceVersion": 0,
+    "persistenceVersion_string": "0",
+    "termName": "term Name"
+  },
+    {
+      "persistenceId": 2,
+      "persistenceId_string": "2",
+      "persistenceVersion": 0,
+      "persistenceVersion_string": "0",
+      "termName": "term Name"
+    }
+  ]
+  "client":
+    "persistenceId": 13
+    "persistenceId_string": "13"
+    "persistenceVersion": 0
+    "persistenceVersion_string": "0"
+    "clientName": "client name"
+    "description": "n/a"
+    "industry": [ {
+      "persistenceId": 2,
+      "persistenceId_string": "2",
+      "persistenceVersion": 0,
+      "persistenceVersion_string": "0",
+      "industryName": "Services"
+    },{
+      "persistenceId": 3,
+      "persistenceId_string": "3",
+      "persistenceVersion": 0,
+      "persistenceVersion_string": "0",
+      "industryName": "Software"
+    }
+    ]

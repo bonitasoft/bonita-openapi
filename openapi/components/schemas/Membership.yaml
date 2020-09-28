@@ -1,0 +1,28 @@
+type: object
+description: ""
+properties:
+  assigned_date:
+    description: "creation date (format: `2014-12-31 15:17:24.736`)"
+    type: string
+  role_id:
+    description: "id of the role of this membership"
+    type: integer
+    format: int64
+  assigned_by_user_id:
+    description: "id of the user who created the membership (-1 if the role was created by the tenant admin or by an organisation import)"
+    type: integer
+    format: int64
+  group_id:
+    description: "id of the group of this membership"
+    type: integer
+    format: int64
+  user_id:
+    description: "id of the user in this membership"
+    type: integer
+    format: int64
+example:
+  assigned_date: "2014-12-02 17:57:09.315"
+  role_id": 4
+  assigned_by_user_id: 12
+  group_id: 5
+  user_id: 125

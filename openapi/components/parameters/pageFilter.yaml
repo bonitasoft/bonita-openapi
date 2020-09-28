@@ -1,0 +1,10 @@
+description: >-
+  can filter on attributes with the format f={filter\_name}={filter\_value} with the name/value pair as url encoded string.
+explode: true
+in: query
+name: f
+required: false
+schema:
+  type: string
+style: form
+example: 'abc%3d123'

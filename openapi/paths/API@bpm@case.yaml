@@ -1,0 +1,129 @@
+get:
+  tags:
+    - Case
+  summary: Finds Cases
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds Cases with pagination params and filters
+
+    You can filter on:
+
+    * `processDefinitionId`: The process derfinition ID
+    * `name`: the process name
+    * `started_by`: the ID of the user who started the process
+    * `team_manager_id`: allow to retrieve the cases in which all users with this manager ID ar involved)
+    * `supervisor_id`: allow the retrived the cases of all processes the user with this ID is supervisor of) beware you cannot use team_manager_id and supervisor_id at the same time
+
+  operationId: findCases
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/Case.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - Case
+  summary: Create the Case
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Create the Case
+    This way of creating a case using this method will only work for processes in which no contract is defined. To instantiate a process with a contract, check the process instantiation resource documentation.
+  operationId: createCase
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            processDefinitionId:
+              description: the process definition Id
+              type: string
+            variables:
+              description: process variables initial values
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    description: variable name
+                    type: string
+                  value:
+                    $ref: '../components/schemas/AnyValue.yaml'
+        example:
+          processDefinitionId: "5777042023671752656"
+          variables:
+            - name: "stringVariable"
+              value: "aValue"
+            - name: "dateVariable"
+              value: 349246800000
+            - name: "numericVariable"
+              value: 5
+    description: |
+      **Warning**: The attribute `variables` on the request payload is used to initialize the process variables (not BDM variables). If you want to initialize BDM variables at process instantiation, add a contract on the process and map BDM variables to the contract data. See Start a process using an instantiation contract for usage.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Case.yaml'
+      description: successful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body
+delete:
+  tags:
+    - Case
+  summary: Delete the Case by batch
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Delete a list of Cases for the given IDs
+  operationId: deleteCaseByIds
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            description: 'Case id'
+            type: integer
+            format: int64
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

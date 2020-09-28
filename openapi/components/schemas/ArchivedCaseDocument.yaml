@@ -1,0 +1,30 @@
+allOf:     # Combines the CaseDocument and the inline model
+  - $ref: './CaseDocument.yaml'
+  - type: object
+    description: "A document in an active case"
+    properties:
+      sourceObjectId:
+        description: 'original document id'
+        type: integer
+        format: int64
+      archivedDate:
+        description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current task was assigned for example '2014-10-17 16:05:42.626'"
+        type: string
+        pattern: '^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]$'
+    example:
+      id: "1"
+      creationDate: "2014-10-09 16:39:52.472"
+      author: "1"
+      index: "0"
+      contentMimetype: "text/plain"
+      caseId: "1"
+      contentStorageId: "1"
+      isInternal: "true"
+      description: ""
+      name: "myDoc"
+      fileName: "test1.txt"
+      submittedBy: "1"
+      url: "documentDownload?fileName=test1.txt&contentStorageId=1"
+      version: "1"
+      sourceObjectId: "1"
+      archivedDate: "2014-10-09 17:39:52.473"

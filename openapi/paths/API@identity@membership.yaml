@@ -1,0 +1,92 @@
+get:
+  tags:
+    - Membership
+  summary: Finds Memberships
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds Memberships with pagination params and filters
+
+    **Filter `user_id` is mandatory**
+
+    You can order with the values: `ROLE_NAME_ASC`,`ROLE_NAME_DESC`, `GROUP_NAME_ASC`,`GROUP_NAME_DESC`, `ASSIGNED_DATE_ASC`, `ASSIGNED_DATE_DESC`
+
+  operationId: findMemberships
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/Membership.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - Membership
+  summary: Create the Membership
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Create the Membership
+  operationId: createMembership
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - role_id
+            - group_id
+            - user_id
+          properties:
+            role_id:
+              description: "id of the role of this membership"
+              type: integer
+              format: int64
+            group_id:
+              description: "id of the group of this membership"
+              type: integer
+              format: int64
+            user_id:
+              description: "id of the user in this membership"
+              type: integer
+              format: int64
+        example:
+          user_id: 4
+          group_id: 5
+          role_id: 1
+    description: Partial Membership description
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Membership.yaml'
+      description: successful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

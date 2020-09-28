@@ -1,0 +1,38 @@
+type: object
+description: ""
+properties:
+  id:
+    description: "id of the tenant"
+    type: integer
+    format: int64
+  creation:
+    description: "the creation date"
+    type: string
+  icon:
+    description: "the path of the icon"
+    type: string
+  name:
+    description: "the name of the tenant"
+    type: string
+  description:
+    description: "the description"
+    type: string
+  username:
+    description: "the username"
+    type: string
+  password:
+    description: "the password"
+    type: string
+  state:
+    description: "the tenant state"
+    type: string
+    enum: [ ACTIVATED, DEACTIVATED ]
+example:
+  id: 1
+  creation: "2014-12-04 15:46:46.256"
+  icon: "/default.png"
+  username: ""
+  description: "Default tenant"
+  name: "default"
+  state: "ACTIVATED"
+  password: ""

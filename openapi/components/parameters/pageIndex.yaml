@@ -1,0 +1,9 @@
+description: index of the page to display
+explode: true
+in: query
+name: p
+example: '0'
+required: true
+schema:
+  type: integer
+style: form

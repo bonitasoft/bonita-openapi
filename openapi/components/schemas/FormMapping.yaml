@@ -1,0 +1,56 @@
+type: object
+description: "Form Mapping specifies the mapping of a form to a process or a task. The mapping indicates the technology used to create the form, in the `target` attribute."
+properties:
+  id:
+    description: "the form mapping identifier"
+    type: integer
+    format: int64
+  processDefinitionId:
+    description: "the process identifier related to this form mapping"
+    type: integer
+    format: int64
+  type:
+    description: "the form mapping type"
+    type: string
+    enum: [PROCESSSTART, PROCESSOVERVIEW, TASK]
+  target:
+    description: "the target"
+    type: string
+    enum:
+      - URL # an external URL
+      - INTERNAL # a custom page ID
+      - LEGACY # means that the old form application is used for old processes
+      - UNDEFINED # when the form is not present in the definition but is required
+      - NONE # when there is no form needed for the process instantiation or task execution
+  task:
+    description: "the task name when type is TASK - null otherwise"
+    type: string
+  pageId:
+    description: "the custom page identifier when type is INTERNAL - null otherwise"
+    type: integer
+    format: int64
+  pageMappingKey:
+    description: "the page mapping key part used to generate the form URL"
+    type: string
+  lastUpdateBy:
+    description: "the identifier of the user who last updated this form mapping - 0 if no update has been done yet"
+    type: integer
+    format: int64
+  lastUpdateDate:
+    description: "the last update date in milliseconds - null if no update has been done yet"
+    type: integer
+    format: int64
+  url:
+    description: "the external URL (string) when type is URL - null otherwise"
+    type: string
+example:
+  id: 5
+  processDefinitionId: 7281286536417002543
+  type: "TASK"
+  target: "URL"
+  task: "Validate Feedback"
+  pageId: null
+  pageMappingKey: "taskInstance/myProcess/1.0/Validate Feedback"
+  lastUpdatedBy: 4
+  lastUpdateDate: 1425295012666
+  url: "http://customerportal.bonitasoft.com"

@@ -1,0 +1,116 @@
+get:
+  tags:
+    - Process
+  summary: Finds the Process by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the single Process for the given ID
+  operationId: getProcessById
+  parameters:
+    - description: ID of the Process to return
+      in: path
+      name: processId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Process.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - Process
+  summary: Update the Process by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Update the Process for the given ID
+  operationId: updateProcessById
+  parameters:
+    - description: ID of the Process to return
+      in: path
+      name: processId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            displaydescription:
+              description: description of the Process
+              type: string
+            displayName:
+              description: display name of the Process
+              type: string
+            activationState:
+              description: activation state of the Process
+              type: string
+              enum: [ ENABLED,DISABLED ]
+        example:
+          "displayName": "Leave booking process"
+    description: Partial Process description
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+delete:
+  tags:
+    - Process
+  summary: Delete the Process by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Delete the single Process for the given ID.
+
+    **Warning: Beware! Data loss risk!**
+
+    Deleting a process will automatically delete all its cases (on-going and archived alike).
+    Thus, the operation may take a long time, and fail if the transaction timeout is not large enough. This feature should only be used on non-production environments.
+
+    **Please proceed at your own risk.**
+
+  operationId: deleteProcessById
+  parameters:
+    - description: ID of the Process to delete
+      in: path
+      name: processId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

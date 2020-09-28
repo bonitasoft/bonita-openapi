@@ -1,0 +1,78 @@
+get:
+  tags:
+    - ProfessionalContactData
+  summary: Finds the PersonalContactData by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the single PersonalContactData for the given ID
+  operationId: getPersonalContactDataById
+  parameters:
+    - description: User ID of the PersonalContactData to return
+      in: path
+      name: userId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ProfessionalContactData.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - ProfessionalContactData
+  summary: Update the PersonalContactData by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Update the PersonalContactData for the given ID
+  operationId: updatePersonalContactDataById
+  parameters:
+    - description: User ID of the PersonalContactData to update
+      in: path
+      name: userId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/ProfessionalContactData.yaml'
+        example:
+          id: 4
+          fax_number: "484-302-0766"
+          building: "70"
+          phone_number: "484-302-5766"
+          zipcode: "19108"
+          state: "PA"
+          city: "Philadelphia"
+          country: "United States"
+          address: "Renwick Drive"
+          email: "walter.bates@acme.com"
+    description: Partial PersonalContactData description including the user ID
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

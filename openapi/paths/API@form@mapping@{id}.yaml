@@ -1,0 +1,46 @@
+put:
+  tags:
+    - FormMapping
+  summary: Update the FormMapping by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Update the FormMapping for the given ID
+  operationId: updateFormMappingById
+  parameters:
+    - description: ID of the FormMapping to return
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            pageId:
+              description: pageId of the FormMapping
+              type: integer
+              format: int64
+            url:
+              description: url of the FormMapping
+              type: string
+        example:
+          pageId: 123
+          url: "http://somewhe.re/over/the/rainbow"
+    description: "Representation of the form mapping attribute to update - {'pageId': (long)} or {'url': (string)} or {} to set the mapping type to NONE"
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

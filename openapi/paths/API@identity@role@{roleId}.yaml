@@ -1,0 +1,110 @@
+get:
+  tags:
+    - Role
+  summary: Finds the Role by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the single Role for the given ID
+  operationId: getRoleById
+  parameters:
+    - description: ID of the Role to return
+      in: path
+      name: roleId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Role.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - Role
+  summary: Update the Role by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Update the Role for the given ID
+  operationId: updateRoleById
+  parameters:
+    - description: ID of the Role to return
+      in: path
+      name: roleId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - name
+          properties:
+            name:
+              description: "name"
+              type: string
+            displayName:
+              description: "display name"
+              type: string
+            description:
+              description: "description"
+              type: string
+            icon:
+              description: "icon path"
+              type: string
+    description: Partial Role description
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+delete:
+  tags:
+    - Role
+  summary: Delete the Role by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Delete the single Role for the given ID
+  operationId: deleteRoleById
+  parameters:
+    - description: ID of the Role to delete
+      in: path
+      name: roleId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

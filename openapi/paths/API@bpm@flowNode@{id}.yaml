@@ -1,0 +1,73 @@
+get:
+  tags:
+    - FlowNode
+  summary: Finds the FlowNode by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the single FlowNode for the given ID
+  operationId: getFlowNodeById
+  parameters:
+    - description: ID of the FlowNode to return
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/FlowNode.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - FlowNode
+  summary: Update the FlowNode by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Replay the flow node for the given ID.
+  operationId: updateFlowNodeById
+  parameters:
+    - description: ID of the FlowNode to return
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            state:
+              description: state of the FlowNode
+              type: string
+        example:
+          state: "replay"
+    description: Replay the flow node.
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

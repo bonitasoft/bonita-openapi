@@ -1,0 +1,59 @@
+type: object
+description: ""
+required:
+  - id
+properties:
+  id:
+    description: "user ID"
+    type: integer
+    format: int64
+  fax_number:
+    description: "fax number"
+    type: string
+  building:
+    description: "building"
+    type: string
+  phone_number:
+    description: "phone number"
+    type: string
+  website:
+    description: "website"
+    type: string
+  zipcode:
+    description: "zipcode"
+    type: string
+  state:
+    description: "state"
+    type: string
+  city:
+    description: "city"
+    type: string
+  country:
+    description: "country"
+    type: string
+  mobile_number:
+    description: "mobile phone number"
+    type: string
+  address:
+    description: "address"
+    type: string
+  room:
+    description: "room"
+    type: string
+  email:
+    description: "email"
+    type: string
+example:
+  id: 4
+  fax_number: "484-302-0766"
+  building: "70"
+  phone_number: "484-302-5766"
+  website: ""
+  zipcode: "19108"
+  state: "PA"
+  city: "Philadelphia"
+  country: "United States"
+  mobile_number: ""
+  address: "Renwick Drive"
+  email: "walter.bates@acme.com"
+  room: ""

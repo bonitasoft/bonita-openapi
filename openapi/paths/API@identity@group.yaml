@@ -1,0 +1,95 @@
+get:
+  tags:
+    - Group
+  summary: Finds Groups
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds Groups with pagination params and filters.
+
+    - can order on `id`,`name`,`displayName`
+    - can filter on `name`,`displayName`,`parent_path`
+
+  operationId: findGroups
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/Group.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - Group
+  summary: Create the Group
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Create the Group
+  operationId: createGroup
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - name
+          properties:
+            name:
+              description: "name"
+              type: string
+            displayName:
+              description: "display name"
+              type: string
+            parent_path:
+              description: "the path of the parent group of this group (empty if the group has no parent)"
+              type: string
+            path:
+              description: "the full path of the group (including its parent path)"
+              type: string
+            description:
+              description: "description"
+              type: string
+            icon:
+              description: "icon path"
+              type: string
+        example:
+          icon: ""
+          name: "HR"
+          displayName: "Human Resources"
+          description: "Human resources department"
+    description: Partial Group description
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Group.yaml'
+      description: successful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

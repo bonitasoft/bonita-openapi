@@ -1,0 +1,39 @@
+get:
+  tags:
+    - I18ntranslation
+  summary: Finds I18ntranslations
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    List the available I18ntranslations with pagination params and filters
+    Returns all translations of the product. If a locale is specified in the filter, that translation for that locale are returned.
+    If no locale is specified, the translations in English are returned.
+
+    You can filter on `locale`
+
+  operationId: findI18ntranslations
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/I18ntranslation.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

@@ -1,0 +1,42 @@
+delete:
+  tags:
+    - Membership
+  summary: Delete the Membership by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Delete a membership of a user using the group id and role id.
+  operationId: deleteMembershipById
+  parameters:
+    - description: User ID of the Membership to delete
+      in: path
+      name: userId
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: Group ID of the Membership to delete
+      in: path
+      name: groupId
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: Role ID of the Membership to delete
+      in: path
+      name: roleId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

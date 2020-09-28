@@ -1,0 +1,51 @@
+get:
+  tags:
+    - BDM
+  summary: Finds business data attribute by id
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Gets the business data attribute of business data according to its identifier and attribute name. Request url.
+
+  operationId: findBusinessDataAttributeById
+  parameters:
+    - description: Business Data Type
+      in: path
+      name: businessDataType
+      required: true
+      schema:
+        type: string
+      example: com.company.model.Employee
+    - description: Business data ID
+      in: path
+      name: persistenceId
+      required: true
+      schema:
+        type: string
+      example: 1
+    - description: Business data attribute name
+      in: path
+      name: attributeName
+      required: true
+      schema:
+        type: string
+      example: company
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/BusinessData.yaml'
+          example:
+            "persistenceId_string": "1"
+            "persistenceVersion_string": "0"
+            "company": "The Big Company"
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

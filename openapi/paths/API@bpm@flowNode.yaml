@@ -1,0 +1,41 @@
+get:
+  tags:
+    - FlowNode
+  summary: Finds FlowNodes
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds FlowNodes with pagination params and filters
+
+    - can order on `name`, `displayName`, `state`, `processDefinitionId`, `parentProcessInstanceId`, `parentActivityInstanceId` (if the retrieved flow nodes are activities, order by parent activity id), `rootProcessInstanceId`, `lastUpdateDate`
+    - can search on any field that can be used to order results
+    - can filter on `name`, `state`, `processId`, `parentCaseId`, `rootCaseId`, `last_update_date`
+
+  operationId: findFlowNodes
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/FlowNode.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

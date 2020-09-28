@@ -1,0 +1,35 @@
+type: object
+properties:
+  id:
+    description: page id
+    format: int64
+    type: integer
+  creationDate:
+    description: date and time
+    format: int64
+    type: integer
+  createdBy:
+    description: created by user id
+    format: int64
+    type: integer
+  isProvided:
+    description: is provided
+    type: boolean
+  description:
+    description: description
+    type: string
+  contentName:
+    description: content name
+    type: string
+  displayName:
+    description: custom page display name
+    type: string
+  updatedBy:
+    description: updated by user id
+    type: string
+  lastUpdateDate:
+    description: date and time
+    type: string
+  urlToken:
+    description: custom page urlToken
+    type: string

@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Message
+  summary: Send BPM message events
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Use this resource to send BPM message events. Message events are caught by processes using `catch message event` flow nodes (Start, intermediate, boundary or receive tasks).
+  operationId: createMessage
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/Message.yaml'
+    description: A Message event
+    required: true
+  responses:
+    '204':
+      $ref: '../components/responses/NoContent.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

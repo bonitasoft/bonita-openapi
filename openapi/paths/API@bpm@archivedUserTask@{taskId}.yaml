@@ -1,0 +1,32 @@
+get:
+  tags:
+    - ArchivedUserTask
+  summary: Finds the ArchivedUserTask by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the single ArchivedUserTask for the given ID
+  operationId: getArchivedUserTaskById
+  parameters:
+    - description: ID of the ArchivedUserTask to return
+      in: path
+      name: taskId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ArchivedUserTask.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

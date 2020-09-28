@@ -1,0 +1,67 @@
+type: object
+description: Use this resource to retrieve finished activities (human or service tasks), call activities, and subprocesses.
+properties:
+  id:
+    type: string
+    description: the archived activity id (long)
+  type:
+    $ref: './ActivityTypeEnum.yaml'
+  name:
+    type: string
+    description: the archived activity technical name (string)
+  displayName:
+    type: string
+    description: the human readable archived activity name (string)
+  description:
+    type: string
+    description: the archived activity description (string)
+  displayDescription:
+    type: string
+    description: the human readable archived activity description (string)
+  state:
+    $ref: './ActivityStateEnum.yaml'
+  reached_state_date:
+    type: string
+    description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when this archived activity reached the current state, for example '2014-10-17 16:05:42.626'
+  last_update_date:
+    type: string
+    description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when this archived activity was last updated, for example '2014-10-17 16:05:42.626)
+  dueDate:
+    type: string
+    description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when this archived activity is due, for example '2014-10-17 16:05:42.626'
+  priority:
+    $ref: './ActivityPriorityEnum.yaml'
+  processId:
+    type: string
+    description: the process definition id (long) of the case which define this archived activity
+  parentCaseId:
+    type: string
+    description: the immediate containing case id (long, a.k.a process instance id)
+  rootCaseId:
+    type: string
+    description: the top/root case id (long, a.k.a process instance id). In the case of an event sub process, parentCaseId will the id of the case called while rootCaseId will be the one from the caller case
+  rootContainerId:
+    type: string
+    description: same as rootCaseId
+  executedBy:
+    type: string
+    description: the id (long) of the user who performed this archived activity. The archived activity has to be a human task otherwise its value will be 0
+  executedBySubstitute:
+    type: string
+    description: the id (long) of the user who did actually performed the archived activity in the case of has been done in the name of someone else. Value is 0 otherwise
+  actorId:
+    type: string
+    description: the id (long) of the actor that can execute this archived activity, null otherwise
+  assigned_id:
+    type: string
+    description: the user id (long) that this archived activity is assigned to, or 0 if it is unassigned
+  assigned_date:
+    type: string
+    description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current archived activity was assigned, for example '2014-10-17 16:05:42.626'
+  sourceObjectId:
+    type: string
+    description: the original id of the archived activity before it was archived
+  archivedDate:
+    type: string
+    description: the date (('yyyy-MM-dd HH:mm:ss.SSS')) when this archived activity was archived, for example '2014-10-17 16:05:42.626'
+#example:

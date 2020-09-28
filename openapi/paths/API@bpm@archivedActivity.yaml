@@ -1,0 +1,51 @@
+get:
+  tags:
+    - ArchivedActivity
+  summary: Finds Archived Activities
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds Archived  Activities with pagination params and filters. Activities in states completed, cancelled, or aborted are not retrieved. The search returns an array of activities.
+
+    Can order on:
+      - `name` : the name of this activity
+      - `displayName` : the display name of this activity
+      - `state` : the current state of the activity
+      - `type` : the activity type
+      - `isTerminal` : say whether or not the activity is in a terminal state
+      - `processId` : the process this activity is associated to
+      - `caseId` : the case initiator this activity is associated to
+      - `reached_state_date` : the date when this activity arrived in this state
+
+    Can filter on:
+      - `supervisor_id`: retrieve the information the process manager associated to this id has access to (only in Enterprise editions)
+      - f: same as the sort order fields
+
+  operationId: findArchivedActivities
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/ArchivedActivity.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

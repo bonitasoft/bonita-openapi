@@ -1,0 +1,28 @@
+delete:
+  tags:
+    - ArchivedCaseDocument
+  summary: Delete the ArchivedCaseDocument by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Delete the single ArchivedCaseDocument for the given ID
+  operationId: deleteArchivedCaseDocumentById
+  parameters:
+    - description: ID of the ArchivedCaseDocument to delete
+      in: path
+      name: archivedCaseDocumentId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

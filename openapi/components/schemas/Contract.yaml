@@ -1,0 +1,23 @@
+type: object
+properties:
+  constraints:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          description: "constraint name"
+        expression:
+          description: "constraint expression"
+        explanation:
+          description: "constraint explanation"
+        inputNames:
+          type: array
+          items:
+              type: string
+        constraintType:
+          description: "constraint type (ex: MANDATORY)"
+  inputs:
+    type: array
+    items:
+      $ref: './ContractInput.yaml'

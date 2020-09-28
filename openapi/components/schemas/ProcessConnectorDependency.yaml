@@ -1,0 +1,21 @@
+type: object
+description: "Use the processConnectorDependency resource to access connector dependencies."
+properties:
+  connector_version:
+    description: "<connector version>"
+    type: string
+  connector_process_id:
+    description: "<process id>"
+    type: integer
+    format: int64
+  filename:
+    description: "<filename representing the connector>"
+    type: string
+  connector_name:
+    description: "<connector name>"
+    type: string
+example:
+  connector_version: "1.0.0"
+  connector_process_id: 4971555129176049183
+  filename: "bonita-connector-email-impl-1.0.12.jar"
+  connector_name: "email"

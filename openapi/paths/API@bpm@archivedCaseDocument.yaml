@@ -1,0 +1,49 @@
+get:
+  tags:
+    - ArchivedCaseDocument
+  summary: Finds ArchivedCaseDocuments
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds ArchivedCaseDocuments with pagination params and filters
+
+    You can filter on :
+
+    * `sourceObjectId="id"`: search for documents by specifying the original document id.
+      This is useful if you know the id of a caseDocument and you wish to retrieve all its previous versions..
+    * `caseId="id"`: search for documents with the specified open case id.
+    * `archivedCaseId="id"`: search for documents with the specified archvied case id.
+    * `submittedBy="id"`: search for documents that were submitted by the user with the specified identifier.
+    * `name="string"`: search for documents with names that contain _string_.
+      Depending on the setting for [word-based search](using-list-and-search-methods.md), the search returns documents with _string_ at the start of the name or the start of a word in the name.
+    * `description="string"`: search for documents with descriptions that contain _string_.
+      Depending on the setting for [word-based search](using-list-and-search-methods.md), the search returns documents with _string_ at the start of the description or the start of a word in the description.
+
+
+  operationId: findArchivedCaseDocuments
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/ArchivedCaseDocument.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

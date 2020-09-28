@@ -1,0 +1,58 @@
+get:
+  tags:
+    - Platform
+  summary: Finds the Platform by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the current Platform
+  operationId: getPlatformById
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Platform.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - Platform
+  summary: Update the Platform by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Start or stop the current node, that is, start or stop all services of the current JVM.
+  operationId: updatePlatformById
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            state:
+              description: Platform state
+              type: string
+              enum: [start, stop]
+        example:
+          state: "stop"
+    description: Start or stop all services of the current JVM.
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

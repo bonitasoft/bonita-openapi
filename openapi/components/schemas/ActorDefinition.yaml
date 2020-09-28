@@ -1,0 +1,12 @@
+type: object
+description: "Actor definition"
+properties:
+  name:
+    description: "the actor name"
+    type: string
+  description:
+    description: "the actor description"
+    type: string
+  initiator:
+    description: "true, if this actor can start the process"
+    type: boolean

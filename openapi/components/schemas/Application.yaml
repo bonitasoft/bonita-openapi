@@ -1,0 +1,54 @@
+type: object
+properties:
+  createdBy:
+    description: Author user ID
+    format: int64
+    type: integer
+  creationDate:
+    description: creation date of the application
+    type: string
+  description:
+    description: description of the application
+    type: string
+  displayName:
+    description: display name of the application
+    type: string
+  homePageId:
+    description: id of the application page used as the home page
+    format: int64
+    type: integer
+  id:
+    description: id of the application
+    format: int64
+    type: integer
+  lastUpdateDate:
+    description: last update date of the application
+    type: string
+  profileId:
+    description: profile authorized to access this application
+    format: int64
+    type: integer
+  token:
+    description: token of the application used to build the application URL
+    type: string
+  updatedBy:
+    description: Last updating user ID
+    format: int64
+    type: integer
+  version:
+    description: version of the application
+    type: string
+example:
+  id: 305
+  creationDate: "1411548289900"
+  iconPath: ""
+  createdBy": "1"
+  profileId: 2
+  description: "My application description"
+  token: "myapp"
+  state: "DEACTIVATED"
+  displayName: "My app"
+  updatedBy: 1
+  lastUpdateDate: "1411548289900"
+  version: "1.0"
+  homePageId: -1

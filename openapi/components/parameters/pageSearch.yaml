@@ -1,0 +1,8 @@
+description: 'can search on attributes'
+explode: true
+in: query
+name: s
+required: false
+schema:
+  type: string
+style: form

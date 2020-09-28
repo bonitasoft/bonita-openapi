@@ -1,0 +1,7 @@
+description: Authorization information is missing or invalid.
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/Error.yaml'
+    example:
+      message: "Unauthorized"

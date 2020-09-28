@@ -1,0 +1,17 @@
+type: object
+description: "Custom user definition"
+properties:
+  id:
+    description: "definition id"
+    type: integer
+    format: int64
+  description:
+    description: "definition description"
+    type: string
+  name:
+    description: "definition name"
+    type: string
+example:
+  id: 101
+  name: "skill"
+  description: "Team player"

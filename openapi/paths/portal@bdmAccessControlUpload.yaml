@@ -1,0 +1,37 @@
+post:
+  tags:
+    - BDMAccessControl
+  summary: Upload a BDM Access Control
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Upload BDM Access Control
+  operationId: uploadBDMAccessControl
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            file:
+              type: string
+              format: binary
+  responses:
+    '200':
+      description: sucessful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              fileUpload:
+                type: string
+                description: the temporary file name once uploaded on the server
+          example:
+            fileUpload: "tmp_accessControlFileToUpload.xml"
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

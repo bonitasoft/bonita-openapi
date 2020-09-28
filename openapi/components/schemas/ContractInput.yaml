@@ -1,0 +1,14 @@
+type: object
+properties:
+  description:
+    description: 'input description'
+  name:
+    description: "input name"
+  multiple:
+    description: "true if input contains multiple values"
+  type:
+    description: "input type"
+  inputs:
+    type: array
+    items:
+      $ref: './ContractInput.yaml'

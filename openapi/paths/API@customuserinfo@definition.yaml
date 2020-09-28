@@ -1,0 +1,74 @@
+get:
+  tags:
+    - CustomUserDefinition
+  summary: Finds CustomUserDefinitions
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds CustomUserDefinitions. There are no filters, and no search terms. All the definitions are returned.
+
+  operationId: findCustomUserDefinitions
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/CustomUserDefinition.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - CustomUserDefinition
+  summary: Create the CustomUserDefinition
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Create the CustomUserDefinition
+  operationId: createCustomUserDefinition
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              description: "definition name"
+              type: string
+            description:
+              description: "definition description"
+              type: string
+        example:
+          name: "skill"
+          description: "Team player"
+    description: Partial CustomUserDefinition description
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/CustomUserDefinition.yaml'
+      description: successful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

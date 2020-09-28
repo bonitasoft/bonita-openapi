@@ -1,0 +1,30 @@
+type: object
+description: "BPM timer event triggers"
+properties:
+  id:
+    description: "the ID of the timer returned"
+    type: integer
+    format: int64
+  id_string:
+    description: "the ID of the timer returned"
+    type: string
+  eventInstanceId:
+    description: "the ID of the event instance to which this trigger is related"
+    type: integer
+    format: int64
+  eventInstanceId_string:
+    description: "the ID of the event instance to which this trigger is related"
+    type: string
+  executionDate:
+    description: "the long value of the next execution date (number of milliseconds from January 1st, 1970 00:00:00)"
+    type: string
+  eventInstanceName:
+    description: "the name of the event instance to which this trigger is related"
+    type: string
+example:
+  id: 4015
+  id_string: "4015"
+  eventInstanceId: 2
+  eventInstanceId_string: "2"
+  executionDate: 1413980484194
+  eventInstanceName: "Timer1"

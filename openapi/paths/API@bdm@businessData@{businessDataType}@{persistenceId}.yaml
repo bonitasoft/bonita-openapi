@@ -1,0 +1,40 @@
+get:
+  tags:
+    - BDM
+  summary: Finds business data by Id
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds business data specified by its identifier.
+
+  operationId: findBusinessDataById
+  parameters:
+    - description: Business Data Type
+      in: path
+      name: businessDataType
+      required: true
+      schema:
+        type: string
+      example: com.company.model.Employee
+    - description: Business data ID
+      in: path
+      name: persistenceId
+      required: true
+      schema:
+        type: string
+      example: 1
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/BusinessData.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

@@ -1,0 +1,26 @@
+type: object
+properties:
+  id:
+    description: Id of the BDM access control
+    type: integer
+    format: int64
+  name:
+    description: BDM access control name
+    type: string
+  state:
+    description: BDM access control
+    type: string
+    enum: ["INSTALLED"]
+  lastUpdatedBy:
+    description: "If `lastUpdatedBy: -1` it means that the access control were last installed or updated by tenant_technical_user."
+    type: string
+  lastUpdateDate:
+    description: "Last date when the access control were installed or updated."
+    type: string
+example:
+  id: 4090
+  name: "bdm_access_control.xml"
+  type: "BDM_ACCESS_CONTROL"
+  state: "INSTALLED"
+  lastUpdatedBy: 4
+  lastUpdateDate: "2018-01-17T17:05:36.671Z"

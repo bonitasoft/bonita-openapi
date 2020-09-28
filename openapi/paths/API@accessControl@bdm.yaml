@@ -1,0 +1,41 @@
+get:
+  tags:
+    - BDMAccessControl
+  summary: BDM access control status
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Get the BDM access control status.
+
+  operationId: getDBMAccessControlStatus
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/BDMAccessControl.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+delete:
+  tags:
+    - BDMAccessControl
+  summary: Delete the BDM Access Control
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Delete the BDM access control
+  operationId: deleteBDMAccessControl
+  responses:
+    '204':
+      $ref: '../components/responses/NoContent.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

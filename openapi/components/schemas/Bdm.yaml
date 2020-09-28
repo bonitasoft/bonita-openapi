@@ -1,0 +1,33 @@
+type: object
+description: ""
+properties:
+  id:
+    description: "BDM id"
+    type: integer
+    format: int64
+  name:
+    description: "BDM name"
+    type: string
+  type:
+    description: "BDM type"
+    type: string
+  state:
+    description: "BDM state"
+    type: string
+    enum: [INSTALLED]
+  lastUpdatedBy:
+    description: "This value is always -1 because only the tenant_technical_user can install BDM."
+    type: integer
+    format: int64
+    default: -1
+  lastUpdateDate:
+    description: "Last date when the BDM was installed or updated."
+    type: string
+
+example:
+  id: "309"
+  name: "client_bdm.zip"
+  type: "BDM"
+  state: "INSTALLED"
+  lastUpdatedBy: -1
+  lastUpdateDate: "2018-01-17T17:05:36.671Z"

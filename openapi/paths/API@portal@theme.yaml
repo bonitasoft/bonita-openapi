@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Theme
+  summary: Create the Theme
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Create the Theme
+  operationId: createTheme
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            type:
+              description: theme type
+              type: string
+              enum: [portal, mobile]
+            zipFilePathportal:
+              description: tmp zip file Path as uploaded to portal
+              type: string
+        example:
+          type: "portal"
+          zipFilePathportal: "tmp_1939634566964075173.zip"
+    description: Partial Theme description
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

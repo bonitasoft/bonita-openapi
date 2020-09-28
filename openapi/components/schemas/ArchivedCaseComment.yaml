@@ -1,0 +1,15 @@
+allOf: # Combines the CaseComment and the inline model
+  - $ref: './CaseComment.yaml'
+  - type: object
+    description: "Information about the comment of an archived case."
+    properties:
+      archivedDate:
+        description: "the date set when the case comment was archived"
+        type: string
+    example:
+      id: 20005
+      content: "Need to review the last inputs of this case"
+      processInstanceId: 1
+      postDate: "2016-06-16 14:51:33.053"
+      archivedDate: "2016-06-17 10:18:24.723"
+      userId: 30

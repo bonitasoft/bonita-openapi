@@ -1,0 +1,9 @@
+allOf:     # Combines the ConnectorInstance and the inline model
+  - $ref: './ConnectorInstance.yaml'
+  - type: object
+    description: "Information about archived connector instances attached to an archived process or an archived flow node."
+    properties:
+      archivedDate:
+        description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current task was assigned for example '2014-10-17 16:05:42.626'"
+        type: string
+        pattern: '^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]$'

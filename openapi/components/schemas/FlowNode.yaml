@@ -1,0 +1,102 @@
+type: object
+description: "A flow node (gateway, event, or task) in an open instance of a process."
+properties:
+  id:
+    description: "the flow node id "
+    type: integer
+    format: int64
+  displayDescription:
+    description: "the human readable flow node description "
+    type: string
+  executedBySubstitute:
+    description: "the id of the user who really performed this flow node in case where a substitute did it, or 0 if the flow node was not performed by a substitute"
+    type: integer
+    format: int64
+  caseId:
+    description: "the case id that is associated with this flow node"
+    type: integer
+    format: int64
+  parentCaseId:
+    description: "the parent case id that is associated with this flow node's case"
+    type: integer
+    format: int64
+  rootCaseId:
+    description: "the root case initiator id that is associated with this flow node's case"
+    type: integer
+    format: int64
+  processId:
+    description: "the process id that is associated with this flow node"
+    type: integer
+    format: int64
+  rootContainerId:
+    description: "the root process id of the root case that is associated with this flow node"
+    type: integer
+    format: int64
+  state:
+    description: "the current state of the flow node (ready, completed, failed)"
+    type: string
+  type:
+    description: "the flow node type "
+    type: string
+  assigned_id:
+    description: "the user id that this flow node is assigned to, or 0 if it is unassigned"
+    type: integer
+    format: int64
+  assigned_date:
+    description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current flow node was assigned, for example '2014-10-17 16:05:42.626'"
+    type: string
+  executedBy:
+    description: "the id of the user who executed the flow node, or 0 if the flow node has not been executed"
+    type: integer
+    format: int64
+  priority:
+    description: "the priority of the current flow node"
+    type: string
+  actorId:
+    description: "the id of the actor that can execute this flow node, null otherwise"
+    type: integer
+    format: int64
+  description:
+    description: "the flow node description "
+    type: string
+  name:
+    description: "the flow node name "
+    type: string
+  reached_state_date:
+    description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when this flow node reached the current state, for example '2014-10-17 16:05:42.626'"
+    type: string
+  displayName:
+    description: "the display name of this flow node"
+    type: string
+  dueDate:
+    description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when this flow node is due, for example '2014-10-17 16:05:42.626'"
+    type: string
+  last_update_date:
+    description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when this flow node was last updated, for example '2014-10-17 16:05:42.626)"
+    type: string
+  parentTaskId":
+    description: "in the case of a subtask, the parent task id "
+    type: integer
+    format: int64
+example:
+  displayDescription": ""
+  executedBySubstitute": 0
+  processId": 7596769292810273901
+  parentCaseId": 1
+  state": "failed"
+  rootContainerId": 1
+  type": "USER_TASK"
+  assigned_id":
+  assigned_date": ""
+  id": "77456"
+  executedBy": 0
+  caseId": 1
+  priority": "normal"
+  actorId": 4
+  description": ""
+  name": "Step1"
+  reached_state_date": "2014-12-10 08:59:47.884"
+  rootCaseId": 1
+  displayName": "Step1"
+  dueDate": "2014-12-10 09:59:47.855"
+  last_update_date": "2014-12-10 08:59:47.884"

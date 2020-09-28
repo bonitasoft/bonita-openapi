@@ -1,0 +1,92 @@
+type: object
+description: "Case is an instance of a process. When you start a process, it creates a case."
+properties:
+  id:
+    description: "the identifier of the case"
+    type: integer
+    format: int64
+  end_date:
+    description: "the date set when the case is closed"
+    type: string
+  failedFlowNodes:
+    description: "count of failed flow nodes if parameter n=failedFlowNodes is given"
+    type: string
+  startedBySubstitute:
+    description: "the identifier of the substitute user (as Process manager or Administrator) who started the process. It can be also the substitute user if d=startedBySubstitute is given."
+    type: string
+  start:
+    description: "the starting date of the case"
+    type: string
+  activeFlowNodes:
+    description: "count of active flow nodes if parameter n=activeFlowNodes is given"
+    type: string
+  state:
+    description: "state: an enum that represent the state of the case, it can be INITIALIZING, STARTED, SUSPENDED, CANCELLED, ABORTED, COMPLETING, COMPLETED, ERROR, ABORTING"
+    type: string
+  rootCaseId:
+    description: "the identifier of the container of the case"
+    type: integer
+    format: int64
+  started_by:
+    description: "the identifier of the user who started the case"
+    type: integer
+    format: int64
+  processDefinitionId:
+    description: "the identifier of the process related of the case"
+    type: integer
+    format: int64
+  last_update_date:
+    description: "the date of the last update done on the case"
+    type: string
+  searchIndex1Label:
+    description: "the 1st search index label (from 6.5, in Subscription editions only)"
+    type: string
+  searchIndex2Label:
+    description: "the 2nd search index label (from 6.5, in Subscription editions only)"
+    type: string
+  searchIndex3Label:
+    description: "the 3rd search index label (from 6.5, in Subscription editions only)"
+    type: string
+  searchIndex4Label:
+    description: "the 4th search index label (from 6.5, in Subscription editions only)"
+    type: string
+  searchIndex5Label:
+    description: "the 5th search index label (from 6.5, in Subscription editions only)"
+    type: string
+  searchIndex1Value:
+    description: "the 1st search index value (from 6.5, in Subscription editions only)"
+    type: string
+  searchIndex2Value:
+    description: "the 2nd search index value (from 6.5, in Subscription editions only)"
+    type: string
+  searchIndex3Value:
+    description: "the 3rd search index value (from 6.5, in Subscription editions only)"
+    type: string
+  searchIndex4Value:
+    description: "the 4th search index value (from 6.5, in Subscription editions only)"
+    type: string
+  searchIndex5Value:
+    description: "the 5th search index value (from 6.5, in Subscription editions only)"
+    type: string
+example:
+  id: 1
+  end_date": ""
+  failedFlowNodes": 9
+  startedBySubstitute": 345
+  start": "2014-11-27 17:55:00.906"
+  activeFlowNodes": "9"
+  state": "started"
+  rootCaseId": "1"
+  started_by": 989
+  processDefinitionId": "5777042023671752656"
+  last_update_date": "2014-11-27 17:55:00.906"
+  searchIndex1Label: "mySearchIndex1Label"
+  searchIndex2Label: "mySearchIndex2Label"
+  searchIndex3Label: "mySearchIndex3Label"
+  searchIndex4Label: "mySearchIndex4Label"
+  searchIndex5Label: "mySearchIndex5Label"
+  searchIndex1Value: "mySearchIndex1Value"
+  searchIndex2Value: "mySearchIndex2Value"
+  searchIndex3Value: "mySearchIndex3Value"
+  searchIndex4Value: "mySearchIndex4Value"
+  searchIndex5Value: "mySearchIndex5Value"

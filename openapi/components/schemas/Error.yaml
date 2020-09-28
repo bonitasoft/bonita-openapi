@@ -1,0 +1,15 @@
+type: object
+additionalProperties: true
+properties:
+  message:
+    type: string
+    description: The error message
+  exception:
+    type: string
+    description: The exception type
+  explanations:
+    description: Further details on the error
+    type: array
+    items:
+      type: string
+

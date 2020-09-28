@@ -1,0 +1,8 @@
+description:  ![](https://img.shields.io/badge/edition-subscription-blue)
+type: object
+properties:
+  themeId:
+    description: id of theme resource
+    format: int64
+    type: integer
+    example: 1234

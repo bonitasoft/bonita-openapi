@@ -1,0 +1,47 @@
+get:
+  tags:
+    - ArchivedCase
+  summary: Finds ArchivedCases
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds ArchivedCases with pagination params and filters
+
+    You can order on `id`, `processDefinitionId`, `startedBy`, `startedBySubstitute`, `startDate`, `endDate`, `lastUpdate`, `archivedDate`, `sourceObjectId`
+
+    You can filter on :
+
+    * `sourceObjectId`: The original case ID before the case was archived
+    * `processDefinitionId`: The process derfinition ID
+    * `name`: the process name
+    * `started_by`: the ID of the user who started the process
+    * `team_manager_id`: allow to retrieve the cases in which all users with this manager ID ar involved)
+    * `supervisor_id`: allow the retrived the cases of all processes the user with this ID is supervisor of) beware you cannot use team_manager_id and supervisor_id at the same time
+
+  operationId: findArchivedCases
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/ArchivedCase.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

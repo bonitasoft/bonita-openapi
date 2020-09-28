@@ -1,0 +1,667 @@
+openapi: 3.0.2
+info:
+  contact:
+    email: rd.user@bonitasoft.com
+  license:
+    name: GPL-v2.0
+    url: 'http://www.gnu.org/licenses/gpl-2.0.txt'
+  version: 0.0.1
+  title: Bonita 7.11 HTTP API
+  description:
+    # Ignore IDE warnings
+    $ref: './intro.md'
+  x-logo:
+    url: images/logo_bonitasoft_white.png
+    backgroundColor: "#003355"
+    altText: "Bonita API"
+    href: "https://documentation.bonitasoft.com/bonita/7.11/_rest-api"
+servers:
+  - url: 'http://localhost:8080/bonita'
+  - url: 'http://bonita.localhost/bonita'
+security:
+  - bonita_auth: [ ]
+    bonita_token: [ ]
+x-tagGroups:
+  - name: Application
+    tags:
+      - ApplicationTheme
+      - Application
+      - ApplicationMenu
+      - ApplicationPage
+      - FormMapping
+  - name: BDM
+    tags:
+      - BDM
+      - BusinessDataQuery
+      - BDMAccessControl
+  - name: BPM
+    tags:
+      - Activity
+      - ArchivedActivity
+      - HumanTask
+      - ManualTask
+      - Task
+      - UserTask
+      - ArchivedHumanTask
+      - ArchivedManualTask
+      - ArchivedTask
+      - ArchivedUserTask
+      - ActivityVariable
+      - CaseVariable
+      - CaseDocument
+      - ArchivedCaseDocument
+      - Actor
+      - ActorMember
+      - Case
+      - ArchivedCase
+      - CaseInfo
+      - CaseComment
+      - ArchivedCaseComment
+      - Process
+      - Diagram
+      - ProcessParameter
+      - ProcessResolutionProblem
+      - ProcessSupervisor
+      - ProcessConnectorDependency
+      - ConnectorFailure
+      - ConnectorInstance
+      - ArchivedConnectorInstance
+      - FlowNode
+      - ArchivedFlowNode
+      - TimerEventTrigger
+      - Message
+
+  - name: Custom user info
+    tags:
+      - CustomUserDefinition
+      - CustomUserValue
+      - CustomUser
+
+  - name: Identity
+    tags:
+      - ProfessionalContactData
+      - Group
+      - Membership
+      - Role
+      - User
+      - Authentication
+
+  - name: Platform
+    tags:
+      - PlatformAuthentication
+      - Platform
+      - PlatformTenant
+      - Tenant
+      - License
+
+  - name: Portal
+    tags:
+      - Page
+      - Profile
+      - ProfileEntry
+      - ProfileMember
+      - Theme
+
+  - name: System
+    tags:
+      - I18nlocale
+      - I18nTranslation
+      - Session
+      - SystemTenant
+
+  - name: Tenant
+    tags:
+      - BDM
+
+  - name: Other
+    tags:
+      - RestAPIextensions
+tags:
+  - name: Activity
+    x-displayName: Activity
+    description: Activity
+  - name: ActivityVariable
+    x-displayName: ActivityVariable
+    description: ActivityVariable
+  - name: Actor
+    x-displayName: Actor
+    description: Actor
+  - name: ActorMember
+    x-displayName: ActorMember
+    description: ActorMember
+  - name: Application
+    x-displayName: Application
+    description: >-
+      Manage applications. This enables you to build a consistent functional
+      applicative environment for users to interact with business processes and
+      business data from one place.
+  - name: ApplicationMenu
+    x-displayName: ApplicationMenu
+    description: |
+      Manage the set of menus in an application. This set of menus enables a user to navigate to the application pages.
+
+      There are two types of menu item:
+
+      A top-level item appears in the navigation bar of the application. A top-level item can be clickable, leading to a page, or can be a parent for a menu of clickable items.
+      A child menu item becomes visible in a menu when the parent is selected. A child menu item is clickable and leads to a page.
+      Each menu item has an index that defines the position in the menu. For a top-level menu item, this is the position in the the navigation bar counting from the left. For a child menu item, this is the position in the menu counting from the top.
+  - name: ApplicationPage
+    x-displayName: ApplicationPage
+    description: |
+      An application page is a custom page that has been associated with an application. Use this resource to manage application pages and define the paths used to access them. This list of pages will be used to build the application menus.
+  - name: ApplicationTheme
+    x-displayName: ApplicationTheme
+    description: >-
+      This API is available in Subscription editions only
+
+      Manage applications theme. This enables you to modify your application theme.
+  - name: ArchivedActivity
+    x-displayName: ArchivedActivity
+    description: ArchivedActivity
+  - name: ArchivedCase
+    x-displayName: ArchivedCase
+    description: ArchivedCase
+  - name: ArchivedCaseComment
+    x-displayName: ArchivedCaseComment
+    description: ArchivedCaseComment
+  - name: ArchivedCaseDocument
+    x-displayName: ArchivedCaseDocument
+    description: ArchivedCaseDocument
+  - name: ArchivedConnectorInstance
+    x-displayName: ArchivedConnectorInstance
+    description: ArchivedConnectorInstance
+  - name: ArchivedFlowNode
+    x-displayName: ArchivedFlowNode
+    description: ArchivedFlowNode
+  - name: ArchivedHumanTask
+    x-displayName: ArchivedHumanTask
+    description: ArchivedHumanTask
+  - name: ArchivedManualTask
+    x-displayName: ArchivedManualTask
+    description: ArchivedManualTask
+  - name: ArchivedTask
+    x-displayName: ArchivedTask
+    description: ArchivedTask
+  - name: ArchivedUserTask
+    x-displayName: ArchivedUserTask
+    description: ArchivedUserTask
+  - name: Authentication
+    x-displayName: Authentication endpoints
+    description: Authentication endpoints
+  - name: BDM
+    x-displayName: BDM
+    description: |
+      Show status or install or update the Business Data Model.
+
+      Installing or updating a BDM on your tenant needs to be done in two successive steps:
+      1 - Upload a BDM file
+      2 - Install/Update the previously uploaded file
+
+      **To do this, your tenant services need to be paused.**
+
+      **In Enterprise editions, if you have an access control file installed on your tenant, you need to delete it before installing or updating your BDM.**
+  - name: BDMAccessControl
+    x-displayName: BDMAccessControl
+    description: BDM Access control is available to protect the tenant BDM. You can use this API to get the access control status (lastUpdatedBy, lastUpdateDate...).
+  - name: BusinessDataQuery
+    x-displayName: BusinessDataQuery
+    description: BDM Rest APIs allow to query Bonita Business Data.
+  - name: BPM
+    x-displayName: BPM
+    description: Easily retrieve human or service tasks, call activities, and subprocesses with BPM APIs. Perform maintenance tasks.
+  - name: Case
+    x-displayName: Case
+    description: Case
+  - name: CaseComment
+    x-displayName: CaseComment
+    description: CaseComment
+  - name: CaseDocument
+    x-displayName: CaseDocument
+    description: CaseDocument
+  - name: CaseInfo
+    x-displayName: CaseInfo
+    description: CaseInfo
+  - name: CaseVariable
+    x-displayName: CaseVariable
+    description: CaseVariable
+  - name: ConnectorFailure
+    x-displayName: ConnectorFailure
+    description: ConnectorFailure
+  - name: ConnectorInstance
+    x-displayName: ConnectorInstance
+    description: ConnectorInstance
+  - name: CustomUser
+    x-displayName: CustomUser
+    description: CustomUser
+  - name: CustomUserDefinition
+    x-displayName: CustomUserDefinition
+    description: CustomUserDefinition
+  - name: CustomUserValue
+    x-displayName: CustomUserValue
+    description: CustomUserValue
+  - name: Diagram
+    x-displayName: Diagram
+    description: Diagram
+  - name: FlowNode
+    x-displayName: FlowNode
+    description: FlowNode
+  - name: FormMappingBDM
+    x-displayName: FormMappingBDM
+    description: FormMappingBDM
+  - name: Group
+    x-displayName: Group
+    description: The group a user belongs to. Groups have a hierarchy (subgroups can be created inside a group).
+  - name: HumanTask
+    x-displayName: HumanTask
+    description: HumanTask
+  - name: I18nlocale
+    x-displayName: I18nlocale
+    description: I18nlocale
+  - name: I18nTranslation
+    x-displayName: I18nTranslation
+    description: I18nTranslation
+  - name: License
+    x-displayName: License
+    description: |
+      Handle the license information. This requires a platform session. Log in using the platform login service.
+      This Web REST API is available in **Enterprise editions only**, since version 7.1.
+  - name: ManualTask
+    x-displayName: ManualTask
+    description: ManualTask
+  - name: Membership
+    x-displayName: Membership
+    description: Manage membership of users. There is a membership when a user belongs to a group and a role. Use this resource to add, search, and delete memberships.
+  - name: Message
+    x-displayName: Message
+    description: Message
+  - name: Page
+    x-displayName: Page
+    description: Use the page resource to access custom pages, UI Designer pages, layouts or forms and REST API extensions.
+  - name: Platform
+    x-displayName: Platform
+    description: The Platform API resources require a platform session. In order to get one, log in as the platform administrator using the platform login service.
+  - name: PlatformAuthentication
+    x-displayName: PlatformAuthentication
+    description: PlatformAuthentication
+  - name: PlatformTenant
+    x-displayName: PlatformTenant
+    description: PlatformTenant
+  - name: Process
+    x-displayName: Process
+    description: Deploy and manage process definitions. In addition, you can instantiate a process, which will create a new process instance (case).
+  - name: ProcessConnectorDependency
+    x-displayName: ProcessConnectorDependency
+    description: ProcessConnectorDependency
+  - name: ProcessParameter
+    x-displayName: ProcessParameter
+    description: ProcessParameter
+  - name: ProcessResolutionProblem
+    x-displayName: ProcessResolutionProblem
+    description: ProcessResolutionProblem
+  - name: ProcessSupervisor
+    x-displayName: ProcessSupervisor
+    description: ProcessSupervisor
+  - name: ProfessionalContactData
+    x-displayName: ProfessionalContactData
+    description: ProfessionalContactData
+  - name: Profile
+    x-displayName: Profile
+    description: Profile
+  - name: ProfileEntry
+    x-displayName: ProfileEntry
+    description: ProfileEntry
+  - name: ProfileMember
+    x-displayName: ProfileMember
+    description: ProfileMember
+  - name: Role
+    x-displayName: Role
+    description: Role
+  - name: Session
+    x-displayName: Session
+    description: Session
+  - name: SystemTenant
+    x-displayName: SystemTenant
+    description: SystemTenant
+  - name: Task
+    x-displayName: Task
+    description: Task
+  - name: Tenant
+    x-displayName: Tenant
+    description: Handle the tenants (**Enterprise editions only**). This requires a platform session. Log in using the platform login service.
+  - name: Theme
+    x-displayName: Theme
+    description: Theme
+  - name: TimerEventTrigger
+    x-displayName: TimerEventTrigger
+    description: TimerEventTrigger
+  - name: User
+    x-displayName: User
+    description: User
+  - name: UserTask
+    x-displayName: UserTask
+    description: UserTask
+  - name: RestAPIextensions
+    x-displayName: API extensions
+    description: |
+      Create REST API extensions to use third party systems (databases, web services, Bonita Engine, etc) data in forms and pages.
+
+      REST API extensions can be used to query business data, Bonita Engine APIs, or an external information system (such as a database, web service, LDAP directory...). They also help to keep a clean separation between the front-end (forms, pages, and interfaces visible to users) and the back-end (processes).
+    externalDocs:
+      url: https://documentation.bonitasoft.com/bonita/7.11/rest-api-extensions
+
+paths:
+  #  =======================
+  #   AUTH/LOGIN API
+  #  =======================
+  /loginservice:
+    $ref: "./paths/loginservice.yaml"
+  /logoutservice:
+    $ref: "./paths/logoutservice.yaml"
+  #  =======================
+  #   APPLICATION API
+  #  =======================
+  /API/living/application:
+    $ref: "./paths/API@living@application.yaml"
+  '/API/living/application/{applicationId}':
+    $ref: "./paths/API@living@application@{applicationId}.yaml"
+  /services/application/import:
+    $ref: "./paths/services@application@import.yaml"
+  /portal/applicationsUpload:
+    $ref: "./paths/portal@applicationsUpload.yaml"
+  /API/living/application-menu:
+    $ref: "./paths/API@living@application-menu.yaml"
+  /API/living/application-menu/{applicationMenuId}:
+    $ref: "./paths/API@living@application-menu@{applicationMenuId}.yaml"
+  /API/living/application-page:
+    $ref: './paths/API@living@application-page.yaml'
+  /API/living/application-page/{applicationPageId}:
+    $ref: './paths/API@living@application-page@{applicationPageId}.yaml'
+  #  =======================
+  #   BDM API
+  #  =======================
+  /API/bdm/businessData/{businessDataType}:
+    $ref: './paths/API@bdm@businessData@{businessDataType}.yaml'
+  /API/bdm/businessData/{businessDataType}/findByIds:
+    $ref: './paths/API@bdm@businessData@{businessDataType}@findByIds.yaml'
+  /API/bdm/businessData/{businessDataType}/{persistenceId}:
+    $ref: './paths/API@bdm@businessData@{businessDataType}@{persistenceId}.yaml'
+  /API/bdm/businessData/{businessDataType}/{persistenceId}/{attributeName}:
+    $ref: './paths/API@bdm@businessData@{businessDataType}@{persistenceId}@{attributeName}.yaml'
+  #  =======================
+  #   BDM ACCESS CONTROL API
+  #  =======================
+  /API/accessControl/bdm:
+    $ref: './paths/API@accessControl@bdm.yaml'
+  /portal/bdmAccessControlUpload:
+    $ref: "./paths/portal@bdmAccessControlUpload.yaml"
+  /services/bdmAccessControl/install:
+    $ref: "./paths/services@bdmAccessControl@install.yaml"
+  #  =======================
+  #   BPM API
+  #  =======================
+  /API/bpm/activity:
+    $ref: './paths/API@bpm@activity.yaml'
+  /API/bpm/activity/{id}:
+    $ref: './paths/API@bpm@activity@{id}.yaml'
+  /API/bpm/archivedActivity:
+    $ref: './paths/API@bpm@archivedActivity.yaml'
+  /API/bpm/archivedActivity/{id}:
+    $ref: './paths/API@bpm@archivedActivity@{id}.yaml'
+  /API/bpm/humanTask:
+    $ref: './paths/API@bpm@humanTask.yaml'
+  /API/bpm/humanTask/{taskId}:
+    $ref: './paths/API@bpm@humanTask@{taskId}.yaml'
+  /API/bpm/manualTask:
+    $ref: './paths/API@bpm@manualTask.yaml'
+  /API/bpm/manualTask/{taskId}:
+    $ref: './paths/API@bpm@manualTask@{taskId}.yaml'
+  /API/bpm/task:
+    $ref: './paths/API@bpm@task.yaml'
+  /API/bpm/task/{taskId}:
+    $ref: './paths/API@bpm@task@{taskId}.yaml'
+  /API/bpm/userTask:
+    $ref: './paths/API@bpm@userTask.yaml'
+  /API/bpm/userTask/{taskId}:
+    $ref: './paths/API@bpm@userTask@{taskId}.yaml'
+  /API/bpm/userTask/{taskId}/contract:
+    $ref: './paths/API@bpm@userTask@{taskId}@contract.yaml'
+  /API/bpm/userTask/{taskId}/execution:
+    $ref: './paths/API@bpm@userTask@{taskId}@execution.yaml'
+  /API/bpm/userTask/{taskId}/context:
+    $ref: './paths/API@bpm@userTask@{taskId}@context.yaml'
+  /API/bpm/archivedHumanTask:
+    $ref: './paths/API@bpm@archivedHumanTask.yaml'
+  /API/bpm/archivedHumanTask/{taskId}:
+    $ref: './paths/API@bpm@archivedHumanTask@{taskId}.yaml'
+  /API/bpm/archivedManualTask:
+    $ref: './paths/API@bpm@archivedManualTask.yaml'
+  /API/bpm/archivedManualTask/{taskId}:
+    $ref: './paths/API@bpm@archivedManualTask@{taskId}.yaml'
+  /API/bpm/archivedUserTask:
+    $ref: './paths/API@bpm@archivedUserTask.yaml'
+  /API/bpm/archivedUserTask/{taskId}:
+    $ref: './paths/API@bpm@archivedUserTask@{taskId}.yaml'
+  /API/bpm/archivedTask:
+    $ref: './paths/API@bpm@archivedTask.yaml'
+  /API/bpm/archivedTask/{taskId}:
+    $ref: './paths/API@bpm@archivedTask@{taskId}.yaml'
+  /API/bpm/activityVariable/{activityId}/{variableName}:
+    $ref: './paths/API@bpm@activityVariable@{activityId}@{variableName}.yaml'
+  /API/bpm/caseVariable:
+    $ref: './paths/API@bpm@caseVariable.yaml'
+  /API/bpm/caseVariable/{caseId}/{variableName}:
+    $ref: './paths/API@bpm@caseVariable@{caseId}@{variableName}.yaml'
+  /API/bpm/caseDocument:
+    $ref: './paths/API@bpm@caseDocument.yaml'
+  /API/bpm/caseDocument/{documentId}:
+    $ref: './paths/API@bpm@caseDocument@{documentId}.yaml'
+  /API/bpm/archivedCaseDocument:
+    $ref: './paths/API@bpm@archivedCaseDocument.yaml'
+  /API/bpm/archivedCaseDocument/{archivedCaseDocumentId}:
+    $ref: './paths/API@bpm@archivedCaseDocument@{archivedCaseDocumentId}.yaml'
+  /API/bpm/actor:
+    $ref: './paths/API@bpm@actor.yaml'
+  /API/bpm/actor/{actorId}:
+    $ref: './paths/API@bpm@actor@{actorId}.yaml'
+  /API/bpm/actorMemberEntry:
+    $ref: './paths/API@bpm@actorMemberEntry.yaml'
+  /API/bpm/actorMemberEntry/{id}:
+    $ref: './paths/API@bpm@actorMemberEntry@{id}.yaml'
+  /API/bpm/case:
+    $ref: './paths/API@bpm@case.yaml'
+  /API/bpm/case/{id}:
+    $ref: './paths/API@bpm@case@{id}.yaml'
+  /API/bpm/case/{caseId}/context:
+    $ref: './paths/API@bpm@case@{caseId}@context.yaml'
+  /API/bpm/archivedCase:
+    $ref: './paths/API@bpm@archivedCase.yaml'
+  /API/bpm/archivedCase/{archivedCaseId}:
+    $ref: './paths/API@bpm@archivedCase@{archivedCaseId}.yaml'
+  /API/bpm/archivedCase/{archivedCaseId}/context:
+    $ref: './paths/API@bpm@archivedCase@{archivedCaseId}@context.yaml'
+  /API/bpm/caseInfo/{id}:
+    $ref: './paths/API@bpm@caseInfo@{id}.yaml'
+  /API/bpm/comment:
+    $ref: './paths/API@bpm@comment.yaml'
+  /API/bpm/archivedComment:
+    $ref: './paths/API@bpm@archivedComment.yaml'
+  /API/bpm/process:
+    $ref: './paths/API@bpm@process.yaml'
+  /API/bpm/process/{processId}:
+    $ref: './paths/API@bpm@process@{processId}.yaml'
+  /API/bpm/process/{processId}/design:
+    $ref: './paths/API@bpm@process@{processId}@design.yaml'
+  /API/bpm/process/{processId}/contract:
+    $ref: './paths/API@bpm@process@{processId}@contract.yaml'
+  /API/bpm/process/{processId}/instantiation:
+    $ref: './paths/API@bpm@process@{processId}@instantiation.yaml'
+  /API/bpm/diagram/{processId}:
+    $ref: './paths/API@bpm@diagram@{processId}.yaml'
+  /API/bpm/processParameter:
+    $ref: './paths/API@bpm@processParameter.yaml'
+  /API/bpm/processParameter/{processId}/{name}:
+    $ref: './paths/API@bpm@processParameter@{processId}@{name}.yaml'
+  /API/bpm/processResolutionProblem:
+    $ref: './paths/API@bpm@processResolutionProblem.yaml'
+  /API/bpm/processSupervisor:
+    $ref: './paths/API@bpm@processSupervisor.yaml'
+  /API/bpm/processConnectorDependency:
+    $ref: './paths/API@bpm@processConnectorDependency.yaml'
+  /API/bpm/connectorFailure/{connectorFailureId}:
+    $ref: './paths/API@bpm@connectorFailure@{connectorFailureId}.yaml'
+  /API/bpm/connectorInstance:
+    $ref: './paths/API@bpm@connectorInstance.yaml'
+  /API/bpm/archivedConnectorInstance:
+    $ref: './paths/API@bpm@archivedConnectorInstance.yaml'
+  /API/bpm/flowNode:
+    $ref: './paths/API@bpm@flowNode.yaml'
+  /API/bpm/flowNode/{id}:
+    $ref: './paths/API@bpm@flowNode@{id}.yaml'
+  /API/bpm/archivedFlowNode:
+    $ref: './paths/API@bpm@archivedFlowNode.yaml'
+  /API/bpm/archivedFlowNode/{id}:
+    $ref: './paths/API@bpm@archivedFlowNode@{id}.yaml'
+  /API/bpm/timerEventTrigger:
+    $ref: './paths/API@bpm@timerEventTrigger.yaml'
+  /API/bpm/timerEventTrigger/{id}:
+    $ref: './paths/API@bpm@timerEventTrigger@{id}.yaml'
+  /API/bpm/message:
+    $ref: './paths/API@bpm@message.yaml'
+  #  =======================
+  #  CustomUserDefintion
+  #  =======================
+  /API/customuserinfo/definition:
+    $ref: './paths/API@customuserinfo@definition.yaml'
+  /API/customuserinfo/definition/{id}:
+    $ref: './paths/API@customuserinfo@definition@{id}.yaml'
+  /API/customuserinfo/value:
+    $ref: './paths/API@customuserinfo@value.yaml'
+  /API/customuserinfo/value/{userId}/{definitionId}:
+    $ref: './paths/API@customuserinfo@value@{userId}@{definitionId}.yaml'
+  /API/customuserinfo/user:
+    $ref: './paths/API@customuserinfo@user.yaml'
+  #  =======================
+  #  Forms
+  #  =======================
+  /API/form/mapping:
+    $ref: './paths/API@form@mapping.yaml'
+  /API/form/mapping/{id}:
+    $ref: './paths/API@form@mapping@{id}.yaml'
+  #  =======================
+  #   IDENTITY API
+  #  =======================
+  /API/identity/professionalcontactdata:
+    $ref: './paths/API@identity@professionalcontactdata.yaml'
+  /API/identity/professionalcontactdata/{userId}:
+    $ref: './paths/API@identity@professionalcontactdata@{userId}.yaml'
+  /API/identity/personalcontactdata/{userId}:
+    $ref: './paths/API@identity@personalcontactdata@{userId}.yaml'
+  /API/identity/group:
+    $ref: './paths/API@identity@group.yaml'
+  /API/identity/group/{groupId}:
+    $ref: './paths/API@identity@group@{groupId}.yaml'
+  /API/identity/membership:
+    $ref: './paths/API@identity@membership.yaml'
+  /API/identity/membership/{userId}/{groupId}/{roleId}:
+    $ref: './paths/API@identity@membership@{userId}@{groupId}@{roleId}.yaml'
+  /API/identity/role:
+    $ref: './paths/API@identity@role.yaml'
+  /API/identity/role/{roleId}:
+    $ref: './paths/API@identity@role@{roleId}.yaml'
+  /API/identity/user:
+    $ref: './paths/API@identity@user.yaml'
+  /API/identity/user/{userId}:
+    $ref: './paths/API@identity@user@{userId}.yaml'
+
+  #  =======================
+  #   PLATFORM API
+  #  =======================
+  /platformloginservice:
+    $ref: './paths/platformloginservice.yaml'
+  /platformlogoutservice:
+    $ref: './paths/platformlogoutservice.yaml'
+  /API/platform/platform/unusedid:
+    $ref: './paths/platform@platform@unusedid.yaml'
+  /API/platform/tenant:
+    $ref: './paths/API@platform@tenant.yaml'
+  /API/platform/tenant/{id}:
+    $ref: './paths/API@platform@tenant@{id}.yaml'
+  /API/platform/license:
+    $ref: './paths/API@platform@license.yaml'
+
+  #  =======================
+  #   PORTAL API
+  #  =======================
+  /portal/pageUpload:
+    $ref: './paths/portal@pageUpload.yaml'
+  /API/portal/page:
+    $ref: './paths/API@portal@page.yaml'
+  /API/portal/page/{pageId}:
+    $ref: './paths/API@portal@page@{pageId}.yaml'
+  /API/portal/profile:
+    $ref: './paths/API@portal@profile.yaml'
+  /API/portal/profile/{profileId}:
+    $ref: './paths/API@portal@profile@{profileId}.yaml'
+  /API/portal/profileEntry:
+    $ref: './paths/API@portal@profileEntry.yaml'
+  /API/portal/profileEntry/{profileEntryId}:
+    $ref: './paths/API@portal@profileEntry@{profileEntryId}.yaml'
+  /API/portal/profileMember:
+    $ref: './paths/API@portal@profileMember.yaml'
+  /API/portal/profileMember/{id}:
+    $ref: './paths/API@portal@profileMember@{id}.yaml'
+  /API/portal/theme:
+    $ref: './paths/API@portal@theme.yaml'
+  /API/portal/theme/unusedId:
+    $ref: './paths/API@portal@theme@unusedId.yaml'
+  #  =======================
+  #   SYSTEM API
+  #  =======================
+  /API/system/i18nlocale:
+    $ref: './paths/API@system@i18nlocale.yaml'
+  /API/system/i18ntranslation:
+    $ref: './paths/API@system@i18ntranslation.yaml'
+  /API/system/session/unusedId:
+    $ref: "./paths/API@system@session@unusedId.yaml"
+  /API/system/tenant/unusedid:
+    $ref: "./paths/API@system@tenant@unusedid.yaml"
+  #  =======================
+  #   TENANT API
+  #  =======================
+  /portal/fileUpload:
+    $ref: "./paths/portal@fileUpload.yaml"
+  /API/tenant/bdm:
+    $ref: "./paths/API@tenant@bdm.yaml"
+
+  #  =======================
+  #  =======================
+  #  =======================
+  #   ORGANIZATION API
+  #  =======================
+  /portal/organizationUpload:
+    $ref: "./paths/portal@organizationUpload.yaml"
+  /services/organization/import:
+    $ref: "./paths/services@organization@import.yaml"
+  #  =======================
+  #   PROFILES API
+  #  =======================
+  /portal/profilesUpload:
+    $ref: "./paths/portal@profilesUpload.yaml"
+  /services/profile/import:
+    $ref: "./paths/services@profile@import.yaml"
+
+# TODO : upload endpoints
+#  /portal/processUpload, supports only .bar files
+#  /portal/actorsUpload, supports only .xml files
+#  /portal/imageUpload, supports only .png, .jpg, .gif, .jpeg, .bmp, .wbmp or .tga files
+#  /portal/connectorImplementation, supports only .zip files (not available in Community edition)
+#  /portal/reportUpload, supports any type of file (not available in Community edition)
+#  /portal/resourceUpload, supports only .jar files (not available in Community edition)
+#  /API/formFileUpload, supports any type of files, used to upload a file before submitting a process or task form with a document in its contract
+
+components:
+  securitySchemes:
+    bonita_auth:
+      $ref: "components/securitySchemes/bonita_auth.yaml"
+    bonita_token:
+      $ref: "components/securitySchemes/bonita_token.yaml"

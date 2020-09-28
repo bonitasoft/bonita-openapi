@@ -1,0 +1,13 @@
+type: object
+description: "This resource represents a problem in a process that needs to be resolved for the process to run. It can be an actor, a connector implementation, or a parameter (in the Enterprise, Performance, Efficiency, or Teamwork edition)."
+properties:
+  message:
+    description: "resolution problem"
+    type: string
+  resource_id:
+    description: "id of the unresolved resource"
+    type: integer
+    format: int64
+  target_type:
+    description: "the type of the unresolved resource (parameter, actor, or connector)"
+    type: string

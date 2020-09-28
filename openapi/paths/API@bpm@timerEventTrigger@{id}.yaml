@@ -1,0 +1,86 @@
+get:
+  tags:
+    - TimerEventTrigger
+  summary: Finds the TimerEventTrigger by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the single TimerEventTrigger for the given ID
+  operationId: getTimerEventTriggerById
+  parameters:
+    - description: ID of the TimerEventTrigger to return
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/TimerEventTrigger.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - TimerEventTrigger
+  summary: Update the TimerEventTrigger by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Update the TimerEventTrigger for the given ID
+  operationId: updateTimerEventTriggerById
+  parameters:
+    - description: ID of the TimerEventTrigger to return
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            executionDate:
+              description: executionDate of the TimerEventTrigger
+              type: integer
+              format: int64
+        example:
+          executionDate: 1433980484194
+    description: a long value with attribute name "executionDate"
+    required: true
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            description: The actual long value corresponding to the next execution date of the timer event trigger, as a long value
+            type: object
+            properties:
+              executionDate:
+                description: executionDate of the TimerEventTrigger
+                type: integer
+                format: int64
+          example:
+            executionDate: 1433980484194
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

@@ -1,0 +1,14 @@
+type: object
+description: "An input definition"
+properties:
+  multiple:
+    type: boolean
+  hasChildren:
+    type: boolean
+  type:
+    type: string
+    enum: [ TEXT, BOOLEAN, DATE, INTEGER, DECIMAL, BYTE_ARRAY, FILE, LONG, LOCALDATE, LOCALDATETIME, OFFSETDATETIME ]
+  inputs:
+    type: array
+    items:
+      $ref: './InputDefinition.yaml'

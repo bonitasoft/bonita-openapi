@@ -1,0 +1,69 @@
+get:
+  tags:
+    - BusinessDataQuery
+  summary: Finds Business Data
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds Business Data with pagination params and filters by calling a `Named Query`.
+    The business data query REST API resource is used to call a default or custom business data query. It is available from version 6.5.
+
+    **Data parameters**:
+
+      * businessDataType - the fully-qualified business data type name
+      * q=queryName - the query name
+      * p=0 - the page number
+      * c=10 - the maximum number of results in the page
+      * f=parameter=value - sets the parameter value according to business data query parameters defined in Bonita Studio
+      For a Boolean parameter, the accepted values are `true` or `false`.
+
+      By default, for a Date parameter can use the following formats:
+
+      * yyyy-MM-dd
+      * HH:mm:ss
+      * yyyy-MM-dd HH:mm:ss
+      * yyyy-MM-dd'T'HH:mm:ss
+      * yyyy-MM-dd'T'HH:mm:ss.SSS
+
+  operationId: findBusinessData
+  parameters:
+    - description: Business Data Type
+      in: path
+      name: businessDataType
+      required: true
+      schema:
+        type: string
+      example: com.company.model.Employee
+    - description: Named query to use
+      in: query
+      name: q
+      required: true
+      schema:
+        type: string
+      example: findEmployeeByFirstNameAndLastName
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/BusinessData.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

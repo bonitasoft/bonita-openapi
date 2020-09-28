@@ -1,0 +1,9 @@
+description: maximum number of elements to retrieve
+explode: true
+in: query
+name: c
+example: '10'
+required: true
+schema:
+  type: integer
+style: form

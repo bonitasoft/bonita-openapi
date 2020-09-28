@@ -1,0 +1,26 @@
+type: object
+properties:
+  id:
+    description: "the expression id"
+    type: integer
+    format: int64
+  name:
+    description: "the expression name"
+    type: string
+  content:
+    description: "the expression content"
+    type: string
+  expressionType:
+    description: "the expression type"
+    type: string
+  returnType:
+    description: "the expression return type"
+    type: string
+  interpreter:
+    description: "the expression interpreter"
+    type: string
+  dependencies:
+    description: "the expression dependencies"
+    type: array
+    items:
+      $ref: './Expression.yaml'

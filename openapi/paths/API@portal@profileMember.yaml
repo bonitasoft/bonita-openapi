@@ -1,0 +1,94 @@
+get:
+  tags:
+    - ProfileMember
+  summary: Finds ProfileMembers
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds ProfileMembers with pagination params and filters
+
+    **Filter `member_type` is mandatory**
+
+    You can filter on `profile_id`, `user_id`, `role_id` and `group_id`
+
+  operationId: findProfileMembers
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/ProfileMember.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - ProfileMember
+  summary: Create the ProfileMember
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Create the ProfileMember
+  operationId: createProfileMember
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            profile_id:
+              description: "id of the profile for this mapping"
+              type: integer
+              format: int64
+            role_id:
+              description: "id of role, or -1 if the member type is not role"
+              type: integer
+              format: int64
+            group_id:
+              description: "id of group, or -1 if the member type is not group"
+              type: integer
+              format: int64
+            user_id:
+              description: "id of user, or -1 if the member type is not user"
+              type: integer
+              format: int64
+            member_type:
+              description: "member type"
+              type: string
+              enum: [ USER,ROLE,GROUP ]
+        example:
+          profile_id: 2
+          member_type: "USER"
+          user_id: 101
+    description: Partial ProfileMember description
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ProfileMember.yaml'
+      description: successful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

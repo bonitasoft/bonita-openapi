@@ -1,0 +1,29 @@
+get:
+  tags:
+    - Session
+  summary: Get the current user session
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns session information for the current user
+  operationId: getSession
+  x-codeSamples:
+    - lang: "Shell"
+      label: "Curl"
+      source: |
+        curl -b saved_cookies.txt -X GET --url 'http://localhost:8080/bonita/API/system/session/unusedId'
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Session.yaml'
+#          example:
+#            $ref: "../components/examples/Session.yaml"
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

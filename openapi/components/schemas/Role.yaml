@@ -1,0 +1,35 @@
+type: object
+description: "The role of a user in a group"
+properties:
+  id:
+    description: "role ID"
+    type: string
+  name:
+    description: "name"
+    type: string
+  displayName:
+    description: "display name"
+    type: string
+  description:
+    description: "description"
+    type: string
+  icon:
+    description: "icon path"
+    type: string
+  creation_date:
+    description: "creation date (format: `2014-12-31 15:17:24.736`)"
+    type: string
+  created_by_user_id:
+    description: "Id of the user who created the role (-1 if the role was created by the tenant admin or by an organisation import)"
+    type: string
+  last_update_date:
+    description: "last update date (format: `2014-12-31 15:17:24.736`)"
+    type: string
+example:
+  icon: ""
+  name: "manager"
+  displayName: "department manager"
+  description: "manager of the department"
+  creation_date: "2014-12-01 18:51:54.791"
+  created_by_user_id: 4
+  last_update_date: "2014-12-01 18:51:54.791"

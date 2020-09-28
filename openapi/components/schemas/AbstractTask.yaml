@@ -1,0 +1,107 @@
+type: object
+properties:
+  id:
+    description: the task id
+    type: integer
+    format: int64
+  type:
+    description: the task type
+    type: string
+  name:
+    description: the task technical name
+    type: string
+  displayName:
+    description: the human readable task name
+    type: string
+  description:
+    description: the task description
+    type: string
+  displayDescription:
+    description: the human readable task description
+    type: string
+  state:
+    description: the current state of the task
+    type: string
+    enum: [ready completed failed]
+  reached_state_date:
+    description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when this task reached the current state for example '2014-10-17 16:05:42.626'
+    type: string
+    pattern: '^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]$'
+  last_update_date:
+    description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when this task was last updated for example '2014-10-17 16:05:42.626)
+    type: string
+    pattern: '^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]$'
+  dueDate:
+    description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when this task is due for example '2014-10-17 16:05:42.626'
+    type: string
+    pattern: '^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]$'
+  priority:
+    description: the priority (string) of the current task
+    type: string
+  processId:
+    description: the process definition id (long) of the case which define this task
+    type: integer
+    format: int64
+  parentCaseId:
+    description: the immediate containing case id (long a.k.a process instance id)
+    type: integer
+    format: int64
+  parentTaskId:
+    description: the parent Task id
+    type: integer
+    format: int64
+  rootCaseId:
+    description: the top/root case id (long a.k.a process instance id). In the case of an event sub process parentCaseId will the id of the case called while rootCaseId will be the one from the caller case
+    type: integer
+    format: int64
+  rootContainerId:
+    description: same as rootCaseId
+    type: integer
+    format: int64
+  executedBy:
+    description: the id of the user who performed this task. The task has to be a human task otherwise its value will be 0
+    type: integer
+    format: int64
+  executedBySubstitute:
+    description: the id of the user who did actually performed the task in the case of has been done in the name of someone else. Value is 0 otherwise
+    type: integer
+    format: int64
+  actorId:
+    description: the id of the actor that can execute this task null otherwise
+    type: integer
+    format: int64
+  assigned_id:
+    description: the user id that this task is assigned to or 0 if it is unassigned
+    type: integer
+    format: int64
+  assigned_date:
+    description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current task was assigned for example '2014-10-17 16:05:42.626'
+    type: string
+    pattern: '^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]$'
+  isTerminal:
+    description: True if the task is the last one in a flow
+    type: boolean
+
+example:
+  displayDescription: This is my subtask
+  executedBySubstitute: 1
+  processId: 8367255255370237633
+  parentCaseId: 1
+  state: ready
+  rootContainerId: 1
+  type: MANUAL_TASK
+  assigned_id: 1
+  assigned_date: 2014-12-01 17:39:53.784
+  id: 40006
+  executedBy: 1
+  caseId: 1
+  priority: above_normal
+  actorId: 1
+  description: This is my subtask
+  name: My subtask
+  reached_state_date: 2014-12-01 17:39:53.784
+  rootCaseId: 1
+  displayName: My subtask
+  parentTaskId: 40001
+  dueDate: 2014-12-25 00:00:00.000
+  last_update_date: 2014-12-01 17:39:53.784

@@ -1,0 +1,29 @@
+type: object
+description: "Profile member"
+properties:
+  id:
+    description: "profile member id"
+    type: integer
+    format: int64
+  profile_id:
+    description: "id of the profile for this mapping"
+    type: integer
+    format: int64
+  role_id:
+    description: "id of role, or -1 if the member type is not role"
+    type: integer
+    format: int64
+  group_id:
+    description: "id of group, or -1 if the member type is not group"
+    type: integer
+    format: int64
+  user_id:
+    description: "id of user, or -1 if the member type is not user"
+    type: integer
+    format: int64
+example:
+  id: 204
+  profile_id: 2
+  role_id: -1
+  group_id: -1
+  user_id: 101

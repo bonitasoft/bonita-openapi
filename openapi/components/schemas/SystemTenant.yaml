@@ -1,0 +1,13 @@
+type: object
+description: ""
+properties:
+  id:
+    description: "system tenant id"
+    type: integer
+    format: int64
+  paused:
+    description: "wether the system tenant is paused or not"
+    type: boolean
+example:
+  id: 1
+  paused: false

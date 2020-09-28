@@ -1,0 +1,26 @@
+allOf:     # Combines the AbstractTask and the inline model
+  - $ref: './AbstractTask.yaml'
+  - type: object
+    description: |
+      A Human task is Manual task or a User task. A User task is a task that can be done by a user.
+      A Manual task is a subtask of a user task, and is also done by a user.
+    example:
+      displayDescription:
+      executedBySubstitute: 0
+      processId: 5826139717723008213
+      state: ready
+      rootContainerId: 1002
+      type: USER_TASK
+      assigned_id:
+      assigned_date:
+      id: 20004
+      executedBy: 0
+      caseId: 1002
+      priority: normal
+      actorId: 102
+      description:
+      name: Analyse case
+      reached_state_date: 2014-09-05 11:11:30.808
+      displayName: Analyse case
+      dueDate: 2014-09-05 12:11:30.775
+      last_update_date: 2014-09-05 11:11:30.808

@@ -1,0 +1,117 @@
+get:
+  tags:
+    - Process
+  summary: Finds Processs
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds Processs with pagination params and filters
+
+    - can order (default is ASC) on `name`, `version`, `deploymentDate`, `deployedBy`, `activationState`, `configurationState`, `processId`, `displayName`, `lastUpdateDate`, `categoryId`, `label`
+    - can search on `name`, `displayName` or `version`
+    - can filter on `name`, `version`, `deploymentDate`, `deployedBy`, `activationState` with the value DISABLED or ENABLED, `configurationState` with the value UNRESOLVED, or RESOLVED, `processId`, `displayName`, `lastUpdateDate`, `categoryId`, `label`, `supervisor_id`
+
+  operationId: findProcesss
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/Process.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - Process
+  summary: Create the Process
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Create the Process.
+    A process resource is created using the content of a .bar file that has previously been uploaded, using the processUpload servlet http://.../bonita/portal/processUpload, to get the process archive path.
+  operationId: createProcess
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            fileupload:
+              description: the bar file to deploy (previously uploaded in tmp folder)
+              type: string
+        example:
+          fileupload: "tmp_4431838172282406107.bar"
+    description: Partial Process description
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Process.yaml'
+      description: successful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body
+
+delete:
+  tags:
+    - Process
+  summary: Delete the Process by IDs
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Delete Process for the given list of ID.
+
+    **Warning: Beware! Data loss risk!**
+
+    Deleting a process will automatically delete all its cases (on-going and archived alike).
+    Thus, the operation may take a long time, and fail if the transaction timeout is not large enough. This feature should only be used on non-production environments.
+
+    **Please proceed at your own risk.**
+
+  operationId: deleteProcessByIds
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int64
+        example:
+          - 1
+          - 2
+          - 3
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

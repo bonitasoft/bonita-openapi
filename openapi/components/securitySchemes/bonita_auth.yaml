@@ -1,0 +1,6 @@
+#  https://swagger.io/docs/specification/authentication/cookie-authentication/
+name: JSESSIONID
+description: |
+  To call the REST API, you must first log on with a user registered in the Engine database. Please refer to the __[Login API](#operation/login)__ operations section.
+type: apiKey
+in: cookie

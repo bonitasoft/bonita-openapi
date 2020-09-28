@@ -1,0 +1,28 @@
+allOf:     # Combines the AbstractTask and the inline model
+  - $ref: './AbstractArchivedTask.yaml'
+  - type: object
+    description: "Use the archivedManualTask resource to access archived process subtasks."
+    example:
+      displayDescription: this is a test
+      executedBySubstitute: 1
+      processId: 8367255255370237633
+      parentCaseId: 1
+      state: completed
+      rootContainerId: 1
+      type: MANUAL_TASK
+      assigned_id: 1
+      id: 160007
+      sourceObjectId: 40003
+      executedBy: 1
+      caseId: 1
+      priority: highest
+      actorId: 1
+      description: this is a test
+      name: myTest
+      reached_state_date: 2014-12-01 17:20:47.200
+      rootCaseId: 1
+      archivedDate: 2014-12-01 17:20:47.217
+      displayName: myTest
+      parentTaskId: 40001
+      dueDate: 2014-12-17 00:00:00.000
+      last_update_date: 2014-12-01 17:20:47.200

@@ -1,0 +1,79 @@
+get:
+  tags:
+    - CaseComment
+  summary: Finds CaseComments
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds CaseComments with pagination params and filters
+
+    - can order on `postDate`
+    - can filter on `supervisor_id`,`user_id`,`processInstanceId` - You cannot use supervisor_id and user_id filter at the same time
+
+  operationId: findCaseComments
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/CaseComment.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - CaseComment
+  summary: Create the CaseComment
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Create the CaseComment
+  operationId: createCaseComment
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            processInstanceId:
+              description: the process instance(case) the comment is associated to
+              type: string
+            content:
+              description: the comment content
+              type: string
+        example:
+          processInstanceId: "5777042023671752656"
+          content: "The case has been started"
+    description: The process instance (case) id and the comment content, in JSON
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/CaseComment.yaml'
+      description: successful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

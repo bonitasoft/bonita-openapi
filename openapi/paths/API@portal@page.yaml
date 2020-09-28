@@ -1,0 +1,77 @@
+get:
+  tags:
+    - Page
+  summary: Finds Pages
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds Pages with pagination params and filters
+
+    - can search on `displayName`,`description`
+    - can filter on `createdBy`,`contentType`
+
+  operationId: findPages
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/Page.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - Page
+  summary: Create the Page
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Upload the page content using the `portal/pageUpload` . This returns a temporary file name that can be used as input for this operation.
+
+  operationId: createPage
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            pageZip:
+              description: Zip name as named in the temp folder after upload
+              type: string
+          example:
+            pageZip: "tmp_4338264789005487499.zip:new-bonita-angular-dashboard.zip"
+    description: Zip name as named in the temp folder after upload
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Page.yaml'
+      description: successful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

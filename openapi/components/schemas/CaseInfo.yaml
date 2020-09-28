@@ -1,0 +1,39 @@
+type: object
+description: "Retrieves information about a case. It returns counters for each flow node in the case, showing the number of flow node instances that are in completed, ready, or failed state. If there are no flow node instances in a given state, no counter is returned for that state for the flow node."
+properties:
+  id:
+    description: "case identifier"
+    type: integer
+    format: int64
+  flowNodeStatesCounters:
+    type: object
+    description: "flow nodes counters"
+    additionalProperties:
+      type: object
+      properties:
+        completed:
+          description: "number of instance of the given Flow Node in completed state"
+          type: integer
+          format: int64
+        ready:
+          description: "number of instance of the given Flow Node in ready state"
+          type: integer
+          format: int64
+        failed:
+          description: "number of instance of the given Flow Node in failed state"
+          type: integer
+          format: int64
+        executing:
+          description: "number of instance of the given Flow Node in executing state"
+          type: integer
+          format: int64
+example:
+  id: 123
+  flowNodeStatesCounters:
+    "Step1":
+      "completed": 2
+      "ready": 1
+      "executing": 5
+    "Step3":
+      "completed": 10
+      "failed": 2

@@ -1,0 +1,53 @@
+post:
+  tags:
+    - Platform
+  operationId: platformLogin
+  summary: Platform Login
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    The username and password are in `bonita-platform-community-custom.properties` file.
+
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+              description: the username
+            password:
+              type: string
+              format: password
+              description: the password
+            redirect:
+              type: string
+              description: >-
+                "true" or "false". "false" indicates that the service should not
+                redirect to Bonita Portal (after a successful login) or to
+                the login page (after a login failure).
+        example:
+          username: install
+          password: install
+          redirect: "false"
+  responses:
+    '200':
+      description: Login success
+      headers:
+        Set-Cookie:
+          description: Session cookie
+          schema:
+            type: string
+            example: JSESSIONID=C5385BFEE2969D9E46F0160C1952B0F1; Path=/bonita; HttpOnly; SameSite=Lax
+        X-Bonita-API-Token:
+          description: X-Bonita-API-Token - CSRF token (also present in the cookie response)
+          schema:
+            type: string
+          example: ed27cbeb-9953-4d77-b5a2-1f62a6c2e0bb
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

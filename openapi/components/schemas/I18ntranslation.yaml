@@ -1,0 +1,7 @@
+description: ""
+type: object
+additionalProperties:
+  type: string
+example:
+  value: "Gehen Sie dazu zum %profilelink%."
+  key: "To do so, go to %profilelink%."

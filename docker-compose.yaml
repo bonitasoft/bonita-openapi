@@ -1,0 +1,42 @@
+version: '3'
+services:
+
+  reverse-proxy:
+    # The official v2 Traefik docker image
+    image: traefik:v2.2
+    # Enables the web UI and tells Traefik to listen to docker
+    command: --api.insecure=true --providers.docker
+    ports:
+      # The HTTP port
+      - "80:80"
+      # The Web UI (enabled by --api.insecure=true)
+      - "8888:8080"
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    labels:
+      - "traefik.http.routers.swagger.rule=Host(`swagger.localhost`)"
+      - "traefik.http.services.swagger.loadbalancer.server.port=8080"
+    environment:
+      - SWAGGER_JSON=/openapi/openapi.yaml
+    volumes:
+      - ./dist:/openapi
+
+  bonita:
+    image: bonita:latest
+    labels:
+      - "traefik.http.routers.bonita.rule=Host(`bonita.localhost`)"
+      - "traefik.http.routers.bonita.middlewares=bonita-cors@docker"
+      - "traefik.http.middlewares.bonita-cors.headers.accessControlAllowMethods=*"
+      - "traefik.http.middlewares.bonita-cors.headers.accessControlExposeHeaders=*"
+      - "traefik.http.middlewares.bonita-cors.headers.accessControlAllowOriginList=http://swagger.localhost"
+      - "traefik.http.middlewares.bonita-cors.headers.accessControlMaxAge=100"
+      - "traefik.http.middlewares.bonita-cors.headers.addVaryHeader=true"
+#    healthcheck:
+#      test: [ "CMD", "curl", "-f", "http://bonita.localhost/bonita" ]
+#      interval: 1m30s
+#      timeout: 10s
+#      retries: 3

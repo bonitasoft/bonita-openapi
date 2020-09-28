@@ -1,0 +1,68 @@
+type: object
+description: "A document in an active case"
+properties:
+  id:
+    description: "documentId"
+    type: integer
+    format: int64
+  creationDate:
+    description: "date and time"
+    type: string
+  author:
+    deprecated: true
+    description: "submittorUserId"
+    type: integer
+    format: int64
+  index:
+    description: "index in a list of documents, or -1 for a single document"
+    type: string
+  contentMimetype:
+    description: "MIME type"
+    type: string
+  caseId:
+    description: "caseId"
+    type: integer
+    format: int64
+  contentStorageId:
+    description: "storageId"
+    type: integer
+    format: int64
+  isInternal:
+    description: >-
+      `true` if  the the document object contains the content directly.
+      `false` if the document is specified by URL so the document object contains a reference to the content, not the content itself.
+    type: boolean
+  description:
+    description: "description"
+    type: string
+  name:
+    description: "name"
+    type: string
+  fileName:
+    description: "filename"
+    type: string
+  submittedBy:
+    description: "submittorUserId"
+    type: integer
+    format: int64
+  url:
+    description: "urlForDownload"
+    type: string
+  version:
+    description: "version"
+    type: string
+example:
+  id: "3"
+  creationDate: "2014-10-09 16:45:36.658"
+  author: "1"
+  index: "-1"
+  contentMimetype: "application/octet-stream"
+  caseId: "1"
+  contentStorageId: "4"
+  isInternal: "true"
+  description: "draft"
+  name: "Doc 1"
+  fileName: "document_1.jpg"
+  submittedBy: "1"
+  url: "documentDownload?fileName=document_1.jpg&contentStorageId=4"
+  version: "1"

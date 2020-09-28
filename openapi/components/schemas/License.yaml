@@ -1,0 +1,42 @@
+type: object
+description: ""
+properties:
+  licenseStartDate:
+    description: "date with format `yyyy-MM-dd` - first day (included) of license file validity"
+    type: string
+  duration:
+    description: "number of days for license file validity"
+    type: integer
+    format: int64
+  licenseExpirationDate:
+    description: "date with format `yyyy-MM-dd` - last day (included) of license file validity"
+    type: string
+  numberOfCPUCores:
+    description: "number of CPUs"
+    type: integer
+    format: int64
+  edition:
+    description: "name of the Bonita edition enabled by the license"
+    type: string
+  licenseMode:
+    description: "available mode enabled by the license"
+    type: string
+  requestKey:
+    description: |
+      request key to use to generate a new license on the customer portal
+      If you have a subscription that specifies case-counter licensing, additional fields are present:
+    type: string
+  subscriptionStartPeriod:
+    description: "date with format `yyyy-MM-dd` - first day (included) of current period for number of cases provisioned"
+    type: string
+  subscriptionEndPeriod:
+    description: "date with format `yyyy-MM-dd` - last day (included) of current period for number of cases provisioned"
+    type: string
+  caseCounterLimit:
+    description: "number of cases provisioned for period between `subscriptionStartPeriod` and `subscriptionEndPeriod`"
+    type: integer
+    format: int64
+  caseCounter:
+    description: "number of consumed cases for period between `subscriptionStartPeriod` and `subscriptionEndPeriod`"
+    type: integer
+    format: int64

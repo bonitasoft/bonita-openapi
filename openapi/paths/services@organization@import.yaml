@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Organization
+  summary: Import an organization
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Import an organization
+  operationId: importOrganization
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          properties:
+            organizationDataUpload:
+              type: string
+              description: Uploaded file
+            importPolicy:
+              type: string
+              description: Import policy
+  responses:
+    '200':
+      description: sucessful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

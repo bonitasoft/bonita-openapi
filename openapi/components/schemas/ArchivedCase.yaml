@@ -1,0 +1,34 @@
+allOf: # Combines the Case and the inline model
+  - $ref: './Case.yaml'
+  - type: object
+    description: "A completed instance of a process."
+    properties:
+      sourceObjectId:
+        description: "the id of the case before it was archived"
+        type: integer
+        format: int64
+      archivedDate:
+        description: "the date set when the case was archived"
+        type: string
+    example:
+      id: 9
+      end_date: "2014-10-22 10:57:00.299"
+      startedBySubstitute: "4"
+      sourceObjectId: "3"
+      start: "2014-10-22 10:56:53.415"
+      state: "completed"
+      rootCaseId: "3"
+      started_by: "4"
+      archivedDate: "2014-10-22 10:57:00.299"
+      processDefinitionId: "6054482369194211518"
+      last_update_date": "2014-10-22 10:57:00.299"
+      searchIndex1Label: "case9SearchIndex1Label"
+      searchIndex2Label: "case9SearchIndex2Label"
+      searchIndex3Label: "case9SearchIndex3Label"
+      searchIndex4Label: "case9SearchIndex4Label"
+      searchIndex5Label: "case9SearchIndex5Label"
+      searchIndex1Value: "case9SearchIndex1Value"
+      searchIndex2Value: "case9SearchIndex2Value"
+      searchIndex3Value: "case9SearchIndex3Value"
+      searchIndex4Value: "case9SearchIndex4Value"
+      searchIndex5Value: "case9SearchIndex5Value"

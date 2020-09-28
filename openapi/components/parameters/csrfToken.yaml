@@ -1,0 +1,8 @@
+in: cookie
+name: X-Bonita-API-Token
+description: |
+  To call the REST API, you must first log on with a user registered in the Engine database. Please refer to the __[Login API](#operation/login)__ operations section.
+schema:
+  type: string
+style: form
+explode: true

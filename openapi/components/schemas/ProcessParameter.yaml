@@ -1,0 +1,33 @@
+type: object
+description: ""
+properties:
+  process_id:
+    description: "the identifier of the process definition"
+    type: integer
+    format: int64
+  process_name:
+    description: "the name of the related process"
+    type: string
+  description:
+    description: "the description of the parameter"
+    type: string
+  name:
+    description: "the name of the parameter"
+    type: string
+  value:
+    description: "the value of the parameter"
+    type: string
+  process_version:
+    description: "the version of the process"
+    type: string
+  type:
+    description: "the type of the parameter"
+    type: string
+example:
+  process_id: 4880205209556178729
+  process_name: "myProcessName"
+  description: "myProcessDescription"
+  name: "myParameterName"
+  value: "myParameterValue"
+  process_version: "1.0"
+  type: "java.lang.String"

@@ -1,0 +1,63 @@
+post:
+  tags:
+    - Process
+  summary: Instanciate the process
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Instanciate the process with the provided contract values.
+
+  operationId: instanciateProcess
+  parameters:
+    - name: processId
+      description: ID of the process to instanciate
+      in: path
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties: { }
+          additionalProperties: true
+        example:
+          ticket_account: "CustomerA"
+          ticket_description: "issue description"
+          ticket_subject: "Issue 1"
+    description: A JSON object matching process contract.
+    required: true
+  responses:
+    '201':
+      description: Return the created case ID
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              caseId:
+                type: integer
+                format: int64
+          example:
+            caseId: 12345678
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      description: Bad request.
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../components/schemas/Error.yaml'
+          example:
+            message: "USERNAME=walter.bates | Contract is not valid: "
+            exception: "class org.bonitasoft.engine.bpm.contract.ContractViolationException"
+            explanations:
+              - "Expected input [ticket_account] is missing"
+              - "Expected input [ticket_description] is missing"
+              - "Expected input [ticket_subject] is missing"
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

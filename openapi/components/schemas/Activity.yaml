@@ -1,0 +1,84 @@
+type: object
+description: |
+  Use this resource to retrieve activities (human or service tasks), call activities, and subprocesses currently running on the platform.
+  It enables you to perform maintenance tasks like skipping or replaying a failed task and modifying variables.
+properties:
+  id:
+    type: string
+    description: "the activity id (long)"
+  type:
+    $ref: './ActivityTypeEnum.yaml'
+  name:
+    type: string
+    description: "the activity technical name (string)"
+  displayName:
+    type: string
+    description: "the human readable activity name (string)"
+  description:
+    type: string
+    description: "the activity description (string)"
+  displayDescription:
+    type: string
+    description: "the human readable activity description (string)"
+  state:
+    $ref: './ActivityStateEnum.yaml'
+  reached_state_date:
+    type: string
+    description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when this activity reached the current state, for example '2014-10-17 16:05:42.626'"
+  last_update_date:
+    type: string
+    description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when this activity was last updated, for example '2014-10-17 16:05:42.626)"
+  dueDate:
+    type: string
+    description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when this activity is due, for example '2014-10-17 16:05:42.626'"
+  priority:
+    $ref: './ActivityPriorityEnum.yaml'
+  processId:
+    type: string
+    description: "the process definition id (long) of the case which define this activity"
+  parentCaseId:
+    type: string
+    description: "the immediate containing case id (long, a.k.a process instance id)"
+  rootCaseId:
+    type: string
+    description: "the top/root case id (long, a.k.a process instance id). In the case of an event sub process, parentCaseId will the id of the case called while rootCaseId will be the one from the caller case"
+  rootContainerId:
+    type: string
+    description: "same as rootCaseId"
+  executedBy:
+    type: string
+    description: "the id (long) of the user who performed this activity. The activity has to be a human task otherwise its value will be 0"
+  executedBySubstitute:
+    type: string
+    description: "the id (long) of the user who did actually performed the activity in the case of has been done in the name of someone else. Value is 0 otherwise"
+  actorId:
+    type: string
+    description: "the id (long) of the actor that can execute this activity, null otherwise"
+  assigned_id:
+    type: string
+    description: "the user id (long) that this activity is assigned to, or 0 if it is unassigned"
+  assigned_date:
+    type: string
+    description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current activity was assigned, for example '2014-10-17 16:05:42.626'"
+example:
+  "displayDescription": "validate expense request"
+  "executedBySubstitute": "0"
+  "caseId": "76539"
+  "parentCaseId": "68743"
+  "rootCaseId": "65879"
+  "processId": "7012"
+  "rootContainerId": "7000"
+  "state": "completed"
+  "type": "the activity type as a string"
+  "assigned_id": "304"
+  "assigned_date": "2014-10-17 16:05:42.626"
+  "id": "809764"
+  "executedBy": "0"
+  "priority": "the priority of the current activity as a string"
+  "actorId": "50"
+  "description": "In this step a manager reviews and validates an expense request."
+  "name": "Validate"
+  "reached_state_date": "2014-10-18 10:37:05.643"
+  "displayName": "Validate expense request"
+  "dueDate": "2014-10-21 16:05:42.626"
+  "last_update_date": "2014-10-18 10:37:05.643"

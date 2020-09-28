@@ -1,0 +1,53 @@
+get:
+  tags:
+    - ArchivedCase
+  summary: Finds the Context by ArchivedCase ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the Context for the given ArchivedCase ID
+  operationId: getContextByArchivedCaseId
+  parameters:
+    - description: ID of the ArchivedCase that has the Context to return
+      in: path
+      name: archivedCaseId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/AnyValue.yaml'
+          example:
+            myBusinessData_ref:
+              "name": "myBusinessData"
+              "type": "com.company.model.BusinessObject1"
+              "link": "API/bdm/businessData/com.company.model.BusinessObject1/2"
+              "storageId": 2
+              "storageId_string": "2"
+            "myDocument_ref":
+              "id": 1
+              "processInstanceId": 3
+              "name": "myDocument"
+              "author": 104
+              "creationDate": 1434723950847
+              "fileName": "TestCommunity-1.0.bos"
+              "contentMimeType": null
+              "contentStorageId": "1"
+              "url": "documentDownload?fileName=TestCommunity-1.0.bos&contentStorageId=1"
+              "description": ""
+              "version": "1"
+              "index": -1
+              "contentFileName": "TestCommunity-1.0.bos"
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

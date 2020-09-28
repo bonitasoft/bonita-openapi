@@ -1,0 +1,24 @@
+type: string
+description: "the current state of the activity"
+enum:
+  - failed
+  - initializing
+  - ready
+  - executing
+  - completing
+  - completed
+  - waiting
+  - skipped
+  - cancelled
+  - aborted
+  - cancelling subtasksfailed
+  - initializing
+  - ready
+  - executing
+  - completing
+  - completed
+  - waiting
+  - skipped
+  - cancelled
+  - aborted
+  - cancelling subtasks

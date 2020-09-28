@@ -1,0 +1,67 @@
+get:
+  tags:
+    - Case
+  summary: Finds the Case by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the single Case for the given ID
+  operationId: getCaseById
+  parameters:
+    - description: ID of the Case to return
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: Count of related resources
+      in: query
+      name: n
+      required: false
+      schema:
+        type: string
+        enum: [activeFlowNodes, failedFlowNodes]
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Case.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+delete:
+  tags:
+    - Case
+  summary: Delete the Case by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Delete the single Case for the given ID
+  operationId: deleteCaseById
+  parameters:
+    - description: ID of the Case to delete
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

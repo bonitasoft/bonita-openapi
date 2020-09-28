@@ -1,0 +1,47 @@
+get:
+  tags:
+    - ActorMember
+  summary: Finds ActorMembers
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds ActorMembers with pagination params and filters
+
+    There is a **mandatory** filter on:
+
+    * `actor_id` For example, retrieve the actorMembers related to the specified actor_id. http://localhost:8080/bonita/API/bpm/actorMember?p=0&c=10&f=actor_id%3d1
+
+    You can also filter also on:
+
+    * `member_type` (user|role|group|roleAndGroup) retrieve only the actorMembers of type user. `/API/bpm/actorMember?p=0&c=10&f=actor_id%3d1&f=member_type%3duser`
+    * `user_id`: retrieve only the actorMembers related to the specified user_id. `/API/bpm/actorMember?p=0&c=10&f=actor_id%3d1&f=user_id%3d101`
+    * `role_id`: retrieve only the actorMembers related to the specified role_id. `/API/bpm/actorMember?p=0&c=10&f=actor_id%3d1&f=role_id%3d101`
+    * `group_id`: retrieve only the actorMembers related to the specified group_id. `/API/bpm/actorMember?p=0&c=10&f=actor_id%3d1&f=group_id%3d101`
+
+  operationId: findActorMembers
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/ActorMember.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

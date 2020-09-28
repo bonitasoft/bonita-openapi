@@ -1,0 +1,113 @@
+get:
+  tags:
+    - Tenant
+  summary: Finds the Tenant by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Returns the single Tenant for the given ID
+  operationId: getTenantById
+  parameters:
+    - description: ID of the Tenant to return
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Tenant.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - Tenant
+  summary: Update the Tenant by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Update the Tenant for the given ID
+  operationId: updateTenantById
+  parameters:
+    - description: ID of the Tenant to return
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              description: "the name of the tenant"
+              type: string
+            description:
+              description: "the description"
+              type: string
+            username:
+              description: "the username"
+              type: string
+            password:
+              description: "the password"
+              type: string
+        example:
+          name: "MyTenant"
+          description: "My tenant"
+          username: "john"
+          password: "bpm"
+    description: Partial Tenant description
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+delete:
+  tags:
+    - Tenant
+  summary: Delete the Tenant by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Delete the single Tenant for the given ID
+  operationId: deleteTenantById
+  parameters:
+    - description: ID of the Tenant to delete
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

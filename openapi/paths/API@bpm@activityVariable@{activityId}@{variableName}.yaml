@@ -1,0 +1,38 @@
+get:
+  tags:
+    - ActivityVariable
+  summary: Finds the ActivityVariable by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the single ActivityVariable for the given ID
+  operationId: getActivityVariableById
+  parameters:
+    - description: The identifier of the activity from which to retrieve the variable
+      in: path
+      name: activityId
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: The name of the variable to retrieve
+      in: path
+      name: variableName
+      required: true
+      schema:
+        format: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ActivityVariable.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

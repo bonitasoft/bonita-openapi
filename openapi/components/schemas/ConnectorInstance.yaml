@@ -1,0 +1,38 @@
+type: object
+description: ""
+properties:
+  containerType:
+    description: "the type of the containing activity"
+    type: string
+  connectorId:
+    description: "the connector id"
+    type: string
+  id:
+    description: "the connector instance id "
+    type: integer
+    format: int64
+  name:
+    description: "the connector name"
+    type: string
+  activationEvent:
+    description: "the name of hte event that activated the connector instance"
+    type: string
+  state:
+    description: "the connector state"
+    type: string
+  containerId:
+    description: "the containing activity instance id"
+    type: integer
+    format: int64
+  version:
+    description: "the connector version"
+    type: string
+example:
+  containerType: "flowNode"
+  connectorId: "scripting-groovy-script"
+  id: 3
+  name: "hello world"
+  activationEvent: "ON_FINISH"
+  state: "TO_BE_EXECUTED"
+  containerId: 15
+  version: "1.0.0"

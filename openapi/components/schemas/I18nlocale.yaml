@@ -1,0 +1,12 @@
+type: object
+description: ""
+properties:
+  name:
+    description: "Name of the language"
+    type: string
+  locale:
+    description: "code of the locale"
+    type: string
+example:
+  name: "English"
+  locale: "en"

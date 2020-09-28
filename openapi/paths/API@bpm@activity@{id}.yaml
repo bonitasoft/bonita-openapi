@@ -1,0 +1,88 @@
+get:
+  tags:
+    - Activity
+  summary: Finds the Activity by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the single Activity for the given ID
+  operationId: getActivityById
+  parameters:
+    - description: ID of the Activity to return
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Activity.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - Activity
+  summary: Update the Activity by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Update the Activity for the given ID
+  operationId: updateActivityById
+  parameters:
+    - description: ID of the Activity to return
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            variables:
+              description: |
+                Activity variables to update.
+
+                **Note**: if there is no data with the specified name in the activity,
+                the update will be applied to the process data if a variable with the specified name exists.
+
+                **Note**: if the task definition includes a connector that is executed on finish and updates the value of a variable, the value set by the REST API call is overwritten.
+
+              type: string
+            state:
+              description: |
+                The target state of the activity
+                - Execute a task: `completed`
+                - Skip activity: `skipped` - Make this call after all failed connectors have been reset ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+                - Replay activity: `replay`
+              type: string
+        example:
+          variables: "[{\"name\":\"foo\",\"value\":\"bar\"}]"
+          state: "completed"
+    description: Partial Activity description
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

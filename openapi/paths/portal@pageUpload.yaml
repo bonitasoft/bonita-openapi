@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Page
+  summary: Upload a Page
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Upload Page
+  operationId: uploadPage
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            file:
+              type: string
+              format: binary
+  responses:
+    '200':
+      description: sucessful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pageZip:
+                type: string
+                description: the temporary file name once uploaded on the server
+          example:
+            pageZip: "tmp_113096560980259488.zip:bonita-angular-dashboard.zip"
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

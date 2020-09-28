@@ -1,0 +1,77 @@
+get:
+  tags:
+    - Actor
+  summary: Finds the Actor by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the single Actor for the given ID
+  operationId: getActorById
+  parameters:
+    - description: ID of the Actor to return
+      in: path
+      name: actorId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Actor.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - Actor
+  summary: Update the Actor by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Update the Actor for the given ID
+  operationId: updateActorById
+  parameters:
+    - description: ID of the Actor to return
+      in: path
+      name: actorId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            displayName:
+              description: display name of the Actor
+              type: string
+            description:
+              description: description of the Actor
+              type: string
+        example:
+          displayName: "My actor"
+          description: "My actor description"
+    description: Fields that can be upated are `displayName` and `description`
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

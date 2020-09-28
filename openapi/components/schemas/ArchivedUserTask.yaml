@@ -1,0 +1,24 @@
+allOf:     # Combines the AbstractTask and the inline model
+  - $ref: './AbstractArchivedTask.yaml'
+  - type: object
+    description: "An executable task that has been performed by a user or skipped and is archived."
+    example:
+      displayDescription:
+      executedBySubstitute: 0
+      processId: 5826139717723008213
+      state: skipped
+      rootContainerId: 1002
+      type: USER_TASK
+      assigned_id: 2
+      id: 240002
+      executedBy: 0
+      caseId: 1002
+      priority: normal
+      actorId: 102
+      description:
+      name: Analyse case
+      reached_state_date: 2014-09-09 17:21:51.946
+      displayName: Analyse case
+      archivedDate: 2014-09-09 17:21:51.986
+      dueDate: 2014-09-05 12:11:30.775
+      last_update_date: 2014-09-09 17:21:51.946

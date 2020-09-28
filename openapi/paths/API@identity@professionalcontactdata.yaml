@@ -1,0 +1,84 @@
+get:
+  tags:
+    - ProfessionalContactData
+  summary: Finds ProfessionalContactData
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds ProfessionalContactData with pagination params and filters
+
+    - can order on `id`
+    - can search on `displayName`
+    - can filter on `displayName`
+
+  operationId: findProfessionalContactDatas
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/ProfessionalContactData.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - ProfessionalContactData
+  summary: Create the ProfessionalContactData
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Create the ProfessionalContactData
+  operationId: createProfessionalContactData
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/ProfessionalContactData.yaml'
+        example:
+          id: 4
+          fax_number: "484-302-0766"
+          building: "70"
+          phone_number: "484-302-5766"
+          zipcode: "19108"
+          state: "PA"
+          city: "Philadelphia"
+          country: "United States"
+          address: "Renwick Drive"
+          email: "walter.bates@acme.com"
+    description: Partial ProfessionalContactData description including the user ID
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ProfessionalContactData.yaml'
+      description: 'Successful operation'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+        description: 'Contact information for this user already exists'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

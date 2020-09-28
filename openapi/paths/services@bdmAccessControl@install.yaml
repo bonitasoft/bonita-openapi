@@ -1,0 +1,30 @@
+post:
+  tags:
+    - BDMAccessControl
+  summary: Import a BDM Access Control
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Import a BDM Access Control
+  operationId: importBDMAccessControl
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          properties:
+            bdmAccessControlUpload:
+              type: string
+              description: The temporary name of the previously uploaded file to install
+        example:
+          bdmAccessControlUpload: tmp_accessControlFileToUpload.xml
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

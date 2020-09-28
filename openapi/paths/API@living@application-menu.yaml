@@ -1,0 +1,102 @@
+get:
+  tags:
+    - ApplicationMenu
+  summary: Finds application menus
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns application menus with pagination params and filters
+
+    - can order on `id`, `displayName`, `applicationId`, `applicationPageId`, `menuIndex`, `parentMenuId`
+    - can search on `displayName`
+    - can filter on `id`, `displayName`, `applicationId`, `applicationPageId`, `menuIndex`, `parentMenuId`
+
+  operationId: findApplicationMenus
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/ApplicationMenu.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - ApplicationMenu
+  summary: New application menu item
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Create an application menu item
+  operationId: createApplicationMenu
+  requestBody:
+    description: A partial representation of an application menu in JSON
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            "parentMenuId":
+              description: "id of the parent menu of this menu item, or -1 for a top-level item"
+              type: integer
+              format: int64
+            "applicationPageId":
+              description: "id of the application page targeted by this menu item, or -1 if there is no targeted page (that is, the item is a parent menu)"
+              type: integer
+              format: int64
+            "applicationId":
+              description: "id of the application related to this menu item"
+              type: integer
+              format: int64
+            "menuIndex":
+              description: "index of the menu item"
+              type: integer
+              format: int64
+            "displayName":
+              description: "label to display for this menu in the application navigation bar or menu"
+              type: string
+        example:
+          displayName: "menuLabel"
+          applicationId: 1
+          applicationPageId: 5
+          menuIndex: 1
+          parentMenuId: -1
+  responses:
+    '200':
+      description: sucessful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ApplicationMenu.yaml'
+          example:
+            id: 9823
+            displayName: "menuLabel"
+            applicationId: 1
+            applicationPageId: 5
+            menuIndex: 1
+            parentMenuId: -1
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

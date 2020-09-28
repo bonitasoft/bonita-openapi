@@ -1,0 +1,26 @@
+allOf:     # Combines the AbstractTask and the inline model
+  - $ref: './AbstractTask.yaml'
+  - type: object
+    description: A process task
+    example:
+      displayDescription:
+      executedBySubstitute: 0
+      processId: 9132099022957910959
+      parentCaseId: 5
+      state: ready
+      rootContainerId: 5
+      type: USER_TASK
+      assigned_id: 4
+      assigned_date: 2014-12-01 16:22:54.685
+      id: 10
+      executedBy: 0
+      caseId: 5
+      priority: normal
+      actorId: 6
+      description:
+      name: Step1
+      reached_state_date: 2014-12-01 16:22:50.814
+      rootCaseId: 5
+      displayName: Step1
+      dueDate: 2014-12-01 17:22:50.809
+      last_update_date: 2014-12-01 16:22:50.814

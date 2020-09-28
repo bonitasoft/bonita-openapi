@@ -1,0 +1,41 @@
+get:
+  tags:
+    - Authentication
+  summary: Logout the current user
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Logout the current user from the system
+  operationId: logout
+  parameters:
+    - description: >-
+        Setting the redirect parameter to false indicates that the service
+        should not redirect to the login page after logging out.
+      explode: true
+      in: query
+      name: redirect
+      required: false
+      schema:
+        type: string
+      style: form
+      example:
+        redirect: "false"
+        redirectURL:
+  x-codeSamples:
+    - lang: "Shell"
+      label: "Curl"
+      source:
+        $ref: '../code_samples/curl/logoutservice/get.bash'
+    - lang: "Java"
+      label: "Java"
+      source:
+        $ref: "../code_samples/java/logoutservice/get.java"
+  responses:
+    '200':
+      description: successful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

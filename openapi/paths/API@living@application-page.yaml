@@ -1,0 +1,88 @@
+get:
+  tags:
+    - ApplicationPage
+  summary: Finds application pages
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Finds application pages with pagination params and filters
+
+    - can order on `id`, `token`, `applicationId`, `pageId`
+    - can search on `token`
+    - can filter on `id`, `token`, `applicationId`, `pageId`
+
+  operationId: findApplicationPages
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        ApplicationPage/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/ApplicationPage.yaml'
+#          example:
+#            - $ref: '../components/examples/ApplicationPage.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - ApplicationPage
+  summary: Create an application page
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Create an application page
+  operationId: createApplicationPage
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            "token":
+              description: "token use to access the page using a URL : ../appName/pageToken/"
+            "applicationId":
+              description: "id of the application related to this page"
+              type: integer
+              format: int64
+            "pageId":
+              description: "id of the custom page to display"
+              type: integer
+              format: int64
+        example:
+          token: "myPage"
+          applicationId: 1234
+          pageId: 5678
+    description: Partial application page description
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ApplicationPage.yaml'
+      description: successful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

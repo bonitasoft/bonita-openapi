@@ -1,0 +1,56 @@
+type: object
+description: "This resource enables you to retrieve the value of a specific variable name for a specific case (or process instance). Only persistent variables are concerned by this resource, not transient variables."
+properties:
+  tenantId:
+    description: "The ID of the tenant where the current user is logged in (technical information)"
+    type: integer
+    format: int64
+  tenantId_string:
+    description: "number (since 7.0.1)"
+    type: string
+  id:
+    description: "The identifier of the variable"
+    type: integer
+    format: int64
+  id_string:
+    description: "number (since 7.0.1)"
+    type: string
+  name:
+    description: "The name of the activity variable"
+    type: string
+  description:
+    description: "The description of the variable if any"
+    type: string
+  transientData:
+    description: "FALSE"  # Always false (boolean)
+    type: string
+  className:
+    description: "The fully qualified class name of the variable type"
+    type: string
+  containerId:
+    description: "The ID of the activity containing this variable (same as the one passed as parameter) if the variable is defined at activity level or ID of the process instance if the variable is defined on the process"
+    type: integer
+    format: int64
+  containerId_string:
+    description: "number (since 7.0.1)"
+    type: string
+  containerType:
+    description: "ACTIVITY_INSTANCE | PROCESS_INSTANCE depending on whether the variable is defined at activity or process level."
+    type: string
+    enum: [ ACTIVITY_INSTANCE, PROCESS_INSTANCE ]
+  value:
+    description: "the value of this variable. The format of the value depends on the type of the variable"
+    type: string
+example:
+  tenantId: 0
+  tenantId_string: 0
+  id: 5010
+  id_string: 5010
+  name: RequestValidationData
+  description: null
+  transientData: false
+  className: java.lang.String
+  containerId: 20004
+  containerId_string: 20004
+  containerType: ACTIVITY_INSTANCE
+  value: Confirmed

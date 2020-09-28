@@ -1,0 +1,78 @@
+get:
+  tags:
+    - ProfessionalContactData
+  summary: Finds the ProfessionalContactData by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Returns the single ProfessionalContactData for the given ID
+  operationId: getProfessionalContactDataById
+  parameters:
+    - description: User ID of the ProfessionalContactData to return
+      in: path
+      name: userId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ProfessionalContactData.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - ProfessionalContactData
+  summary: Update the ProfessionalContactData by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Update the ProfessionalContactData for the given ID
+  operationId: updateProfessionalContactDataById
+  parameters:
+    - description: User ID of the ProfessionalContactData to update
+      in: path
+      name: userId
+      required: true
+      schema:
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/ProfessionalContactData.yaml'
+        example:
+          id: 4
+          fax_number: "484-302-0766"
+          building: "70"
+          phone_number: "484-302-5766"
+          zipcode: "19108"
+          state: "PA"
+          city: "Philadelphia"
+          country: "United States"
+          address: "Renwick Drive"
+          email: "walter.bates@acme.com"
+    description: Partial ProfessionalContactData description including the user ID
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

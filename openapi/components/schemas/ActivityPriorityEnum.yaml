@@ -1,0 +1,8 @@
+type: string
+description: "the priority (string) of the current activity"
+enum:
+  - highest
+  - above_normal
+  - normal
+  - under_normal
+  - lowest

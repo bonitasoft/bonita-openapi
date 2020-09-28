@@ -1,0 +1,44 @@
+type: object
+description: ""
+properties:
+  id:
+    description: "the identifier of the process definition (long)"
+    type: integer
+    format: int64
+  icon:
+    description: "icon path"
+    type: string
+  displayDescription:
+    description: "the human readable activity description"
+    type: string
+  deploymentDate:
+    description: "the date when the process definition was deployed"
+    type: string
+  description:
+    description: "the process description"
+    type: string
+  activationState:
+    description: "the state of the process definition (ENABLED or DISABLED)"
+    type: string
+  name:
+    description: "the process name"
+    type: string
+  deployedBy:
+    description: "the id of the user who deployed the process"
+    type: integer
+    format: int64
+  displayName:
+    description: "the human readable process description"
+    type: string
+  actorinitiatorid:
+    description: "the id of the actor that can initiate cases of the process"
+    type: string
+  last_update_date:
+    description: "the date when the process definition was last updated"
+    type: string
+  configurationState:
+    description: "the configuration state of the process (UNRESOLVED or RESOLVED)"
+    type: string
+  version:
+    description: "the version of the process"
+    type: string

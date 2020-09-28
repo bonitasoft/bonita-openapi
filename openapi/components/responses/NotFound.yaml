@@ -1,0 +1,7 @@
+description: The resource for the specified ID was not found.
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/Error.yaml'
+    example:
+      message: "Resource not found."

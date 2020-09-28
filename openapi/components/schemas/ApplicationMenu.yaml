@@ -1,0 +1,25 @@
+type: object
+properties:
+  "id":
+    description: "id of the application menu item"
+    type: integer
+    format: int64
+  "parentMenuId":
+    description: "id of the parent menu of this menu item, or -1 for a top-level item"
+    type: integer
+    format: int64
+  "applicationPageId":
+    description: "id of the application page targeted by this menu item, or -1 if there is no targeted page (that is, the item is a parent menu)"
+    type: integer
+    format: int64
+  "applicationId":
+    description: "id of the application related to this menu item"
+    type: integer
+    format: int64
+  "menuIndex":
+    description: "index of the menu item"
+    type: integer
+    format: int64
+  "displayName":
+    description: "label to display for this menu in the application navigation bar or menu"
+    type: string

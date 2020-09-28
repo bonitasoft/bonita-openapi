@@ -1,0 +1,89 @@
+get:
+  tags:
+    - Tenant
+  summary: Finds Tenants
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Finds Tenants with pagination params and filters
+
+    - can order on `id`
+    - can search on `displayName`
+    - can filter on `displayName`
+
+  operationId: findTenants
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  responses:
+    '200':
+      description: successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/Tenant.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+post:
+  tags:
+    - Tenant
+  summary: Create the Tenant
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Create the Tenant
+  operationId: createTenant
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              description: "the name of the tenant"
+              type: string
+            description:
+              description: "the description"
+              type: string
+            username:
+              description: "the username"
+              type: string
+            password:
+              description: "the password"
+              type: string
+        example:
+          name: "MyTenant"
+          description: "My tenant"
+          username: "john"
+          password: "bpm"
+    description: Partial Tenant description
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Tenant.yaml'
+      description: successful operation
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

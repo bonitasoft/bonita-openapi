@@ -1,0 +1,26 @@
+type: object
+description: ""
+properties:
+  id:
+    description: "actor id"
+    type: integer
+    format: int64
+  process_id:
+    description: "process definition id"
+    type: integer
+    format: int64
+  description:
+    description: "a description of the actor"
+    type: string
+  name:
+    description: "name of the actor (as specified on human tasks and for the initiator of the process)"
+    type: string
+  displayName:
+    description: "the display name of the actor"
+    type: string
+example:
+  id: "1"
+  process_id: "4717422838168315799"
+  description:
+  name: "employee"
+  displayName: "Employee actor"

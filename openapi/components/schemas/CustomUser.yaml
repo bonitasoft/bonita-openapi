@@ -1,0 +1,12 @@
+type: object
+description: "Custom user defintion and value"
+properties:
+    userId:
+      description: "user id"
+      type: integer
+      format: int64
+    value:
+      description: "definition value"
+      type: string
+    definitionId:
+      $ref: './CustomUserDefinition.yaml'

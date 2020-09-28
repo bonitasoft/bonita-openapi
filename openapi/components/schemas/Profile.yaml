@@ -1,0 +1,43 @@
+type: object
+description: "Profile"
+properties:
+  id:
+    description: "profile id"
+    type: integer
+    format: int64
+  creationDate:
+    description: "date and time of profile creation"
+    type: string
+  icon:
+    description: "icon used in the portal to represent the profile"
+    type: string
+  createdBy:
+    description: "id of the uer who created the profile"
+    type: integer
+    format: int64
+  description:
+    description: "a description of the profile"
+    type: string
+  name:
+    description: "profile name"
+    type: string
+  isdefault:
+    description: "true | false "
+    type: boolean
+  lastUpdateDate:
+    description: "date and time of the last update to the profile"
+    type: string
+  updatedBy:
+    description: "the id of the user who last updated the profile"
+    type: integer
+    format: int64
+example:
+  id: 101
+  creationDate: "2014-12-04 16:29:23.434"
+  icon: "/profiles/profileDefault.png"
+  createdBy: 1
+  description: "This is my custom profile"
+  name: "MyCustomProfile"
+  is_default: false
+  lastUpdateDate: "2014-12-04 16:29:23.434"
+  updatedBy: 1

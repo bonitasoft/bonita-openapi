@@ -1,0 +1,27 @@
+allOf:     # Combines the AbstractTask and the inline model
+  - $ref: './AbstractArchivedTask.yaml'
+  - type: object
+    description: "Use the archived task resource to get information about archived tasks."
+    example:
+      displayDescription:
+      executedBySubstitute: 4
+      processId: 9132099022957910959
+      parentCaseId: 5
+      state: completed
+      rootContainerId: 5
+      type: USER_TASK
+      assigned_id: 4
+      id: 9
+      sourceObjectId: 10
+      executedBy: 4
+      caseId: 5
+      priority: normal
+      actorId: 6
+      description:
+      name: Step1
+      reached_state_date: 2014-12-01 16:24:32.457
+      rootCaseId: 5
+      archivedDate: 2014-12-01 16:24:32.460
+      displayName: Step1
+      dueDate: 2014-12-01 17:22:50.809
+      last_update_date: 2014-12-01 16:24:32.457

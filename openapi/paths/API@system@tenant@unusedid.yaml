@@ -1,0 +1,57 @@
+get:
+  tags:
+    - SystemTenant
+  summary: Get the current Tenant
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Pause and resume tenant services in order to do maintenance on a tenant.
+  operationId: getSystemTenant
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/SystemTenant.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - SystemTenant
+  summary: Update the current Tenant
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+
+    Pause or resume the current tenant.
+  operationId: updateSystemTenant
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            paused:
+              description: "wether the system tenant should be paused or not"
+              type: boolean
+        example:
+          paused: true
+    description: Partial SystemTenant description
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
