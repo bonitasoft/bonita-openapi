@@ -11,16 +11,33 @@ Based on this file, one could generate : documentation, client in different lang
 The specification file is written in `yaml` format because multiline support is much better than in `json`
 The specification has a lot of _description block_ and since it is a _documentation_, it needs to be quite verbose.
 
-The specification file can be found here: `src/main/resources/openapi/bonita-api.yaml`
+The specification file can be found here: `openapi/openapi.yaml`
 
 We make use of https://swagger.io/docs/specification/openapi-extensions/[extensions] to add better support for some documentation sites (x-logo, x-codeSamples, ...)
+
+This repository structure was inspired by https://github.com/Redocly/create-openapi-repo.
 
 == Live Documentation
 
 The api descriptor file can be used to render documentation sites. Those sites have different rendering and may show different parts of the specification file.
 That's the reason why it is interessting to test and evaluate differents sites and rendering.
 
-The `docker-compose.yaml` file at the project root starts two sites: a https://github.com/Redocly/redoc[ReDoc] site and a https://swagger.io/tools/swagger-ui/[swagger-ui] site.
+You 'll need to install the https://github.com/redocly/openapi-cli[openapi-cli] to be able to work on the specification.
+
+=== Redoc Preview
+
+A https://github.com/Redocly/redoc[ReDoc] site is available at http://localhost:8080 when you run from project directory
+
+[source,bash]
+----
+npm start
+----
+
+This preview is the preferred one when editing the specification.
+
+=== Swagger Preview
+
+The `docker-compose.yaml` file at the project root starts two sites: a https://swagger.io/tools/swagger-ui/[swagger-ui] site and a Bonita instance to query
 
 To start the container, just issue the following comment at the project root:
 
@@ -31,8 +48,8 @@ docker-compose up -d
 
 You should be able to access:
 
-- ReDoc: http://localhost:8000
-- Swagger UI: http://localhost:9000
+- Bonita: http://bonita.localhost/bonita
+- Swagger UI: http://swagger.localhost
 
 NOTE: You can keep on editing the specification file and just refresh the browser to see the changes.
 
@@ -53,3 +70,7 @@ https://swagger.io/docs/specification/basic-structure/
 - Discourse API: https://docs.discourse.org/
 - API hub: https://apis.guru/browse-apis/
 - Samples: https://github.com/OAI/OpenAPI-Specification/tree/master/examples/v3.0
+
+*ReDoc*
+
+- https://github.com/Redocly/redoc
