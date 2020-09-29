@@ -156,7 +156,7 @@ tags:
   - name: I18nlocale
     x-displayName: I18nlocale
     description: I18nlocale
-  - name: I18nTranslation
+  - name: I18ntranslation
     x-displayName: I18nTranslation
     description: I18nTranslation
   - name: License
