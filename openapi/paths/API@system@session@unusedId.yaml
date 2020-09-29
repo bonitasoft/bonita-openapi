@@ -3,7 +3,7 @@ get:
     - Session
   summary: Get the current user session
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns session information for the current user
   operationId: getSession

@@ -3,7 +3,7 @@ get:
     - ManualTask
   summary: Finds the ManualTask by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single ManualTask for the given ID
   operationId: getManualTaskById
@@ -36,7 +36,7 @@ put:
     - ManualTask
   summary: Update the ManualTask by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Update the ManualTask for the given ID.
     Use a PUT method to execute a subtask.

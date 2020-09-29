@@ -3,7 +3,7 @@ get:
     - I18nlocale
   summary: Finds I18nlocales
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     List the available I18nlocales with pagination params and filters
 

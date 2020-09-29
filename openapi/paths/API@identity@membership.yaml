@@ -3,7 +3,7 @@ get:
     - Membership
   summary: Finds Memberships
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds Memberships with pagination params and filters
 
@@ -44,7 +44,7 @@ post:
     - Membership
   summary: Create the Membership
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Create the Membership
   operationId: createMembership

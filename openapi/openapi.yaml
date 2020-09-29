@@ -21,19 +21,121 @@ servers:
 security:
   - bonita_auth: [ ]
     bonita_token: [ ]
+x-tagGroups:
+  - name: Application
+    tags:
+      - ApplicationTheme
+      - Application
+      - ApplicationMenu
+      - ApplicationPage
+      - FormMapping
+  - name: BDM
+    tags:
+      - BDM
+      - BusinessDataQuery
+      - BDMAccessControl
+  - name: BPM
+    tags:
+      - Activity
+      - ArchivedActivity
+      - HumanTask
+      - ManualTask
+      - Task
+      - UserTask
+      - ArchivedHumanTask
+      - ArchivedManualTask
+      - ArchivedTask
+      - ArchivedUserTask
+      - ActivityVariable
+      - CaseVariable
+      - CaseDocument
+      - ArchivedCaseDocument
+      - Actor
+      - ActorMember
+      - Case
+      - ArchivedCase
+      - CaseInfo
+      - CaseComment
+      - ArchivedCaseComment
+      - Process
+      - Diagram
+      - ProcessParameter
+      - ProcessResolutionProblem
+      - ProcessSupervisor
+      - ProcessConnectorDependency
+      - ConnectorFailure
+      - ConnectorInstance
+      - ArchivedConnectorInstance
+      - FlowNode
+      - ArchivedFlowNode
+      - TimerEventTrigger
+      - Message
+
+  - name: Custom user info
+    tags:
+      - CustomUserDefinition
+      - CustomUserValue
+      - CustomUser
+
+  - name: Identity
+    tags:
+      - ProfessionalContactData
+      - Group
+      - Membership
+      - Role
+      - User
+      - Authentication
+
+  - name: Platform
+    tags:
+      - PlatformAuthentication
+      - Platform
+      - PlatformTenant
+      - Tenant
+      - License
+
+  - name: Portal
+    tags:
+      - Page
+      - Profile
+      - ProfileEntry
+      - ProfileMember
+      - Theme
+
+  - name: System
+    tags:
+      - I18nlocale
+      - I18nTranslation
+      - Session
+      - SystemTenant
+
+  - name: Tenant
+    tags:
+      - Bdm
+
+  - name: Other
+    tags:
+      - RestAPIextensions
 tags:
   - name: Activity
     x-displayName: Activity
-    description: Activity
+    description: >-
+      Use this resource to retrieve activities (human or service tasks), call activities, and subprocesses currently running on the platform.
+      It enables you to perform maintenance tasks like skipping or replaying a failed task and modifying variables.
   - name: ActivityVariable
     x-displayName: ActivityVariable
-    description: ActivityVariable
+    description: >-
+      This resource enables you to retrieve the value of a specific variable name for a specific case (or process instance).
+      Only persistent variables are concerned by this resource, not transient variables.
   - name: Actor
     x-displayName: Actor
-    description: Actor
+    description: Manage process actors.
   - name: ActorMember
     x-displayName: ActorMember
-    description: ActorMember
+    description: >-
+      An actor member represents the association between the organization and the actor af a process.
+      In an organization we have four member_types = `USER`, `GROUP`, `ROLE` and `MEMBERSHIP` (role in a group).
+      You can assign a actor to a user by specifying a role and or a group, or specific user.
   - name: Application
     x-displayName: Application
     description: >-
@@ -62,39 +164,41 @@ tags:
       Manage applications theme. This enables you to modify your application theme.
   - name: ArchivedActivity
     x-displayName: ArchivedActivity
-    description: ArchivedActivity
+    description: |
+      Use this resource to retrieve finished activities (human or service tasks), call activities, and subprocesses.
+      For this resource, the available state search parameters for the GET verb are the same as for the archived flow nodes.
   - name: ArchivedCase
     x-displayName: ArchivedCase
-    description: ArchivedCase
+    description: Use the document resource to access a document in an active case.
   - name: ArchivedCaseComment
     x-displayName: ArchivedCaseComment
-    description: ArchivedCaseComment
+    description: Retrieves information about the comment of an archived case.
   - name: ArchivedCaseDocument
     x-displayName: ArchivedCaseDocument
-    description: ArchivedCaseDocument
+    description: Use the archived case document resource to access previous document versions for active and archived cases.
   - name: ArchivedConnectorInstance
     x-displayName: ArchivedConnectorInstance
-    description: ArchivedConnectorInstance
+    description: Retrieve information about archived connector instances attached to an archived process or an archived flow node.
   - name: ArchivedFlowNode
     x-displayName: ArchivedFlowNode
-    description: ArchivedFlowNode
+    description: A flow node (gateway or event or task) in an archived instance of a process.
   - name: ArchivedHumanTask
     x-displayName: ArchivedHumanTask
-    description: ArchivedHumanTask
+    description: An Archived Human task is a User task or Manual task that has been archived.
   - name: ArchivedManualTask
     x-displayName: ArchivedManualTask
-    description: ArchivedManualTask
+    description: Use the archivedManualTask resource to access archived process subtasks.
   - name: ArchivedTask
     x-displayName: ArchivedTask
-    description: ArchivedTask
+    description: Get informations about archived tasks.
   - name: ArchivedUserTask
     x-displayName: ArchivedUserTask
-    description: ArchivedUserTask
+    description: An executable task that has been performed by a user or skipped and is archived.
   - name: Authentication
     x-displayName: Authentication endpoints
     description: Authentication endpoints
   - name: BDM
-    x-displayName: BDM
+    x-displayName: Business Data Model
     description: |
       Show status or install or update the Business Data Model.
 
@@ -116,55 +220,69 @@ tags:
     description: Easily retrieve human or service tasks, call activities, and subprocesses with BPM APIs. Perform maintenance tasks.
   - name: Case
     x-displayName: Case
-    description: Case
+    description: Case is an instance of a process. When you start a process, it creates a case.
   - name: CaseComment
     x-displayName: CaseComment
-    description: CaseComment
+    description: Retrieves information about a case comment.
   - name: CaseDocument
     x-displayName: CaseDocument
-    description: CaseDocument
+    description: Use the case document resource to access a document in an active case. For archived cases and previous document versions use archivedCaseDocument.
   - name: CaseInfo
     x-displayName: CaseInfo
-    description: CaseInfo
+    description: |
+      Retrieves information about a case. It returns counters for each flow node in the case, showing the number of flow node instances that are in
+      `completed`, `ready`, or `failed` state. If there are no flow node instances in a given state, no counter is returned for that state for the flow node.
   - name: CaseVariable
     x-displayName: CaseVariable
-    description: CaseVariable
+    description: Search, count, find, or update case variable values. A case is an instance of a process.
   - name: ConnectorFailure
     x-displayName: ConnectorFailure
-    description: ConnectorFailure
+    description: |
+      ![edition](https://img.shields.io/badge/edition-entreprise-blue) Error message and stackTrace recorded when a connector fails during a process execution.
   - name: ConnectorInstance
     x-displayName: ConnectorInstance
-    description: ConnectorInstance
+    description: Retrieve information about connector instances attached to a process or a flow node.
   - name: CustomUser
     x-displayName: CustomUser
-    description: CustomUser
+    description: Manage the custom user info associated to a specific user
   - name: CustomUserDefinition
     x-displayName: CustomUserDefinition
-    description: CustomUserDefinition
+    description: Manage the custom user definitions.
   - name: CustomUserValue
     x-displayName: CustomUserValue
-    description: CustomUserValue
+    description: Manage the value of the custom user definitions.
   - name: Diagram
     x-displayName: Diagram
-    description: Diagram
+    description: |
+      ![edition](https://img.shields.io/badge/edition-entreprise-blue) Use the diagram resource to access the process diagram xml representation. This is necessary for drawing the diagram.
   - name: FlowNode
     x-displayName: FlowNode
-    description: FlowNode
-  - name: FormMappingBDM
-    x-displayName: FormMappingBDM
-    description: FormMappingBDM
+    description: A flow node (gateway, event, or task) in an open instance of a process.
+  - name: FormMapping
+    x-displayName: FormMapping
+    description: |
+      This resource specifies the mapping of a form to a process or a task.
+      The mapping indicates the technology used to create the form, in the "target" attribute. Possible values are:
+
+      - `URL` - an external URL
+      - `INTERNAL` - a custom page ID
+      - `LEGACY` - means that the old form application is used for old processes
+      - `UNDEFINED` - when the form is not present in the definition but is required
+      - `NONE` - when there is no form needed for the process instantiation or task execution
+
+      Having any `UNDEFINED` mapping prevents the process from being resolved.
   - name: Group
     x-displayName: Group
     description: The group a user belongs to. Groups have a hierarchy (subgroups can be created inside a group).
   - name: HumanTask
     x-displayName: HumanTask
-    description: HumanTask
+    description: A Human task is Manual task or a User task. A User task is a task that can be done by a user. A Manual task is a subtask of a user task, and is also done by a user.
   - name: I18nlocale
     x-displayName: I18nlocale
-    description: I18nlocale
+    description: List the available locales.
   - name: I18nTranslation
     x-displayName: I18nTranslation
-    description: I18nTranslation
+    description: Get the translations for the specified locale.
   - name: License
     x-displayName: License
     description: |
@@ -172,13 +290,13 @@ tags:
       This Web REST API is available in **Enterprise editions only**, since version 7.1.
   - name: ManualTask
     x-displayName: ManualTask
-    description: ManualTask
+    description: Use the manualTask resource to access process subtasks. For archived subtasks use archivedManualTask.
   - name: Membership
     x-displayName: Membership
     description: Manage membership of users. There is a membership when a user belongs to a group and a role. Use this resource to add, search, and delete memberships.
   - name: Message
     x-displayName: Message
-    description: Message
+    description: Use this resource to send BPM message events. Message events are caught by processes using catch message event flow nodes (Start, intermediate, boundary or receive tasks).
   - name: Page
     x-displayName: Page
     description: Use the page resource to access custom pages, UI Designer pages, layouts or forms and REST API extensions.
@@ -187,64 +305,68 @@ tags:
     description: The Platform API resources require a platform session. In order to get one, log in as the platform administrator using the platform login service.
   - name: PlatformAuthentication
     x-displayName: PlatformAuthentication
-    description: PlatformAuthentication
+    description: Platform Authentication
   - name: PlatformTenant
     x-displayName: PlatformTenant
-    description: PlatformTenant
+    description: |
+      ![edition](https://img.shields.io/badge/edition-entreprise-blue) Handle the tenants. This requires a platform session. Log in using the platform login service.
   - name: Process
     x-displayName: Process
     description: Deploy and manage process definitions. In addition, you can instantiate a process, which will create a new process instance (case).
   - name: ProcessConnectorDependency
     x-displayName: ProcessConnectorDependency
-    description: ProcessConnectorDependency
+    description: Use the processConnectorDependency resource to access connector dependencies.
   - name: ProcessParameter
     x-displayName: ProcessParameter
-    description: ProcessParameter
+    description: |
+      ![edition](https://img.shields.io/badge/edition-entreprise-blue) A process parameter is a variable attached to process. The parameter value is set at deployment, and applies to all cases of the process.
   - name: ProcessResolutionProblem
     x-displayName: ProcessResolutionProblem
-    description: ProcessResolutionProblem
+    description: |
+      ![edition](https://img.shields.io/badge/edition-entreprise-blue) This resource represents a problem in a process that needs to be resolved for the process to run. It can be an actor, a connector implementation, or a parameter
   - name: ProcessSupervisor
     x-displayName: ProcessSupervisor
-    description: ProcessSupervisor
+    description: The process supervisor has management rights over a process. He can configure and monitor it. You can give the ProcessSupervisor rights to some users by specifying a role and or a group, or a specific user. In order to be able to manage the processes he supervises in the portal, a user should also have the profile "Process Manager".
   - name: ProfessionalContactData
     x-displayName: ProfessionalContactData
-    description: ProfessionalContactData
+    description: Additional information about a user (personal and professional). Both resources have the same attributes.
   - name: Profile
     x-displayName: Profile
-    description: Profile
+    description: Use the profile resource to access profiles.
   - name: ProfileEntry
     x-displayName: ProfileEntry
-    description: ProfileEntry
+    description: A profileEntry represents the association between pages and profiles. A profile is associated with a set of profileEntry items. This defines the pages that a user with this profile can access, and the menu structure that the user sees.
   - name: ProfileMember
     x-displayName: ProfileMember
-    description: ProfileMember
+    description: A profileMember represents the association between the organization and profiles. In an organization we have three member_types = USER, GROUP and ROLE. You can assign a profile to a user by specifying a role, group, or specific user.
   - name: Role
     x-displayName: Role
-    description: Role
+    description: The role of a user in a group.
   - name: Session
     x-displayName: Session
-    description: Session
+    description: Get the current session.
   - name: SystemTenant
     x-displayName: SystemTenant
-    description: SystemTenant
+    description: Pause and resume tenant services in order to do maintenance on a tenant.
   - name: Task
     x-displayName: Task
-    description: Task
+    description: Manage process tasks.
   - name: Tenant
     x-displayName: Tenant
-    description: Handle the tenants (**Enterprise editions only**). This requires a platform session. Log in using the platform login service.
+    description: |
+      ![edition](https://img.shields.io/badge/edition-entreprise-blue) Handle the tenants. This requires a platform session. Log in using the platform login service.
   - name: Theme
     x-displayName: Theme
-    description: Theme
+    description: Use the theme resource for managing the portal and mobile app theme (look & feel).
   - name: TimerEventTrigger
     x-displayName: TimerEventTrigger
-    description: TimerEventTrigger
+    description: Use this resource to search for BPM timer event triggers. The result enables you to to update the date and time at which the trigger should next execute.
   - name: User
     x-displayName: User
-    description: User
+    description: Used to manage information about users.
   - name: UserTask
     x-displayName: UserTask
-    description: UserTask
+    description: An executable task that is performed by a user.
   - name: RestAPIextensions
     x-displayName: API extensions
     description: |

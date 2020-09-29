@@ -3,7 +3,7 @@ get:
     - FlowNode
   summary: Finds the FlowNode by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single FlowNode for the given ID
   operationId: getFlowNodeById

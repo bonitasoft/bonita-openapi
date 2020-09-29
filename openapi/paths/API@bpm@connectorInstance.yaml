@@ -3,7 +3,7 @@ get:
     - ConnectorInstance
   summary: Finds ConnectorInstances
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds ConnectorInstances with pagination params and filters.
     Retrieve a list of connector instances attached to a process or a flow node.

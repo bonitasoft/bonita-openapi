@@ -3,7 +3,7 @@ get:
     - ProfessionalContactData
   summary: Finds the ProfessionalContactData by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single ProfessionalContactData for the given ID
   operationId: getProfessionalContactDataById
@@ -35,7 +35,7 @@ put:
     - ProfessionalContactData
   summary: Update the ProfessionalContactData by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Update the ProfessionalContactData for the given ID
   operationId: updateProfessionalContactDataById

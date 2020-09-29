@@ -3,7 +3,7 @@ get:
     - BDM
   summary: Finds business data attribute by id
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Gets the business data attribute of business data according to its identifier and attribute name. Request url.
 

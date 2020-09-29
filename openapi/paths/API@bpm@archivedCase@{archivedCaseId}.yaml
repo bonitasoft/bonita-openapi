@@ -3,7 +3,7 @@ get:
     - ArchivedCase
   summary: Finds the ArchivedCase by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single ArchivedCase for the given ID
   operationId: getArchivedCaseById
@@ -35,7 +35,7 @@ delete:
     - ArchivedCase
   summary: Delete the ArchivedCase by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Delete the single ArchivedCase for the given ID
   operationId: deleteArchivedCaseById

@@ -5,7 +5,7 @@ post:
   summary: Platform Logout
 #  FIXME: This resource is not clear ! create a session
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
   responses:
     '200':

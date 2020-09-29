@@ -3,7 +3,7 @@ get:
     - CaseDocument
   summary: Finds CaseDocuments
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds CaseDocuments with pagination params and filters
 
@@ -48,7 +48,7 @@ post:
     - CaseDocument
   summary: Create the CaseDocument
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Create the CaseDocument.
 

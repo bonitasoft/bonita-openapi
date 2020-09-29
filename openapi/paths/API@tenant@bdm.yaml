@@ -3,7 +3,7 @@ get:
     - BDM
   summary: Get the BDM
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the current BDM. Make this call to get the status the BDM.
 
@@ -28,7 +28,7 @@ post:
     - BDM
   summary: Install a BDM
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Install a BDM
   operationId: installBDM

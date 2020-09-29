@@ -3,7 +3,7 @@ get:
     - ProfileEntry
   summary: Finds ProfileEntries
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds ProfileEntries with pagination params and filters
 
@@ -42,7 +42,7 @@ post:
     - ProfileEntry
   summary: Create the ProfileEntry
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Create the ProfileEntry
   operationId: createProfileEntry

@@ -3,7 +3,7 @@ get:
     - CaseVariable
   summary: Finds the Variable by Case ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single Variable for the given Case ID
   operationId: getVariableByCaseId
@@ -41,7 +41,7 @@ put:
     - CaseVariable
   summary: Update a Variable by Case ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Update the variable for the given Case ID.
 

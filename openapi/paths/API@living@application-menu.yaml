@@ -3,7 +3,7 @@ get:
     - ApplicationMenu
   summary: Finds application menus
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns application menus with pagination params and filters
 
@@ -44,7 +44,7 @@ post:
     - ApplicationMenu
   summary: New application menu item
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Create an application menu item
   operationId: createApplicationMenu

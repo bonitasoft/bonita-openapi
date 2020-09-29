@@ -3,7 +3,7 @@ get:
     - Group
   summary: Finds the Group by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single Group for the given ID
   operationId: getGroupById
@@ -35,7 +35,7 @@ put:
     - Group
   summary: Update the Group by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Update the Group for the given ID
   operationId: updateGroupById
@@ -104,7 +104,7 @@ delete:
     - Group
   summary: Delete the Group by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Delete the single Group for the given ID
   operationId: deleteGroupById

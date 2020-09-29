@@ -3,7 +3,7 @@ post:
     - Page
   summary: Upload a Page
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Upload Page
   operationId: uploadPage

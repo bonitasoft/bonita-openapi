@@ -3,7 +3,7 @@ get:
     - ArchivedUserTask
   summary: Finds the ArchivedUserTask by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single ArchivedUserTask for the given ID
   operationId: getArchivedUserTaskById

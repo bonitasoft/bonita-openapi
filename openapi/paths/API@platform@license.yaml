@@ -3,7 +3,7 @@ get:
     - License
   summary: Get the platform License
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the current platform License.
     This requires a platform session. Log in using the platform login service.

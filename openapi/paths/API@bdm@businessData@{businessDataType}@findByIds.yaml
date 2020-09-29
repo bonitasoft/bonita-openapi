@@ -3,7 +3,7 @@ get:
     - BDM
   summary: Finds business data By Ids
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds business data specified by their identifiers.
 

@@ -3,7 +3,7 @@ get:
     - UserTask
   summary: Finds the UserTask by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single UserTask for the given ID
   operationId: getUserTaskById
@@ -35,7 +35,7 @@ put:
     - UserTask
   summary: Update the UserTask by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Update the UserTask for the given ID.
 

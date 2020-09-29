@@ -3,7 +3,7 @@ get:
     - ApplicationPage
   summary: Finds an application page by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns a single application page for the given ID
   operationId: getApplicationPageById
@@ -36,7 +36,7 @@ delete:
     - ApplicationPage
   summary: Delete an application page by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Delete a single application page for the given ID
   operationId: deleteApplicationPageById

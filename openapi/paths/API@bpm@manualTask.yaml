@@ -3,7 +3,7 @@ get:
     - ManualTask
   summary: Finds ManualTasks
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds ManualTasks with pagination params and filters
 
@@ -51,7 +51,7 @@ post:
     - ManualTask
   summary: Create the ManualTask
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Create the ManualTask.
     Use a POST method to create a new subtask. A subtask is attached to a parent task and it needs to be immediately assigned to a user.

@@ -3,7 +3,7 @@ get:
     - ProfessionalContactData
   summary: Finds ProfessionalContactData
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds ProfessionalContactData with pagination params and filters
 
@@ -44,7 +44,7 @@ post:
     - ProfessionalContactData
   summary: Create the ProfessionalContactData
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Create the ProfessionalContactData
   operationId: createProfessionalContactData

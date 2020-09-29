@@ -3,7 +3,7 @@ post:
     - Organization
   summary: Import an organization
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Import an organization
   operationId: importOrganization

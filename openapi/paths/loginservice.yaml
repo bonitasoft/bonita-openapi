@@ -5,7 +5,7 @@ post:
   security: []
   summary: Login
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     A call to the `/loginservice` will generates a set-cookie header in the response.
 

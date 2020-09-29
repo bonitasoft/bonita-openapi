@@ -3,7 +3,7 @@ get:
     - Group
   summary: Finds Groups
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds Groups with pagination params and filters.
 
@@ -42,7 +42,7 @@ post:
     - Group
   summary: Create the Group
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Create the Group
   operationId: createGroup

@@ -3,7 +3,7 @@ get:
     - ProfileMember
   summary: Finds the ProfileMember by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single ProfileMember for the given ID
   operationId: getProfileMemberById
@@ -35,7 +35,7 @@ delete:
     - ProfileMember
   summary: Delete the ProfileMember by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Delete the single ProfileMember for the given ID
   operationId: deleteProfileMemberById

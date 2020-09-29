@@ -3,7 +3,7 @@ delete:
     - Membership
   summary: Delete the Membership by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Delete a membership of a user using the group id and role id.
   operationId: deleteMembershipById

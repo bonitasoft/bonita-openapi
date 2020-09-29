@@ -3,7 +3,7 @@ get:
     - I18ntranslation
   summary: Finds I18ntranslations
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     List the available I18ntranslations with pagination params and filters
     Returns all translations of the product. If a locale is specified in the filter, that translation for that locale are returned.

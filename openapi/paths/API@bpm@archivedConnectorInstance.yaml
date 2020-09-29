@@ -3,7 +3,7 @@ get:
     - ArchivedConnectorInstance
   summary: Finds ArchivedConnectorInstances
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds ArchivedConnectorInstances with pagination params and filters
 

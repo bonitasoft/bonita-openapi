@@ -3,7 +3,7 @@ get:
     - HumanTask
   summary: Finds the HumanTask by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single HumanTask for the given ID
   operationId: getHumanTaskById
@@ -36,7 +36,7 @@ put:
     - HumanTask
   summary: Update the HumanTask by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Update the HumanTask for the given ID
 

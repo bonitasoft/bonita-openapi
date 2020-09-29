@@ -3,7 +3,7 @@ get:
     - User
   summary: Finds Users
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds Users with pagination params and filters
 
@@ -44,7 +44,7 @@ post:
     - User
   summary: Create the User
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Create the User
   operationId: createUser

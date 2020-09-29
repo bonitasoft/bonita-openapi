@@ -3,7 +3,7 @@ post:
     - BDM
   summary: Upload a BDM
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Upload BDM
   operationId: uploadBDM

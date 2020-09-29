@@ -3,7 +3,7 @@ get:
     - ProfessionalContactData
   summary: Finds the PersonalContactData by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single PersonalContactData for the given ID
   operationId: getPersonalContactDataById
@@ -35,7 +35,7 @@ put:
     - ProfessionalContactData
   summary: Update the PersonalContactData by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Update the PersonalContactData for the given ID
   operationId: updatePersonalContactDataById

@@ -3,7 +3,7 @@ get:
     - SystemTenant
   summary: Get the current Tenant
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Pause and resume tenant services in order to do maintenance on a tenant.
   operationId: getSystemTenant
@@ -27,7 +27,7 @@ put:
     - SystemTenant
   summary: Update the current Tenant
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Pause or resume the current tenant.
   operationId: updateSystemTenant

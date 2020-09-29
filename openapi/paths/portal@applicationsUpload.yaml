@@ -3,7 +3,7 @@ post:
     - Application
   summary: Upload a living application
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Upload application
   operationId: uploadApplication

@@ -3,7 +3,7 @@ get:
     - Application
   summary: Finds living applications
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds living applications with pagination params and filters
 
@@ -44,7 +44,7 @@ post:
     - Application
   summary: Create a living applications
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Create a living applications
   operationId: createApplication

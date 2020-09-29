@@ -3,7 +3,7 @@ get:
     - ApplicationMenu
   summary: Finds a application menu by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns a single application menu for the given ID
   operationId: geApplicationMenuById

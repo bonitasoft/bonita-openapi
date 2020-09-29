@@ -3,7 +3,7 @@ get:
     - User
   summary: Finds the User by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single User for the given ID
   operationId: getUserById
@@ -35,7 +35,7 @@ put:
     - User
   summary: Update the User by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Update the User for the given ID
   operationId: updateUserById
@@ -100,7 +100,7 @@ delete:
     - User
   summary: Delete the User by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Delete the single User for the given ID.
 

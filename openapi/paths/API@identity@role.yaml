@@ -3,7 +3,7 @@ get:
     - Role
   summary: Finds Roles
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Finds Roles with pagination params and filters
 
@@ -43,7 +43,7 @@ post:
     - Role
   summary: Create the Role
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Create the Role
   operationId: createRole
