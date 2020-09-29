@@ -3,8 +3,6 @@ get:
     - Process
   summary: Finds the Process design by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single Process design for the given ID
   operationId: getProcessDesignById
   parameters:

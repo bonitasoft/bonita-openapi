@@ -3,8 +3,6 @@ get:
     - Profile
   summary: Finds the Profile by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single Profile for the given ID
   operationId: getProfileById
   parameters:
@@ -35,8 +33,6 @@ put:
     - Profile
   summary: Update the Profile by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Update the Profile for the given ID
   operationId: updateProfileById
   parameters:
@@ -80,8 +76,6 @@ delete:
     - Profile
   summary: Delete the Profile by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Delete the single Profile for the given ID
   operationId: deleteProfileById
   parameters:

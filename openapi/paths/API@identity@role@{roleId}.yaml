@@ -3,8 +3,6 @@ get:
     - Role
   summary: Finds the Role by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single Role for the given ID
   operationId: getRoleById
   parameters:
@@ -35,8 +33,6 @@ put:
     - Role
   summary: Update the Role by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Update the Role for the given ID
   operationId: updateRoleById
   parameters:
@@ -85,8 +81,6 @@ delete:
     - Role
   summary: Delete the Role by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Delete the single Role for the given ID
   operationId: deleteRoleById
   parameters:

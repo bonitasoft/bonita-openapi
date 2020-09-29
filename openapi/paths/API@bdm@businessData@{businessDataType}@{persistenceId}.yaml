@@ -3,8 +3,6 @@ get:
     - BDM
   summary: Finds business data by Id
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds business data specified by its identifier.
 
   operationId: findBusinessDataById

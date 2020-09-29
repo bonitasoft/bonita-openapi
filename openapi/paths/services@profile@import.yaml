@@ -3,8 +3,6 @@ post:
     - Profile
   summary: Import profiles
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Import profiles
   operationId: importProfiles
   requestBody:

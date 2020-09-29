@@ -3,8 +3,6 @@ post:
     - Profile
   summary: Upload profiles
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Upload profiles
   operationId: uploadprofiles
   requestBody:

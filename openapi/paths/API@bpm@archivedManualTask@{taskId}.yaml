@@ -3,8 +3,6 @@ get:
     - ArchivedManualTask
   summary: Finds the ArchivedManualTask by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single ArchivedManualTask for the given ID
   operationId: getArchivedManualTaskById
   parameters:

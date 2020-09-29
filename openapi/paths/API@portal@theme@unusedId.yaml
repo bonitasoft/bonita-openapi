@@ -3,8 +3,6 @@ put:
     - Theme
   summary: Update the Theme by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Restore a default theme
   operationId: updateTheme
   requestBody:

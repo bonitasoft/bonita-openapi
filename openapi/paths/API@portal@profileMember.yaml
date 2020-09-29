@@ -3,8 +3,6 @@ get:
     - ProfileMember
   summary: Finds ProfileMembers
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds ProfileMembers with pagination params and filters
 
     **Filter `member_type` is mandatory**
@@ -42,8 +40,6 @@ post:
     - ProfileMember
   summary: Create the ProfileMember
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Create the ProfileMember
   operationId: createProfileMember
   requestBody:

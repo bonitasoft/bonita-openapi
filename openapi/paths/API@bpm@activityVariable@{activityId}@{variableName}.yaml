@@ -3,8 +3,6 @@ get:
     - ActivityVariable
   summary: Finds the ActivityVariable by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single ActivityVariable for the given ID
   operationId: getActivityVariableById
   parameters:

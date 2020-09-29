@@ -3,8 +3,6 @@ get:
     - Activity
   summary: Finds Activities
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds Activities with pagination params and filters. Activities in states completed, cancelled, or aborted are not retrieved. The search returns an array of activities.
 
     - can order on `name`, `displayName`, `state`, `processDefinitionId`, `parentProcessInstanceId`, `parentActivityInstanceId` (order by parent activity id), `rootProcessInstanceId`, `lastUpdateDate`

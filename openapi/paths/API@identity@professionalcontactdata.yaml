@@ -3,8 +3,6 @@ get:
     - ProfessionalContactData
   summary: Finds ProfessionalContactData
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds ProfessionalContactData with pagination params and filters
 
     - can order on `id`
@@ -44,8 +42,6 @@ post:
     - ProfessionalContactData
   summary: Create the ProfessionalContactData
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Create the ProfessionalContactData
   operationId: createProfessionalContactData
   requestBody:

@@ -3,8 +3,6 @@ get:
     - ProcessConnectorDependency
   summary: Finds ProcessConnectorDependencys
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds ProcessConnectorDependencys with pagination params and filters
 
     **Mandatory filters: `connector_process_id`, `connector_name`, `connector_version`**

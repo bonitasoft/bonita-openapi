@@ -3,8 +3,6 @@ get:
     - HumanTask
   summary: Finds HumanTasks
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds HumanTasks with pagination params and filters
 
     - can order on `name`, `priority`, `dueDate`, `state`, `userId`, `groupId`, `roleId`, `processDefinitionId`, `processInstanceId`, `parentActivityInstanceId`, `assigneeId`, `parentContainerId`, `displayName`, `reachedStateDate`

@@ -3,8 +3,6 @@ get:
     - ArchivedCase
   summary: Finds the Context by ArchivedCase ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the Context for the given ArchivedCase ID
   operationId: getContextByArchivedCaseId
   parameters:

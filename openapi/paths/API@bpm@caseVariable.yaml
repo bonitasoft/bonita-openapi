@@ -3,8 +3,6 @@ get:
     - CaseVariable
   summary: Finds Case Variables
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds Case Variables with pagination params and filters
 
   operationId: findCaseVariables

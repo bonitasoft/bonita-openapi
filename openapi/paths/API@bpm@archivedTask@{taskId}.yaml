@@ -3,8 +3,6 @@ get:
     - ArchivedTask
   summary: Finds the ArchivedTask by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single ArchivedTask for the given ID
   operationId: getArchivedTaskById
   parameters:

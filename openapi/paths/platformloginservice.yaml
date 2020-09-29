@@ -4,8 +4,6 @@ post:
   operationId: platformLogin
   summary: Platform Login
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     The username and password are in `bonita-platform-community-custom.properties` file.
 
   requestBody:

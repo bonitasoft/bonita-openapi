@@ -3,8 +3,6 @@ put:
     - CustomUserValue
   summary: Update the CustomUserValue by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Update the CustomUserValue for the given ID
   operationId: updateCustomUserValueById
   parameters:

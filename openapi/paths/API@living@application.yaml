@@ -3,8 +3,6 @@ get:
     - Application
   summary: Finds living applications
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds living applications with pagination params and filters
 
     - can order on `id`,`creationDate`, `createdBy`, `profileId`, `token`, `displayName`, `updatedBy`, `lastUpdateDate`, `version`
@@ -44,8 +42,6 @@ post:
     - Application
   summary: Create a living applications
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Create a living applications
   operationId: createApplication
   requestBody:

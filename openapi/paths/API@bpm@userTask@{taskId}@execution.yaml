@@ -3,8 +3,6 @@ post:
     - UserTask
   summary: Execute the UserTask
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Execute the UserTask. In order to execute a task, the task contract values have to be provided.
 
   operationId: executeUserTask

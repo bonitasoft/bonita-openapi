@@ -3,8 +3,6 @@ get:
     - Application
   summary: Finds a living application by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns a single application for the given ID
   operationId: getApplicationById
   parameters:
@@ -35,8 +33,6 @@ delete:
     - Application
   summary: Delete a living application by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Delete a single application for the given ID
   operationId: deleteApplicationById
   parameters:
@@ -63,8 +59,6 @@ put:
     - Application
   summary: Update a living application by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Update a single application for the given ID
   operationId: updateApplicationById
   parameters:

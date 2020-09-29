@@ -3,8 +3,6 @@ get:
     - ArchivedCaseComment
   summary: Finds ArchivedCaseComments
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds ArchivedCaseComments with pagination params and filters
 
     - can order on `id`

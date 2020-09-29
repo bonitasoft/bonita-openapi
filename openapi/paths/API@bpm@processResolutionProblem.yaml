@@ -3,8 +3,6 @@ get:
     - ProcessResolutionProblem
   summary: Finds ProcessResolutionProblems
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds ProcessResolutionProblems with pagination params and filters to list the problems that need to be solved before a process can be used.
 
     **Filtering on the process definition ID is mandatory.**

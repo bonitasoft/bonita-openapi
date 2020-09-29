@@ -3,8 +3,6 @@ get:
     - User
   summary: Finds the User by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single User for the given ID
   operationId: getUserById
   parameters:
@@ -35,8 +33,6 @@ put:
     - User
   summary: Update the User by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Update the User for the given ID
   operationId: updateUserById
   parameters:
@@ -100,8 +96,6 @@ delete:
     - User
   summary: Delete the User by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Delete the single User for the given ID.
 
     **Use this method with caution**: some artifacts like applications, cases or users may present display problems in the Bonita Portal if the referenced user was deleted.

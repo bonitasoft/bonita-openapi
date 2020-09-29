@@ -3,8 +3,6 @@ get:
     - Actor
   summary: Finds the Actor by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single Actor for the given ID
   operationId: getActorById
   parameters:
@@ -35,8 +33,6 @@ put:
     - Actor
   summary: Update the Actor by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Update the Actor for the given ID
   operationId: updateActorById
   parameters:

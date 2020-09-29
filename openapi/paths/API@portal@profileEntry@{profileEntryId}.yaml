@@ -3,8 +3,6 @@ get:
     - ProfileEntry
   summary: Finds the ProfileEntry by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single ProfileEntry for the given ID
   operationId: getProfileEntryById
   parameters:
@@ -35,8 +33,6 @@ put:
     - ProfileEntry
   summary: Update the ProfileEntry by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Update the ProfileEntry for the given ID
   operationId: updateProfileEntryById
   parameters:
@@ -101,8 +97,6 @@ delete:
     - ProfileEntry
   summary: Delete the ProfileEntry by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Delete the single ProfileEntry for the given ID
   operationId: deleteProfileEntryById
   parameters:

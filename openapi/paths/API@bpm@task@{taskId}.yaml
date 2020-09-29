@@ -3,8 +3,6 @@ get:
     - Task
   summary: Finds the Task by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single Task for the given ID
   operationId: getTaskById
   parameters:
@@ -35,8 +33,6 @@ put:
     - Task
   summary: Update the Task by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Update the Task for the given ID
   operationId: updateTaskById
   parameters:

@@ -3,8 +3,6 @@ get:
     - CustomUserDefinition
   summary: Finds the CustomUserDefinition by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single CustomUserDefinition for the given ID
   operationId: getCustomUserDefinitionById
   parameters:
@@ -35,8 +33,6 @@ delete:
     - CustomUserDefinition
   summary: Delete the CustomUserDefinition by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Delete the single CustomUserDefinition for the given ID
   operationId: deleteCustomUserDefinitionById
   parameters:

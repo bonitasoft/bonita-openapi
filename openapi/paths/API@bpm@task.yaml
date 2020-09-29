@@ -3,8 +3,6 @@ get:
     - Task
   summary: Finds Tasks
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds Tasks with pagination params and filters
 
     - can order on `caseId`, `processId`, `state`, `type`, `supervisor_id`, `last_update_date`

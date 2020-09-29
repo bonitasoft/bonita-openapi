@@ -3,8 +3,6 @@ get:
     - Case
   summary: Finds Cases
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds Cases with pagination params and filters
 
     You can filter on:
@@ -47,7 +45,7 @@ post:
     - Case
   summary: Create the Case
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
 
     Create the Case
     This way of creating a case using this method will only work for processes in which no contract is defined. To instantiate a process with a contract, check the process instantiation resource documentation.
@@ -103,7 +101,7 @@ delete:
     - Case
   summary: Delete the Case by batch
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
 
     Delete a list of Cases for the given IDs
   operationId: deleteCaseByIds

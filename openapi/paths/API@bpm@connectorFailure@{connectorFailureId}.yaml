@@ -3,8 +3,6 @@ get:
     - ConnectorFailure
   summary: Finds the ConnectorFailure by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single ConnectorFailure for the given ID
   operationId: getConnectorFailureById
   parameters:

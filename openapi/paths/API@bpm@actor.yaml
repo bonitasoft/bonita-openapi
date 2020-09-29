@@ -3,8 +3,6 @@ get:
     - Actor
   summary: Finds Actors
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds Actors with pagination params and filters
   operationId: findActors
   parameters:

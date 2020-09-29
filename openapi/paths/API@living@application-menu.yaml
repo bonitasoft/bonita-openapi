@@ -3,8 +3,6 @@ get:
     - ApplicationMenu
   summary: Finds application menus
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns application menus with pagination params and filters
 
     - can order on `id`, `displayName`, `applicationId`, `applicationPageId`, `menuIndex`, `parentMenuId`
@@ -44,8 +42,6 @@ post:
     - ApplicationMenu
   summary: New application menu item
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Create an application menu item
   operationId: createApplicationMenu
   requestBody:

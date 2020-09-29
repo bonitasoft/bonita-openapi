@@ -3,8 +3,6 @@ get:
     - ArchivedFlowNode
   summary: Finds the ArchivedFlowNode by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single ArchivedFlowNode for the given ID
   operationId: getArchivedFlowNodeById
   parameters:

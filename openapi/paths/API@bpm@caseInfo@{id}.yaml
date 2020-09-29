@@ -3,8 +3,6 @@ get:
     - CaseInfo
   summary: Finds the CaseInfo by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single CaseInfo for the given ID
   operationId: getCaseInfoById
   parameters:

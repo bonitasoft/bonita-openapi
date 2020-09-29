@@ -3,8 +3,6 @@ get:
     - CaseComment
   summary: Finds CaseComments
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds CaseComments with pagination params and filters
 
     - can order on `postDate`
@@ -42,8 +40,6 @@ post:
     - CaseComment
   summary: Create the CaseComment
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Create the CaseComment
   operationId: createCaseComment
   requestBody:

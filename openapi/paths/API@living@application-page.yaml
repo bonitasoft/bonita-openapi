@@ -3,8 +3,6 @@ get:
     - ApplicationPage
   summary: Finds application pages
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds application pages with pagination params and filters
 
     - can order on `id`, `token`, `applicationId`, `pageId`
@@ -46,8 +44,6 @@ post:
     - ApplicationPage
   summary: Create an application page
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Create an application page
   operationId: createApplicationPage
   requestBody:

@@ -3,8 +3,6 @@ get:
     - Case
   summary: Finds the Case by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single Case for the given ID
   operationId: getCaseById
   parameters:
@@ -42,8 +40,6 @@ delete:
     - Case
   summary: Delete the Case by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Delete the single Case for the given ID
   operationId: deleteCaseById
   parameters:

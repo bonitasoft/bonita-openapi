@@ -3,8 +3,6 @@ get:
     - BusinessDataQuery
   summary: Finds Business Data
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds Business Data with pagination params and filters by calling a `Named Query`.
     The business data query REST API resource is used to call a default or custom business data query. It is available from version 6.5.
 

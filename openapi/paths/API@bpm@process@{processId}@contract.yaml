@@ -3,8 +3,6 @@ get:
     - Process
   summary: Finds the Process contract by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the process contract for the given ID
   operationId: getProcessContractById
   parameters:

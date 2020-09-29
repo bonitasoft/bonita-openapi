@@ -3,8 +3,6 @@ get:
     - Authentication
   summary: Logout the current user
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Logout the current user from the system
   operationId: logout
   parameters:

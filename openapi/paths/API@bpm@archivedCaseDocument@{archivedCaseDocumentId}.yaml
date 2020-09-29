@@ -3,8 +3,6 @@ delete:
     - ArchivedCaseDocument
   summary: Delete the ArchivedCaseDocument by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Delete the single ArchivedCaseDocument for the given ID
   operationId: deleteArchivedCaseDocumentById
   parameters:

@@ -3,8 +3,6 @@ post:
     - Message
   summary: Send BPM message events
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Use this resource to send BPM message events. Message events are caught by processes using `catch message event` flow nodes (Start, intermediate, boundary or receive tasks).
   operationId: createMessage
   requestBody:

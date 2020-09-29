@@ -3,8 +3,6 @@ get:
     - CustomUserDefinition
   summary: Finds CustomUserDefinitions
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds CustomUserDefinitions. There are no filters, and no search terms. All the definitions are returned.
 
   operationId: findCustomUserDefinitions
@@ -37,8 +35,6 @@ post:
     - CustomUserDefinition
   summary: Create the CustomUserDefinition
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Create the CustomUserDefinition
   operationId: createCustomUserDefinition
   requestBody:

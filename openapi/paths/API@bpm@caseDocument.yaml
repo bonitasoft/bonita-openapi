@@ -3,8 +3,6 @@ get:
     - CaseDocument
   summary: Finds CaseDocuments
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds CaseDocuments with pagination params and filters
 
     It is possible to filter on three parameters: `submittedBy`, `name` and `description`.
@@ -48,8 +46,6 @@ post:
     - CaseDocument
   summary: Create the CaseDocument
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Create the CaseDocument.
 
     Use a POST method to add a document to a case. You can upload a document from the local file system or by URL.

@@ -3,8 +3,6 @@ get:
     - ActorMember
   summary: Finds ActorMembers
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Finds ActorMembers with pagination params and filters
 
     There is a **mandatory** filter on:

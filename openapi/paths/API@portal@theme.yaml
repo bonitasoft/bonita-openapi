@@ -3,8 +3,6 @@ post:
     - Theme
   summary: Create the Theme
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Create the Theme
   operationId: createTheme
   requestBody:

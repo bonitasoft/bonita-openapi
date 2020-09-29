@@ -3,8 +3,6 @@ get:
     - XXX
   summary: Finds the XXX by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single XXX for the given ID
   operationId: getXXXById
   parameters:
@@ -35,8 +33,6 @@ put:
     - XXX
   summary: Update the XXX by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Update the XXX for the given ID
   operationId: updateXXXById
   parameters:
@@ -80,8 +76,6 @@ delete:
     - XXX
   summary: Delete the XXX by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Delete the single XXX for the given ID
   operationId: deleteXXXById
   parameters:

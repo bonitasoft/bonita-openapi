@@ -3,8 +3,6 @@ get:
     - CaseDocument
   summary: Finds the CaseDocument by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Returns the single CaseDocument for the given ID.
     Use a GET method to get a document from a case. First you get the document information, then you download the content. To get the document information, specify the document id in the URL. The document id is created when you upload a document to a case. There is no payload.
   operationId: getCaseDocumentById
@@ -39,8 +37,6 @@ put:
     - CaseDocument
   summary: Update the CaseDocument by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Update the CaseDocument for the given ID
 
     You update a document in a case by uploading a new version of the document using a PUT method. You can upload a document version from the local file system or by URL. The document name will be used in all the cases of the process, but the combination of case id and document name is unique.
@@ -98,8 +94,6 @@ delete:
     - CaseDocument
   summary: Delete the CaseDocument by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
     Delete the single CaseDocument for the given ID
   operationId: deleteCaseDocumentById
   parameters:
