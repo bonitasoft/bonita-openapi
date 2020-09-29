@@ -3,8 +3,6 @@ get:
     - User
   summary: Finds Users
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Finds Users with pagination params and filters
 
     - can order on `id`
@@ -44,8 +42,6 @@ post:
     - User
   summary: Create the User
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Create the User
   operationId: createUser
   requestBody:

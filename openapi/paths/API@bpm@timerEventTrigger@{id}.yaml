@@ -3,8 +3,6 @@ get:
     - TimerEventTrigger
   summary: Finds the TimerEventTrigger by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Returns the single TimerEventTrigger for the given ID
   operationId: getTimerEventTriggerById
   parameters:
@@ -35,8 +33,6 @@ put:
     - TimerEventTrigger
   summary: Update the TimerEventTrigger by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Update the TimerEventTrigger for the given ID
   operationId: updateTimerEventTriggerById
   parameters:

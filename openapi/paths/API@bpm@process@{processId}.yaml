@@ -3,8 +3,6 @@ get:
     - Process
   summary: Finds the Process by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Returns the single Process for the given ID
   operationId: getProcessById
   parameters:
@@ -35,8 +33,6 @@ put:
     - Process
   summary: Update the Process by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Update the Process for the given ID
   operationId: updateProcessById
   parameters:
@@ -83,8 +79,6 @@ delete:
     - Process
   summary: Delete the Process by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Delete the single Process for the given ID.
 
     **Warning: Beware! Data loss risk!**

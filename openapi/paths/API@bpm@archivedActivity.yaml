@@ -3,8 +3,6 @@ get:
     - ArchivedActivity
   summary: Finds Archived Activities
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Finds Archived  Activities with pagination params and filters. Activities in states completed, cancelled, or aborted are not retrieved. The search returns an array of activities.
 
     Can order on:

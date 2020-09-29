@@ -3,8 +3,6 @@ post:
     - Application
   summary: Import a living application
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Import a single application
   operationId: importApplication
   requestBody:

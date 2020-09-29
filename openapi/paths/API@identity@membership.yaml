@@ -3,8 +3,6 @@ get:
     - Membership
   summary: Finds Memberships
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Finds Memberships with pagination params and filters
 
     **Filter `user_id` is mandatory**
@@ -44,8 +42,6 @@ post:
     - Membership
   summary: Create the Membership
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Create the Membership
   operationId: createMembership
   requestBody:

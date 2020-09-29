@@ -3,8 +3,6 @@ get:
     - Case
   summary: Finds the Context by Case ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Returns the Context for the given Case ID
   operationId: getContextByCaseId
   parameters:

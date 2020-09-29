@@ -3,8 +3,6 @@ get:
     - CustomUserValue
   summary: Finds CustomUserValues
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Finds CustomUserValues with pagination params and filters
 
     You can filter on `userId`, `value`, `definitionId`

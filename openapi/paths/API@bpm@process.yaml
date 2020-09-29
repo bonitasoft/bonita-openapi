@@ -3,8 +3,6 @@ get:
     - Process
   summary: Finds Processs
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Finds Processs with pagination params and filters
 
     - can order (default is ASC) on `name`, `version`, `deploymentDate`, `deployedBy`, `activationState`, `configurationState`, `processId`, `displayName`, `lastUpdateDate`, `categoryId`, `label`
@@ -44,8 +42,6 @@ post:
     - Process
   summary: Create the Process
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Create the Process.
     A process resource is created using the content of a .bar file that has previously been uploaded, using the processUpload servlet http://.../bonita/portal/processUpload, to get the process archive path.
   operationId: createProcess
@@ -82,8 +78,6 @@ delete:
     - Process
   summary: Delete the Process by IDs
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Delete Process for the given list of ID.
 
     **Warning: Beware! Data loss risk!**

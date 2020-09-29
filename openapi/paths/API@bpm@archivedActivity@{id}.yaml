@@ -3,8 +3,6 @@ get:
     - ArchivedActivity
   summary: Finds the Archived Activity by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Returns the single Archived Activity for the given ID
   operationId: getArchivedActivityById
   parameters:

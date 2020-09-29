@@ -3,8 +3,6 @@ get:
     - Activity
   summary: Finds the Activity by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Returns the single Activity for the given ID
   operationId: getActivityById
   parameters:
@@ -35,8 +33,6 @@ put:
     - Activity
   summary: Update the Activity by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Update the Activity for the given ID
   operationId: updateActivityById
   parameters:

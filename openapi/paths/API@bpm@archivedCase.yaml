@@ -3,8 +3,6 @@ get:
     - ArchivedCase
   summary: Finds ArchivedCases
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Finds ArchivedCases with pagination params and filters
 
     You can order on `id`, `processDefinitionId`, `startedBy`, `startedBySubstitute`, `startDate`, `endDate`, `lastUpdate`, `archivedDate`, `sourceObjectId`
