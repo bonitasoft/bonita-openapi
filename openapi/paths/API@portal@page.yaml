@@ -3,8 +3,6 @@ get:
     - Page
   summary: Finds Pages
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Finds Pages with pagination params and filters
 
     - can search on `displayName`,`description`
@@ -43,8 +41,6 @@ post:
     - Page
   summary: Create the Page
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Upload the page content using the `portal/pageUpload` . This returns a temporary file name that can be used as input for this operation.
 
   operationId: createPage

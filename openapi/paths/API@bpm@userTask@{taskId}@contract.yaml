@@ -3,8 +3,6 @@ get:
     - UserTask
   summary: Finds the Contract by UserTask ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Returns the Contract for the given UserTask ID
   operationId: getContractByUserTaskId
   parameters:

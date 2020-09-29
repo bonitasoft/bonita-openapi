@@ -3,8 +3,6 @@ get:
     - CaseVariable
   summary: Finds the Variable by Case ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Returns the single Variable for the given Case ID
   operationId: getVariableByCaseId
   parameters:
@@ -41,8 +39,6 @@ put:
     - CaseVariable
   summary: Update a Variable by Case ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Update the variable for the given Case ID.
 
     **Warning** : only following types are supported for javaTypeclassname: `java.lang.String`, `java.lang.Integer`, `java.lang.Double`, `java.lang.Long`, `java.lang.Boolean`, `java.util.Date`

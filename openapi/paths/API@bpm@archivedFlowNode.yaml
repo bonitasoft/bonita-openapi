@@ -3,8 +3,6 @@ get:
     - ArchivedFlowNode
   summary: Finds ArchivedFlowNodes
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Finds ArchivedFlowNodes with pagination params and filters
 
     - can order on `name`, `displayName`, `state`, `type`, `isTerminal`, `processId`, `caseId`, `archivedDate`

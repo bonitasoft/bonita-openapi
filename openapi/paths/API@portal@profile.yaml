@@ -3,8 +3,6 @@ get:
     - Profile
   summary: Finds Profiles
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Finds Profiles with pagination params and filters
 
     - can search on `name`
@@ -42,8 +40,6 @@ post:
     - Profile
   summary: Create the Profile
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Create the Profile
   operationId: createProfile
   requestBody:

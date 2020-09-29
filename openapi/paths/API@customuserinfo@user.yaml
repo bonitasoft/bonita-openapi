@@ -3,8 +3,6 @@ get:
     - CustomUser
   summary: Finds CustomUsers
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Finds CustomUsers with pagination params and filters
 
     **The filter `userId` is mandatory**

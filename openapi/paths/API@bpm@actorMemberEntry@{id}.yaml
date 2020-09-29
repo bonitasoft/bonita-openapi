@@ -3,8 +3,6 @@ get:
     - ActorMember
   summary: Finds the ActorMember by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Returns the single ActorMember for the given ID
   operationId: getActorMemberById
   parameters:
@@ -35,8 +33,6 @@ delete:
     - ActorMember
   summary: Delete the ActorMember by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Delete the single ActorMember for the given ID
   operationId: deleteActorMemberById
   parameters:

@@ -3,8 +3,6 @@ get:
     - FlowNode
   summary: Finds FlowNodes
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
-
     Finds FlowNodes with pagination params and filters
 
     - can order on `name`, `displayName`, `state`, `processDefinitionId`, `parentProcessInstanceId`, `parentActivityInstanceId` (if the retrieved flow nodes are activities, order by parent activity id), `rootProcessInstanceId`, `lastUpdateDate`
