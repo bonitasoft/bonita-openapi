@@ -11,8 +11,7 @@ get:
       name: groupId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       description: successful operation
@@ -41,8 +40,7 @@ put:
       name: groupId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   requestBody:
     content:
       application/json:
@@ -71,8 +69,7 @@ put:
               type: string
             created_by_user_id:
               description: "id of the user who created the group (-1 if the group was created by the tenant admin or by an organisation import)"
-              type: integer
-              format: int64
+              type: string
             last_update_date:
               description: "last update date (format: `2014-12-31 15:17:24.736`)"
               type: string
@@ -108,8 +105,7 @@ delete:
       name: groupId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'

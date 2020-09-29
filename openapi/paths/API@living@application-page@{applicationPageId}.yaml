@@ -11,8 +11,7 @@ get:
       name: applicationPageId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       description: successful operation
@@ -42,8 +41,7 @@ delete:
       name: applicationPageId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'

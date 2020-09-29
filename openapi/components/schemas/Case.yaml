@@ -3,8 +3,7 @@ description: "Case is an instance of a process. When you start a process, it cre
 properties:
   id:
     description: "the identifier of the case"
-    type: integer
-    format: int64
+    type: string
   end_date:
     description: "the date set when the case is closed"
     type: string
@@ -25,16 +24,13 @@ properties:
     type: string
   rootCaseId:
     description: "the identifier of the container of the case"
-    type: integer
-    format: int64
+    type: string
   started_by:
     description: "the identifier of the user who started the case"
-    type: integer
-    format: int64
+    type: string
   processDefinitionId:
     description: "the identifier of the process related of the case"
-    type: integer
-    format: int64
+    type: string
   last_update_date:
     description: "the date of the last update done on the case"
     type: string

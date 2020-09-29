@@ -11,8 +11,7 @@ get:
       name: caseId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       description: successful operation

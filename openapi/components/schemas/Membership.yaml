@@ -10,16 +10,13 @@ properties:
     format: int64
   assigned_by_user_id:
     description: "id of the user who created the membership (-1 if the role was created by the tenant admin or by an organisation import)"
-    type: integer
-    format: int64
+    type: string
   group_id:
     description: "id of the group of this membership"
-    type: integer
-    format: int64
+    type: string
   user_id:
     description: "id of the user in this membership"
-    type: integer
-    format: int64
+    type: string
 example:
   assigned_date: "2014-12-02 17:57:09.315"
   role_id": 4

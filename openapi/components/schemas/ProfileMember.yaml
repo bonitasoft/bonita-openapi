@@ -3,24 +3,19 @@ description: "Profile member"
 properties:
   id:
     description: "profile member id"
-    type: integer
-    format: int64
+    type: string
   profile_id:
     description: "id of the profile for this mapping"
-    type: integer
-    format: int64
+    type: string
   role_id:
     description: "id of role, or -1 if the member type is not role"
-    type: integer
-    format: int64
+    type: string
   group_id:
     description: "id of group, or -1 if the member type is not group"
-    type: integer
-    format: int64
+    type: string
   user_id:
     description: "id of user, or -1 if the member type is not user"
-    type: integer
-    format: int64
+    type: string
 example:
   id: 204
   profile_id: 2

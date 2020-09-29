@@ -5,8 +5,7 @@ required:
 properties:
   id:
     description: "user ID"
-    type: integer
-    format: int64
+    type: string
   fax_number:
     description: "fax number"
     type: string

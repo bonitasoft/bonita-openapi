@@ -17,8 +17,6 @@ get:
         application/json:
           schema:
             $ref: '../components/schemas/Session.yaml'
-#          example:
-#            $ref: "../components/examples/Session.yaml"
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

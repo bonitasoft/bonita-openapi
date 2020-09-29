@@ -11,8 +11,7 @@ delete:
       name: archivedCaseDocumentId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'

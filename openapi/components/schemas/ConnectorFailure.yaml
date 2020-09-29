@@ -6,8 +6,7 @@ properties:
     type: string
   connectorInstanceId:
     description: "the ID of the connector instance (see connectorInstance resource documentation)"
-    type: integer
-    format: int64
+    type: string
   errorStackTrace:
     description: "the stack trace of the error"
     type: string

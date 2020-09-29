@@ -3,20 +3,16 @@ description: "The process supervisor has management rights over a process. He ca
 properties:
   process_id:
     description: "Id of the process"
-    type: integer
-    format: int64
+    type: string
   role_id:
     description: "Id of role, or -1 if the supervisor type is not role or membership"
-    type: integer
-    format: int64
+    type: string
   group_id:
     description: "Id of group, or -1 if the supervisor type is not group or membership"
-    type: integer
-    format: int64
+    type: string
   user_id:
     description: "Id of user, or -1 if the supervisor type is not user"
-    type: integer
-    format: int64
+    type: string
 example:
   process_id: 8040901857674754544
   user_id: 2

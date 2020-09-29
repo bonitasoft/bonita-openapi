@@ -1,5 +1,5 @@
 type: string
-description: "the priority (string) of the current activity"
+description: "the priority of the current activity"
 enum:
   - highest
   - above_normal

@@ -3,8 +3,7 @@ description: ""
 properties:
   id:
     description: "BDM id"
-    type: integer
-    format: int64
+    type: string
   name:
     description: "BDM name"
     type: string
@@ -18,12 +17,11 @@ properties:
   lastUpdatedBy:
     description: "This value is always -1 because only the tenant_technical_user can install BDM."
     type: integer
-    format: int64
-    default: -1
+    format: string
+    default: "-1"
   lastUpdateDate:
     description: "Last date when the BDM was installed or updated."
     type: string
-
 example:
   id: "309"
   name: "client_bdm.zip"

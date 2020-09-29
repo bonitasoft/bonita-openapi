@@ -50,7 +50,7 @@ post:
         schema:
           $ref: '../components/schemas/ProfessionalContactData.yaml'
         example:
-          id: 4
+          id: "4"
           fax_number: "484-302-0766"
           building: "70"
           phone_number: "484-302-5766"

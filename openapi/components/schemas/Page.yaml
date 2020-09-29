@@ -2,16 +2,13 @@ type: object
 properties:
   id:
     description: page id
-    format: int64
-    type: integer
+    format: string
   creationDate:
     description: date and time
-    format: int64
-    type: integer
+    type: string
   createdBy:
     description: created by user id
-    format: int64
-    type: integer
+    type: string
   isProvided:
     description: is provided
     type: boolean

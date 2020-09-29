@@ -3,15 +3,13 @@ description: "This resource enables you to retrieve the value of a specific vari
 properties:
   tenantId:
     description: "The ID of the tenant where the current user is logged in (technical information)"
-    type: integer
-    format: int64
+    type: string
   tenantId_string:
     description: "number (since 7.0.1)"
     type: string
   id:
     description: "The identifier of the variable"
-    type: integer
-    format: int64
+    type: string
   id_string:
     description: "number (since 7.0.1)"
     type: string
@@ -29,8 +27,7 @@ properties:
     type: string
   containerId:
     description: "The ID of the activity containing this variable (same as the one passed as parameter) if the variable is defined at activity level or ID of the process instance if the variable is defined on the process"
-    type: integer
-    format: int64
+    type: string
   containerId_string:
     description: "number (since 7.0.1)"
     type: string

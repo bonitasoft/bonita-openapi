@@ -12,8 +12,7 @@ properties:
     type: string
   case_id:
     description: "ID of the case this variable belongs to"
-    type: integer
-    format: int64
+    type: string
   type:
     description: "the Java type of the variable"
     type: string

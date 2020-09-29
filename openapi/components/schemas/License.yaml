@@ -6,15 +6,13 @@ properties:
     type: string
   duration:
     description: "number of days for license file validity"
-    type: integer
-    format: int64
+    type: string
   licenseExpirationDate:
     description: "date with format `yyyy-MM-dd` - last day (included) of license file validity"
     type: string
   numberOfCPUCores:
     description: "number of CPUs"
-    type: integer
-    format: int64
+    type: string
   edition:
     description: "name of the Bonita edition enabled by the license"
     type: string

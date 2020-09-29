@@ -3,26 +3,22 @@ description: ""
 properties:
   id:
     description: "the comment id"
-    type: integer
-    format: int64
+    type: string
   content:
     description: "the comment content"
     type: string
   tenantId:
     description: "the id of the tenant the comment is associated to"
-    type: integer
-    format: int64
+    type: string
   processInstanceId:
     description: "the process instance(case) the comment is associated to"
-    type: integer
-    format: int64
+    type: string
   postDate:
     description: "the comment creation date"
     type: string
   userId:
     description: "the user that created the comment"
-    type: integer
-    format: int64
+    type: string
 example:
   content: "Need to review the last inputs of this case"
   tenantId: "1"

@@ -12,8 +12,7 @@ post:
       in: path
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
     - name: assign
       description: if true, assign the task to the current user and execute the task
       in: query
@@ -25,7 +24,6 @@ post:
       application/json:
         schema:
           type: object
-          properties: {}
           additionalProperties: true
         example:
           ticket_comment: "this is a comment"

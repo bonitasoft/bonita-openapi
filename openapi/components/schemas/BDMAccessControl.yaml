@@ -2,8 +2,7 @@ type: object
 properties:
   id:
     description: Id of the BDM access control
-    type: integer
-    format: int64
+    type: string
   name:
     description: BDM access control name
     type: string
