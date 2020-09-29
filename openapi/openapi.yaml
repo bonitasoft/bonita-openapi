@@ -156,12 +156,6 @@ tags:
     x-displayName: ApplicationPage
     description: |
       An application page is a custom page that has been associated with an application. Use this resource to manage application pages and define the paths used to access them. This list of pages will be used to build the application menus.
-  - name: ApplicationTheme
-    x-displayName: ApplicationTheme
-    description: >-
-      This API is available in Subscription editions only
-
-      Manage applications theme. This enables you to modify your application theme.
   - name: ArchivedActivity
     x-displayName: ArchivedActivity
     description: |
