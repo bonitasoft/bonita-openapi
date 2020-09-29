@@ -60,7 +60,7 @@ delete:
       $ref: '../components/responses/ServerError.yaml'
 put:
   tags:
-    - ApplicationTheme
+    - Application
   summary: Update a living application by ID
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
