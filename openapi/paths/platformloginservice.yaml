@@ -1,6 +1,7 @@
 post:
   tags:
     - Platform
+    - PlatformAuthentication
   operationId: platformLogin
   summary: Platform Login
   description: |

@@ -1,6 +1,7 @@
 post:
   tags:
     - Authentication
+    - PortalAuthentication
   operationId: login
   security: []
   summary: Login

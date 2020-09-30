@@ -22,6 +22,10 @@ security:
   - bonita_auth: [ ]
     bonita_token: [ ]
 x-tagGroups:
+  - name: Authentication
+    tags:
+      - PortalAuthentication
+      - PlatformAuthentication
   - name: Application
     tags:
       - Application
@@ -174,9 +178,12 @@ tags:
   - name: ArchivedUserTask
     x-displayName: ArchivedUserTask
     description: ArchivedUserTask
-  - name: Authentication
-    x-displayName: Authentication endpoints
-    description: Authentication endpoints
+  - name: PortalAuthentication
+    x-displayName: Portal Authentication
+    description: Portal Authentication
+  - name: PlatformAuthentication
+    x-displayName: Platform Authentication
+    description: Platform Authentication
   - name: BDM
     x-displayName: Business Data Model
     description: |
@@ -269,9 +276,6 @@ tags:
   - name: Platform
     x-displayName: Platform
     description: The Platform API resources require a platform session. In order to get one, log in as the platform administrator using the platform login service.
-  - name: PlatformAuthentication
-    x-displayName: PlatformAuthentication
-    description: PlatformAuthentication
   - name: PlatformTenant
     x-displayName: PlatformTenant
     description: PlatformTenant

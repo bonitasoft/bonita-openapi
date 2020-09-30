@@ -1,6 +1,7 @@
 post:
   tags:
     - Platform
+    - PlatformAuthentication
   operationId: platformLogout
   summary: Platform Logout
 #  FIXME: This resource is not clear ! create a session

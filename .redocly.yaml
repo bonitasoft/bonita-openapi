@@ -1,4 +1,5 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
+# https://github.com/Redocly/redoc#redoc-options-object
 apiDefinitions:
   main: openapi/openapi.yaml
 lint:
@@ -9,6 +10,7 @@ lint:
 referenceDocs:
   htmlTemplate: ./docs/index.html
   menuToggle: true
+  noAutoAuth: true
   requiredPropsFirst: true
   pathInMiddlePanel: true
 #  theme:
