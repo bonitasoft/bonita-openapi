@@ -1,22 +1,16 @@
 put:
   tags:
     - Theme
-  summary: Update the Theme by ID
+  summary: Restore default Theme
   description: |
-    Restore a default theme
-  operationId: updateTheme
+    Restore the default theme
+  operationId: restoreTheme
   requestBody:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            type:
-              description: theme type
-              type: string
-              enum: [ portal, mobile ]
-        example:
-          type: "portal"
+           $ref: '../components/schemas/ThemeRestoreRequest.yaml'
+         
     description: Partial Theme description
     required: true
   responses:

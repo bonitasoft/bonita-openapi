@@ -45,22 +45,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - name
-          properties:
-            name:
-              description: "name"
-              type: string
-            displayName:
-              description: "display name"
-              type: string
-            description:
-              description: "description"
-              type: string
-            icon:
-              description: "icon path"
-              type: string
+         $ref: '../components/schemas/RoleUpdateRequest.yaml'
     description: Partial Role description
     required: true
   responses:

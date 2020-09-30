@@ -47,27 +47,7 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - name
-          properties:
-            name:
-              description: "name"
-              type: string
-            displayName:
-              description: "display name"
-              type: string
-            description:
-              description: "description"
-              type: string
-            icon:
-              description: "icon path"
-              type: string
-        example:
-          icon: ""
-          name: "manager"
-          displayName: "department manager"
-          description: "manager of the department"
+          $ref: '../components/schemas/RoleCreateRequest.yaml'
     description: Partial Role description
     required: true
   responses:

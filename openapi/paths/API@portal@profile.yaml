@@ -46,17 +46,7 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            description:
-              description: "a description of the profile"
-              type: string
-            name:
-              description: "profile name"
-              type: string
-        example:
-          name: "MyCustomProfile"
-          description: "This is my custom profile"
+           $ref: '../components/schemas/ProfileCreateRequest.yaml'
     description: Partial Profile description
     required: true
   responses:

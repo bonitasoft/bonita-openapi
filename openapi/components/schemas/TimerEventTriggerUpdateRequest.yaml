@@ -1,0 +1,8 @@
+type: object
+properties:
+   executionDate:
+     description: executionDate of the TimerEventTrigger
+     type: integer
+     format: int64
+example:
+   executionDate: 1433980484194

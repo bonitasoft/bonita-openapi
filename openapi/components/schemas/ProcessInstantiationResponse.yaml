@@ -1,0 +1,6 @@
+type: object
+properties:
+  caseId:
+    type: string
+example:
+   caseId: "12345678"

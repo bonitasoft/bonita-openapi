@@ -1,0 +1,34 @@
+type: object
+required:
+- name
+properties:
+   name:
+     description: "name"
+     type: string
+   displayName:
+     description: "display name"
+     type: string
+   parent_path:
+     description: "the path of the parent group of this group (empty if the group has no parent)"
+     type: string
+   path:
+     description: "the full path of the group (including its parent path)"
+     type: string
+   description:
+     description: "description"
+     type: string
+   creation_date:
+     description: "creation date (format: `2014-12-31 15:17:24.736`)"
+     type: string
+   created_by_user_id:
+     description: "id of the user who created the group (-1 if the group was created by the tenant admin or by an organisation import)"
+     type: string
+   last_update_date:
+     description: "last update date (format: `2014-12-31 15:17:24.736`)"
+     type: string
+   icon:
+     description: "icon path"
+     type: string
+example:
+   name: "HR"
+   displayName: "Humman resources"

@@ -1,0 +1,11 @@
+type: object
+properties:
+   description:
+     description: description of the Profile
+     type: string
+   displayName:
+     description: display name of the Profile
+     type: string
+example:
+   displayName: "My app"
+   description: "My application description"

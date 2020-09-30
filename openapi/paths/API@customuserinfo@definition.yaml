@@ -41,17 +41,7 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            name:
-              description: "definition name"
-              type: string
-            description:
-              description: "definition description"
-              type: string
-        example:
-          name: "skill"
-          description: "Team player"
+           $ref: '../components/schemas/CustomUserDefinitionCreateRequest.yaml'
     description: Partial CustomUserDefinition description
     required: true
   responses:

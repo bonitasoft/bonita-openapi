@@ -31,14 +31,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            state:
-              description: Platform state
-              type: string
-              enum: [start, stop]
-        example:
-          state: "stop"
+          $ref: '../components/schemas/PlatformUpdateRequest.yaml'
     description: Start or stop all services of the current JVM.
     required: true
   responses:

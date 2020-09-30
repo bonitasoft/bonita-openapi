@@ -31,13 +31,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            paused:
-              description: "wether the system tenant should be paused or not"
-              type: boolean
-        example:
-          paused: true
+          $ref: '../components/schemas/TenantPauseRequest.yaml'
     description: Partial SystemTenant description
     required: true
   responses:

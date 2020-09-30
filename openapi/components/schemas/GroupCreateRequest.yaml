@@ -1,0 +1,27 @@
+type: object
+required:
+- name
+properties:
+   name:
+     description: "name"
+     type: string
+   displayName:
+     description: "display name"
+     type: string
+   parent_path:
+     description: "the path of the parent group of this group (empty if the group has no parent)"
+     type: string
+   path:
+     description: "the full path of the group (including its parent path)"
+     type: string
+   description:
+     description: "description"
+     type: string
+   icon:
+     description: "icon path"
+     type: string
+example:
+   icon: ""
+   name: "HR"
+   displayName: "Human Resources"
+   description: "Human resources department"

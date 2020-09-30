@@ -1,0 +1,31 @@
+type: object
+properties:
+   parentTaskId:
+     description: "The parent task ID"
+     type: string
+   state:
+     description: "The task state"
+     type: string
+   name:
+     description: "The task name"
+     type: string
+   description:
+     description: "The task description"
+     type: string
+   priority:
+     description: "The task priority"
+     type: string
+   dueDate:
+     description: "The task due date"
+     type: string
+   assigned_id:
+     description: "The id of the user assigned to the task"
+     type: string
+example:
+   parentTaskId: "40001"
+   state: "ready"
+   name: "My subtask"
+   description: "This is my subtask"
+   priority: "above_normal"
+   dueDate: "2014-12-25 00:00:00.000"
+   assigned_id: "1"

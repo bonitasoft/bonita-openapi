@@ -47,13 +47,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            state:
-              description: state of the FlowNode
-              type: string
-        example:
-          state: "replay"
+           $ref: '../components/schemas/FlowNodeUpdateRequest.yaml'
     description: Replay the flow node.
     required: true
   responses:

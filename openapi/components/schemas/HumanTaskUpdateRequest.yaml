@@ -1,0 +1,11 @@
+type: object
+properties:
+   assignedId:
+     description: assignedId of the HumanTask
+     type: string
+   state:
+     description: state of the HumanTask
+     type: string
+example:
+   assignedId: "new_user_id"
+   state: "new_state"

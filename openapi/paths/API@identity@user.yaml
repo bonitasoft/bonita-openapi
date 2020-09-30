@@ -48,17 +48,7 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            displayName:
-              description: display name of the User
-              type: string
-            token:
-              description: token of the User used to build the User URL
-              type: string
-        example:
-          token: "myapp"
-          displayName: "My app"
+          $ref: '../components/schemas/UserCreateRequest.yaml'
     description: Partial User description
     required: true
   responses:

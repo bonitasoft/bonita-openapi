@@ -59,13 +59,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            value:
-              description: value of the Process Parameter
-              type: string
-        example:
-          value: "myNewValue"
+           $ref: '../components/schemas/ProcessParameterUpdateRequest.yaml'
     description: You can update only a process parameter value using the API. If you specify values for other fields in the update request, they are ignored.
     required: true
   responses:

@@ -45,17 +45,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            description:
-              description: description of the Profile
-              type: string
-            displayName:
-              description: display name of the Profile
-              type: string
-        example:
-          displayName: "My app"
-          description: "My application description"
+          $ref: '../components/schemas/ProfileUpdateRequest.yaml'
     description: Partial Profile description
     required: true
   responses:

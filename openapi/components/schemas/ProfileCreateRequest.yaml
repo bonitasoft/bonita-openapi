@@ -1,0 +1,11 @@
+type: object
+properties:
+   description:
+     description: "a description of the profile"
+     type: string
+   name:
+     description: "profile name"
+     type: string
+example:
+   name: "MyCustomProfile"
+   description: "This is my custom profile"

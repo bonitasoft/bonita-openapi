@@ -22,13 +22,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            value:
-              description: new value to set
-              type: string
-        example:
-          value: "My new value"
+           $ref: '../components/schemas/CustomUserValueUpdateRequest.yaml'
     description: Custom user defition Value
     required: true
   responses:

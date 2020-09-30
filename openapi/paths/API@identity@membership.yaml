@@ -48,25 +48,7 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - role_id
-            - group_id
-            - user_id
-          properties:
-            role_id:
-              description: "id of the role of this membership"
-              type: string
-            group_id:
-              description: "id of the group of this membership"
-              type: string
-            user_id:
-              description: "id of the user in this membership"
-              type: string
-        example:
-          user_id: "4"
-          group_id: "5"
-          role_id: "1"
+           $ref: '../components/schemas/MembershipCreateRequest.yaml'          
     description: Partial Membership description
     required: true
   responses:

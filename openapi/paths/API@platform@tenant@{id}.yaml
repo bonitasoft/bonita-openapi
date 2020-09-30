@@ -49,25 +49,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            name:
-              description: "the name of the tenant"
-              type: string
-            description:
-              description: "the description"
-              type: string
-            username:
-              description: "the username"
-              type: string
-            password:
-              description: "the password"
-              type: string
-        example:
-          name: "MyTenant"
-          description: "My tenant"
-          username: "john"
-          password: "bpm"
+          $ref: '../components/schemas/TenantUpdateRequest.yaml'
     description: Partial Tenant description
     required: true
   responses:

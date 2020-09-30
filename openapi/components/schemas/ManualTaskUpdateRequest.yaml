@@ -1,0 +1,11 @@
+type: object
+properties:
+   state:
+     description: State of the ManualTask (completed)
+     type: string
+   executedBy:
+     description: Id of the task executor
+     type: string
+example:
+   state: "completed"
+   executedBy: "1"
