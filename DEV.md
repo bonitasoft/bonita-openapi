@@ -21,6 +21,9 @@ Validates the definition.
 #### `npm run postman`
 Generate postman collections that can imported and runned against a Bonita instance.
 
+#### `npm run package`
+Generate postman collections and the openapi.yaml in the dist folder after running tests.
+
 ## Contribution Guide
 
 Below is a sample contribution guide. The tools
