@@ -24,10 +24,6 @@ get:
       label: "Curl"
       source:
         $ref: '../code_samples/curl/logoutservice/get.bash'
-    - lang: "Java"
-      label: "Java"
-      source:
-        $ref: "../code_samples/java/logoutservice/get.java"
   responses:
     '200':
       description: successful operation

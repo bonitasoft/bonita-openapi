@@ -48,10 +48,6 @@ post:
       label: "Curl"
       source:
         $ref: "../code_samples/curl/loginservice/post.bash"
-    - lang: "Java"
-      label: "Java"
-      source:
-        $ref: "../code_samples/java/loginservice/post.java"
   responses:
     '200':
       description: Login success
