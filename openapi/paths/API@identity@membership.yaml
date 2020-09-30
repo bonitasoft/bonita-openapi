@@ -56,20 +56,17 @@ post:
           properties:
             role_id:
               description: "id of the role of this membership"
-              type: integer
-              format: int64
+              type: string
             group_id:
               description: "id of the group of this membership"
-              type: integer
-              format: int64
+              type: string
             user_id:
               description: "id of the user in this membership"
-              type: integer
-              format: int64
+              type: string
         example:
-          user_id: 4
-          group_id: 5
-          role_id: 1
+          user_id: "4"
+          group_id: "5"
+          role_id: "1"
     description: Partial Membership description
     required: true
   responses:

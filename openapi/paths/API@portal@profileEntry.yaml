@@ -50,8 +50,7 @@ post:
           properties:
             profile_id:
               description: "id of the profile that contains this profileEntry"
-              type: integer
-              format: int64
+              type: string
             page:
               description: "pageToken (menu name or menu item name) used in a portal menu to identify the page associated with the profileEntry"
               type: string
@@ -69,13 +68,12 @@ post:
               type: boolean
             parent_id:
               description: "id or parent profileEntry if in a folder"
-              type: integer
-              format: int64
+              type: string
         example:
           page: "tasklistingadmin"
-          parent_id: 0
+          parent_id: "0"
           name: "Test menu"
-          profile_id: 102
+          profile_id: "102"
           type: "link"
           isCustom: false
     description: Partial ProfileEntry description

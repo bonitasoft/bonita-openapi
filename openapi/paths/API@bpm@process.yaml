@@ -94,12 +94,11 @@ delete:
         schema:
           type: array
           items:
-            type: integer
-            format: int64
+            type: string
         example:
-          - 1
-          - 2
-          - 3
+          - "1"
+          - "2"
+          - "3"
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'

@@ -12,8 +12,7 @@ get:
       name: documentId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       description: |
@@ -49,8 +48,7 @@ put:
       name: documentId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   requestBody:
     content:
       application/json:
@@ -102,8 +100,7 @@ delete:
       name: documentId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'

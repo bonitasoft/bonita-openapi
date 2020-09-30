@@ -13,8 +13,7 @@ put:
       name: id
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   requestBody:
     content:
       application/json:
@@ -23,13 +22,12 @@ put:
           properties:
             pageId:
               description: pageId of the FormMapping
-              type: integer
-              format: int64
+              type: string
             url:
               description: url of the FormMapping
               type: string
         example:
-          pageId: 123
+          pageId: "123"
           url: "http://somewhe.re/over/the/rainbow"
     description: "Representation of the form mapping attribute to update - {'pageId': (long)} or {'url': (string)} or {} to set the mapping type to NONE"
     required: true

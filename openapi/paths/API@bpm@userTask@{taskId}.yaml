@@ -11,8 +11,7 @@ get:
       name: taskId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       description: successful operation
@@ -44,8 +43,7 @@ put:
       name: taskId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   requestBody:
     content:
       application/json:
@@ -57,10 +55,9 @@ put:
               type: string
             assignedId:
               description: The id of the user assign to  the UserTask
-              type: integer
-              format: int64
+              type: string
         example:
-          assignedId: 1
+          assignedId: "1"
           state: "skipped"
     description: Partial UserTask description
     required: true

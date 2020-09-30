@@ -3,8 +3,7 @@ description: "Profile"
 properties:
   id:
     description: "profile id"
-    type: integer
-    format: int64
+    type: string
   creationDate:
     description: "date and time of profile creation"
     type: string
@@ -13,8 +12,7 @@ properties:
     type: string
   createdBy:
     description: "id of the uer who created the profile"
-    type: integer
-    format: int64
+    type: string
   description:
     description: "a description of the profile"
     type: string
@@ -29,8 +27,7 @@ properties:
     type: string
   updatedBy:
     description: "the id of the user who last updated the profile"
-    type: integer
-    format: int64
+    type: string
 example:
   id: 101
   creationDate: "2014-12-04 16:29:23.434"

@@ -5,8 +5,7 @@ allOf:     # Combines the FlowNode and the inline model
     properties:
       sourceObjectId:
         description: "the original id of the flowNode before it was archived"
-        type: integer
-        format: int64
+        type: string
       archivedDate:
         description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current task was assigned for example '2014-10-17 16:05:42.626'"
         type: string

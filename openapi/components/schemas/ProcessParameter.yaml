@@ -3,8 +3,7 @@ description: ""
 properties:
   process_id:
     description: "the identifier of the process definition"
-    type: integer
-    format: int64
+    type: string
   process_name:
     description: "the name of the related process"
     type: string

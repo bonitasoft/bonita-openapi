@@ -11,8 +11,7 @@ get:
       name: applicationId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       content:
@@ -41,8 +40,7 @@ delete:
       name: applicationId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       description: sucessful operation
@@ -67,8 +65,7 @@ put:
       name: applicationId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   requestBody:
     content:
       application/json:

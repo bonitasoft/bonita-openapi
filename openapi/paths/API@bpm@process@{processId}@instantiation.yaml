@@ -12,14 +12,12 @@ post:
       in: path
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   requestBody:
     content:
       application/json:
         schema:
           type: object
-          properties: { }
           additionalProperties: true
         example:
           ticket_account: "CustomerA"
@@ -36,10 +34,9 @@ post:
             type: object
             properties:
               caseId:
-                type: integer
-                format: int64
+                type: string
           example:
-            caseId: 12345678
+            caseId: "12345678"
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

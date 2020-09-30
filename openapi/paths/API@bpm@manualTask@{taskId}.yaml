@@ -11,8 +11,7 @@ get:
       name: taskId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       description: successful operation
@@ -45,8 +44,7 @@ put:
       name: taskId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   requestBody:
     content:
       application/json:
@@ -58,11 +56,10 @@ put:
               type: string
             executedBy:
               description: Id of the task executor
-              type: integer
-              format: int64
+              type: string
         example:
           state: "completed"
-          executedBy: 1
+          executedBy: "1"
     description: Partial ManualTask description
     required: true
   responses:

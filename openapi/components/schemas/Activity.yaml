@@ -5,21 +5,21 @@ description: |
 properties:
   id:
     type: string
-    description: "the activity id (long)"
+    description: "the activity id"
   type:
     $ref: './ActivityTypeEnum.yaml'
   name:
     type: string
-    description: "the activity technical name (string)"
+    description: "the activity technical name"
   displayName:
     type: string
-    description: "the human readable activity name (string)"
+    description: "the human readable activity name"
   description:
     type: string
-    description: "the activity description (string)"
+    description: "the activity description"
   displayDescription:
     type: string
-    description: "the human readable activity description (string)"
+    description: "the human readable activity description"
   state:
     $ref: './ActivityStateEnum.yaml'
   reached_state_date:
@@ -35,7 +35,7 @@ properties:
     $ref: './ActivityPriorityEnum.yaml'
   processId:
     type: string
-    description: "the process definition id (long) of the case which define this activity"
+    description: "the process definition id of the case which define this activity"
   parentCaseId:
     type: string
     description: "the immediate containing case id (long, a.k.a process instance id)"
@@ -47,16 +47,16 @@ properties:
     description: "same as rootCaseId"
   executedBy:
     type: string
-    description: "the id (long) of the user who performed this activity. The activity has to be a human task otherwise its value will be 0"
+    description: "the id of the user who performed this activity. The activity has to be a human task otherwise its value will be 0"
   executedBySubstitute:
     type: string
-    description: "the id (long) of the user who did actually performed the activity in the case of has been done in the name of someone else. Value is 0 otherwise"
+    description: "the id of the user who did actually performed the activity in the case of has been done in the name of someone else. Value is 0 otherwise"
   actorId:
     type: string
-    description: "the id (long) of the actor that can execute this activity, null otherwise"
+    description: "the id of the actor that can execute this activity, null otherwise"
   assigned_id:
     type: string
-    description: "the user id (long) that this activity is assigned to, or 0 if it is unassigned"
+    description: "the user id that this activity is assigned to, or 0 if it is unassigned"
   assigned_date:
     type: string
     description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current activity was assigned, for example '2014-10-17 16:05:42.626'"

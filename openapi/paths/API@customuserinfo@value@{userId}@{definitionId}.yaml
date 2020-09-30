@@ -11,15 +11,13 @@ put:
       name: userId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
     - description: definition ID
       in: path
       name: definitionId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   requestBody:
     content:
       application/json:

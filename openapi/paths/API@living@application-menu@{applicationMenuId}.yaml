@@ -11,8 +11,7 @@ get:
       name: applicationMenuId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       description: sucessful operation
@@ -21,12 +20,12 @@ get:
           schema:
             $ref: '../components/schemas/ApplicationMenu.yaml'
           example:
-            id: 9823
+            id: "9823"
             displayName: "menuLabel"
-            applicationId: 1
-            applicationPageId: 5
-            menuIndex: 1
-            parentMenuId: -1
+            applicationId: "1"
+            applicationPageId: "5"
+            menuIndex: "1"
+            parentMenuId: "-1"
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':
@@ -48,8 +47,7 @@ delete:
       name: applicationMenuId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       description: sucessful operation
@@ -74,8 +72,7 @@ put:
       name: applicationMenuId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   requestBody:
     content:
       application/json:
@@ -87,16 +84,13 @@ put:
               type: string
             applicationPageId:
               description: the application menu page ID
-              type: integer
-              format: int64
+              type: string
             menuIndex:
               description: the application menu index
-              type: integer
-              format: int32
+              type: string
             parentMenuId:
               description: the application parent menu ID
-              type: integer
-              format: int64
+              type: string
         example:
           displayName: "My updated label"
     description: Partial application menu description

@@ -5,8 +5,7 @@ allOf: # Combines the Case and the inline model
     properties:
       sourceObjectId:
         description: "the id of the case before it was archived"
-        type: integer
-        format: int64
+        type: string
       archivedDate:
         description: "the date set when the case was archived"
         type: string

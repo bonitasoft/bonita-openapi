@@ -3,8 +3,7 @@ description: "Custom user defintion and value"
 properties:
     userId:
       description: "user id"
-      type: integer
-      format: int64
+      type: string
     value:
       description: "definition value"
       type: string

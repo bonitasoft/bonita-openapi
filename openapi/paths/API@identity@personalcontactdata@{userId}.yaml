@@ -11,8 +11,7 @@ get:
       name: userId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       description: successful operation
@@ -41,15 +40,14 @@ put:
       name: userId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   requestBody:
     content:
       application/json:
         schema:
           $ref: '../components/schemas/ProfessionalContactData.yaml'
         example:
-          id: 4
+          id: "4"
           fax_number: "484-302-0766"
           building: "70"
           phone_number: "484-302-5766"

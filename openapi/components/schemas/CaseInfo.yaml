@@ -3,8 +3,7 @@ description: "Retrieves information about a case. It returns counters for each f
 properties:
   id:
     description: "case identifier"
-    type: integer
-    format: int64
+    type: string
   flowNodeStatesCounters:
     type: object
     description: "flow nodes counters"

@@ -3,8 +3,7 @@ description: ""
 properties:
   id:
     description: "system tenant id"
-    type: integer
-    format: int64
+    type: string
   paused:
     description: "wether the system tenant is paused or not"
     type: boolean

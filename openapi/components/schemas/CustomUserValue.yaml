@@ -3,12 +3,10 @@ description: ""
 properties:
   userId:
     description: "user id"
-    type: integer
-    format: int64
+    type: string
   value:
     description: "definition value"
     type: string
   definitionId:
     description: "definition id"
-    type: integer
-    format: int64
+    type: string
