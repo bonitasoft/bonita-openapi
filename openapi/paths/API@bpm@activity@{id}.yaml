@@ -18,7 +18,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/Activity.yaml'
+             $ref: '../components/schemas/Activity.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':
@@ -45,28 +45,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            variables:
-              description: |
-                Activity variables to update.
-
-                **Note**: if there is no data with the specified name in the activity,
-                the update will be applied to the process data if a variable with the specified name exists.
-
-                **Note**: if the task definition includes a connector that is executed on finish and updates the value of a variable, the value set by the REST API call is overwritten.
-
-              type: string
-            state:
-              description: |
-                The target state of the activity
-                - Execute a task: `completed`
-                - Skip activity: `skipped` - Make this call after all failed connectors have been reset ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-                - Replay activity: `replay`
-              type: string
-        example:
-          variables: "[{\"name\":\"foo\",\"value\":\"bar\"}]"
-          state: "completed"
+           $ref: '../components/schemas/ActivityUpdateRequest.yaml'
     description: Partial Activity description
     required: true
   responses:

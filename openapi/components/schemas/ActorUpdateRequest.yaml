@@ -1,0 +1,11 @@
+type: object
+properties:
+   displayName:
+     description: display name of the Actor
+     type: string
+   description:
+     description: description of the Actor
+     type: string
+example:
+   displayName: "My actor"
+   description: "My actor description"

@@ -54,38 +54,7 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            processDefinitionId:
-              description: the process definition Id
-              type: string
-            variables:
-              description: process variables initial values
-              type: array
-              items:
-                type: object
-                properties:
-                  name:
-                    description: variable name
-                    type: string
-                  value:
-                    anyOf:
-                    - type: string
-                    - type: number
-                    - type: integer
-                    - type: boolean
-                    - type: array
-                      items: {}
-                    - type: object
-        example:
-          processDefinitionId: "5777042023671752656"
-          variables:
-            - name: "stringVariable"
-              value: "aValue"
-            - name: "dateVariable"
-              value: 349246800000
-            - name: "numericVariable"
-              value: 5
+          $ref: '../components/schemas/CaseCreateRequest.yaml'
     description: |
       **Warning**: The attribute `variables` on the request payload is used to initialize the process variables (not BDM variables). If you want to initialize BDM variables at process instantiation, add a contract on the process and map BDM variables to the contract data. See Start a process using an instantiation contract for usage.
     required: true

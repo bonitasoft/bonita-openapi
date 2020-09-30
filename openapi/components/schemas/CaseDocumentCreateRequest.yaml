@@ -1,0 +1,26 @@
+type: object
+properties:
+   caseId:
+     description: "The case id"
+     type: string
+   file:
+     description: "The local file name to upload from (as from the temp upload folder)"
+     type: string
+   url:
+     description: "The remote url to upload from"
+     type: string
+   name:
+     description: "The file display name"
+     type: string
+   fileName:
+     description: "The target file name"
+     type: string
+   description:
+     description: "The document description"
+     type: string
+example:
+   caseId: "1"
+   file: "doc.jpg" # from the temp upload folder
+   name: "Doc 1"
+   fileName: "document_1.jpg"
+   description: "draft"

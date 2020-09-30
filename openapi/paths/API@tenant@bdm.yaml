@@ -32,13 +32,7 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            fileUpload:
-              type: string
-              description: the temporary file name once uploaded on the server
-        example:
-          fileUpload: "tmp_uploaded_bdm.zip"
+          $ref: '../components/schemas/BDMInstallRequest.yaml' 
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'
