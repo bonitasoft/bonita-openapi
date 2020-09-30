@@ -21,6 +21,96 @@ servers:
 security:
   - bonita_auth: [ ]
     bonita_token: [ ]
+x-tagGroups:
+  - name: Application
+    tags:
+      - Application
+      - ApplicationMenu
+      - ApplicationPage
+      - FormMapping
+  - name: BDM
+    tags:
+      - BDM
+      - BusinessDataQuery
+      - BDMAccessControl
+  - name: BPM
+    tags:
+      - Activity
+      - ArchivedActivity
+      - HumanTask
+      - ManualTask
+      - Task
+      - UserTask
+      - ArchivedHumanTask
+      - ArchivedManualTask
+      - ArchivedTask
+      - ArchivedUserTask
+      - ActivityVariable
+      - CaseVariable
+      - CaseDocument
+      - ArchivedCaseDocument
+      - Actor
+      - ActorMember
+      - Case
+      - ArchivedCase
+      - CaseInfo
+      - CaseComment
+      - ArchivedCaseComment
+      - Process
+      - Diagram
+      - ProcessParameter
+      - ProcessResolutionProblem
+      - ProcessSupervisor
+      - ProcessConnectorDependency
+      - ConnectorFailure
+      - ConnectorInstance
+      - ArchivedConnectorInstance
+      - FlowNode
+      - ArchivedFlowNode
+      - TimerEventTrigger
+      - Message
+
+  - name: Custom user info
+    tags:
+      - CustomUserDefinition
+      - CustomUserValue
+      - CustomUser
+
+  - name: Identity
+    tags:
+      - ProfessionalContactData
+      - Group
+      - Membership
+      - Role
+      - User
+      - Authentication
+
+  - name: Platform
+    tags:
+      - PlatformAuthentication
+      - Platform
+      - PlatformTenant
+      - Tenant
+      - License
+
+  - name: Portal
+    tags:
+      - Page
+      - Profile
+      - ProfileEntry
+      - ProfileMember
+      - Theme
+
+  - name: System
+    tags:
+      - I18nlocale
+      - I18ntranslation
+      - Session
+      - SystemTenant
+
+  - name: Other
+    tags:
+      - RestAPIextensions
 tags:
   - name: Activity
     x-displayName: Activity
@@ -88,7 +178,7 @@ tags:
     x-displayName: Authentication endpoints
     description: Authentication endpoints
   - name: BDM
-    x-displayName: BDM
+    x-displayName: Business Data Model
     description: |
       Show status or install or update the Business Data Model.
 
