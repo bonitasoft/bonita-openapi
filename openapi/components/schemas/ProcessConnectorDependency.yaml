@@ -6,8 +6,7 @@ properties:
     type: string
   connector_process_id:
     description: "<process id>"
-    type: integer
-    format: int64
+    type: string
   filename:
     description: "<filename representing the connector>"
     type: string

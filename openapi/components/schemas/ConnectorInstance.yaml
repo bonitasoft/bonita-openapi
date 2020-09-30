@@ -22,8 +22,7 @@ properties:
     type: string
   containerId:
     description: "the containing activity instance id"
-    type: integer
-    format: int64
+    type: string
   version:
     description: "the connector version"
     type: string

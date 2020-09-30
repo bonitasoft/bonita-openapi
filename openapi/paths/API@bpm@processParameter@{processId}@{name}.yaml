@@ -11,8 +11,7 @@ get:
       name: processId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
     - description: Name of the process parameter to return
       in: path
       name: name
@@ -49,8 +48,7 @@ put:
       name: processId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
     - description: Name of the process parameter to return
       in: path
       name: name

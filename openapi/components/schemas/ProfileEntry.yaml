@@ -3,19 +3,16 @@ description: "Profile entry"
 properties:
   id:
     description: "profileEntry id"
-    type: integer
-    format: int64
+    type: string
   icon:
     description: "icon used in the portal to represent a profileEntry"
     type: string
   index:
     description: "position in a menu"
-    type: integer
-    format: int32
+    type: string
   profile_id:
     description: "id of the profile that contains this profileEntry"
-    type: integer
-    format: int64
+    type: string
   page:
     description: "pageToken (menu name or menu item name) used in a portal menu to identify the page associated with the profileEntry"
     type: string
@@ -33,5 +30,4 @@ properties:
     type: boolean
   parent_id:
     description: "id or parent profileEntry if in a folder"
-    type: integer
-    format: int64
+    type: string

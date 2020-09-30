@@ -2,8 +2,7 @@ type: object
 properties:
   user_id:
     description: user id
-    type: integer
-    format: int64
+    type: string
   user_name:
     description: user name
     type: string

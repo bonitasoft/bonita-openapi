@@ -11,8 +11,7 @@ get:
       name: id
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
     - description: Count of related resources
       in: query
       name: n
@@ -48,8 +47,7 @@ delete:
       name: id
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'

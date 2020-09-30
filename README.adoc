@@ -4,7 +4,7 @@ This project is about describing the Bonita web API in https://swagger.io/specif
 
 This single yaml file is to become the single source of truth for the Bonita features accessible through HTTP.
 
-Based on this file, one could generate : documentation, client in different language and/or technologie, server side stubs, ...
+Based on this file, one could generate : documentation, client in different language and/or technology, server side stubs, ...
 
 == Open API v3
 

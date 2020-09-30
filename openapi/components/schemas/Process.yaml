@@ -3,8 +3,7 @@ description: ""
 properties:
   id:
     description: "the identifier of the process definition (long)"
-    type: integer
-    format: int64
+    type: string
   icon:
     description: "icon path"
     type: string
@@ -25,8 +24,7 @@ properties:
     type: string
   deployedBy:
     description: "the id of the user who deployed the process"
-    type: integer
-    format: int64
+    type: string
   displayName:
     description: "the human readable process description"
     type: string

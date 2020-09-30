@@ -3,35 +3,28 @@ description: "A flow node (gateway, event, or task) in an open instance of a pro
 properties:
   id:
     description: "the flow node id "
-    type: integer
-    format: int64
+    type: string
   displayDescription:
     description: "the human readable flow node description "
     type: string
   executedBySubstitute:
     description: "the id of the user who really performed this flow node in case where a substitute did it, or 0 if the flow node was not performed by a substitute"
-    type: integer
-    format: int64
+    type: string
   caseId:
     description: "the case id that is associated with this flow node"
-    type: integer
-    format: int64
+    type: string
   parentCaseId:
     description: "the parent case id that is associated with this flow node's case"
-    type: integer
-    format: int64
+    type: string
   rootCaseId:
     description: "the root case initiator id that is associated with this flow node's case"
-    type: integer
-    format: int64
+    type: string
   processId:
     description: "the process id that is associated with this flow node"
-    type: integer
-    format: int64
+    type: string
   rootContainerId:
     description: "the root process id of the root case that is associated with this flow node"
-    type: integer
-    format: int64
+    type: string
   state:
     description: "the current state of the flow node (ready, completed, failed)"
     type: string
@@ -40,22 +33,19 @@ properties:
     type: string
   assigned_id:
     description: "the user id that this flow node is assigned to, or 0 if it is unassigned"
-    type: integer
-    format: int64
+    type: string
   assigned_date:
     description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current flow node was assigned, for example '2014-10-17 16:05:42.626'"
     type: string
   executedBy:
     description: "the id of the user who executed the flow node, or 0 if the flow node has not been executed"
-    type: integer
-    format: int64
+    type: string
   priority:
     description: "the priority of the current flow node"
     type: string
   actorId:
     description: "the id of the actor that can execute this flow node, null otherwise"
-    type: integer
-    format: int64
+    type: string
   description:
     description: "the flow node description "
     type: string
@@ -76,8 +66,7 @@ properties:
     type: string
   parentTaskId":
     description: "in the case of a subtask, the parent task id "
-    type: integer
-    format: int64
+    type: string
 example:
   displayDescription": ""
   executedBySubstitute": 0

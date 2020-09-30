@@ -50,8 +50,8 @@ post:
         schema:
           $ref: '../components/schemas/ProcessSupervisor.yaml'
         example:
-          process_id: 5777042023671752656
-          user_id: 11
+          process_id: "5777042023671752656"
+          user_id: "11"
     description: The process definition id and either the user, role and/or group id.
     required: true
   responses:

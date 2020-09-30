@@ -3,16 +3,14 @@ description: "A document in an active case"
 properties:
   id:
     description: "documentId"
-    type: integer
-    format: int64
+    type: string
   creationDate:
     description: "date and time"
     type: string
   author:
     deprecated: true
     description: "submittorUserId"
-    type: integer
-    format: int64
+    type: string
   index:
     description: "index in a list of documents, or -1 for a single document"
     type: string
@@ -21,12 +19,10 @@ properties:
     type: string
   caseId:
     description: "caseId"
-    type: integer
-    format: int64
+    type: string
   contentStorageId:
     description: "storageId"
-    type: integer
-    format: int64
+    type: string
   isInternal:
     description: >-
       `true` if  the the document object contains the content directly.
@@ -43,8 +39,7 @@ properties:
     type: string
   submittedBy:
     description: "submittorUserId"
-    type: integer
-    format: int64
+    type: string
   url:
     description: "urlForDownload"
     type: string

@@ -6,8 +6,7 @@ properties:
     type: string
   resource_id:
     description: "id of the unresolved resource"
-    type: integer
-    format: int64
+    type: string
   target_type:
     description: "the type of the unresolved resource (parameter, actor, or connector)"
     type: string

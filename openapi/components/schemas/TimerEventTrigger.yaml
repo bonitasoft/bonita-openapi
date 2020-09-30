@@ -3,15 +3,13 @@ description: "BPM timer event triggers"
 properties:
   id:
     description: "the ID of the timer returned"
-    type: integer
-    format: int64
+    type: string
   id_string:
     description: "the ID of the timer returned"
     type: string
   eventInstanceId:
     description: "the ID of the event instance to which this trigger is related"
-    type: integer
-    format: int64
+    type: string
   eventInstanceId_string:
     description: "the ID of the event instance to which this trigger is related"
     type: string

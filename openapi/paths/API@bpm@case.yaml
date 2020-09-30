@@ -112,8 +112,7 @@ delete:
           type: array
           items:
             description: 'Case id'
-            type: integer
-            format: int64
+            type: string
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'

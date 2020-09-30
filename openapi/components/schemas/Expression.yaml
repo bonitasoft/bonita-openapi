@@ -2,8 +2,7 @@ type: object
 properties:
   id:
     description: "the expression id"
-    type: integer
-    format: int64
+    type: string
   name:
     description: "the expression name"
     type: string

@@ -3,12 +3,10 @@ description: "Form Mapping specifies the mapping of a form to a process or a tas
 properties:
   id:
     description: "the form mapping identifier"
-    type: integer
-    format: int64
+    type: string
   processDefinitionId:
     description: "the process identifier related to this form mapping"
-    type: integer
-    format: int64
+    type: string
   type:
     description: "the form mapping type"
     type: string
@@ -27,19 +25,16 @@ properties:
     type: string
   pageId:
     description: "the custom page identifier when type is INTERNAL - null otherwise"
-    type: integer
-    format: int64
+    type: string
   pageMappingKey:
     description: "the page mapping key part used to generate the form URL"
     type: string
   lastUpdateBy:
     description: "the identifier of the user who last updated this form mapping - 0 if no update has been done yet"
-    type: integer
-    format: int64
+    type: string
   lastUpdateDate:
     description: "the last update date in milliseconds - null if no update has been done yet"
-    type: integer
-    format: int64
+    type: string
   url:
     description: "the external URL (string) when type is URL - null otherwise"
     type: string

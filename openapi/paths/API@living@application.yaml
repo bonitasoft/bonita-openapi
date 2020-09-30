@@ -58,8 +58,7 @@ post:
               type: string
             profileId:
               description: profile authorized to access this application
-              format: int64
-              type: integer
+              type: string
             token:
               description: token of the application used to build the application URL
               type: string
@@ -68,7 +67,7 @@ post:
               type: string
         example:
           version: "1.0"
-          profileId: 2
+          profileId: "2"
           token: "myapp"
           displayName: "My app"
           description: "My application description"

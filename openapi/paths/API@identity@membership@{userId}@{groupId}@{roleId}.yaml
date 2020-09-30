@@ -11,22 +11,19 @@ delete:
       name: userId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
     - description: Group ID of the Membership to delete
       in: path
       name: groupId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
     - description: Role ID of the Membership to delete
       in: path
       name: roleId
       required: true
       schema:
-        format: int64
-        type: integer
+        type: string
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'

@@ -3,8 +3,7 @@ description: ""
 properties:
   id:
     description: "id of the tenant"
-    type: integer
-    format: int64
+    type: string
   creation:
     description: "the creation date"
     type: string
