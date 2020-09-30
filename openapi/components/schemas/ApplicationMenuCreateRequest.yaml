@@ -1,0 +1,16 @@
+type: object
+properties:
+   displayName:
+     description: display name of the application menu
+     type: string
+   applicationPageId:
+     description: the application menu page ID
+     type: string
+   menuIndex:
+     description: the application menu index
+     type: string
+   parentMenuId:
+     description: the application parent menu ID
+     type: string
+example:
+   displayName: "My updated label"

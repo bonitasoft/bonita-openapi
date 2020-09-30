@@ -1,0 +1,7 @@
+type: object
+properties:
+   state:
+     description: state of the FlowNode
+     type: string
+example:
+   state: "replay"

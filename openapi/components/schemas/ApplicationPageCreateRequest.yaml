@@ -1,0 +1,15 @@
+type: object
+properties:
+   token:
+      description: "token use to access the page using a URL : ../appName/pageToken/"
+      type: string
+   applicationId:
+      description: "id of the application related to this page"
+      type: string
+   pageId:
+      description: "id of the custom page to display"
+      type: string
+example:
+   token: "myPage"
+   applicationId: "1234"
+   pageId: "5678"

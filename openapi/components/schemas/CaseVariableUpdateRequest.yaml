@@ -1,0 +1,11 @@
+type: object
+properties:
+   type:
+     description: the java class name
+     type: string
+   value:
+     description: the new value
+     type: string
+example:
+   type: "java.lang.String"
+   value: "My new value"

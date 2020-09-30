@@ -1,0 +1,22 @@
+type: object
+properties:
+   profile_id:
+     description: "id of the profile for this mapping"
+     type: string
+   role_id:
+     description: "id of role, or -1 if the member type is not role"
+     type: string
+   group_id:
+     description: "id of group, or -1 if the member type is not group"
+     type: string
+   user_id:
+     description: "id of user, or -1 if the member type is not user"
+     type: string
+   member_type:
+     description: "member type"
+     type: string
+     enum: [ USER,ROLE,GROUP ]
+example:
+   profile_id: "2"
+   member_type: "USER"
+   user_id: "101"

@@ -1,0 +1,8 @@
+type: object
+properties:
+   type:
+     description: theme type
+     type: string
+     enum: [ portal, mobile ]
+example:
+   type: "portal"

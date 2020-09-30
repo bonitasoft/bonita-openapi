@@ -1,0 +1,7 @@
+type: object
+properties:
+   value:
+     description: value of the Process Parameter
+     type: string
+example:
+   value: "myNewValue"

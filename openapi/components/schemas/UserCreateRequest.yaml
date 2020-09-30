@@ -1,0 +1,41 @@
+type: object
+properties:
+   userName:
+     description: user name
+     type: string
+   firstname:
+     description: user last name
+     type: string
+   lastname:
+     description: user last name
+     type: string
+   password:
+     description: user password
+     format: password
+     type: string
+   password_confirm:
+     description: user password confirmation
+     format: password
+     type: string
+   icon:
+     description: ' bonita icon path (ie. /default/icon_user.png)'
+     type: string
+   title:
+     description: user title
+     type: string
+   job_title:
+     description: user job title
+     type: string
+   manager_id:
+     description: user manager id
+     type: string
+example:
+  userName: "New.User"
+  password: "bpm"
+  password_confirm: "bpm"
+  icon: ""
+  firstname: "New"
+  lastname: "User"
+  title: "Mr"
+  job_title: "Human resources benefits"
+  manager_id: "3"

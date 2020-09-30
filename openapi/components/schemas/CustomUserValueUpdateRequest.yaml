@@ -1,0 +1,7 @@
+type: object
+properties:
+   value:
+     description: new value to set
+     type: string
+example:
+   value: "My new value"

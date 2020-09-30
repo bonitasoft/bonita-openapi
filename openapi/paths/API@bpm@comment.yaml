@@ -46,17 +46,7 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            processInstanceId:
-              description: the process instance(case) the comment is associated to
-              type: string
-            content:
-              description: the comment content
-              type: string
-        example:
-          processInstanceId: "5777042023671752656"
-          content: "The case has been started"
+           $ref: '../components/schemas/CaseCommentCreateRequest.yaml'
     description: The process instance (case) id and the comment content, in JSON
     required: true
   responses:

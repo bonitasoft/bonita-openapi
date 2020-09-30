@@ -9,18 +9,7 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            type:
-              description: theme type
-              type: string
-              enum: [portal, mobile]
-            zipFilePathportal:
-              description: tmp zip file Path as uploaded to portal
-              type: string
-        example:
-          type: "portal"
-          zipFilePathportal: "tmp_1939634566964075173.zip"
+         $ref: '../components/schemas/ThemeCreateRequest.yaml'
     description: Partial Theme description
     required: true
   responses:

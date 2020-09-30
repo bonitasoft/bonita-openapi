@@ -46,13 +46,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            pageZip:
-              description: pageZip as named in the temp folder after upload
-              type: string
-        example:
-          pageZip: "tmp_4338264789005487499.zip:new-bonita-angular-dashboard.zip"
+           $ref: '../components/schemas/PageUpdateRequest.yaml'
     description: Partial Page description
     required: true
   responses:

@@ -45,31 +45,16 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            executionDate:
-              description: executionDate of the TimerEventTrigger
-              type: integer
-              format: int64
-        example:
-          executionDate: 1433980484194
+         $ref: '../components/schemas/TimerEventTriggerUpdateRequest.yaml'
     description: a long value with attribute name "executionDate"
     required: true
   responses:
     '200':
-      description: successful operation
+      description: The actual long value corresponding to the next execution date of the timer event trigger, as a long value
       content:
         application/json:
           schema:
-            description: The actual long value corresponding to the next execution date of the timer event trigger, as a long value
-            type: object
-            properties:
-              executionDate:
-                description: executionDate of the TimerEventTrigger
-                type: integer
-                format: int64
-          example:
-            executionDate: 1433980484194
+             $ref: '../components/schemas/TimerEventTriggerUpdateResponse.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

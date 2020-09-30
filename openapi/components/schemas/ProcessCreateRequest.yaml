@@ -1,0 +1,7 @@
+type: object
+properties:
+   fileupload:
+     description: the bar file to deploy (previously uploaded in tmp folder)
+     type: string
+example:
+   fileupload: "tmp_4431838172282406107.bar"

@@ -60,17 +60,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            type:
-              description: the java class name
-              type: string
-            value:
-              description: the new value
-              type: string
-        example:
-          type: "java.lang.String"
-          value: "My new value"
+           $ref: '../components/schemas/CaseVariableUpdateRequest.yaml'
     description: Partial XXX description
     required: true
   responses:

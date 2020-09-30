@@ -1,0 +1,7 @@
+type: object
+properties:
+   paused:
+     description: "wether the system tenant should be paused or not"
+     type: boolean
+example:
+   paused: true

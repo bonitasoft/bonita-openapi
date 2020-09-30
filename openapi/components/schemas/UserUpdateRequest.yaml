@@ -1,0 +1,30 @@
+type: object
+properties:
+   enabled:
+     description: 'if "true", user will be activated.'
+     type: string
+   userName:
+     description: user name
+     type: string
+   firstname:
+     description: user last name
+     type: string
+   lastname:
+     description: user last name
+     type: string
+   password:
+     description: user password
+     format: password
+     type: string
+   icon:
+     description: ' bonita icon path (ie. /default/icon_user.png)'
+     type: string
+   title:
+     description: user title
+     type: string
+   job_title:
+     description: user job title
+     type: string
+   manager_id:
+     description: user manager id
+     type: string

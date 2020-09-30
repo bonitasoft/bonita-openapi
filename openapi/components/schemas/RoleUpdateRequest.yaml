@@ -1,0 +1,16 @@
+type: object
+required:
+- name
+properties:
+   name:
+     description: "name"
+     type: string
+   displayName:
+     description: "display name"
+     type: string
+   description:
+     description: "description"
+     type: string
+   icon:
+     description: "icon path"
+     type: string

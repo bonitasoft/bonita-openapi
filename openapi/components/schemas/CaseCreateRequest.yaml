@@ -1,0 +1,24 @@
+type: object
+properties:
+   processDefinitionId:
+     description: the process definition Id
+     type: string
+   variables:
+     description: process variables initial values
+     type: array
+     items:
+       type: object
+       additionalProperties: true
+       properties:
+         name:
+           description: variable name
+           type: string
+example:
+   processDefinitionId: "5777042023671752656"
+   variables:
+   - name: "stringVariable"
+     value: "aValue"
+   - name: "dateVariable"
+     value: 349246800000
+   - name: "numericVariable"
+     value: 55

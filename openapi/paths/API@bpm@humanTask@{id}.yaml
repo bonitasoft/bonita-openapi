@@ -47,17 +47,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            assignedId:
-              description: assignedId of the HumanTask
-              type: string
-            state:
-              description: state of the HumanTask
-              type: string
-        example:
-          assignedId: "new_user_id"
-          state: "new_state"
+           $ref: '../components/schemas/HumanTaskUpdateRequest.yaml'          
     description: Fields that can be updated are `assignedId` and `state`. Specify only those fields that you want to change.
     required: true
   responses:

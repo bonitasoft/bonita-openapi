@@ -19,7 +19,9 @@ post:
       description: the temporary file name once uploaded on the server
       content:
         text/plain:
-          example: tmp_11199343585454336281.bar
+           schema:
+              type: string
+              example: tmp_11199343585454336281.bar
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

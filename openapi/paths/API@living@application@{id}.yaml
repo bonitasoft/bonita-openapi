@@ -70,35 +70,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            description:
-              description: description of the application
-              type: string
-            displayName:
-              description: display name of the application
-              type: string
-            profileId:
-              description: profile authorized to access this application
-              type: string
-            token:
-              description: token of the application used to build the application URL
-              type: string
-            version:
-              description: version of the application
-              type: string
-            themeId:
-              description: |
-                ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
-                theme id for the application
-              type: string
-        example:
-          version: "1.0"
-          profileId: "2"
-          token: "myapp"
-          displayName: "My app"
-          description: "My application description"
+         $ref: '../components/schemas/ApplicationUpdateRequest.yaml'
     description: Partial living application description
     required: true
   responses:

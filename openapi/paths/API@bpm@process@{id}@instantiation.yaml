@@ -31,12 +31,7 @@ post:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              caseId:
-                type: string
-          example:
-            caseId: "12345678"
+             $ref: '../components/schemas/ProcessInstantiationResponse.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

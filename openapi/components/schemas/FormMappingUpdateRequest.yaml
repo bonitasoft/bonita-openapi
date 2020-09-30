@@ -1,0 +1,11 @@
+type: object
+properties:
+   pageId:
+     description: pageId of the FormMapping
+     type: string
+   url:
+     description: url of the FormMapping
+     type: string
+example:
+   pageId: "123"
+   url: "http://somewhe.re/over/the/rainbow"

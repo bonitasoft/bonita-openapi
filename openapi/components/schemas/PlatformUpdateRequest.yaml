@@ -1,0 +1,8 @@
+type: object
+properties:
+   state:
+     description: Platform state
+     type: string
+     enum: [start, stop]
+example:
+   state: "stop"

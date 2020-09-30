@@ -48,17 +48,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            state:
-              description: The UserTask state
-              type: string
-            assignedId:
-              description: The id of the user assign to  the UserTask
-              type: string
-        example:
-          assignedId: "1"
-          state: "skipped"
+          $ref: '../components/schemas/UserTaskUpdateRequest.yaml'
     description: Partial UserTask description
     required: true
   responses:
