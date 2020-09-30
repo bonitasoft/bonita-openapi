@@ -2,7 +2,7 @@ type: object
 properties:
   id:
     description: user id
-    format: string
+    type: string
   enabled:
     description: 'if "true", user will be activated.'
     type: string
@@ -30,13 +30,13 @@ properties:
     type: string
   manager_id:
     description: user manager id
-    format: string
+    type: string
   last_connection:
     description: last connection date
     type: string
   created_by_user_id:
     description: created by
-    format: string
+    type: string
   creation_date:
     description: creation date
     format: int64

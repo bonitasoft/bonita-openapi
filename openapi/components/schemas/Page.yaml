@@ -2,7 +2,7 @@ type: object
 properties:
   id:
     description: page id
-    format: string
+    type: string
   creationDate:
     description: date and time
     type: string

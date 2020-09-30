@@ -7,16 +7,20 @@ properties:
       properties:
         name:
           description: "constraint name"
+          type: string
         expression:
           description: "constraint expression"
+          type: string
         explanation:
           description: "constraint explanation"
+          type: string
         inputNames:
           type: array
           items:
               type: string
         constraintType:
           description: "constraint type (ex: MANDATORY)"
+          type: string
   inputs:
     type: array
     items:

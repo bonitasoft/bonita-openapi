@@ -20,30 +20,7 @@ post:
     content:
       application/x-www-form-urlencoded:
         schema:
-          type: object
-          properties:
-            username:
-              type: string
-              description: the username
-            password:
-              type: string
-              format: password
-              description: the password
-            redirect:
-              type: string
-              description: >-
-                "true" or "false". "false" indicates that the service should not
-                redirect to Bonita Portal (after a successful login) or to
-                the login page (after a login failure).
-            redirectURL:
-              type: string
-              description: the URL of the page to be displayed after login
-              nullable: true
-        example:
-          username: install
-          password: install
-          redirect: "false"
-          redirectURL:
+          $ref: '../components/schemas/LoginRequest.yaml'
   x-codeSamples:
     - lang: "Shell"
       label: "Curl"

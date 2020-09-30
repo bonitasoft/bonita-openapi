@@ -3,5 +3,5 @@ type: object
 properties:
   themeId:
     description: id of theme resource
-    format: string
+    type: string
     example: "1234"

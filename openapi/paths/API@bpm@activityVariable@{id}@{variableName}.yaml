@@ -17,7 +17,7 @@ get:
       name: variableName
       required: true
       schema:
-        format: string
+        type: string
   responses:
     '200':
       description: successful operation

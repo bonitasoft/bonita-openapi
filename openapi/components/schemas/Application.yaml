@@ -2,7 +2,7 @@ type: object
 properties:
   createdBy:
     description: Author user ID
-    format: string
+    type: string
   creationDate:
     description: creation date of the application
     type: string
@@ -14,22 +14,22 @@ properties:
     type: string
   homePageId:
     description: id of the application page used as the home page
-    format: string
+    type: string
   id:
     description: id of the application
-    format: string
+    type: string
   lastUpdateDate:
     description: last update date of the application
     type: string
   profileId:
     description: profile authorized to access this application
-    format: string
+    type: string
   token:
     description: token of the application used to build the application URL
     type: string
   updatedBy:
     description: Last updating user ID
-    format: string
+    type: string
   version:
     description: version of the application
     type: string

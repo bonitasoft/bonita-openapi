@@ -69,7 +69,7 @@ post:
                     description: variable name
                     type: string
                   value:
-                    $ref: '../components/schemas/AnyValue.yaml'
+                    type: object
         example:
           processDefinitionId: "5777042023671752656"
           variables:

@@ -48,29 +48,7 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            description:
-              description: description of the application
-              type: string
-            displayName:
-              description: display name of the application
-              type: string
-            profileId:
-              description: profile authorized to access this application
-              type: string
-            token:
-              description: token of the application used to build the application URL
-              type: string
-            version:
-              description: version of the application
-              type: string
-        example:
-          version: "1.0"
-          profileId: "2"
-          token: "myapp"
-          displayName: "My app"
-          description: "My application description"
+          $ref: '../components/schemas/CreateApplicationRequest.yaml'
     description: Partial living application description
     required: true
   responses:
@@ -78,9 +56,7 @@ post:
       content:
         application/json:
           schema:
-            items:
-              $ref: '../components/schemas/Application.yaml'
-            type: object
+            $ref: '../components/schemas/Application.yaml'
       description: successful operation
     '401':
       $ref: '../components/responses/Unauthorized.yaml'

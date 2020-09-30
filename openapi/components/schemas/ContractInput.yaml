@@ -2,12 +2,16 @@ type: object
 properties:
   description:
     description: 'input description'
+    type: string
   name:
     description: "input name"
+    type: string
   multiple:
     description: "true if input contains multiple values"
+    type: string
   type:
     description: "input type"
+    type: string
   inputs:
     type: array
     items:
