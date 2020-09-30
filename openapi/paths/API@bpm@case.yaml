@@ -69,7 +69,14 @@ post:
                     description: variable name
                     type: string
                   value:
-                    type: object
+                    anyOf:
+                    - type: string
+                    - type: number
+                    - type: integer
+                    - type: boolean
+                    - type: array
+                      items: {}
+                    - type: object
         example:
           processDefinitionId: "5777042023671752656"
           variables:
