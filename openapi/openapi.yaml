@@ -1,7 +1,5 @@
 openapi: 3.0.2
 info:
-  contact:
-    email: rd.user@bonitasoft.com
   license:
     name: GPL-v2.0
     url: 'http://www.gnu.org/licenses/gpl-2.0.txt'
