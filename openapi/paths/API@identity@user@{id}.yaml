@@ -1,0 +1,119 @@
+get:
+  tags:
+    - User
+  summary: Finds the User by ID
+  description: |
+    Returns the single User for the given ID
+  operationId: getUserById
+  parameters:
+    - description: ID of the User to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/User.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - User
+  summary: Update the User by ID
+  description: |
+    Update the User for the given ID
+  operationId: updateUserById
+  parameters:
+    - description: ID of the User to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            enabled:
+              description: 'if "true", user will be activated.'
+              type: string
+            userName:
+              description: user name
+              type: string
+            firstname:
+              description: user last name
+              type: string
+            lastname:
+              description: user last name
+              type: string
+            password:
+              description: user password
+              format: password
+              type: string
+            icon:
+              description: ' bonita icon path (ie. /default/icon_user.png)'
+              type: string
+            title:
+              description: user title
+              type: string
+            job_title:
+              description: user job title
+              type: string
+            manager_id:
+              description: user manager id
+              type: string
+    description: Partial User description
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+delete:
+  tags:
+    - User
+  summary: Delete the User by ID
+  description: |
+    Delete the single User for the given ID.
+
+    **Use this method with caution**: some artifacts like applications, cases or users may present display problems in the Bonita Portal if the referenced user was deleted.
+    Note that you can disable a user instead of deleting it. To do so, use the UPDATE method and set the attribute 'enabled' to false
+
+  operationId: deleteUserById
+  parameters:
+    - description: ID of the User to delete
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

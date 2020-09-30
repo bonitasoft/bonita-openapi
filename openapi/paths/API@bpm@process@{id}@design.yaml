@@ -1,0 +1,29 @@
+get:
+  tags:
+    - Process
+  summary: Finds the Process design by ID
+  description: |
+    Returns the single Process design for the given ID
+  operationId: getProcessDesignById
+  parameters:
+    - description: ID of the Process to get the design from
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/DesignProcessDefinition.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

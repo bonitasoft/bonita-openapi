@@ -1,0 +1,55 @@
+get:
+  tags:
+    - ApplicationPage
+  summary: Finds an application page by ID
+  description: |
+    Returns a single application page for the given ID
+  operationId: getApplicationPageById
+  parameters:
+    - description: ID of application page to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ApplicationPage.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+
+delete:
+  tags:
+    - ApplicationPage
+  summary: Delete an application page by ID
+  description: |
+    Delete a single application page for the given ID
+  operationId: deleteApplicationPageById
+  parameters:
+    - description: ID of application page to delete
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

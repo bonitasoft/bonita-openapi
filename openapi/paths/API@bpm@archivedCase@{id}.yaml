@@ -1,0 +1,54 @@
+get:
+  tags:
+    - ArchivedCase
+  summary: Finds the ArchivedCase by ID
+  description: |
+    Returns the single ArchivedCase for the given ID
+  operationId: getArchivedCaseById
+  parameters:
+    - description: ID of the ArchivedCase to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ArchivedCase.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+delete:
+  tags:
+    - ArchivedCase
+  summary: Delete the ArchivedCase by ID
+  description: |
+    Delete the single ArchivedCase for the given ID
+  operationId: deleteArchivedCaseById
+  parameters:
+    - description: ID of the ArchivedCase to delete
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

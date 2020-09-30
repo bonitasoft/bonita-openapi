@@ -1,0 +1,73 @@
+get:
+  tags:
+    - HumanTask
+  summary: Finds the HumanTask by ID
+  description: |
+    Returns the single HumanTask for the given ID
+  operationId: getHumanTaskById
+  parameters:
+    - description: ID of the HumanTask to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/HumanTask.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+
+put:
+  tags:
+    - HumanTask
+  summary: Update the HumanTask by ID
+  description: |
+    Update the HumanTask for the given ID
+
+  operationId: updateHumanTaskById
+  parameters:
+    - description: ID of the HumanTask to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            assignedId:
+              description: assignedId of the HumanTask
+              type: string
+            state:
+              description: state of the HumanTask
+              type: string
+        example:
+          assignedId: "new_user_id"
+          state: "new_state"
+    description: Fields that can be updated are `assignedId` and `state`. Specify only those fields that you want to change.
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

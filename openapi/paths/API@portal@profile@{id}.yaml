@@ -1,0 +1,96 @@
+get:
+  tags:
+    - Profile
+  summary: Finds the Profile by ID
+  description: |
+    Returns the single Profile for the given ID
+  operationId: getProfileById
+  parameters:
+    - description: ID of the Profile to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Profile.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - Profile
+  summary: Update the Profile by ID
+  description: |
+    Update the Profile for the given ID
+  operationId: updateProfileById
+  parameters:
+    - description: ID of the Profile to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            description:
+              description: description of the Profile
+              type: string
+            displayName:
+              description: display name of the Profile
+              type: string
+        example:
+          displayName: "My app"
+          description: "My application description"
+    description: Partial Profile description
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+delete:
+  tags:
+    - Profile
+  summary: Delete the Profile by ID
+  description: |
+    Delete the single Profile for the given ID
+  operationId: deleteProfileById
+  parameters:
+    - description: ID of the Profile to delete
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

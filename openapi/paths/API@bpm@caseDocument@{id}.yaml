@@ -1,0 +1,114 @@
+get:
+  tags:
+    - CaseDocument
+  summary: Finds the CaseDocument by ID
+  description: |
+    Returns the single CaseDocument for the given ID.
+    Use a GET method to get a document from a case. First you get the document information, then you download the content. To get the document information, specify the document id in the URL. The document id is created when you upload a document to a case. There is no payload.
+  operationId: getCaseDocumentById
+  parameters:
+    - description: ID of the CaseDocument to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: |
+        successful operation.
+        The response includes the "url" to use to download the content. Call the documentDownload servlet with this URL: /portal/documentDownload?fileName=doc.jpg&contentStorageId=4. Note: Since Bonita 7.10, document url fileName is now URL encoded. This will avoid errors when a document to be downloaded contains special characters in its name.
+        In the previous versions, a workaround was necessary client-side using the javascript native function "encodeURI" to generate document download url. You can now remove this workaround.
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/CaseDocument.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - CaseDocument
+  summary: Update the CaseDocument by ID
+  description: |
+    Update the CaseDocument for the given ID
+
+    You update a document in a case by uploading a new version of the document using a PUT method. You can upload a document version from the local file system or by URL. The document name will be used in all the cases of the process, but the combination of case id and document name is unique.
+    In the URL, you specify to supply the document id. This is included in the response when you first add a document to a case.
+    The response to PUT methods is the same as for POST methods.
+  operationId: updateCaseDocumentById
+  parameters:
+    - description: ID of the CaseDocument to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            file:
+              description: "The local file name to upload from (as from the temp upload folder)"
+              type: string
+            url:
+              description: "The remote url to upload from"
+              type: string
+            name:
+              description: "The file display name"
+              type: string
+            fileName:
+              description: "The target file name"
+              type: string
+            description:
+              description: "The document description"
+              type: string
+        example:
+          file: "Expense policy rev2.pdf"
+          description: "updated version of document"
+          fileName: "revision2.pdf"
+    description: Partial CaseDocument description
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+delete:
+  tags:
+    - CaseDocument
+  summary: Delete the CaseDocument by ID
+  description: |
+    Delete the single CaseDocument for the given ID
+  operationId: deleteCaseDocumentById
+  parameters:
+    - description: ID of the CaseDocument to delete
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
