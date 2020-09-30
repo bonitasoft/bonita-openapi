@@ -1,0 +1,86 @@
+get:
+  tags:
+    - CaseVariable
+  summary: Finds the Variable by Case ID
+  description: |
+    Returns the single Variable for the given Case ID
+  operationId: getVariableByCaseId
+  parameters:
+    - description: The identifier of the case from which to retrieve the variable
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+    - description: The name of the variable to retrieve
+      in: path
+      name: variableName
+      required: true
+      schema:
+        format: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/CaseVariable.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - CaseVariable
+  summary: Update a Variable by Case ID
+  description: |
+    Update the variable for the given Case ID.
+
+    **Warning** : only following types are supported for javaTypeclassname: `java.lang.String`, `java.lang.Integer`, `java.lang.Double`, `java.lang.Long`, `java.lang.Boolean`, `java.util.Date`
+
+  operationId: updateVariableByCaseId
+  parameters:
+    - description: The identifier of the case from which to retrieve the variable
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+    - description: The name of the variable to retrieve
+      in: path
+      name: variableName
+      required: true
+      schema:
+        format: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            type:
+              description: the java class name
+              type: string
+            value:
+              description: the new value
+              type: string
+        example:
+          type: "java.lang.String"
+          value: "My new value"
+    description: Partial XXX description
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

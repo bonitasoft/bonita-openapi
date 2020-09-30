@@ -1,0 +1,29 @@
+get:
+  tags:
+    - UserTask
+  summary: Finds the Contract by UserTask ID
+  description: |
+    Returns the Contract for the given UserTask ID
+  operationId: getContractByUserTaskId
+  parameters:
+    - description: ID of the UserTask that has the Contract to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Contract.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

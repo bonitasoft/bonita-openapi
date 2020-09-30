@@ -351,20 +351,20 @@ paths:
   #  =======================
   /API/living/application:
     $ref: "./paths/API@living@application.yaml"
-  '/API/living/application/{applicationId}':
-    $ref: "./paths/API@living@application@{applicationId}.yaml"
+  '/API/living/application/{id}':
+    $ref: "./paths/API@living@application@{id}.yaml"
   /services/application/import:
     $ref: "./paths/services@application@import.yaml"
   /portal/applicationsUpload:
     $ref: "./paths/portal@applicationsUpload.yaml"
   /API/living/application-menu:
     $ref: "./paths/API@living@application-menu.yaml"
-  /API/living/application-menu/{applicationMenuId}:
-    $ref: "./paths/API@living@application-menu@{applicationMenuId}.yaml"
+  /API/living/application-menu/{id}:
+    $ref: "./paths/API@living@application-menu@{id}.yaml"
   /API/living/application-page:
     $ref: './paths/API@living@application-page.yaml'
-  /API/living/application-page/{applicationPageId}:
-    $ref: './paths/API@living@application-page@{applicationPageId}.yaml'
+  /API/living/application-page/{id}:
+    $ref: './paths/API@living@application-page@{id}.yaml'
   #  =======================
   #   BDM API
   #  =======================
@@ -398,60 +398,60 @@ paths:
     $ref: './paths/API@bpm@archivedActivity@{id}.yaml'
   /API/bpm/humanTask:
     $ref: './paths/API@bpm@humanTask.yaml'
-  /API/bpm/humanTask/{taskId}:
-    $ref: './paths/API@bpm@humanTask@{taskId}.yaml'
+  /API/bpm/humanTask/{id}:
+    $ref: './paths/API@bpm@humanTask@{id}.yaml'
   /API/bpm/manualTask:
     $ref: './paths/API@bpm@manualTask.yaml'
-  /API/bpm/manualTask/{taskId}:
-    $ref: './paths/API@bpm@manualTask@{taskId}.yaml'
+  /API/bpm/manualTask/{id}:
+    $ref: './paths/API@bpm@manualTask@{id}.yaml'
   /API/bpm/task:
     $ref: './paths/API@bpm@task.yaml'
-  /API/bpm/task/{taskId}:
-    $ref: './paths/API@bpm@task@{taskId}.yaml'
+  /API/bpm/task/{id}:
+    $ref: './paths/API@bpm@task@{id}.yaml'
   /API/bpm/userTask:
     $ref: './paths/API@bpm@userTask.yaml'
-  /API/bpm/userTask/{taskId}:
-    $ref: './paths/API@bpm@userTask@{taskId}.yaml'
-  /API/bpm/userTask/{taskId}/contract:
-    $ref: './paths/API@bpm@userTask@{taskId}@contract.yaml'
-  /API/bpm/userTask/{taskId}/execution:
-    $ref: './paths/API@bpm@userTask@{taskId}@execution.yaml'
-  /API/bpm/userTask/{taskId}/context:
-    $ref: './paths/API@bpm@userTask@{taskId}@context.yaml'
+  /API/bpm/userTask/{id}:
+    $ref: './paths/API@bpm@userTask@{id}.yaml'
+  /API/bpm/userTask/{id}/contract:
+    $ref: './paths/API@bpm@userTask@{id}@contract.yaml'
+  /API/bpm/userTask/{id}/execution:
+    $ref: './paths/API@bpm@userTask@{id}@execution.yaml'
+  /API/bpm/userTask/{id}/context:
+    $ref: './paths/API@bpm@userTask@{id}@context.yaml'
   /API/bpm/archivedHumanTask:
     $ref: './paths/API@bpm@archivedHumanTask.yaml'
-  /API/bpm/archivedHumanTask/{taskId}:
-    $ref: './paths/API@bpm@archivedHumanTask@{taskId}.yaml'
+  /API/bpm/archivedHumanTask/{id}:
+    $ref: './paths/API@bpm@archivedHumanTask@{id}.yaml'
   /API/bpm/archivedManualTask:
     $ref: './paths/API@bpm@archivedManualTask.yaml'
-  /API/bpm/archivedManualTask/{taskId}:
-    $ref: './paths/API@bpm@archivedManualTask@{taskId}.yaml'
+  /API/bpm/archivedManualTask/{id}:
+    $ref: './paths/API@bpm@archivedManualTask@{id}.yaml'
   /API/bpm/archivedUserTask:
     $ref: './paths/API@bpm@archivedUserTask.yaml'
-  /API/bpm/archivedUserTask/{taskId}:
-    $ref: './paths/API@bpm@archivedUserTask@{taskId}.yaml'
+  /API/bpm/archivedUserTask/{id}:
+    $ref: './paths/API@bpm@archivedUserTask@{id}.yaml'
   /API/bpm/archivedTask:
     $ref: './paths/API@bpm@archivedTask.yaml'
-  /API/bpm/archivedTask/{taskId}:
-    $ref: './paths/API@bpm@archivedTask@{taskId}.yaml'
-  /API/bpm/activityVariable/{activityId}/{variableName}:
-    $ref: './paths/API@bpm@activityVariable@{activityId}@{variableName}.yaml'
+  /API/bpm/archivedTask/{id}:
+    $ref: './paths/API@bpm@archivedTask@{id}.yaml'
+  /API/bpm/activityVariable/{id}/{variableName}:
+    $ref: './paths/API@bpm@activityVariable@{id}@{variableName}.yaml'
   /API/bpm/caseVariable:
     $ref: './paths/API@bpm@caseVariable.yaml'
-  /API/bpm/caseVariable/{caseId}/{variableName}:
-    $ref: './paths/API@bpm@caseVariable@{caseId}@{variableName}.yaml'
+  /API/bpm/caseVariable/{id}/{variableName}:
+    $ref: './paths/API@bpm@caseVariable@{id}@{variableName}.yaml'
   /API/bpm/caseDocument:
     $ref: './paths/API@bpm@caseDocument.yaml'
-  /API/bpm/caseDocument/{documentId}:
-    $ref: './paths/API@bpm@caseDocument@{documentId}.yaml'
+  /API/bpm/caseDocument/{id}:
+    $ref: './paths/API@bpm@caseDocument@{id}.yaml'
   /API/bpm/archivedCaseDocument:
     $ref: './paths/API@bpm@archivedCaseDocument.yaml'
-  /API/bpm/archivedCaseDocument/{archivedCaseDocumentId}:
-    $ref: './paths/API@bpm@archivedCaseDocument@{archivedCaseDocumentId}.yaml'
+  /API/bpm/archivedCaseDocument/{id}:
+    $ref: './paths/API@bpm@archivedCaseDocument@{id}.yaml'
   /API/bpm/actor:
     $ref: './paths/API@bpm@actor.yaml'
-  /API/bpm/actor/{actorId}:
-    $ref: './paths/API@bpm@actor@{actorId}.yaml'
+  /API/bpm/actor/{id}:
+    $ref: './paths/API@bpm@actor@{id}.yaml'
   /API/bpm/actorMemberEntry:
     $ref: './paths/API@bpm@actorMemberEntry.yaml'
   /API/bpm/actorMemberEntry/{id}:
@@ -460,14 +460,14 @@ paths:
     $ref: './paths/API@bpm@case.yaml'
   /API/bpm/case/{id}:
     $ref: './paths/API@bpm@case@{id}.yaml'
-  /API/bpm/case/{caseId}/context:
-    $ref: './paths/API@bpm@case@{caseId}@context.yaml'
+  /API/bpm/case/{id}/context:
+    $ref: './paths/API@bpm@case@{id}@context.yaml'
   /API/bpm/archivedCase:
     $ref: './paths/API@bpm@archivedCase.yaml'
-  /API/bpm/archivedCase/{archivedCaseId}:
-    $ref: './paths/API@bpm@archivedCase@{archivedCaseId}.yaml'
-  /API/bpm/archivedCase/{archivedCaseId}/context:
-    $ref: './paths/API@bpm@archivedCase@{archivedCaseId}@context.yaml'
+  /API/bpm/archivedCase/{id}:
+    $ref: './paths/API@bpm@archivedCase@{id}.yaml'
+  /API/bpm/archivedCase/{id}/context:
+    $ref: './paths/API@bpm@archivedCase@{id}@context.yaml'
   /API/bpm/caseInfo/{id}:
     $ref: './paths/API@bpm@caseInfo@{id}.yaml'
   /API/bpm/comment:
@@ -476,28 +476,28 @@ paths:
     $ref: './paths/API@bpm@archivedComment.yaml'
   /API/bpm/process:
     $ref: './paths/API@bpm@process.yaml'
-  /API/bpm/process/{processId}:
-    $ref: './paths/API@bpm@process@{processId}.yaml'
-  /API/bpm/process/{processId}/design:
-    $ref: './paths/API@bpm@process@{processId}@design.yaml'
-  /API/bpm/process/{processId}/contract:
-    $ref: './paths/API@bpm@process@{processId}@contract.yaml'
-  /API/bpm/process/{processId}/instantiation:
-    $ref: './paths/API@bpm@process@{processId}@instantiation.yaml'
-  /API/bpm/diagram/{processId}:
-    $ref: './paths/API@bpm@diagram@{processId}.yaml'
+  /API/bpm/process/{id}:
+    $ref: './paths/API@bpm@process@{id}.yaml'
+  /API/bpm/process/{id}/design:
+    $ref: './paths/API@bpm@process@{id}@design.yaml'
+  /API/bpm/process/{id}/contract:
+    $ref: './paths/API@bpm@process@{id}@contract.yaml'
+  /API/bpm/process/{id}/instantiation:
+    $ref: './paths/API@bpm@process@{id}@instantiation.yaml'
+  /API/bpm/diagram/{id}:
+    $ref: './paths/API@bpm@diagram@{id}.yaml'
   /API/bpm/processParameter:
     $ref: './paths/API@bpm@processParameter.yaml'
-  /API/bpm/processParameter/{processId}/{name}:
-    $ref: './paths/API@bpm@processParameter@{processId}@{name}.yaml'
+  /API/bpm/processParameter/{id}/{name}:
+    $ref: './paths/API@bpm@processParameter@{id}@{name}.yaml'
   /API/bpm/processResolutionProblem:
     $ref: './paths/API@bpm@processResolutionProblem.yaml'
   /API/bpm/processSupervisor:
     $ref: './paths/API@bpm@processSupervisor.yaml'
   /API/bpm/processConnectorDependency:
     $ref: './paths/API@bpm@processConnectorDependency.yaml'
-  /API/bpm/connectorFailure/{connectorFailureId}:
-    $ref: './paths/API@bpm@connectorFailure@{connectorFailureId}.yaml'
+  /API/bpm/connectorFailure/{id}:
+    $ref: './paths/API@bpm@connectorFailure@{id}.yaml'
   /API/bpm/connectorInstance:
     $ref: './paths/API@bpm@connectorInstance.yaml'
   /API/bpm/archivedConnectorInstance:
@@ -547,20 +547,20 @@ paths:
     $ref: './paths/API@identity@personalcontactdata@{userId}.yaml'
   /API/identity/group:
     $ref: './paths/API@identity@group.yaml'
-  /API/identity/group/{groupId}:
-    $ref: './paths/API@identity@group@{groupId}.yaml'
+  /API/identity/group/{id}:
+    $ref: './paths/API@identity@group@{id}.yaml'
   /API/identity/membership:
     $ref: './paths/API@identity@membership.yaml'
   /API/identity/membership/{userId}/{groupId}/{roleId}:
     $ref: './paths/API@identity@membership@{userId}@{groupId}@{roleId}.yaml'
   /API/identity/role:
     $ref: './paths/API@identity@role.yaml'
-  /API/identity/role/{roleId}:
-    $ref: './paths/API@identity@role@{roleId}.yaml'
+  /API/identity/role/{id}:
+    $ref: './paths/API@identity@role@{id}.yaml'
   /API/identity/user:
     $ref: './paths/API@identity@user.yaml'
-  /API/identity/user/{userId}:
-    $ref: './paths/API@identity@user@{userId}.yaml'
+  /API/identity/user/{id}:
+    $ref: './paths/API@identity@user@{id}.yaml'
 
   #  =======================
   #   PLATFORM API
@@ -587,16 +587,16 @@ paths:
     $ref: './paths/portal@pageUpload.yaml'
   /API/portal/page:
     $ref: './paths/API@portal@page.yaml'
-  /API/portal/page/{pageId}:
-    $ref: './paths/API@portal@page@{pageId}.yaml'
+  /API/portal/page/{id}:
+    $ref: './paths/API@portal@page@{id}.yaml'
   /API/portal/profile:
     $ref: './paths/API@portal@profile.yaml'
-  /API/portal/profile/{profileId}:
-    $ref: './paths/API@portal@profile@{profileId}.yaml'
+  /API/portal/profile/{id}:
+    $ref: './paths/API@portal@profile@{id}.yaml'
   /API/portal/profileEntry:
     $ref: './paths/API@portal@profileEntry.yaml'
-  /API/portal/profileEntry/{profileEntryId}:
-    $ref: './paths/API@portal@profileEntry@{profileEntryId}.yaml'
+  /API/portal/profileEntry/{id}:
+    $ref: './paths/API@portal@profileEntry@{id}.yaml'
   /API/portal/profileMember:
     $ref: './paths/API@portal@profileMember.yaml'
   /API/portal/profileMember/{id}:
@@ -623,9 +623,6 @@ paths:
     $ref: "./paths/portal@fileUpload.yaml"
   /API/tenant/bdm:
     $ref: "./paths/API@tenant@bdm.yaml"
-
-  #  =======================
-  #  =======================
   #  =======================
   #   ORGANIZATION API
   #  =======================

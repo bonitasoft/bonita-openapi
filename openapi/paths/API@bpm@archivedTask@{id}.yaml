@@ -1,0 +1,29 @@
+get:
+  tags:
+    - ArchivedTask
+  summary: Finds the ArchivedTask by ID
+  description: |
+    Returns the single ArchivedTask for the given ID
+  operationId: getArchivedTaskById
+  parameters:
+    - description: ID of the ArchivedTask to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ArchivedTask.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
