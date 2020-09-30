@@ -491,6 +491,8 @@ paths:
   #  =======================
   #   PORTAL API
   #  =======================
+  /portal/processUpload:
+    $ref: './paths/portal@processUpload.yaml'
   /portal/pageUpload:
     $ref: './paths/portal@pageUpload.yaml'
   /API/portal/page:

@@ -6,7 +6,7 @@
     "start": "openapi preview-docs openapi/openapi.yaml",
     "test": "openapi lint",
     "build": "rm -rf dist/* && copyfiles -u 2 openapi/images/* dist/images/ && openapi bundle -o dist/openapi.yaml -f",
-    "postman": "node_modules/.bin/openapi2postmanv2 -s dist/openapi.yaml -o dist/postman.json -p"
+    "postman": "npm run build && node_modules/.bin/openapi2postmanv2 -s dist/openapi.yaml -o dist/postman.json -p"
   },
   "license": "Apache 2.0",
   "private": true,

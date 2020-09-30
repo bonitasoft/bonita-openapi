@@ -43,7 +43,7 @@ post:
   summary: Create the Process
   description: |
     Create the Process.
-    A process resource is created using the content of a .bar file that has previously been uploaded, using the processUpload servlet http://.../bonita/portal/processUpload, to get the process archive path.
+    A process resource is created using the content of a .bar file that has previously been uploaded, using the [processUpload servlet](#operation/uploadProcess), to get the process archive path.
   operationId: createProcess
   requestBody:
     content:
