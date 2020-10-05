@@ -17,7 +17,7 @@ get:
     - $ref: '../components/parameters/pageSearch.yaml'
   responses:
     '200':
-      description: successful operation
+      description: "Success "
       headers:
         Content-Range:
           schema:
@@ -56,7 +56,7 @@ post:
         application/json:
           schema:
             $ref: '../components/schemas/Role.yaml'
-      description: successful operation
+      description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

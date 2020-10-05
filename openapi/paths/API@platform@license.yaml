@@ -8,7 +8,7 @@ get:
   operationId: getLicense
   responses:
     '200':
-      description: successful operation
+      description: "Success "
       content:
         application/json:
           schema:

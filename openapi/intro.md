@@ -16,18 +16,16 @@ It is possible for an extension to interact with the engine (via the API) or wit
 
 ### Create a resource
 
-| | |
-|:-|:-|
 | Request URL | `http://.../API/{API_name}/{resource_name}/  `|
+|:-|:-|
 | Request Method | POST|
 | Request Payload | an item in JSON|
 | Response | the same item in JSON, containing the values provided in the posted item, completed with default values and identifiers provided by Bonita Engine.|
 
 ### Read a resource
 
-| | |
-|:-|:-|
 | Request URL | `http://.../API/{API_name}/{resource_name}/{id} `|
+|:-|:-|
 | Request Method | GET|
 | Response | an item in JSON|
 
@@ -47,9 +45,8 @@ Specifiy multiple `d` parameter to extend several resources. For instance, to re
 
 The order of the identifier parts for each resource type is given in the table above.
 
-| | |
-|:-|:-|
 | Request URL | `http://.../API/{API_name}/{resource_name}/{id_part1}/{id_part2} `|
+|:-|:-|
 | Request Method | GET|
 | Response | an item in JSON|
 
@@ -57,9 +54,8 @@ Example `http://.../API/identity/membership/5/12/24 `
 
 ### Update a resource
 
-| | |
-|:-|:-|
 | Request URL | `http://.../API/{API_name}/{resource_name}/{id} `|
+|:-|:-|
 | Request Method | PUT|
 | Request Payload | a map in JSON containing the new values for the attributes you want to change.|
 | Response | the corresponding item in JSON with new values where you requested a modification|
@@ -70,9 +66,8 @@ Example `http://.../API/identity/user/5`
 
 Response: the corresponding item in JSON with new values where you requested a modification.
 
-| | |
-|:-|:-|
 | Request URL | `http://.../API/{API_name}/{resource_name}/{id_part1}/{id_part2} `|
+|:-|:-|
 | Request Method | PUT|
 | Request Payload | ` a map in JSON containing the new values for the attributes you want to change `|
 | Response | ` the corresponding item in JSON with new values where you requested a modification`|
@@ -84,9 +79,8 @@ Example
 
 Use the DELETE request to remove multiple resources.
 
-| | |
-|:-|:-|
 | Request URL | `http://.../API/{API_name}/{resource_name}/ `|
+|:-|:-|
 | Request Method | DELETE|
 | Request Payload | A list of identifiers in JSON, for example `["id1","id2","id3"]`. Compound identifiers are separated by '/' characters.|
 | Response | `empty `|
@@ -104,9 +98,8 @@ For business data default queries, the count query is defined automatically.
 
 The available filters are the attributes of the item plus some specific filters defined by each item.
 
-| | |
-|:-|:-|
 | Request URL | `http://.../API/{API_name}/{resource_name}?p={page}&c={count}&o={order}&s={query}&f={filter_name}={filter_value}&f=... `|
+|:-|:-|
 | Request Method | GET|
 | Response | an array of items in JSON|
 

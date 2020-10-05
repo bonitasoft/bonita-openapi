@@ -16,7 +16,7 @@ get:
     - $ref: '../components/parameters/pageSearch.yaml'
   responses:
     '200':
-      description: successful operation
+      description: "Success "
       headers:
         Content-Range:
           schema:

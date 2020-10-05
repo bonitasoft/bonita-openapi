@@ -5,9 +5,9 @@ get:
   description: |
     Finds HumanTasks with pagination params and filters
 
-    - can order on `name`, `priority`, `dueDate`, `state`, `userId`, `groupId`, `roleId`, `processDefinitionId`, `processInstanceId`, `parentActivityInstanceId`, `assigneeId`, `parentContainerId`, `displayName`, `reachedStateDate`
+    - can order on `name`, `priority`, `dueDate`, `state`, `processDefinitionId`, `processInstanceId`, `parentActivityInstanceId`, `assigneeId`, `parentContainerId`, `displayName`, `reachedStateDate`
     - can search on any field that can be used to order results
-    - can filter on `assigned_id`, `state`, `name`, `displayName`, `processDefinitionId`, `parentContainerId`
+    - can filter on `assigned_id`, `state`, `name`, `displayName`, `processDefinitionId`, `parentContainerId`, `userId`, `groupId`, `roleId`
 
   operationId: findHumanTasks
   parameters:
@@ -18,7 +18,7 @@ get:
     - $ref: '../components/parameters/pageSearch.yaml'
   responses:
     '200':
-      description: successful operation
+      description: "Success "
       headers:
         Content-Range:
           schema:

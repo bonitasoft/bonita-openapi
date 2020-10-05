@@ -39,8 +39,7 @@ properties:
     type: string
   creation_date:
     description: creation date
-    format: int64
-    type: integer
+    type: string
   last_update_date:
     description: user last update date
     type: string

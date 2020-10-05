@@ -27,7 +27,7 @@ get:
         $ref: '../code_samples/curl/logoutservice/get.bash'
   responses:
     '200':
-      description: successful operation
+      description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

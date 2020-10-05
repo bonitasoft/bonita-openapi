@@ -14,7 +14,7 @@ get:
         type: string
   responses:
     '200':
-      description: sucessful operation
+      description: "Success "
       content:
         application/json:
           schema:
@@ -50,7 +50,7 @@ delete:
         type: string
   responses:
     '200':
-      description: sucessful operation
+      description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

@@ -24,7 +24,7 @@ get:
         type: string
   responses:
     '200':
-      description: successful operation
+      description: "Success "
       headers:
         Content-Range:
           schema:

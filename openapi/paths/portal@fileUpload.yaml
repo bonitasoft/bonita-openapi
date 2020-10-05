@@ -3,7 +3,11 @@ post:
     - BDM
   summary: Upload a BDM
   description: |
-    Upload BDM
+    Upload BDM.
+
+    **NOTE:** To do this, your tenant services need to be paused.
+
+    In Enterprise editions, if you have an access control file installed on your tenant, you need to delete it before installing or updating your BDM.
   operationId: uploadBDM
   requestBody:
     content:
@@ -16,11 +20,11 @@ post:
               format: binary
   responses:
     '200':
-      description: sucessful operation
+      description: "Success: the temp file name as present on the server"
       content:
-        application/json:
+        text/plain:
           schema:
-            $ref: '../components/schemas/BDMUploadResponse.yaml'
+            type: string
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

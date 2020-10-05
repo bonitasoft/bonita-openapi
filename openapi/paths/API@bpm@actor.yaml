@@ -12,7 +12,7 @@ get:
     - $ref: '../components/parameters/pageOrder.yaml'
   responses:
     '200':
-      description: successful operation
+      description: "Success "
       headers:
         Content-Range:
           schema:

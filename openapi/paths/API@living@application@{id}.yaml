@@ -18,7 +18,7 @@ get:
         application/json:
           schema:
             $ref: '../components/schemas/Application.yaml'
-      description: successful operation
+      description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':
@@ -43,7 +43,7 @@ delete:
         type: string
   responses:
     '200':
-      description: sucessful operation
+      description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':
@@ -79,7 +79,7 @@ put:
         application/json:
           schema:
             $ref: '../components/schemas/Application.yaml'
-      description: successful operation
+      description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

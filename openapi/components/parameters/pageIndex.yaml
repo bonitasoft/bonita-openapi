@@ -6,4 +6,6 @@ example: '0'
 required: true
 schema:
   type: integer
+  minimum: 0
+  default: 0
 style: form

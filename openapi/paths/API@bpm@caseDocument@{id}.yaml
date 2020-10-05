@@ -16,7 +16,7 @@ get:
   responses:
     '200':
       description: |
-        successful operation.
+        "Success ".
         The response includes the "url" to use to download the content. Call the documentDownload servlet with this URL: /portal/documentDownload?fileName=doc.jpg&contentStorageId=4. Note: Since Bonita 7.10, document url fileName is now URL encoded. This will avoid errors when a document to be downloaded contains special characters in its name.
         In the previous versions, a workaround was necessary client-side using the javascript native function "encodeURI" to generate document download url. You can now remove this workaround.
       content:

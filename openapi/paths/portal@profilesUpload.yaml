@@ -16,7 +16,7 @@ post:
               format: binary
   responses:
     '200':
-      description: sucessful operation
+      description: "Success "
       content:
         text/plain:
           schema:

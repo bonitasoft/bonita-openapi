@@ -188,8 +188,9 @@ tags:
       Show status or install or update the Business Data Model.
 
       Installing or updating a BDM on your tenant needs to be done in two successive steps:
-      1 - Upload a BDM file
-      2 - Install/Update the previously uploaded file
+
+      1. Upload a BDM file
+      2. Install/Update the previously uploaded file
 
       **To do this, your tenant services need to be paused.**
 

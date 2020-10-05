@@ -23,7 +23,7 @@ get:
       example: 1
   responses:
     '200':
-      description: successful operation
+      description: "Success "
       content:
         application/json:
           schema:
