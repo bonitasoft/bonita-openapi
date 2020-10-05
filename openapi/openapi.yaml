@@ -617,8 +617,8 @@ paths:
     $ref: './paths/API@system@i18ntranslation.yaml'
   /API/system/session/unusedId:
     $ref: "./paths/API@system@session@unusedId.yaml"
-  /API/system/tenant/unusedid:
-    $ref: "./paths/API@system@tenant@unusedid.yaml"
+  /API/system/tenant/{id}:
+    $ref: "./paths/API@system@tenant@{id}.yaml"
   #  =======================
   #   TENANT API
   #  =======================

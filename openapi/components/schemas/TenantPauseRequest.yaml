@@ -2,6 +2,6 @@ type: object
 properties:
    paused:
      description: "wether the system tenant should be paused or not"
-     type: boolean
+     type: string
 example:
    paused: true

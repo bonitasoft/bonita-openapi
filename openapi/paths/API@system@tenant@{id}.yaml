@@ -5,6 +5,13 @@ get:
   description: |
     Pause and resume tenant services in order to do maintenance on a tenant.
   operationId: getSystemTenant
+  parameters:
+    - description: ID of the tenant
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
   responses:
     '200':
       description: "Success "
@@ -27,6 +34,13 @@ put:
   description: |
     Pause or resume the current tenant.
   operationId: updateSystemTenant
+  parameters:
+    - description: ID of the tenant
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
   requestBody:
     content:
       application/json:

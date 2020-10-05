@@ -26,7 +26,7 @@ services:
       - ./dist:/openapi
 
   bonita:
-    image: bonita:latest
+    image: bonita:7.10.5
     labels:
       - "traefik.http.routers.bonita.rule=Host(`bonita.localhost`)"
       - "traefik.http.routers.bonita.middlewares=bonita-cors@docker"
