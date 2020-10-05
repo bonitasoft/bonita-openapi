@@ -17,6 +17,11 @@ post:
   responses:
     '200':
       description: sucessful operation
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: tmp_application_data.xml
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

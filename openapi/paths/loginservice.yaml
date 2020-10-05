@@ -40,6 +40,10 @@ post:
           schema:
             type: string
           example: ed27cbeb-9953-4d77-b5a2-1f62a6c2e0bb
+      content:
+        text/plain:
+          schema:
+            type: string
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

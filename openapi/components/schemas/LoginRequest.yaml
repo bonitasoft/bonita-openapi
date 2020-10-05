@@ -1,4 +1,7 @@
 type: object
+required:
+  - username
+  - password
 properties:
   username:
     type: string
@@ -7,14 +10,19 @@ properties:
     type: string
     format: password
     description: the password
+  tenant:
+    type: string
+    description: the user tenant
   redirect:
     type: string
+    default: "false"
     description: >-
       "true" or "false". "false" indicates that the service should not
       redirect to Bonita Portal (after a successful login) or to
       the login page (after a login failure).
   redirectURL:
     type: string
+    default: ""
     description: the URL of the page to be displayed after login
     nullable: true
 example:
