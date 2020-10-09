@@ -1,15 +1,15 @@
 get:
   tags:
     - Process
-  summary: Finds Processs
+  summary: Finds Processes
   description: |
-    Finds Processs with pagination params and filters
+    Finds Processes with pagination params and filters
 
     - can order (default is ASC) on `name`, `version`, `deploymentDate`, `deployedBy`, `activationState`, `configurationState`, `processId`, `displayName`, `lastUpdateDate`, `categoryId`, `label`
     - can search on `name`, `displayName` or `version`
     - can filter on `name`, `version`, `deploymentDate`, `deployedBy`, `activationState` with the value DISABLED or ENABLED, `configurationState` with the value UNRESOLVED, or RESOLVED, `processId`, `displayName`, `lastUpdateDate`, `categoryId`, `label`, `supervisor_id`
 
-  operationId: findProcesss
+  operationId: findProcesses
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

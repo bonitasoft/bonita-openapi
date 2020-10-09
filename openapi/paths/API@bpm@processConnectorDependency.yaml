@@ -1,13 +1,13 @@
 get:
   tags:
     - ProcessConnectorDependency
-  summary: Finds ProcessConnectorDependencys
+  summary: Finds ProcessConnectorDependencies
   description: |
-    Finds ProcessConnectorDependencys with pagination params and filters
+    Finds ProcessConnectorDependencies with pagination params and filters
 
     **Mandatory filters: `connector_process_id`, `connector_name`, `connector_version`**
 
-  operationId: findProcessConnectorDependencys
+  operationId: findProcessConnectorDependencies
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'
