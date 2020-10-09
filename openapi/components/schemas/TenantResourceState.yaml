@@ -1,0 +1,3 @@
+description: Tenant resource state (BDM, BDM access control, ...)
+type: string
+enum: [ INSTALLING,INSTALLED ]

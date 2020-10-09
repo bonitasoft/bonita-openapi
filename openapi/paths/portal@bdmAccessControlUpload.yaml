@@ -20,9 +20,10 @@ post:
     '200':
       description: "Success "
       content:
-        application/json:
+        text/plain:
           schema:
-            $ref: '../components/schemas/BDMAccessControlUploadResponse.yaml'
+            type: string
+          example: "tmp_accessControlFileToUpload.xml"
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

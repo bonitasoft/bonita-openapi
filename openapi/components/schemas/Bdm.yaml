@@ -11,9 +11,7 @@ properties:
     description: "BDM type"
     type: string
   state:
-    description: "BDM state"
-    type: string
-    enum: [INSTALLED]
+    $ref: './TenantResourceState.yaml'
   lastUpdatedBy:
     description: "This value is always -1 because only the tenant_technical_user can install BDM."
     type: integer

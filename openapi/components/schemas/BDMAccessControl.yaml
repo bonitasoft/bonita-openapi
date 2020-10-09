@@ -7,9 +7,7 @@ properties:
     description: BDM access control name
     type: string
   state:
-    description: BDM access control
-    type: string
-    enum: ["INSTALLED"]
+    $ref: './TenantResourceState.yaml'
   lastUpdatedBy:
     description: "If `lastUpdatedBy: -1` it means that the access control were last installed or updated by tenant_technical_user."
     type: string

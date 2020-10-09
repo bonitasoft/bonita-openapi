@@ -7,7 +7,7 @@ get:
 
     Get the BDM access control status.
 
-  operationId: getDBMAccessControlStatus
+  operationId: getBDMAccessControlStatus
   responses:
     '200':
       description: "Success "

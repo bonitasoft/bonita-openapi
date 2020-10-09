@@ -1,7 +1,0 @@
-type: object
-properties:
-  fileUpload:
-    type: string
-    description: the temporary file name once uploaded on the server
-example:
-   fileUpload: "tmp_accessControlFileToUpload.xml"
