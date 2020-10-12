@@ -8,7 +8,7 @@ get:
     - Can order on `caseId`, `name`, `displayName`, `processId`, `state`, `type`, `archivedDate`, `reached_state_date`, `assigned_id`
     - Can filter on `caseId`, `name`, `displayName`, `processId`, `state`, `type`, `archivedDate`, `reached_state_date`, `assigned_id`, `isTerminal`
 
-  operationId: findArchivedTasks
+  operationId: searchArchivedTasks
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

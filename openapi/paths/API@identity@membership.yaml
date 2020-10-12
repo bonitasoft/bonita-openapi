@@ -9,7 +9,7 @@ get:
 
     You can order with the values: `ROLE_NAME_ASC`,`ROLE_NAME_DESC`, `GROUP_NAME_ASC`,`GROUP_NAME_DESC`, `ASSIGNED_DATE_ASC`, `ASSIGNED_DATE_DESC`
 
-  operationId: findMemberships
+  operationId: searchMemberships
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

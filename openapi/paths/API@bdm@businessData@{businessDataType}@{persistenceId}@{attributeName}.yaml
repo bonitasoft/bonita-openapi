@@ -5,7 +5,7 @@ get:
   description: |
     Gets the business data attribute of business data according to its identifier and attribute name. Request url.
 
-  operationId: findBusinessDataAttributeById
+  operationId: searchBusinessDataAttributeById
   parameters:
     - description: Business Data Type
       in: path

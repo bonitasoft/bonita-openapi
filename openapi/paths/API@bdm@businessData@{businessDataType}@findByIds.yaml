@@ -5,7 +5,7 @@ get:
   description: |
     Finds business data specified by their identifiers.
 
-  operationId: findBusinessDataByIds
+  operationId: searchBusinessDataByIds
   parameters:
     - description: Business Data Type
       in: path

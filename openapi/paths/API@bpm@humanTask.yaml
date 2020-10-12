@@ -9,7 +9,7 @@ get:
     - can search on any field that can be used to order results
     - can filter on `assigned_id`, `state`, `name`, `displayName`, `processDefinitionId`, `parentContainerId`, `userId`, `groupId`, `roleId`
 
-  operationId: findHumanTasks
+  operationId: searchHumanTasks
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

@@ -9,7 +9,7 @@ get:
 
     You can filter on `profile_id`, `user_id`, `role_id` and `group_id`
 
-  operationId: findProfileMembers
+  operationId: searchProfileMembers
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

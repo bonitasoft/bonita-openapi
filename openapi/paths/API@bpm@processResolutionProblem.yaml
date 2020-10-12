@@ -7,7 +7,7 @@ get:
 
     **Filtering on the process definition ID is mandatory.**
 
-  operationId: findProcessResolutionProblems
+  operationId: searchProcessResolutionProblems
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

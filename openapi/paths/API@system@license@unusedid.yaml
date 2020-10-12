@@ -1,23 +1,20 @@
 get:
   tags:
     - License
-  summary: Get the platform License
+  summary: Get the current server license
   description: |
-    Returns the current platform License.
-    This requires a platform session. Log in using the platform login service.
-  operationId: getPlatformLicense
+    Returns license information for the current server
+  operationId: getLicense
   responses:
     '200':
       description: "Success "
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/PlatformLicense.yaml'
+            $ref: '../components/schemas/License.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
-    '404':
-      $ref: '../components/responses/NotFound.yaml'
     '5XX':
       $ref: '../components/responses/ServerError.yaml'

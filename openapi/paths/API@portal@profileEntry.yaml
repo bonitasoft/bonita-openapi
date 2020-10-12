@@ -8,7 +8,7 @@ get:
     - can search on `name`
     - can filter on `page`,`name` and `parent_id`
 
-  operationId: findProfileEntries
+  operationId: searchProfileEntries
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

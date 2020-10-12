@@ -7,7 +7,7 @@ get:
 
     You can filter on `userId`, `value`, `definitionId`
 
-  operationId: findCustomUserValues
+  operationId: searchCustomUserValues
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

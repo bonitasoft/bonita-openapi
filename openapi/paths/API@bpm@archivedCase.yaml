@@ -16,7 +16,7 @@ get:
     * `team_manager_id`: allow to retrieve the cases in which all users with this manager ID ar involved)
     * `supervisor_id`: allow the retrived the cases of all processes the user with this ID is supervisor of) beware you cannot use team_manager_id and supervisor_id at the same time
 
-  operationId: findArchivedCases
+  operationId: searchArchivedCases
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

@@ -8,7 +8,7 @@ get:
     - can order on `id`, `name` and `displayName`
     - can filter on `name` and `displayName`
 
-  operationId: findRoles
+  operationId: searchRoles
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

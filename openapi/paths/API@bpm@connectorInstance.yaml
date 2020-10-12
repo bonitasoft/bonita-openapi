@@ -5,7 +5,7 @@ get:
   description: |
     Finds ConnectorInstances with pagination params and filters.
     Retrieve a list of connector instances attached to a process or a flow node.
-  operationId: findConnectorInstances
+  operationId: searchConnectorInstances
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

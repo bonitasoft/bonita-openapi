@@ -11,7 +11,7 @@ get:
     - can search on `displayName`
     - can filter on `displayName`
 
-  operationId: findTenants
+  operationId: searchTenants
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

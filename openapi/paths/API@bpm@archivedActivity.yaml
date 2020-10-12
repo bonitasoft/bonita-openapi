@@ -19,7 +19,7 @@ get:
       - `supervisor_id`: retrieve the information the process manager associated to this id has access to (only in Enterprise editions)
       - f: same as the sort order fields
 
-  operationId: findArchivedActivities
+  operationId: searchArchivedActivities
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

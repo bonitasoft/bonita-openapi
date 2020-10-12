@@ -23,7 +23,7 @@ get:
       * yyyy-MM-dd'T'HH:mm:ss
       * yyyy-MM-dd'T'HH:mm:ss.SSS
 
-  operationId: findBusinessData
+  operationId: searchBusinessData
   parameters:
     - description: Business Data Type
       in: path
@@ -38,7 +38,7 @@ get:
       required: true
       schema:
         type: string
-      example: findEmployeeByFirstNameAndLastName
+      example: searchEmployeeByFirstNameAndLastName
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'
     - $ref: '../components/parameters/pageFilter.yaml'

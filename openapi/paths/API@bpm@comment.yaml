@@ -8,7 +8,7 @@ get:
     - can order on `postDate`
     - can filter on `supervisor_id`,`user_id`,`processInstanceId` - You cannot use supervisor_id and user_id filter at the same time
 
-  operationId: findCaseComments
+  operationId: searchCaseComments
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

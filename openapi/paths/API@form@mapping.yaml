@@ -7,7 +7,7 @@ get:
 
     - can filter on `processDefinitionId`,`type`
 
-  operationId: findFormMappings
+  operationId: searchFormMappings
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

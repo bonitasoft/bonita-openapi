@@ -5,7 +5,7 @@ get:
   description: |
     Finds CustomUserDefinitions. There are no filters, and no search terms. All the definitions are returned.
 
-  operationId: findCustomUserDefinitions
+  operationId: searchCustomUserDefinitions
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

@@ -9,7 +9,7 @@ get:
     - can search on `displayName`
     - can filter on `displayName`
 
-  operationId: findUserTasks
+  operationId: searchUserTasks
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

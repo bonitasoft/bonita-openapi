@@ -9,7 +9,7 @@ get:
     - can search on `name`, `displayName`, `state`, `processDefinitionId`, `parentProcessInstanceId`, `parentActivityInstanceId` (order by parent activity id), `rootProcessInstanceId`, `lastUpdateDate`
     - can filter on `name`, `state`, `processId`, `parentCaseId`, `rootCaseId`, `last_update_date`, `supervisor_id` (only in Enterprise editions)
 
-  operationId: findActivities
+  operationId: searchActivities
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

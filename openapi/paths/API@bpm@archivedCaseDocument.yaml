@@ -18,7 +18,7 @@ get:
       Depending on the setting for [word-based search](using-list-and-search-methods.md), the search returns documents with _string_ at the start of the description or the start of a word in the description.
 
 
-  operationId: findArchivedCaseDocuments
+  operationId: searchArchivedCaseDocuments
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

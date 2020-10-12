@@ -5,7 +5,7 @@ get:
   description: |
     List the available I18nlocales with pagination params and filters
 
-  operationId: findI18nlocales
+  operationId: searchI18nlocales
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

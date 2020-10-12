@@ -8,7 +8,7 @@ get:
     - can order on `caseId`, `processId`, `state`, `type`, `supervisor_id`, `last_update_date`
     - can filter on `caseId`, `processId`, `state`, `type`, `supervisor_id`, `last_update_date`
 
-  operationId: findTasks
+  operationId: searchTasks
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

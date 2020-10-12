@@ -9,7 +9,7 @@ get:
     - can search on `token`
     - can filter on `id`, `token`, `applicationId`, `pageId`
 
-  operationId: findApplicationPages
+  operationId: searchApplicationPages
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

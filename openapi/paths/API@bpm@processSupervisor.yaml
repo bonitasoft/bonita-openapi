@@ -9,7 +9,7 @@ get:
     (two if you want to filter on group and role) set to `>0` and the other ones set to `-1`.
     E.g.: `f=process_id%3D8040901857674754544&f=user_id%3D>0&f=group_id%3D-1&f=role_id%3D-1`
 
-  operationId: findProcessSupervisors
+  operationId: searchProcessSupervisors
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

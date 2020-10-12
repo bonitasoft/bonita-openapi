@@ -8,7 +8,7 @@ get:
     - can order on `id`,`name`,`displayName`
     - can filter on `name`,`displayName`,`parent_path`
 
-  operationId: findGroups
+  operationId: searchGroups
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'

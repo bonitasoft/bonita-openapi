@@ -9,7 +9,7 @@ get:
     - can search on any field that can be used to order results
     - can filter on `name`, `state`, `processId`, `parentCaseId`, `rootCaseId`, `last_update_date`
 
-  operationId: findFlowNodes
+  operationId: searchFlowNodes
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'
