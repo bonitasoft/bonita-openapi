@@ -18,7 +18,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/Process.yaml'
+            $ref: '../components/schemas/BusinessProcess.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

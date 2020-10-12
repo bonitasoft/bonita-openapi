@@ -7,7 +7,7 @@ properties:
     type: string
     description: "the activity id"
   type:
-    $ref: './ActivityTypeEnum.yaml'
+    $ref: './ActivityType.yaml'
   name:
     type: string
     description: "the activity technical name"
@@ -21,7 +21,7 @@ properties:
     type: string
     description: "the human readable activity description"
   state:
-    $ref: './ActivityStateEnum.yaml'
+    $ref: './ActivityState.yaml'
   reached_state_date:
     type: string
     description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when this activity reached the current state, for example '2014-10-17 16:05:42.626'"
@@ -32,7 +32,7 @@ properties:
     type: string
     description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when this activity is due, for example '2014-10-17 16:05:42.626'"
   priority:
-    $ref: './ActivityPriorityEnum.yaml'
+    $ref: './ActivityPriority.yaml'
   processId:
     type: string
     description: "the process definition id of the case which define this activity"

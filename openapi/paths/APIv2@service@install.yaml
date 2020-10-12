@@ -1,10 +1,12 @@
 post:
   tags:
-    - Page
-  summary: Upload a Page
+    - Application
+  summary: Upload an application configuration file
   description: |
-    Upload Page
-  operationId: uploadPage
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Upload an application configuration file in the `bconf` format.
+  operationId: uploadApplicationConfiguration
   requestBody:
     content:
       multipart/form-data:

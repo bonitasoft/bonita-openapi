@@ -17,8 +17,7 @@ properties:
     description: "the process description"
     type: string
   activationState:
-    description: "the state of the process definition (ENABLED or DISABLED)"
-    type: string
+    $ref: './ActivationState.yaml'
   name:
     description: "the process name"
     type: string
@@ -35,8 +34,7 @@ properties:
     description: "the date when the process definition was last updated"
     type: string
   configurationState:
-    description: "the configuration state of the process (UNRESOLVED or RESOLVED)"
-    type: string
+    $ref: './ConfigurationState.yaml'
   version:
     description: "the version of the process"
     type: string

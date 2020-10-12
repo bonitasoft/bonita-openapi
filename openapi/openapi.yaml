@@ -621,6 +621,8 @@ paths:
     $ref: "./paths/API@system@tenant@{id}.yaml"
   /API/system/license/unusedid:
     $ref: "./paths/API@system@license@unusedid.yaml"
+  /APIv2/service/install:
+    $ref: './paths/APIv2@service@install.yaml'
   #  =======================
   #   TENANT API
   #  =======================
