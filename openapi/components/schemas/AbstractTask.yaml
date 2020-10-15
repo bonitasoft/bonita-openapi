@@ -21,7 +21,7 @@ properties:
   state:
     description: the current state of the task
     type: string
-    enum: [ready completed failed]
+    enum: [ ready,completed,failed ]
   reached_state_date:
     description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when this task reached the current state for example '2014-10-17 16:05:42.626'
     type: string

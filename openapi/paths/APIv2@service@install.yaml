@@ -12,8 +12,10 @@ post:
       multipart/form-data:
         schema:
           type: object
+          required:
+            - configuration
           properties:
-            file:
+            configuration:
               type: string
               format: binary
   responses:
