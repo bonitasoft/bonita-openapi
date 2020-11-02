@@ -48,7 +48,7 @@ post:
     content:
       application/json:
         schema:
-           $ref: '../components/schemas/MembershipCreateRequest.yaml'          
+           $ref: '../components/schemas/MembershipCreateRequest.yaml'
     description: Partial Membership description
     required: true
   responses:

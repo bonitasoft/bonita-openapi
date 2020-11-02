@@ -7,6 +7,6 @@ properties:
      description: display name of the Process
      type: string
    activationState:
-     $ref: './ActivationState.yaml'
+     $ref: '../schemas/ActivationState.yaml'
 example:
    displayName: "Leave booking process"
