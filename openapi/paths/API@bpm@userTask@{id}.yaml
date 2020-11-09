@@ -34,7 +34,7 @@ put:
   description: |
     Update the UserTask for the given ID.
 
-    Fields that can be updated are assignedId and state. The only value that can be set for the state is "skipped". You only need to specify the fields that are to be updated.
+    Fields that can be updated are `assigned_id` and `state`. The only value that can be set for the state is `skipped`. You only need to specify the fields that are to be updated.
 
   operationId: updateUserTaskById
   parameters:
