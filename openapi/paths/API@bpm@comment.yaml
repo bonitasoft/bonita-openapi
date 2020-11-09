@@ -1,14 +1,14 @@
 get:
   tags:
-    - CaseComment
-  summary: Finds CaseComments
+    - ProcessInstanceComment
+  summary: Finds ProcessInstanceComments
   description: |
-    Finds CaseComments with pagination params and filters
+    Finds ProcessInstanceComments with pagination params and filters
 
     - can order on `postDate`
     - can filter on `supervisor_id`,`user_id`,`processInstanceId` - You cannot use supervisor_id and user_id filter at the same time
 
-  operationId: searchCaseComments
+  operationId: searchProcessInstanceComments
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'
@@ -28,7 +28,7 @@ get:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/CaseComment.yaml'
+              $ref: '../components/schemas/ProcessInstanceComment.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':
@@ -37,16 +37,16 @@ get:
       $ref: '../components/responses/ServerError.yaml'
 post:
   tags:
-    - CaseComment
-  summary: Create the CaseComment
+    - ProcessInstanceComment
+  summary: Create the ProcessInstanceComment
   description: |
-    Create the CaseComment
-  operationId: createCaseComment
+    Create the ProcessInstanceComment
+  operationId: createProcessInstanceComment
   requestBody:
     content:
       application/json:
         schema:
-           $ref: '../components/schemas/CaseCommentCreateRequest.yaml'
+           $ref: '../components/schemas/ProcessInstanceCommentCreateRequest.yaml'
     description: The process instance (case) id and the comment content, in JSON
     required: true
   responses:
@@ -54,7 +54,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/CaseComment.yaml'
+            $ref: '../components/schemas/ProcessInstanceComment.yaml'
       description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'

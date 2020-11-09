@@ -1,11 +1,11 @@
 type: object
-description: "Case is an instance of a process. When you start a process, it creates a case."
+description: "ProcessInstance (Case) is an instance of a process. When you start a process, it creates a process instances."
 properties:
   id:
-    description: "the identifier of the case"
+    description: "the identifier of the ProcessInstance (Case)"
     type: string
   end_date:
-    description: "the date set when the case is closed"
+    description: "the date set when the process instance is closed"
     type: string
   failedFlowNodes:
     description: "count of failed flow nodes if parameter n=failedFlowNodes is given"
@@ -20,7 +20,7 @@ properties:
     description: "count of active flow nodes if parameter n=activeFlowNodes is given"
     type: string
   state:
-    description: "state: an enum that represent the state of the case, it can be INITIALIZING, STARTED, SUSPENDED, CANCELLED, ABORTED, COMPLETING, COMPLETED, ERROR, ABORTING"
+    description: "state: an enum that represent the state of the process instances, it can be INITIALIZING, STARTED, SUSPENDED, CANCELLED, ABORTED, COMPLETING, COMPLETED, ERROR, ABORTING"
     type: string
   rootCaseId:
     description: "the identifier of the container of the case"

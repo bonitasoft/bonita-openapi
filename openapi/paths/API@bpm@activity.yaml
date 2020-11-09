@@ -7,7 +7,7 @@ get:
 
     - can order on `name`, `displayName`, `state`, `processDefinitionId`, `parentProcessInstanceId`, `parentActivityInstanceId` (order by parent activity id), `rootProcessInstanceId`, `lastUpdateDate`
     - can search on `name`, `displayName`, `state`, `processDefinitionId`, `parentProcessInstanceId`, `parentActivityInstanceId` (order by parent activity id), `rootProcessInstanceId`, `lastUpdateDate`
-    - can filter on `name`, `state`, `processId`, `parentCaseId`, `rootCaseId`, `last_update_date`, `supervisor_id` (only in Enterprise editions)
+    - can filter on `name`, `state`, `processId`, `parentProcessInstanceId`, `rootProcessInstanceId`, `last_update_date`, `supervisor_id` (only in Enterprise editions)
 
   operationId: searchActivities
   parameters:

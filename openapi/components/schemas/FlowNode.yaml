@@ -8,22 +8,22 @@ properties:
     description: "the human readable flow node description "
     type: string
   executedBySubstitute:
-    description: "the id of the user who really performed this flow node in case where a substitute did it, or 0 if the flow node was not performed by a substitute"
+    description: "the id of the user who really performed this flow node when a substitute did it, or 0 if the flow node was not performed by a substitute"
     type: string
   caseId:
-    description: "the case id that is associated with this flow node"
+    description: "the process instance id that is associated with this flow node"
     type: string
   parentCaseId:
-    description: "the parent case id that is associated with this flow node's case"
+    description: "the parent process instance id that is associated with this flow node's case"
     type: string
   rootCaseId:
-    description: "the root case initiator id that is associated with this flow node's case"
+    description: "the root process instance initiator id that is associated with this flow node's case"
     type: string
   processId:
     description: "the process id that is associated with this flow node"
     type: string
   rootContainerId:
-    description: "the root process id of the root case that is associated with this flow node"
+    description: "the root process id of the root process instance that is associated with this flow node"
     type: string
   state:
     description: "the current state of the flow node (ready, completed, failed)"
@@ -65,7 +65,7 @@ properties:
     description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when this flow node was last updated, for example '2014-10-17 16:05:42.626)"
     type: string
   parentTaskId":
-    description: "in the case of a subtask, the parent task id "
+    description: "in case of a subtask, the parent task id "
     type: string
 example:
   displayDescription": ""

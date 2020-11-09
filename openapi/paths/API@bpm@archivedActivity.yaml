@@ -12,7 +12,7 @@ get:
       - `type` : the activity type
       - `isTerminal` : say whether or not the activity is in a terminal state
       - `processId` : the process this activity is associated to
-      - `caseId` : the case initiator this activity is associated to
+      - `caseId` : the process instance initiator this activity is associated to
       - `reached_state_date` : the date when this activity arrived in this state
 
     Can filter on:

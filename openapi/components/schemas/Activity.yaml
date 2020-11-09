@@ -35,13 +35,13 @@ properties:
     $ref: './ActivityPriority.yaml'
   processId:
     type: string
-    description: "the process definition id of the case which define this activity"
+    description: "the process definition id of the process instance which define this activity"
   parentCaseId:
     type: string
-    description: "the immediate containing case id (long, a.k.a process instance id)"
+    description: "the immediate containing process instance id (long, a.k.a process instance id)"
   rootCaseId:
     type: string
-    description: "the top/root case id (long, a.k.a process instance id). In the case of an event sub process, parentCaseId will the id of the case called while rootCaseId will be the one from the caller case"
+    description: "the top/root process instance id (long, a.k.a case id). In case of an event sub process, `parentCaseId` will the id of the process instance called while `rootCaseId` will be the one from the caller process instance"
   rootContainerId:
     type: string
     description: "same as rootCaseId"
@@ -50,7 +50,7 @@ properties:
     description: "the id of the user who performed this activity. The activity has to be a human task otherwise its value will be 0"
   executedBySubstitute:
     type: string
-    description: "the id of the user who did actually performed the activity in the case of has been done in the name of someone else. Value is 0 otherwise"
+    description: "the id of the user who did actually performed the activity when it has been done in the name of someone else. Value is 0 otherwise"
   actorId:
     type: string
     description: "the id of the actor that can execute this activity, null otherwise"

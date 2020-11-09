@@ -1,0 +1,24 @@
+type: object
+description: "A process instance  variable"
+properties:
+  description:
+    description: "Detailed description of the process instance variable, as set in the definition at design-time"
+    type: string
+  name:
+    description: "name of the variable in the process instance"
+    type: string
+  value:
+    description: "the current value of the process instance variable"
+    type: string
+  case_id:
+    description: "ID of the process instance this variable belongs to"
+    type: string
+  type:
+    description: "the Java type of the variable"
+    type: string
+example:
+  description: ""
+  name: "myInvoiceAmount"
+  value: "14.2"
+  case_id: 1
+  type: "java.lang.Float"

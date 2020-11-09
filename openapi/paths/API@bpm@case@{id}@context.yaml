@@ -1,12 +1,12 @@
 get:
   tags:
-    - Case
-  summary: Finds the Context by Case ID
+    - ProcessInstance
+  summary: Finds the Context by ProcessInstance ID
   description: |
-    Returns the Context for the given Case ID
-  operationId: getContextByCaseId
+    Returns the Context for the given ProcessInstance ID
+  operationId: getContextByProcessInstanceId
   parameters:
-    - description: ID of the Case that has the Context to return
+    - description: ID of the ProcessInstance that has the Context to return
       in: path
       name: id
       required: true

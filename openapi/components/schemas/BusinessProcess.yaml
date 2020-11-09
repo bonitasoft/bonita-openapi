@@ -28,7 +28,7 @@ properties:
     description: "the human readable process description"
     type: string
   actorinitiatorid:
-    description: "the id of the actor that can initiate cases of the process"
+    description: "the id of the actor that can initiate process instances of the process"
     type: string
   last_update_date:
     description: "the date when the process definition was last updated"

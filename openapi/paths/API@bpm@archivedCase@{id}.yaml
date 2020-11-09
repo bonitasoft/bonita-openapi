@@ -1,12 +1,12 @@
 get:
   tags:
-    - ArchivedCase
-  summary: Finds the ArchivedCase by ID
+    - ArchivedProcessInstance
+  summary: Finds the ArchivedProcessInstance by ID
   description: |
-    Returns the single ArchivedCase for the given ID
-  operationId: getArchivedCaseById
+    Returns the single ArchivedProcessInstance for the given ID
+  operationId: getArchivedProcessInstanceById
   parameters:
-    - description: ID of the ArchivedCase to return
+    - description: ID of the ArchivedProcessInstance to return
       in: path
       name: id
       required: true
@@ -18,7 +18,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/ArchivedCase.yaml'
+            $ref: '../components/schemas/ArchivedProcessInstance.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':
@@ -29,13 +29,13 @@ get:
       $ref: '../components/responses/ServerError.yaml'
 delete:
   tags:
-    - ArchivedCase
-  summary: Delete the ArchivedCase by ID
+    - ArchivedProcessInstance
+  summary: Delete the ArchivedProcessInstance by ID
   description: |
-    Delete the single ArchivedCase for the given ID
-  operationId: deleteArchivedCaseById
+    Delete the single ArchivedProcessInstance for the given ID
+  operationId: deleteArchivedProcessInstanceById
   parameters:
-    - description: ID of the ArchivedCase to delete
+    - description: ID of the ArchivedProcessInstance to delete
       in: path
       name: id
       required: true

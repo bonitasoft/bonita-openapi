@@ -1,12 +1,12 @@
 get:
   tags:
-    - CaseInfo
-  summary: Finds the CaseInfo by ID
+    - ProcessInstanceInfo
+  summary: Finds the ProcessInstanceInfo by ID
   description: |
-    Returns the single CaseInfo for the given ID
-  operationId: getCaseInfoById
+    Returns the single ProcessInstanceInfo for the given ID
+  operationId: getProcessInstanceInfoById
   parameters:
-    - description: ID of the CaseInfo to return
+    - description: ID of the ProcessInstanceInfo to return
       in: path
       name: id
       required: true
@@ -18,7 +18,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/CaseInfo.yaml'
+            $ref: '../components/schemas/ProcessInstanceInfo.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

@@ -1,15 +1,15 @@
 get:
   tags:
-    - ArchivedCaseComment
-  summary: Finds ArchivedCaseComments
+    - ArchivedProcessInstanceComment
+  summary: Finds ArchivedProcessInstanceComments
   description: |
-    Finds ArchivedCaseComments with pagination params and filters
+    Finds ArchivedProcessInstanceComments with pagination params and filters
 
     - can order on `id`
     - can search on `displayName`
     - can filter on `displayName`
 
-  operationId: searchArchivedCaseComments
+  operationId: searchArchivedProcessInstanceComments
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'
@@ -30,7 +30,7 @@ get:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/ArchivedCaseComment.yaml'
+              $ref: '../components/schemas/ArchivedProcessInstanceComment.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

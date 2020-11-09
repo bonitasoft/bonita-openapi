@@ -68,7 +68,7 @@ delete:
 
     **Warning: Beware! Data loss risk!**
 
-    Deleting a process will automatically delete all its cases (on-going and archived alike).
+    Deleting a process will automatically delete all its process instances (on-going and archived alike).
     Thus, the operation may take a long time, and fail if the transaction timeout is not large enough. This feature should only be used on non-production environments.
 
     **Please proceed at your own risk.**

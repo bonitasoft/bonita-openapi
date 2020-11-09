@@ -1,5 +1,5 @@
 type: object
-description: "Retrieves information about a case. It returns counters for each flow node in the case, showing the number of flow node instances that are in completed, ready, or failed state. If there are no flow node instances in a given state, no counter is returned for that state for the flow node."
+description: "Retrieves information about a process instances. It returns counters for each flow node in the process instances, showing the number of flow node instances that are in completed, ready, or failed state. If there are no flow node instances in a given state, no counter is returned for that state for the flow node."
 properties:
   id:
     description: "case identifier"

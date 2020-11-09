@@ -1,12 +1,12 @@
 get:
   tags:
-    - CaseVariable
-  summary: Finds the Variable by Case ID
+    - ProcessInstanceVariable
+  summary: Finds the Variable by ProcessInstance ID
   description: |
-    Returns the single Variable for the given Case ID
-  operationId: getVariableByCaseId
+    Returns the single Variable for the given ProcessInstance ID
+  operationId: getVariableByProcessInstanceId
   parameters:
-    - description: The identifier of the case from which to retrieve the variable
+    - description: The identifier of the process instance from which to retrieve the variable
       in: path
       name: id
       required: true
@@ -24,7 +24,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/CaseVariable.yaml'
+            $ref: '../components/schemas/ProcessInstanceVariable.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':
@@ -35,16 +35,16 @@ get:
       $ref: '../components/responses/ServerError.yaml'
 put:
   tags:
-    - CaseVariable
-  summary: Update a Variable by Case ID
+    - ProcessInstanceVariable
+  summary: Update a Variable by ProcessInstance ID
   description: |
-    Update the variable for the given Case ID.
+    Update the variable for the given ProcessInstance ID.
 
     **Warning** : only following types are supported for javaTypeclassname: `java.lang.String`, `java.lang.Integer`, `java.lang.Double`, `java.lang.Long`, `java.lang.Boolean`, `java.util.Date`
 
-  operationId: updateVariableByCaseId
+  operationId: updateVariableByProcessInstanceId
   parameters:
-    - description: The identifier of the case from which to retrieve the variable
+    - description: The identifier of the process instance from which to retrieve the variable
       in: path
       name: id
       required: true
@@ -60,8 +60,8 @@ put:
     content:
       application/json:
         schema:
-           $ref: '../components/schemas/CaseVariableUpdateRequest.yaml'
-    description: Partial XXX description
+           $ref: '../components/schemas/ProcessInstanceVariableUpdateRequest.yaml'
+    description: Partial ProcessInstance variables description
     required: true
   responses:
     '200':

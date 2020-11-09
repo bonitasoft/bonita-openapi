@@ -1,7 +1,7 @@
 type: object
 properties:
    caseId:
-     description: "The case id"
+     description: "The process instance id"
      type: string
    file:
      description: "The local file name to upload from (as from the temp upload folder)"

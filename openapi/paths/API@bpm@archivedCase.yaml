@@ -1,22 +1,22 @@
 get:
   tags:
-    - ArchivedCase
-  summary: Finds ArchivedCases
+    - ArchivedProcessInstance
+  summary: Finds ArchivedProcessInstances
   description: |
-    Finds ArchivedCases with pagination params and filters
+    Finds archived ProcessInstances (or ProcessInstance) with pagination params and filters
 
     You can order on `id`, `processDefinitionId`, `startedBy`, `startedBySubstitute`, `startDate`, `endDate`, `lastUpdate`, `archivedDate`, `sourceObjectId`
 
     You can filter on :
 
-    * `sourceObjectId`: The original case ID before the case was archived
+    * `sourceObjectId`: The original process instance ID before the process instance was archived
     * `processDefinitionId`: The process derfinition ID
     * `name`: the process name
     * `started_by`: the ID of the user who started the process
-    * `team_manager_id`: allow to retrieve the cases in which all users with this manager ID ar involved)
-    * `supervisor_id`: allow the retrived the cases of all processes the user with this ID is supervisor of) beware you cannot use team_manager_id and supervisor_id at the same time
+    * `team_manager_id`: allow to retrieve the process instances in which all users with this manager ID ar involved)
+    * `supervisor_id`: allow the retrived the process instances of all processes the user with this ID is supervisor of) beware you cannot use team_manager_id and supervisor_id at the same time
 
-  operationId: searchArchivedCases
+  operationId: searchArchivedProcessInstances
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'
@@ -36,7 +36,7 @@ get:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/ArchivedCase.yaml'
+              $ref: '../components/schemas/ArchivedProcessInstance.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

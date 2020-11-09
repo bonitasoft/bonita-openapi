@@ -1,12 +1,12 @@
 get:
   tags:
-    - Case
-  summary: Finds the Case by ID
+    - ProcessInstance
+  summary: Finds the ProcessInstance by ID
   description: |
-    Returns the single Case for the given ID
-  operationId: getCaseById
+    Returns the single ProcessInstance for the given ID
+  operationId: getProcessInstanceById
   parameters:
-    - description: ID of the Case to return
+    - description: ID of the ProcessInstance to return
       in: path
       name: id
       required: true
@@ -25,7 +25,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/Case.yaml'
+            $ref: '../components/schemas/ProcessInstance.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':
@@ -36,13 +36,13 @@ get:
       $ref: '../components/responses/ServerError.yaml'
 delete:
   tags:
-    - Case
-  summary: Delete the Case by ID
+    - ProcessInstance
+  summary: Delete the ProcessInstance by ID
   description: |
-    Delete the single Case for the given ID
-  operationId: deleteCaseById
+    Delete the single ProcessInstance for the given ID
+  operationId: deleteProcessInstanceById
   parameters:
-    - description: ID of the Case to delete
+    - description: ID of the ProcessInstance to delete
       in: path
       name: id
       required: true
