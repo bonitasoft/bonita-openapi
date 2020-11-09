@@ -21,7 +21,7 @@ properties:
   state:
     description: the current state of the task
     type: string
-    enum: [ready completed failed]
+    enum: [ ready,completed,failed ]
   reached_state_date:
     description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when this task reached the current state for example '2014-10-17 16:05:42.626'
     type: string
@@ -38,16 +38,16 @@ properties:
     description: the priority (string) of the current task
     type: string
   processId:
-    description: the process definition id of the case which define this task
+    description: the process definition id of the process instance which define this task
     type: string
   parentCaseId:
-    description: the immediate containing case id (process instance id)
+    description: the immediate containing process instance id (case id)
     type: string
   parentTaskId:
     description: the parent Task id
     type: string
   rootCaseId:
-    description: the top/root case id (process instance id). In the case of an event sub process parentCaseId will the id of the case called while rootCaseId will be the one from the caller case
+    description: the top/root process instance id (case id). In case of an "event sub process" `parentCaseId` will the id of the process instance called while `rootCaseId` will be the one from the caller process instance
     type: string
   rootContainerId:
     description: same as rootCaseId
@@ -56,7 +56,7 @@ properties:
     description: the id of the user who performed this task. The task has to be a human task otherwise its value will be 0
     type: string
   executedBySubstitute:
-    description: the id of the user who did actually performed the task in the case of has been done in the name of someone else. Value is 0 otherwise
+    description: the id of the user who did actually performed the task when it has been done in the name of someone else. Value is 0 otherwise
     type: string
   actorId:
     description: the id of the actor that can execute this task null otherwise

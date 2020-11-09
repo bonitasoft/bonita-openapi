@@ -7,7 +7,7 @@ get:
 
     - can order on `name`, `priority`, `dueDate`, `state`, `processDefinitionId`, `processInstanceId`, `parentActivityInstanceId`, `assigneeId`, `parentContainerId`, `displayName`, `reachedStateDate`
     - can search on any field that can be used to order results
-    - can filter on `assigned_id`, `state`, `name`, `displayName`, `processDefinitionId`, `caseId`, `rootCaseId`, `parentCaseId`
+    - can filter on `assigned_id`, `state`, `name`, `displayName`, `processDefinitionId`, `caseId`, `rootProcessInstanceId`, `parentProcessInstanceId`
 
   operationId: searchHumanTasks
   parameters:

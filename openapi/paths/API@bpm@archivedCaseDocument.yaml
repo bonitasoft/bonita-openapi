@@ -1,16 +1,16 @@
 get:
   tags:
-    - ArchivedCaseDocument
-  summary: Finds ArchivedCaseDocuments
+    - ArchivedProcessInstanceDocument
+  summary: Finds ArchivedProcessInstanceDocuments
   description: |
-    Finds ArchivedCaseDocuments with pagination params and filters
+    Finds ArchivedProcessInstanceDocuments with pagination params and filters
 
     You can filter on :
 
     * `sourceObjectId="id"`: search for documents by specifying the original document id.
-      This is useful if you know the id of a caseDocument and you wish to retrieve all its previous versions..
-    * `caseId="id"`: search for documents with the specified open case id.
-    * `archivedCaseId="id"`: search for documents with the specified archvied case id.
+      This is useful if you know the id of a ProcessInstanceDocument and you wish to retrieve all its previous versions..
+    * `caseId="id"`: search for documents with the specified open process instance id.
+    * `archivedProcessInstanceId="id"`: search for documents with the specified archvied process instance id.
     * `submittedBy="id"`: search for documents that were submitted by the user with the specified identifier.
     * `name="string"`: search for documents with names that contain _string_.
       Depending on the setting for [word-based search](using-list-and-search-methods.md), the search returns documents with _string_ at the start of the name or the start of a word in the name.
@@ -18,7 +18,7 @@ get:
       Depending on the setting for [word-based search](using-list-and-search-methods.md), the search returns documents with _string_ at the start of the description or the start of a word in the description.
 
 
-  operationId: searchArchivedCaseDocuments
+  operationId: searchArchivedProcessInstanceDocuments
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'
@@ -38,7 +38,7 @@ get:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/ArchivedCaseDocument.yaml'
+              $ref: '../components/schemas/ArchivedProcessInstanceDocument.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

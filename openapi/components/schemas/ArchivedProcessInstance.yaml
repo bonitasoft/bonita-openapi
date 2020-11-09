@@ -1,13 +1,13 @@
-allOf: # Combines the Case and the inline model
-  - $ref: './Case.yaml'
+allOf: # Combines the ProcessInstance and the inline model
+  - $ref: './ProcessInstance.yaml'
   - type: object
     description: "A completed instance of a process."
     properties:
       sourceObjectId:
-        description: "the id of the case before it was archived"
+        description: "the id of the process instance before it was archived"
         type: string
       archivedDate:
-        description: "the date set when the case was archived"
+        description: "the date set when the process instance was archived"
         type: string
     example:
       id: 9

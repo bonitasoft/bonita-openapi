@@ -1,5 +1,5 @@
-allOf:     # Combines the CaseDocument and the inline model
-  - $ref: './CaseDocument.yaml'
+allOf:     # Combines the ProcessInstanceDocument and the inline model
+  - $ref: './ProcessInstanceDocument.yaml'
   - type: object
     description: "A document in an active case"
     properties:

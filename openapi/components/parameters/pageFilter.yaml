@@ -5,6 +5,8 @@ in: query
 name: f
 required: false
 schema:
-  type: string
+  type: array
+  items:
+    type: string
 style: form
 example: 'abc%3d123'

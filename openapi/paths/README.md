@@ -21,7 +21,7 @@ Use a predefined "path separator" and keep all of your path files in the top lev
 # todo: insert tree view of paths folder
 ```
 
-Redocly recommends using the `@` character for this case.
+Redocly recommends using the `@` character for this process instances.
 
 In addition, Redocly recommends placing path parameters within `{}` curly braces if you adopt this style.
 
@@ -41,7 +41,7 @@ In addition, Redocly recommends placing path parameters within `{}` curly braces
 
 You may also place each operation in a separate file.  
 
-In this case, if you want all paths at the top-level, you can concatenate the http method to the path name.  Similar to the above option, you can 
+In this process instances, if you want all paths at the top-level, you can concatenate the http method to the path name.  Similar to the above option, you can 
 
 ### Files at top-level of `paths`
 
@@ -64,7 +64,7 @@ GET /customers
 /paths/customers/get.yaml
 ```
 
-In this case, the path id defined within subfolders which mirror the API URL structure.
+In this process instances, the path id defined within subfolders which mirror the API URL structure.
 
 Example with path parameter:
 ```

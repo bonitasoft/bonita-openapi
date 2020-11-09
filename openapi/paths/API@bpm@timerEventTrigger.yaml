@@ -16,7 +16,7 @@ get:
     - $ref: '../components/parameters/pageFilter.yaml'
     - $ref: '../components/parameters/pageOrder.yaml'
     - $ref: '../components/parameters/pageSearch.yaml'
-    - description: the case id
+    - description: the process instance id
       in: query
       name: caseId
       required: true

@@ -1,9 +1,9 @@
 get:
   tags:
-    - CaseDocument
-  summary: Finds CaseDocuments
+    - ProcessInstanceDocument
+  summary: Finds ProcessInstanceDocuments
   description: |
-    Finds CaseDocuments with pagination params and filters
+    Finds ProcessInstanceDocuments with pagination params and filters
 
     It is possible to filter on three parameters: `submittedBy`, `name` and `description`.
 
@@ -14,7 +14,7 @@ get:
        Depending on the setting for [word-based search](using-list-and-search-methods.md), the search returns documents with _string_ at the start of the description or the start of a word in the description.
 
 
-  operationId: searchCaseDocuments
+  operationId: searchProcessInstanceDocuments
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'
@@ -34,7 +34,7 @@ get:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/CaseDocument.yaml'
+              $ref: '../components/schemas/ProcessInstanceDocument.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':
@@ -43,30 +43,30 @@ get:
       $ref: '../components/responses/ServerError.yaml'
 post:
   tags:
-    - CaseDocument
-  summary: Create the CaseDocument
+    - ProcessInstanceDocument
+  summary: Create the ProcessInstanceDocument
   description: |
-    Create the CaseDocument.
+    Create the ProcessInstanceDocument.
 
-    Use a POST method to add a document to a case. You can upload a document from the local file system or by URL.
-    Specify the case id and the document name in the payload. The document description is optional: if you do not specify a description, the description in the response is empty.
+    Use a POST method to add a document to a process instances. You can upload a document from the local file system or by URL.
+    Specify the process instance id and the document name in the payload. The document description is optional: if you do not specify a description, the description in the response is empty.
     The response contains a version, which is managed automatically. You cannot currently retrieve a specific version of a document, only the most recent version.
-    To retrieve earlier versions of a caseDocument, use the archivedCaseDocument resource.
+    To retrieve earlier versions of a ProcessInstanceDocument, use the archivedProcessInstanceDocument resource.
 
-  operationId: createCaseDocument
+  operationId: createProcessInstanceDocument
   requestBody:
     content:
       application/json:
         schema:
-           $ref: '../components/schemas/CaseDocumentCreateRequest.yaml'
-    description: Partial CaseDocument description
+           $ref: '../components/schemas/ProcessInstanceDocumentCreateRequest.yaml'
+    description: Partial ProcessInstanceDocument description
     required: true
   responses:
     '200':
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/CaseDocument.yaml'
+            $ref: '../components/schemas/ProcessInstanceDocument.yaml'
       description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'

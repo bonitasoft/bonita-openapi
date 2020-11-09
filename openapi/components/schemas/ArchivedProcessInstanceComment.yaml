@@ -1,10 +1,10 @@
-allOf: # Combines the CaseComment and the inline model
-  - $ref: './CaseComment.yaml'
+allOf: # Combines the ProcessInstanceComment and the inline model
+  - $ref: './ProcessInstanceComment.yaml'
   - type: object
-    description: "Information about the comment of an archived case."
+    description: "Information about the comment of an archived process instances."
     properties:
       archivedDate:
-        description: "the date set when the case comment was archived"
+        description: "the date set when the process instance comment was archived"
         type: string
     example:
       id: 20005

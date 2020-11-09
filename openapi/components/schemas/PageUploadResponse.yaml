@@ -1,7 +1,0 @@
-type: object
-properties:
-  pageZip:
-    type: string
-    description: the temporary file name once uploaded on the server
-example:
-   pageZip: "tmp_113096560980259488.zip:bonita-angular-dashboard.zip"

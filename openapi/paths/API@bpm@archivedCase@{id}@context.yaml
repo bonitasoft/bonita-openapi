@@ -1,12 +1,12 @@
 get:
   tags:
-    - ArchivedCase
-  summary: Finds the Context by ArchivedCase ID
+    - ArchivedProcessInstance
+  summary: Finds the Context by ArchivedProcessInstance ID
   description: |
-    Returns the Context for the given ArchivedCase ID
-  operationId: getContextByArchivedCaseId
+    Returns the Context for the given ArchivedProcessInstance ID
+  operationId: getContextByArchivedProcessInstanceId
   parameters:
-    - description: ID of the ArchivedCase that has the Context to return
+    - description: ID of the ArchivedProcessInstance that has the Context to return
       in: path
       name: id
       required: true

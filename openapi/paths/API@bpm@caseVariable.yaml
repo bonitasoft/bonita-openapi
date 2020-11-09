@@ -1,11 +1,11 @@
 get:
   tags:
-    - CaseVariable
-  summary: Finds Case Variables
+    - ProcessInstanceVariable
+  summary: Finds ProcessInstance Variables
   description: |
-    Finds Case Variables with pagination params and filters
+    Finds ProcessInstance Variables with pagination params and filters
 
-  operationId: searchCaseVariables
+  operationId: searchProcessInstanceVariables
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
     - $ref: '../components/parameters/pageCount.yaml'
@@ -25,7 +25,7 @@ get:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/CaseVariable.yaml'
+              $ref: '../components/schemas/ProcessInstanceVariable.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '400':

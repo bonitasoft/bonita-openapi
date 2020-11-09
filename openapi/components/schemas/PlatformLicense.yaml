@@ -25,16 +25,16 @@ properties:
       If you have a subscription that specifies case-counter licensing, additional fields are present:
     type: string
   subscriptionStartPeriod:
-    description: "date with format `yyyy-MM-dd` - first day (included) of current period for number of cases provisioned"
+    description: "date with format `yyyy-MM-dd` - first day (included) of current period for number of process instances provisioned"
     type: string
   subscriptionEndPeriod:
-    description: "date with format `yyyy-MM-dd` - last day (included) of current period for number of cases provisioned"
+    description: "date with format `yyyy-MM-dd` - last day (included) of current period for number of process instances provisioned"
     type: string
   caseCounterLimit:
-    description: "number of cases provisioned for period between `subscriptionStartPeriod` and `subscriptionEndPeriod`"
+    description: "number of process instances provisioned for period between `subscriptionStartPeriod` and `subscriptionEndPeriod`"
     type: integer
     format: int64
   caseCounter:
-    description: "number of consumed cases for period between `subscriptionStartPeriod` and `subscriptionEndPeriod`"
+    description: "number of consumed process instances for period between `subscriptionStartPeriod` and `subscriptionEndPeriod`"
     type: integer
     format: int64

@@ -5,7 +5,7 @@ properties:
     type: string
     description: the archived activity id
   type:
-    $ref: './ActivityTypeEnum.yaml'
+    $ref: './ActivityType.yaml'
   name:
     type: string
     description: the archived activity technical name
@@ -19,7 +19,7 @@ properties:
     type: string
     description: the human readable archived activity description
   state:
-    $ref: './ActivityStateEnum.yaml'
+    $ref: './ActivityState.yaml'
   reached_state_date:
     type: string
     description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when this archived activity reached the current state, for example '2014-10-17 16:05:42.626'
@@ -30,16 +30,16 @@ properties:
     type: string
     description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when this archived activity is due, for example '2014-10-17 16:05:42.626'
   priority:
-    $ref: './ActivityPriorityEnum.yaml'
+    $ref: './ActivityPriority.yaml'
   processId:
     type: string
-    description: the process definition id of the case which define this archived activity
+    description: the process definition id of the process instance which define this archived activity
   parentCaseId:
     type: string
-    description: the immediate containing case id (a.k.a process instance id)
+    description: the immediate containing process instance id (a.k.a case id)
   rootCaseId:
     type: string
-    description: the top/root case id (a.k.a process instance id). In the case of an event sub process, `parentCaseId` will the id of the case called while `rootCaseId` will be the one from the caller case
+    description: the top/root process instance id (a.k.a case id). In case of an "event sub process", `parentCaseId` will the id of the process instance called while `rootCaseId` will be the one from the caller case
   rootContainerId:
     type: string
     description: same as `rootCaseId`
@@ -48,7 +48,7 @@ properties:
     description: the id of the user who performed this archived activity. The archived activity has to be a human task otherwise its value will be 0
   executedBySubstitute:
     type: string
-    description: the id of the user who did actually performed the archived activity in the case of has been done in the name of someone else. Value is 0 otherwise
+    description: the id of the user who did actually performed the archived activity when it has been done in the name of someone else. Value is 0 otherwise
   actorId:
     type: string
     description: the id of the actor that can execute this archived activity, null otherwise

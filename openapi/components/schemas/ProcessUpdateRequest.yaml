@@ -7,8 +7,6 @@ properties:
      description: display name of the Process
      type: string
    activationState:
-     description: activation state of the Process
-     type: string
-     enum: [ ENABLED,DISABLED ]
+     $ref: './ActivationState.yaml'
 example:
    displayName: "Leave booking process"

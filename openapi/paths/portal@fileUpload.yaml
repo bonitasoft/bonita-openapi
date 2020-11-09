@@ -13,11 +13,7 @@ post:
     content:
       multipart/form-data:
         schema:
-          type: object
-          properties:
-            file:
-              type: string
-              format: binary
+          $ref: '../components/schemas/FileUploadRequest.yaml'
   responses:
     '200':
       description: "Success: the temp file name as present on the server"

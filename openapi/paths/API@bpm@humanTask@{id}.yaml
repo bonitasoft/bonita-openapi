@@ -47,7 +47,7 @@ put:
     content:
       application/json:
         schema:
-           $ref: '../components/schemas/HumanTaskUpdateRequest.yaml'          
+           $ref: '../components/schemas/HumanTaskUpdateRequest.yaml'
     description: Fields that can be updated are `assignedId` and `state`. Specify only those fields that you want to change.
     required: true
   responses:

@@ -1,12 +1,12 @@
 delete:
   tags:
-    - ArchivedCaseDocument
-  summary: Delete the ArchivedCaseDocument by ID
+    - ArchivedProcessInstanceDocument
+  summary: Delete the ArchivedProcessInstanceDocument by ID
   description: |
-    Delete the single ArchivedCaseDocument for the given ID
-  operationId: deleteArchivedCaseDocumentById
+    Delete the single ArchivedProcessInstanceDocument for the given ID
+  operationId: deleteArchivedProcessInstanceDocumentById
   parameters:
-    - description: ID of the ArchivedCaseDocument to delete
+    - description: ID of the ArchivedProcessInstanceDocument to delete
       in: path
       name: id
       required: true

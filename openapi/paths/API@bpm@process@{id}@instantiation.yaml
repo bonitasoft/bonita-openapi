@@ -27,7 +27,7 @@ post:
     required: true
   responses:
     '201':
-      description: Return the created case ID
+      description: Return the created process instance ID
       content:
         application/json:
           schema:

@@ -10,7 +10,7 @@ post:
       application/x-www-form-urlencoded:
         schema:
           properties:
-            profileDataUpload:
+            profilesDataUpload:
               type: string
               description: Uploaded file
             importPolicy:

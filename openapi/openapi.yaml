@@ -48,16 +48,16 @@ x-tagGroups:
       - ArchivedTask
       - ArchivedUserTask
       - ActivityVariable
-      - CaseVariable
-      - CaseDocument
-      - ArchivedCaseDocument
+      - ProcessInstanceVariable
+      - ProcessInstanceDocument
+      - ArchivedProcessInstanceDocument
       - Actor
       - ActorMember
-      - Case
-      - ArchivedCase
-      - CaseInfo
-      - CaseComment
-      - ArchivedCaseComment
+      - ProcessInstance
+      - ArchivedProcessInstance
+      - ProcessInstanceInfo
+      - ProcessInstanceComment
+      - ArchivedProcessInstanceComment
       - Process
       - Diagram
       - ProcessParameter
@@ -149,15 +149,15 @@ tags:
   - name: ArchivedActivity
     x-displayName: ArchivedActivity
     description: ArchivedActivity
-  - name: ArchivedCase
-    x-displayName: ArchivedCase
-    description: ArchivedCase
-  - name: ArchivedCaseComment
-    x-displayName: ArchivedCaseComment
-    description: ArchivedCaseComment
-  - name: ArchivedCaseDocument
-    x-displayName: ArchivedCaseDocument
-    description: ArchivedCaseDocument
+  - name: ArchivedProcessInstance
+    x-displayName: ArchivedProcessInstance
+    description: ArchivedProcessInstance
+  - name: ArchivedProcessInstanceComment
+    x-displayName: ArchivedProcessInstanceComment
+    description: ArchivedProcessInstanceComment
+  - name: ArchivedProcessInstanceDocument
+    x-displayName: ArchivedProcessInstanceDocument
+    description: ArchivedProcessInstanceDocument
   - name: ArchivedConnectorInstance
     x-displayName: ArchivedConnectorInstance
     description: ArchivedConnectorInstance
@@ -204,21 +204,21 @@ tags:
   - name: BPM
     x-displayName: BPM
     description: Easily retrieve human or service tasks, call activities, and subprocesses with BPM APIs. Perform maintenance tasks.
-  - name: Case
-    x-displayName: Case
-    description: Case
-  - name: CaseComment
-    x-displayName: CaseComment
-    description: CaseComment
-  - name: CaseDocument
-    x-displayName: CaseDocument
-    description: CaseDocument
-  - name: CaseInfo
-    x-displayName: CaseInfo
-    description: CaseInfo
-  - name: CaseVariable
-    x-displayName: CaseVariable
-    description: CaseVariable
+  - name: ProcessInstance
+    x-displayName: ProcessInstance
+    description: ProcessInstance
+  - name: ProcessInstanceComment
+    x-displayName: ProcessInstanceComment
+    description: ProcessInstanceComment
+  - name: ProcessInstanceDocument
+    x-displayName: ProcessInstanceDocument
+    description: ProcessInstanceDocument
+  - name: ProcessInstanceInfo
+    x-displayName: ProcessInstanceInfo
+    description: ProcessInstanceInfo
+  - name: ProcessInstanceVariable
+    x-displayName: ProcessInstanceVariable
+    description: ProcessInstanceVariable
   - name: ConnectorFailure
     x-displayName: ConnectorFailure
     description: ConnectorFailure
@@ -621,6 +621,8 @@ paths:
     $ref: "./paths/API@system@tenant@{id}.yaml"
   /API/system/license/unusedid:
     $ref: "./paths/API@system@license@unusedid.yaml"
+  /APIv2/service/install:
+    $ref: './paths/APIv2@service@install.yaml'
   #  =======================
   #   TENANT API
   #  =======================

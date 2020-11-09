@@ -32,7 +32,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/BDMInstallRequest.yaml' 
+          $ref: '../components/schemas/BDMInstallRequest.yaml'
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'
