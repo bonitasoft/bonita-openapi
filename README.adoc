@@ -74,3 +74,8 @@ https://swagger.io/docs/specification/basic-structure/
 *ReDoc*
 
 - https://github.com/Redocly/redoc
+
+== How to contribute
+
+We would love you to contribute, pull requests are welcome! Don't forget to sign our Contributor Licensing Agreements when opening a pull request.
+This repository uses [Github flow](https://guides.github.com/introduction/flow/), so pull requests should target the `master` branch.
