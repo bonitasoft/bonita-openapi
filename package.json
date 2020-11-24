@@ -9,7 +9,7 @@
     "postman": "npm run build && node_modules/.bin/openapi2postmanv2 -s dist/openapi.yaml -o dist/postman.json -p",
     "package": "npm test && npm run postman"
   },
-  "license": "Apache 2.0",
+  "license": "GPL v2.0",
   "private": true,
   "devDependencies": {
     "copyfiles": "^2.3.0",

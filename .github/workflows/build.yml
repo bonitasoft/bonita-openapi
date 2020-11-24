@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+    branches: [ master,dev ]
+  pull_request:
+    branches: [ master,dev ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm install
+      - run: npm build
+      - run: npm run package
+      - uses: actions/upload-artifact@v2
+        with:
+          name: openapi.yaml
+          path: dist/openapi.yaml
+      
+      
+      
+      
