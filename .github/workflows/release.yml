@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 12
       - run: npm install
-      - run: npm build
+      - run: npm run build
       - run: npm run package
      
       
@@ -36,8 +36,8 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset
-        id: upload-release-asset 
+      - name: Upload OpenAPI YAML Release Asset
+        id: upload-yaml-release-asset 
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -46,4 +46,15 @@ jobs:
           asset_path: dist/openapi.yaml
           asset_name: bonita-openapi-${{ steps.extract_version.outputs.version }}.yaml
           asset_content_type: text/x-yaml
+          
+      - name: Upload Postman Collection Release Asset
+        id: upload-postman-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: dist/postman.json
+          asset_name: bonita-postman-collection-${{ steps.extract_version.outputs.version }}.json
+          asset_content_type: application/json
           
