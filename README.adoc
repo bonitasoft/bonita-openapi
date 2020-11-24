@@ -81,5 +81,6 @@ https://swagger.io/docs/specification/basic-structure/
 
 == How to contribute
 
-We would love you to contribute, pull requests are welcome! Don't forget to sign our Contributor Licensing Agreements when opening a pull request.
+We would love you to contribute, pull requests are welcome! 
+Have a look to link:DEV.md[] guidelines and don't forget to sign our Contributor Licensing Agreements when opening a pull request.
 This repository uses https://guides.github.com/introduction/flow/[Github flow], so pull requests should target the `master` branch.
