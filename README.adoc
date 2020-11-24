@@ -1,6 +1,6 @@
 = Bonita OpenAPI specification
 
-image:https://github.com/bonitasoft/bonita-openapi/workflows/Build/badge.svg[Actions Status, link=https://github.com/bonitasoft/bonita-openapi/actions?query=workflow%3ABuild]
+image:https://github.com/bonitasoft/bonita-openapi/workflows/build/badge.svg[Actions Status, link=https://github.com/bonitasoft/bonita-openapi/actions?query=build]
 image:https://img.shields.io/github/v/release/bonitasoft/bonita-openapi?color=blue&label=Release[GitHub release, link=https://github.com/bonitasoft/bonita-openapi/releases]
 image:https://img.shields.io/badge/License-GPL%20v2-blue.svg[GPLv2 License, link=LICENSE]
 
