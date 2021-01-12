@@ -5,7 +5,10 @@
   "scripts": {
     "start": "openapi preview-docs openapi/openapi.yaml",
     "test": "openapi lint",
-    "build": "rm -rf dist/* && copyfiles -u 2 openapi/images/* dist/images/ && openapi bundle -o dist/openapi.yaml -f",
+    "clean": "rm -rf dist/* && copyfiles -u 2 openapi/images/* dist/images/",
+    "yaml": "openapi bundle -o dist/openapi.yaml -f",
+    "json": "openapi bundle -o dist/openapi.json -f",
+    "build": "npm run clean && npm run yaml && npm run json",
     "postman": "npm run build && node_modules/.bin/openapi2postmanv2 -s dist/openapi.yaml -o dist/postman.json -p",
     "package": "npm test && npm run postman"
   },
