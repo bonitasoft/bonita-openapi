@@ -14,8 +14,8 @@ info:
     altText: "Bonita API"
     href: "https://documentation.bonitasoft.com/bonita/7.11/_rest-api"
 servers:
-  - url: 'http://localhost:8080/bonita'
-  - url: 'http://bonita.localhost/bonita'
+  - url: 'https://localhost:8080/bonita'
+  - url: 'https://bonita.localhost/bonita'
 security:
   - bonita_auth: [ ]
     bonita_token: [ ]
