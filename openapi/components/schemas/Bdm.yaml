@@ -14,7 +14,7 @@ properties:
     $ref: './TenantResourceState.yaml'
   lastUpdatedBy:
     description: "This value is always -1 because only the tenant_technical_user can install BDM."
-    type: integer
+    type: string
     default: "-1"
   lastUpdateDate:
     description: "Last date when the BDM was installed or updated."
