@@ -19,7 +19,7 @@ jobs:
       - run: npm run build
       - run: npm run package
       - name: 42Crunch REST API Static Security Testing
-        uses: 42Crunch/api-security-audit-action@v2
+        uses: 42Crunch/api-security-audit-action@v1
         with:
           api-token: ${{ secrets.CRUNCH_API_TOKEN }}
           ignore-failures: true
