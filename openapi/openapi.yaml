@@ -3,8 +3,8 @@ info:
   license:
     name: GPL-v2.0
     url: 'http://www.gnu.org/licenses/gpl-2.0.txt'
-  version: 0.0.1
-  title: Bonita 7.11 HTTP API
+  version: 0.0.3
+  title: Bonita 7.13 HTTP API
   description:
     # Ignore IDE warnings
     $ref: './intro.md'
@@ -259,7 +259,7 @@ tags:
     x-displayName: License
     description: |
       Handle the license information. This requires a platform session. Log in using the platform login service.
-      This Web REST API is available in **Enterprise editions only**, since version 7.1.
+      This Web REST API is available in **Enterprise editions only**, since version 7.11.
   - name: ManualTask
     x-displayName: ManualTask
     description: ManualTask
@@ -339,7 +339,7 @@ tags:
 
       REST API extensions can be used to query business data, Bonita Engine APIs, or an external information system (such as a database, web service, LDAP directory...). They also help to keep a clean separation between the front-end (forms, pages, and interfaces visible to users) and the back-end (processes).
     externalDocs:
-      url: https://documentation.bonitasoft.com/bonita/7.11/rest-api-extensions
+      url: https://documentation.bonitasoft.com/bonita/latest/rest-api-extensions
 
 paths:
   #  =======================
