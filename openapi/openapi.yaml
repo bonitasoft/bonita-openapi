@@ -3,8 +3,8 @@ info:
   license:
     name: GPL-v2.0
     url: 'http://www.gnu.org/licenses/gpl-2.0.txt'
-  version: 0.0.1
-  title: Bonita 7.11 HTTP API
+  version: 0.0.2
+  title: Bonita 7.12 HTTP API
   description:
     # Ignore IDE warnings
     $ref: './intro.md'
@@ -12,7 +12,7 @@ info:
     url: images/logo_bonitasoft_white.png
     backgroundColor: "#003355"
     altText: "Bonita API"
-    href: "https://documentation.bonitasoft.com/bonita/7.11/_rest-api"
+    href: "https://documentation.bonitasoft.com/bonita/2021.1/rest-api-overview"
 servers:
   - url: 'https://localhost:8080/bonita'
   - url: 'https://bonita.localhost/bonita'
@@ -259,7 +259,7 @@ tags:
     x-displayName: License
     description: |
       Handle the license information. This requires a platform session. Log in using the platform login service.
-      This Web REST API is available in **Enterprise editions only**, since version 7.1.
+      This Web REST API is available in **Enterprise editions only**, since version 7.11.
   - name: ManualTask
     x-displayName: ManualTask
     description: ManualTask
