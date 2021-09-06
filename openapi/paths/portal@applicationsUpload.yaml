@@ -1,6 +1,7 @@
 post:
   tags:
     - Application
+    - Upload
   summary: Upload a living application
   description: |
     Upload application

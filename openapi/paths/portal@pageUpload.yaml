@@ -1,6 +1,7 @@
 post:
   tags:
     - Page
+    - Upload
   summary: Upload a Page
   description: |
     Upload Page

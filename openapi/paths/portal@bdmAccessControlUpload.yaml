@@ -1,6 +1,7 @@
 post:
   tags:
     - BDMAccessControl
+    - Upload
   summary: Upload a BDM Access Control
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)

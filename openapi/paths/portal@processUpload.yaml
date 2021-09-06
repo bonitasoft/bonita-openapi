@@ -1,6 +1,7 @@
 post:
   tags:
     - Process
+    - Upload
   summary: Upload a bar file
   description: |
     Upload a bar file
