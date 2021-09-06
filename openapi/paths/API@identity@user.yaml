@@ -66,8 +66,6 @@ post:
       $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
-    '403':
-      description: "Not allowed to perform operation or resource already exists"
     '5XX':
       $ref: '../components/responses/ServerError.yaml'
   x-codegen-request-body-name: body
