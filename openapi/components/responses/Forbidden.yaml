@@ -1,0 +1,7 @@
+description: Forbidden, The request contained valid data and was understood by the server, but the server is refusing action.
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/Error.yaml'
+    example:
+      message: "Forbidden, The request contained valid data and was understood by the server, but the server is refusing action."

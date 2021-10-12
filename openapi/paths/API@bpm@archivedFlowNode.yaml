@@ -33,6 +33,8 @@ get:
               $ref: '../components/schemas/ArchivedFlowNode.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
     '5XX':

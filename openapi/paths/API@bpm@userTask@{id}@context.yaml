@@ -43,6 +43,8 @@ get:
               "contentFileName": "TestCommunity-1.0.bos"
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
     '404':

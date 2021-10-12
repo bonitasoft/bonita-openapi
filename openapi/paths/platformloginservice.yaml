@@ -46,6 +46,8 @@ post:
           example: ed27cbeb-9953-4d77-b5a2-1f62a6c2e0bb
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
     '5XX':

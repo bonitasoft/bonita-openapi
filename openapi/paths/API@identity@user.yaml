@@ -33,6 +33,8 @@ get:
               $ref: '../components/schemas/User.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
     '5XX':
@@ -60,10 +62,10 @@ post:
       description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
-    '403':
-      description: "Not allowed to perform operation or resource already exists"
     '5XX':
       $ref: '../components/responses/ServerError.yaml'
   x-codegen-request-body-name: body

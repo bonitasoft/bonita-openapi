@@ -36,6 +36,8 @@ get:
               $ref: '../components/schemas/ProcessInstance.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
     '5XX':
@@ -67,6 +69,8 @@ post:
       description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
     '5XX':
@@ -94,6 +98,8 @@ delete:
       $ref: '../components/responses/OK.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
     '404':
