@@ -457,7 +457,7 @@ paths:
     $ref: './paths/API@bpm@actor@{id}.yaml'
   /API/bpm/actorMember:
     $ref: './paths/API@bpm@actorMember.yaml'
-  /API/bpm/actorMemberEntry/{id}:
+  /API/bpm/actorMember/{id}:
     $ref: './paths/API@bpm@actorMember@{id}.yaml'
   /API/bpm/case:
     $ref: './paths/API@bpm@case.yaml'
