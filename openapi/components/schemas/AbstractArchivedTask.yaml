@@ -3,6 +3,9 @@ allOf:     # Combines the AbstractTask and the inline model
   - type: object
     description: "An Archived task is a task that has been archived"
     properties:
+      sourceObjectId:
+        type: string
+        description: the original id of the task before it was archived
       archivedDate:
         description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current task was assigned for example '2014-10-17 16:05:42.626'"
         type: string
