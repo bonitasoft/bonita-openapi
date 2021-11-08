@@ -1,0 +1,54 @@
+put:
+  tags:
+    - Process
+  summary: Update the Process Connector by Process ID
+  description: |
+    Update the ProcessConnector for the given ID
+  operationId: updateProcessConnectorByProcessId
+  parameters:
+    - description: ID of the process to update
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+    - description: ID of the Process Connector implementation to update
+      in: path
+      name: connectorImplId
+      required: true
+      schema:
+        type: string
+    - description: Version of the Process Connector implementation to update
+      in: path
+      name: connectorImplVersion
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            id:
+              description: Id of the process for which to update the connector, combined with connector name and version separated by slashes (x/y/z)
+              type: string
+            implementation:
+              description: Previously uploaded temp file name of the updated version of the connector (returned by the  [upload file api](#operation/uploadFile))
+              type: string
+        example:
+          id: "8491796209115952722/scripting-groovy-script/1.0.1"
+          implementation: "tmp_7006630415905915150.zip"
+    description: Partial ProcessConnector description
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

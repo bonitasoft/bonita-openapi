@@ -1,6 +1,7 @@
 post:
   tags:
     - Profile
+    - Upload
   summary: Upload profiles
   description: |
     Upload profiles

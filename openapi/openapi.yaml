@@ -102,6 +102,7 @@ x-tagGroups:
       - ProfileEntry
       - ProfileMember
       - Theme
+      - Upload
 
   - name: System
     tags:
@@ -487,6 +488,8 @@ paths:
     $ref: './paths/API@bpm@process@{id}@contract.yaml'
   /API/bpm/process/{id}/instantiation:
     $ref: './paths/API@bpm@process@{id}@instantiation.yaml'
+  /API/bpm/processConnector/{id}/{connectorImplId}/{connectorImplVersion}:
+    $ref: './paths/API@bpm@processConnector@{id}@{connectorImplId}@{connectorImplVersion}.yaml'
   /API/bpm/diagram/{id}:
     $ref: './paths/API@bpm@diagram@{id}.yaml'
   /API/bpm/processParameter:
@@ -588,6 +591,8 @@ paths:
     $ref: './paths/portal@processUpload.yaml'
   /portal/pageUpload:
     $ref: './paths/portal@pageUpload.yaml'
+  /portal/fileUpload:
+    $ref: "./paths/portal@fileUpload.yaml"
   /API/portal/page:
     $ref: './paths/API@portal@page.yaml'
   /API/portal/page/{id}:
@@ -626,8 +631,6 @@ paths:
   #  =======================
   #   TENANT API
   #  =======================
-  /portal/fileUpload:
-    $ref: "./paths/portal@fileUpload.yaml"
   /API/tenant/bdm:
     $ref: "./paths/API@tenant@bdm.yaml"
   #  =======================

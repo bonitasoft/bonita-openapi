@@ -1,14 +1,14 @@
 post:
   tags:
+    - Upload
     - BDM
-  summary: Upload a BDM
+  summary: Upload a file
   description: |
-    Upload BDM.
+    Upload file.
 
-    **NOTE:** To do this, your tenant services need to be paused.
-
+    **NOTE:** If this file is a BDM zip, to do this, your tenant services need to be paused.
     In Enterprise editions, if you have an access control file installed on your tenant, you need to delete it before installing or updating your BDM.
-  operationId: uploadBDM
+  operationId: uploadFile
   requestBody:
     content:
       multipart/form-data:

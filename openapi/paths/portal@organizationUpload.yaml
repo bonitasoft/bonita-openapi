@@ -1,6 +1,7 @@
 post:
   tags:
     - Organization
+    - Upload
   summary: Import an organization
   description: |
     Upload organization
