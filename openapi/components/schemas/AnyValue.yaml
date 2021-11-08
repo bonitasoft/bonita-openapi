@@ -1,0 +1,2 @@
+nullable: true
+description: Can be any value - string, number, boolean, array or object or null depending on your query.
