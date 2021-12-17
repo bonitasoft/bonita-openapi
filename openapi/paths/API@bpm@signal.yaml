@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Signal
+  summary: Broadcast BPM signal events
+  description: |
+    Since 2022.1
+    
+    Use this resource to broadcast BPM signal events. Signal events are caught by processes using `catch signal event` flow nodes (Start, intermediate or boundary).
+  operationId: broadcastSignal
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/Signal.yaml'
+    description: A Signal event
+    required: true
+  responses:
+    '204':
+      $ref: '../components/responses/NoContent.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body

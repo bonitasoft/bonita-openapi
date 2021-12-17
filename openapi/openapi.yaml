@@ -4,7 +4,7 @@ info:
     name: GPL-v2.0
     url: 'http://www.gnu.org/licenses/gpl-2.0.txt'
   version: 0.0.3
-  title: Bonita 7.13 HTTP API
+  title: Bonita HTTP API
   description:
     # Ignore IDE warnings
     $ref: './intro.md'
@@ -48,7 +48,9 @@ x-tagGroups:
       - ArchivedTask
       - ArchivedUserTask
       - ActivityVariable
+      - ArchivedActivityVariable
       - ProcessInstanceVariable
+      - ArchivedProcessInstanceVariable
       - ProcessInstanceDocument
       - ArchivedProcessInstanceDocument
       - Actor
@@ -71,6 +73,7 @@ x-tagGroups:
       - ArchivedFlowNode
       - TimerEventTrigger
       - Message
+      - Signal
 
   - name: Custom user info
     tags:
@@ -121,6 +124,9 @@ tags:
   - name: ActivityVariable
     x-displayName: ActivityVariable
     description: ActivityVariable
+  - name: ArchivedActivityVariable
+    x-displayName: ArchivedActivityVariable
+    description: ArchivedActivityVariable
   - name: Actor
     x-displayName: Actor
     description: Actor
@@ -220,6 +226,9 @@ tags:
   - name: ProcessInstanceVariable
     x-displayName: ProcessInstanceVariable
     description: ProcessInstanceVariable
+  - name: ArchivedProcessInstanceVariable
+    x-displayName: ArchivedProcessInstanceVariable
+    description: ArchivedProcessInstanceVariable
   - name: ConnectorFailure
     x-displayName: ConnectorFailure
     description: ConnectorFailure
@@ -440,10 +449,16 @@ paths:
     $ref: './paths/API@bpm@archivedTask@{id}.yaml'
   /API/bpm/activityVariable/{id}/{variableName}:
     $ref: './paths/API@bpm@activityVariable@{id}@{variableName}.yaml'
+  /API/bpm/archivedActivityVariable/{id}/{variableName}:
+    $ref: './paths/API@bpm@archivedActivityVariable@{id}@{variableName}.yaml'
   /API/bpm/caseVariable:
     $ref: './paths/API@bpm@caseVariable.yaml'
+  /API/bpm/archivedCaseVariable:
+    $ref: './paths/API@bpm@archivedCaseVariable.yaml'
   /API/bpm/caseVariable/{id}/{variableName}:
     $ref: './paths/API@bpm@caseVariable@{id}@{variableName}.yaml'
+  /API/bpm/archivedCaseVariable/{id}/{variableName}:
+    $ref: './paths/API@bpm@archivedCaseVariable@{id}@{variableName}.yaml'
   /API/bpm/caseDocument:
     $ref: './paths/API@bpm@caseDocument.yaml'
   /API/bpm/caseDocument/{id}:
@@ -522,6 +537,8 @@ paths:
     $ref: './paths/API@bpm@timerEventTrigger@{id}.yaml'
   /API/bpm/message:
     $ref: './paths/API@bpm@message.yaml'
+  /API/bpm/signal:
+    $ref: './paths/API@bpm@signal.yaml'
   #  =======================
   #  CustomUserDefintion
   #  =======================
