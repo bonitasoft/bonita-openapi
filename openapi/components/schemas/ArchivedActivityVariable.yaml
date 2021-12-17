@@ -1,0 +1,36 @@
+type: object
+description: "This resource enables you to retrieve the value of a specific archived variable name for a specific case (or process instance). Only persistent variables are concerned by this resource, not transient variables."
+properties:
+  name:
+    description: "The name of the archived  activity variable"
+    type: string
+  description:
+    description: "The description of the variable if any"
+    type: string
+  type:
+    description: "The fully qualified class name of the variable type"
+    type: string
+  containerId:
+    description: "The ID of the activity containing this variable (same as the one passed as parameter)"
+    type: string
+  containerType:
+    description: "ACTIVITY_INSTANCE"
+    type: string
+  value:
+    description: "the value of this variable. The format of the value depends on the type of the variable"
+    type: string
+  archivedDate: 
+    description: "The date when this variable was archived. The date format is yyyy-MM-dd HH:mm:ss.SSS"
+    type: string
+  sourcedObjectId:
+    description: "The id of the activity variable before it was archived"
+    type: string
+example:
+  name: RequestValidationData
+  description: null
+  type: java.lang.String
+  containerId: 20004
+  containerType: ACTIVITY_INSTANCE
+  value: Confirmed
+  archivedDate: 2021-12-27 23:10:59.342
+  sourceObjectId: 42

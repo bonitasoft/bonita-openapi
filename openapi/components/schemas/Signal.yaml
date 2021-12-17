@@ -1,0 +1,6 @@
+type: object
+description: "Signal"
+properties:
+  name:
+    description: "the signal name"
+    type: string

@@ -1,0 +1,39 @@
+get:
+  tags:
+    - ArchivedProcessInstanceVariable
+  summary: Finds an archived Variable by ProcessInstance ID and variable name
+  description: |
+    Since 2022.1
+    
+    Returns the single archived Variable for the given ProcessInstance ID and variable name
+  operationId: getArchivedVariableByProcessInstance
+  parameters:
+    - description: The identifier of the process instance from which to retrieve the archived variable
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+    - description: The name of the archived variable to retrieve
+      in: path
+      name: variableName
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: "Success "
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ArchivedProcessInstanceVariable.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
