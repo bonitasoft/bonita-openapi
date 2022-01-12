@@ -5,7 +5,7 @@ get:
   description: |
     Since 2022.1
     
-    Returns the single archived Variable for the given ProcessInstance ID and variable name
+    Returns the single ArchivedProcessInstanceVariable for the given ProcessInstance ID and variable name
   operationId: getArchivedVariableByProcessInstance
   parameters:
     - description: The identifier of the process instance from which to retrieve the archived variable

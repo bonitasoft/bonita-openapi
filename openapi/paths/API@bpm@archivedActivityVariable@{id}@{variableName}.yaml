@@ -5,10 +5,10 @@ get:
   description: |
     Since 2022.1
     
-    Returns the single ActivityVariable for the given case ID and variable name
-  operationId: getArchivedActivityVariable
+    Returns the single ArchivedActivityVariable for the given activity ID and variable name
+  operationId: getArchivedActivityInstanceVariable
   parameters:
-    - description: The identifier of the case from which to retrieve the variable
+    - description: The identifier of the activity from which to retrieve the variable
       in: path
       name: id
       required: true
