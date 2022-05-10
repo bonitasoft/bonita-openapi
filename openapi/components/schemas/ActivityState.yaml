@@ -12,3 +12,5 @@ enum:
   - cancelled
   - aborted
   - cancelling subtasks
+  - aborting activity with boundary
+  - completing activity with boundary
