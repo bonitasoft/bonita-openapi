@@ -19,9 +19,7 @@ properties:
     description: the human readable task description
     type: string
   state:
-    description: the current state of the task
-    type: string
-    enum: [ initializing,ready,executing,completing,waiting,completed,failed,skipped,cancelled,aborted ]
+    $ref: './ActivityState.yaml'
   reached_state_date:
     description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when this task reached the current state for example '2014-10-17 16:05:42.626'
     type: string
