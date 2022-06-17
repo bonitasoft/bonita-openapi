@@ -3,6 +3,7 @@ get:
     - ProcessInfo
   summary: Finds the ProcessInfo by ID
   description: |
+    Since 2022.2
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single ProcessInfo for the given ID
