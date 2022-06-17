@@ -3,7 +3,7 @@ get:
     - ProcessInstanceInfo
   summary: Finds the ProcessInstanceInfo by ID
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) since 2022.2
 
     Returns the single ProcessInstanceInfo for the given ID
   operationId: getProcessInstanceInfoById
