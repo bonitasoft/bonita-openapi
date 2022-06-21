@@ -62,6 +62,7 @@ x-tagGroups:
       - ArchivedProcessInstanceComment
       - Process
       - Diagram
+      - ProcessInfo
       - ProcessParameter
       - ProcessResolutionProblem
       - ProcessSupervisor
@@ -247,6 +248,9 @@ tags:
   - name: Diagram
     x-displayName: Diagram
     description: Diagram
+  - name: ProcessInfo
+    x-displayName: ProcessInfo
+    description: ProcessInfo
   - name: FlowNode
     x-displayName: FlowNode
     description: FlowNode
@@ -503,6 +507,8 @@ paths:
     $ref: './paths/API@bpm@process@{id}@contract.yaml'
   /API/bpm/process/{id}/instantiation:
     $ref: './paths/API@bpm@process@{id}@instantiation.yaml'
+  /API/bpm/processInfo/{id}:
+    $ref: './paths/API@bpm@processInfo@{id}.yaml'
   /API/bpm/processConnector/{id}/{connectorImplId}/{connectorImplVersion}:
     $ref: './paths/API@bpm@processConnector@{id}@{connectorImplId}@{connectorImplVersion}.yaml'
   /API/bpm/diagram/{id}:
