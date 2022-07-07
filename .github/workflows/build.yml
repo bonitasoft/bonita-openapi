@@ -27,7 +27,7 @@ jobs:
           api-token: ${{ env.CRUNCH_API_TOKEN }}
           ignore-failures: true
           upload-to-code-scanning: true
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: openapi.yaml
           path: dist/openapi.yaml
