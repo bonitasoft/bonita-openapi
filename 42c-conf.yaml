@@ -1,4 +1,7 @@
 audit:
-  discovery:
-    search:
-      - 'dist/openapi.yaml'
+  branches:
+    main:
+      discovery:
+        search:
+          - 'dist/openapi.yaml'
+       
