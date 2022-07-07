@@ -1,0 +1,7 @@
+type: object
+description: "The process definition expressions"
+properties:
+  key:
+    type: string
+  expression:
+      $ref: './Expression.yaml'

@@ -1,0 +1,14 @@
+type: string
+description: "the contract input type (string)"
+enum:
+  - TEXT
+  - BOOLEAN
+  - DATE
+  - INTEGER
+  - DECIMAL
+  - BYTE_ARRAY
+  - FILE
+  - LONG
+  - LOCALDATE
+  - LOCALDATETIME
+  - OFFSETDATETIME

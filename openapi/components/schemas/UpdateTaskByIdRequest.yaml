@@ -1,0 +1,9 @@
+type: object
+additionalProperties: true
+properties:
+   state:
+     description: state of the Task (completed)
+     type: string
+   displayName:
+     description: display name of the Task
+     type: string

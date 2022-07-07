@@ -10,8 +10,7 @@ properties:
     description: "true if input contains multiple values"
     type: string
   type:
-    description: "input type"
-    type: string
+    $ref: "./ContractInputType.yaml"   
   inputs:
     type: array
     items:

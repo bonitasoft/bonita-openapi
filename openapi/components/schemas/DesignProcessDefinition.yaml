@@ -13,17 +13,7 @@ properties:
     description: "The process parameter definitions"
     type: array
     items:
-      type: object
-      properties:
-        type:
-          description: "the parameter type"
-          type: string
-        description:
-          description: "the parameter description"
-          type: string
-        name:
-          description: "the parameter name"
-          type: string
+      $ref: './DesignProcessDefinitionParamater.yaml'  
   actorsList:
     description: "The list of process actor definitions"
     type: array
@@ -43,37 +33,9 @@ properties:
       $ref: './Expression.yaml'
   contract:
     description: "the process instantiation contract"
-    type: object
-    properties:
-      inputs:
-        description: "Lists the inputs of the container."
-        type: array
-        items:
-          $ref: './InputDefinition.yaml'
-      constraints:
-        description: "Lists the validation rules of the contract."
-        type: array
-        items:
-          type: object
-          description: "A constraint when executing the task instance"
-          properties:
-            name:
-              type: string
-            expression:
-              type: string
-            explanation:
-              type: string
-            inputNames:
-              type: array
-              items:
-                type: string
+    $ref: './Contract.yaml'
   context:
     description: "The process definition expressions"
     type: array
     items:
-      type: object
-      properties:
-        key:
-          type: string
-        expression:
-          $ref: './Expression.yaml'
+       $ref: './DesignProcessDefinitionContext.yaml'

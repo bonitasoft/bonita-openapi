@@ -7,12 +7,7 @@ properties:
      description: process variables initial values
      type: array
      items:
-       type: object
-       additionalProperties: true
-       properties:
-         name:
-           description: variable name
-           type: string
+      $ref: './ProcessVariable.yaml'
 example:
    processDefinitionId: "5777042023671752656"
    variables:
