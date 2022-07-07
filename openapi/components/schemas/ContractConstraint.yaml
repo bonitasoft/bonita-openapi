@@ -1,0 +1,15 @@
+type: object
+properties:
+  name:
+    description: "constraint name"
+    type: string
+  expression:
+    description: "constraint expression"
+    type: string
+  explanation:
+    description: "constraint explanation"
+    type: string
+  inputNames:
+    type: array
+    items:
+        type: string

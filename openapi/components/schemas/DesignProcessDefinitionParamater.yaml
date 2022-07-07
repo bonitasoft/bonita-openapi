@@ -1,0 +1,11 @@
+type: object
+properties:
+  type:
+    description: "the parameter type"
+    type: string
+  description:
+    description: "the parameter description"
+    type: string
+  name:
+    description: "the parameter name"
+    type: string

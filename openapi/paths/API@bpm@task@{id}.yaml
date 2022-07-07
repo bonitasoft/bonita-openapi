@@ -47,15 +47,7 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          additionalProperties: true
-          properties:
-            state:
-              description: state of the Task (completed)
-              type: string
-            displayName:
-              description: display name of the Task
-              type: string
+          $ref: '../components/schemas/UpdateTaskByIdRequest.yaml'
         example:
           state: "completed"
     description: 'Task fields to update (forbidden fields are : `caseId`, `processId`, `name`, `executedBy`, `type`, `id`, `reached_state_date`, `last_update_date`)'
