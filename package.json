@@ -17,6 +17,6 @@
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "openapi-to-postmanv2": "^4.1.1",
-    "@redocly/cli": "^1.0.0-beta.104"
+    "@redocly/cli": "^1.0.0-beta.105"
   }
 }
