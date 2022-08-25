@@ -12,6 +12,7 @@ properties:
    password:
      description: "the password"
      type: string
+     format: password
 example:
    name: "MyTenant"
    description: "My tenant"

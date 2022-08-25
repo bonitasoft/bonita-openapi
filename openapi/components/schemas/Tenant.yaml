@@ -22,6 +22,7 @@ properties:
   password:
     description: "the password"
     type: string
+    format: password
   state:
     description: "the tenant state"
     type: string
