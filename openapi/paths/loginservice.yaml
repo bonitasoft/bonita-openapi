@@ -27,7 +27,7 @@ post:
       source:
         $ref: "../code_samples/curl/loginservice/post.bash"
   responses:
-    '200':
+    '204':
       description: Login success
       headers:
         Set-Cookie:
