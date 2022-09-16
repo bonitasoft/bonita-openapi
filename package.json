@@ -3,22 +3,24 @@
   "version": "0.0.1",
   "description": "Open API Specification for Bonita Platform.",
   "scripts": {
-    "start": "openapi preview-docs openapi/openapi.yaml",
-    "test": "openapi lint",
+    "start": "redocly preview-docs openapi/openapi.yaml",
+    "test": "redocly lint",
     "clean": "rm -rf dist/* && copyfiles -u 2 docs/images/* dist/images/",
-    "yaml": "openapi bundle -o dist/openapi.yaml -f",
-    "json": "openapi bundle -o dist/openapi.json -f",
+    "yaml": "redocly bundle -o dist/openapi.yaml -f",
+    "json": "redocly bundle -o dist/openapi.json -f",
     "build": "npm run clean && npm run yaml && npm run json",
     "postman": "npm run build && node_modules/.bin/openapi2postmanv2 -s dist/openapi.yaml -o dist/postman.json -p",
-    "package": "npm test && npm run postman",
-    "static": "npm run build && node_modules/.bin/redoc-cli -t ./docs/index.html bundle ./dist/openapi.yaml -o ./dist/index.html --options.noAutoAuth  --options.suppressWarnings"
+    "static": "redoc-cli build ./dist/openapi.yaml -t docs/index.html.hbs --cdn -o ./dist/index.html",
+    "package": "npm test && npm run postman && npm run static"
   },
   "license": "GPL v2.0",
   "private": true,
   "devDependencies": {
-    "copyfiles": "^2.4.1",
-    "openapi-to-postmanv2": "^4.2.0",
     "@redocly/cli": "^1.0.0-beta.109",
-    "redoc-cli": "^0.13.16"
+    "copyfiles": "^2.4.1",
+    "openapi-to-postmanv2": "^4.2.0"
+  },
+  "dependencies": {
+    "redoc-cli": "^0.13.20"
   }
 }
