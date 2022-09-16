@@ -9,7 +9,9 @@ lint:
   rules:
     no-unused-components: warn
 features.openapi:
-  htmlTemplate: ./docs/index.html
+  htmlTemplate: ./docs/index.html.hbs
+  showConsole: true
+  pagination: section
   menuToggle: true
   noAutoAuth: true
   requiredPropsFirst: true
@@ -18,3 +20,10 @@ features.openapi:
 #    colors:
 #      primary:
 #        main: "#32329f"
+  generateCodeSamples:
+      languages:  # Array of language config objects; indicates in which languages to generate code samples.
+        - lang: curl
+        - lang: Node.js
+        - lang: JavaScript
+        - lang: PHP
+        - lang: Python
