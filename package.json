@@ -5,18 +5,20 @@
   "scripts": {
     "start": "openapi preview-docs openapi/openapi.yaml",
     "test": "openapi lint",
-    "clean": "rm -rf dist/* && copyfiles -u 2 openapi/images/* dist/images/",
+    "clean": "rm -rf dist/* && copyfiles -u 2 docs/images/* dist/images/",
     "yaml": "openapi bundle -o dist/openapi.yaml -f",
     "json": "openapi bundle -o dist/openapi.json -f",
     "build": "npm run clean && npm run yaml && npm run json",
     "postman": "npm run build && node_modules/.bin/openapi2postmanv2 -s dist/openapi.yaml -o dist/postman.json -p",
-    "package": "npm test && npm run postman"
+    "package": "npm test && npm run postman",
+    "static": "npm run build && node_modules/.bin/redoc-cli -t ./docs/index.html bundle ./dist/openapi.yaml -o ./dist/index.html --options.noAutoAuth  --options.suppressWarnings"
   },
   "license": "GPL v2.0",
   "private": true,
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "openapi-to-postmanv2": "^4.2.0",
-    "@redocly/cli": "^1.0.0-beta.109"
+    "@redocly/cli": "^1.0.0-beta.109",
+    "redoc-cli": "^0.13.16"
   }
 }
