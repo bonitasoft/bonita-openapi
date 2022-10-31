@@ -1,81 +1,30 @@
-get:
+put:
   tags:
     - Tenant
-  summary: Finds Tenants
-  deprecated: true
+  summary: Update the Tenant
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
 
-    Finds Tenants with pagination params and filters
+    Update the state of a Tenant
 
-    - can order on `id`
-    - can search on `displayName`
-    - can filter on `displayName`
-    
-    Warning: Since Bonita 7.12, multi-tenancy is deprecated
-
-  operationId: searchTenants
-  parameters:
-    - $ref: '../components/parameters/pageIndex.yaml'
-    - $ref: '../components/parameters/pageCount.yaml'
-    - $ref: '../components/parameters/pageFilter.yaml'
-    - $ref: '../components/parameters/pageOrder.yaml'
-    - $ref: '../components/parameters/pageSearch.yaml'
-  responses:
-    '200':
-      description: "Success "
-      headers:
-        Content-Range:
-          schema:
-            type: integer
-            format: int64
-          description: The total number of matching items
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '../components/schemas/Tenant.yaml'
-    '401':
-      $ref: '../components/responses/Unauthorized.yaml'
-    '403':
-      $ref: '../components/responses/Forbidden.yaml'
-    '400':
-      $ref: '../components/responses/BadRequest.yaml'
-    '5XX':
-      $ref: '../components/responses/ServerError.yaml'
-post:
-  tags:
-    - Tenant
-  summary: Create the Tenant
-  deprecated: true
-  description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
-
-    Create the Tenant.
-    
-    Warning: Since Bonita 7.12, multi-tenancy is deprecated. Creating new tenants is strongly discouraged.
-  operationId: createTenant
+  operationId: updateTenant
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/TenantCreateRequest.yaml'
+          $ref: '../components/schemas/TenantUpdateRequest.yaml'
     description: Partial Tenant description
     required: true
   responses:
     '200':
-      content:
-        application/json:
-          schema:
-            $ref: '../components/schemas/Tenant.yaml'
-      description: "Success "
+      $ref: '../components/responses/OK.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '403':
       $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
     '5XX':
       $ref: '../components/responses/ServerError.yaml'
-  x-codegen-request-body-name: body

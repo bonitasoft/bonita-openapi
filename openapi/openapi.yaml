@@ -3,7 +3,7 @@ info:
   license:
     name: GPL-v2.0
     url: 'http://www.gnu.org/licenses/gpl-2.0.txt'
-  version: 0.0.10
+  version: 0.0.11
   title: Bonita HTTP API
   description:
     # Ignore IDE warnings
@@ -103,9 +103,7 @@ x-tagGroups:
     tags:
       - Page
       - Profile
-      - ProfileEntry
       - ProfileMember
-      - Theme
       - Upload
 
   - name: System
@@ -313,9 +311,6 @@ tags:
   - name: Profile
     x-displayName: Profile
     description: Profile
-  - name: ProfileEntry
-    x-displayName: ProfileEntry
-    description: ProfileEntry
   - name: ProfileMember
     x-displayName: ProfileMember
     description: ProfileMember
@@ -334,9 +329,6 @@ tags:
   - name: Tenant
     x-displayName: Tenant
     description: Handle the tenants (**Enterprise editions only**). This requires a platform session. Log in using the platform login service.
-  - name: Theme
-    x-displayName: Theme
-    description: Theme
   - name: TimerEventTrigger
     x-displayName: TimerEventTrigger
     description: TimerEventTrigger
@@ -602,8 +594,6 @@ paths:
     $ref: './paths/platform@platform@unusedid.yaml'
   /API/platform/tenant:
     $ref: './paths/API@platform@tenant.yaml'
-  /API/platform/tenant/{id}:
-    $ref: './paths/API@platform@tenant@{id}.yaml'
   /API/platform/license:
     $ref: './paths/API@platform@license.yaml'
 
@@ -624,18 +614,10 @@ paths:
     $ref: './paths/API@portal@profile.yaml'
   /API/portal/profile/{id}:
     $ref: './paths/API@portal@profile@{id}.yaml'
-  /API/portal/profileEntry:
-    $ref: './paths/API@portal@profileEntry.yaml'
-  /API/portal/profileEntry/{id}:
-    $ref: './paths/API@portal@profileEntry@{id}.yaml'
   /API/portal/profileMember:
     $ref: './paths/API@portal@profileMember.yaml'
   /API/portal/profileMember/{id}:
     $ref: './paths/API@portal@profileMember@{id}.yaml'
-  /API/portal/theme:
-    $ref: './paths/API@portal@theme.yaml'
-  /API/portal/theme/unusedId:
-    $ref: './paths/API@portal@theme@unusedId.yaml'
   #  =======================
   #   SYSTEM API
   #  =======================
