@@ -1,4 +1,5 @@
 type: object
+deprecated: true
 properties:
    name:
      description: "the name of the tenant"
@@ -13,8 +14,17 @@ properties:
      description: "the password"
      type: string
      format: password
+   icon:
+     description: "the path of the icon"
+     type: string
+   state:
+     description: "the tenant state"
+     type: string
+     enum: [ ACTIVATED, DEACTIVATED ]
 example:
    name: "MyTenant"
-   description: "My tenant"
+   description: "My new tenant description"
    username: "john"
    password: "bpm"
+   icon: "/default.png"
+   state: "ACTIVATED"

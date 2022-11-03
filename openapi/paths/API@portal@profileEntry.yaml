@@ -2,6 +2,7 @@ get:
   tags:
     - ProfileEntry
   summary: Finds ProfileEntries
+  deprecated: true
   description: |
     Finds ProfileEntries with pagination params and filters
 
@@ -41,6 +42,7 @@ post:
   tags:
     - ProfileEntry
   summary: Create the ProfileEntry
+  deprecated: true
   description: |
     Create the ProfileEntry
   operationId: createProfileEntry

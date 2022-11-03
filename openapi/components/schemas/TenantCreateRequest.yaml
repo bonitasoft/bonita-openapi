@@ -1,4 +1,5 @@
 type: object
+deprecated: true
 properties:
    name:
      description: "the name of the tenant"

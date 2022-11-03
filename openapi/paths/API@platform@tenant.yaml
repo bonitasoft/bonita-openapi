@@ -2,6 +2,7 @@ get:
   tags:
     - Tenant
   summary: Finds Tenants
+  deprecated: true
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
@@ -45,6 +46,7 @@ post:
   tags:
     - Tenant
   summary: Create the Tenant
+  deprecated: true
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 

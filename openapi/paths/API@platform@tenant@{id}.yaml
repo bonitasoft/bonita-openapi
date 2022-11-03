@@ -2,6 +2,7 @@ get:
   tags:
     - Tenant
   summary: Finds the Tenant by ID
+  deprecated: true
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
@@ -35,13 +36,15 @@ put:
   tags:
     - Tenant
   summary: Update the Tenant by ID
+  deprecated: true
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
 
-    Update the Tenant for the given ID
+    Update a Tenant
+
   operationId: updateTenantById
   parameters:
-    - description: ID of the Tenant to return
+    - description: ID of the Tenant to update. In Subscription edition, it is mandatory; not in Community edition, as there is only one tenant
       in: path
       name: id
       required: true
@@ -71,6 +74,7 @@ delete:
   tags:
     - Tenant
   summary: Delete the Tenant by ID
+  deprecated: true
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 

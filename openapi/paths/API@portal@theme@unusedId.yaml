@@ -2,6 +2,7 @@ put:
   tags:
     - Theme
   summary: Restore default Theme
+  deprecated: true
   description: |
     Restore the default theme
   operationId: restoreTheme

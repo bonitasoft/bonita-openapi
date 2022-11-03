@@ -2,6 +2,7 @@ get:
   tags:
     - ProfileEntry
   summary: Finds the ProfileEntry by ID
+  deprecated: true
   description: |
     Returns the single ProfileEntry for the given ID
   operationId: getProfileEntryById
@@ -33,6 +34,7 @@ put:
   tags:
     - ProfileEntry
   summary: Update the ProfileEntry by ID
+  deprecated: true
   description: |
     Update the ProfileEntry for the given ID
   operationId: updateProfileEntryById
@@ -67,6 +69,7 @@ delete:
   tags:
     - ProfileEntry
   summary: Delete the ProfileEntry by ID
+  deprecated: true
   description: |
     Delete the single ProfileEntry for the given ID
   operationId: deleteProfileEntryById

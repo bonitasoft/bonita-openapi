@@ -2,6 +2,7 @@ post:
   tags:
     - Theme
   summary: Create the Theme
+  deprecated: true
   description: |
     Create the Theme
   operationId: createTheme
