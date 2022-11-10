@@ -11,6 +11,8 @@ get:
     - can order on `id`
     - can search on `displayName`
     - can filter on `displayName`
+    
+    Warning: Since Bonita 7.12, multi-tenancy is deprecated
 
   operationId: searchTenants
   parameters:
@@ -50,7 +52,9 @@ post:
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
-    Create the Tenant
+    Create the Tenant.
+    
+    Warning: Since Bonita 7.12, multi-tenancy is deprecated. Creating new tenants is strongly discouraged.
   operationId: createTenant
   requestBody:
     content:

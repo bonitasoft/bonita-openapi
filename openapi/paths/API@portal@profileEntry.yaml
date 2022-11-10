@@ -9,6 +9,7 @@ get:
     - can search on `name`
     - can filter on `page`,`name` and `parent_id`
 
+    Warning: Since Bonita 7.13, ProfileEntry is deprecated
   operationId: searchProfileEntries
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
@@ -45,6 +46,7 @@ post:
   deprecated: true
   description: |
     Create the ProfileEntry
+    Warning: Since Bonita 7.13, ProfileEntry is deprecated
   operationId: createProfileEntry
   requestBody:
     content:

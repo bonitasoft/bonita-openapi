@@ -5,6 +5,7 @@ post:
   deprecated: true
   description: |
     Create the Theme
+    Warning: Since Bonita 7.13, theme management is deprecated
   operationId: createTheme
   requestBody:
     content:

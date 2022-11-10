@@ -1,5 +1,6 @@
 type: object
 deprecated: true
+description: "Since Bonita 7.12, tenant update is deprecated"
 properties:
    name:
      description: "the name of the tenant"

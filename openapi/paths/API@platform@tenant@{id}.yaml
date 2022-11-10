@@ -7,6 +7,7 @@ get:
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single Tenant for the given ID
+    Warning: Since Bonita 7.12, multi-tenancy is deprecated
   operationId: getTenantById
   parameters:
     - description: ID of the Tenant to return
@@ -42,6 +43,7 @@ put:
 
     Update a Tenant
 
+    Warning: Since Bonita 7.12, multi-tenancy is deprecated
   operationId: updateTenantById
   parameters:
     - description: ID of the Tenant to update. In Subscription edition, it is mandatory; not in Community edition, as there is only one tenant

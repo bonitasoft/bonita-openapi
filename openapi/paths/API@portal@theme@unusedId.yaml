@@ -5,6 +5,7 @@ put:
   deprecated: true
   description: |
     Restore the default theme
+    Warning: Since Bonita 7.13, theme management is deprecated
   operationId: restoreTheme
   requestBody:
     content:

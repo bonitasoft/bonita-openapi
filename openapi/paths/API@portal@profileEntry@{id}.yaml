@@ -5,6 +5,7 @@ get:
   deprecated: true
   description: |
     Returns the single ProfileEntry for the given ID
+    Warning: Since Bonita 7.13, ProfileEntry is deprecated
   operationId: getProfileEntryById
   parameters:
     - description: ID of the ProfileEntry to return
@@ -37,6 +38,7 @@ put:
   deprecated: true
   description: |
     Update the ProfileEntry for the given ID
+    Warning: Since Bonita 7.13, ProfileEntry is deprecated
   operationId: updateProfileEntryById
   parameters:
     - description: ID of the ProfileEntry to return
