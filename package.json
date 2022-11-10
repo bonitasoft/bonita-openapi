@@ -5,12 +5,13 @@
   "scripts": {
     "start": "redocly preview-docs openapi/openapi.yaml",
     "test": "redocly lint",
-    "clean": "rm -rf dist/* && copyfiles -u 2 docs/images/* dist/images/",
+    "clean": "rm -rf dist/* && copyfiles -u 2 docs/images/* dist/static/images/",
     "yaml": "redocly bundle -o dist/openapi.yaml -f",
     "build": "npm run clean && npm run yaml",
     "postman": "npm run build && node_modules/.bin/openapi2postmanv2 -s dist/openapi.yaml -o dist/postman.json -p",
-    "static": "redoc-cli build ./dist/openapi.yaml -t docs/index.html.hbs --cdn -o ./dist/index.html",
-    "package": "npm test && npm run postman && npm run static"
+    "static": "npm run build && redoc-cli build ./dist/openapi.yaml -t docs/index.html.hbs --cdn -o ./dist/static/index.html",
+    "package": "npm test && npm run postman && npm run static",
+    "zipStatic": "npm run static && cd dist/static && zip -r ../static.zip *"
   },
   "license": "GPL v2.0",
   "private": true,
