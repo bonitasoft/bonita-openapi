@@ -1,3 +1,9 @@
+<p> 
+<a download="openapi.yaml" href="./openapi.yaml" target="_blank" class="btn-download">Download OpenAPI specification</a>
+<a download="postman.json" href="./postman.json" target="_blank" class="btn-download">Download Postman collection</a>
+</p>
+
+<hr>
 
 The REST API lets you access the data with HTTP requests; it is useful when implementing rich web forms / pages for a good user experience.
 
