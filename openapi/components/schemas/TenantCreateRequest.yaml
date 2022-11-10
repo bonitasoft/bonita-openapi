@@ -1,4 +1,6 @@
 type: object
+deprecated: true
+description: "Since Bonita 7.12, tenant creation is deprecated"
 properties:
    name:
      description: "the name of the tenant"

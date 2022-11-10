@@ -2,10 +2,12 @@ get:
   tags:
     - Tenant
   summary: Finds the Tenant by ID
+  deprecated: true
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single Tenant for the given ID
+    Warning: Since Bonita 7.12, multi-tenancy is deprecated
   operationId: getTenantById
   parameters:
     - description: ID of the Tenant to return
@@ -35,13 +37,16 @@ put:
   tags:
     - Tenant
   summary: Update the Tenant by ID
+  deprecated: true
   description: |
-    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue) ![edition](https://img.shields.io/badge/edition-community-brightgreen)
 
-    Update the Tenant for the given ID
+    Update a Tenant
+
+    Warning: Since Bonita 7.12, multi-tenancy is deprecated
   operationId: updateTenantById
   parameters:
-    - description: ID of the Tenant to return
+    - description: ID of the Tenant to update. In Subscription edition, it is mandatory; not in Community edition, as there is only one tenant
       in: path
       name: id
       required: true
@@ -71,6 +76,7 @@ delete:
   tags:
     - Tenant
   summary: Delete the Tenant by ID
+  deprecated: true
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
