@@ -2,8 +2,10 @@ get:
   tags:
     - ProfileEntry
   summary: Finds the ProfileEntry by ID
+  deprecated: true
   description: |
     Returns the single ProfileEntry for the given ID
+    Warning: Since Bonita 7.13, ProfileEntry is deprecated
   operationId: getProfileEntryById
   parameters:
     - description: ID of the ProfileEntry to return
@@ -33,8 +35,10 @@ put:
   tags:
     - ProfileEntry
   summary: Update the ProfileEntry by ID
+  deprecated: true
   description: |
     Update the ProfileEntry for the given ID
+    Warning: Since Bonita 7.13, ProfileEntry is deprecated
   operationId: updateProfileEntryById
   parameters:
     - description: ID of the ProfileEntry to return
@@ -67,6 +71,7 @@ delete:
   tags:
     - ProfileEntry
   summary: Delete the ProfileEntry by ID
+  deprecated: true
   description: |
     Delete the single ProfileEntry for the given ID
   operationId: deleteProfileEntryById

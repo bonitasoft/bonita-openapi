@@ -5,7 +5,7 @@ properties:
     description: "system tenant id"
     type: string
   paused:
-    description: "wether the system tenant is paused or not"
+    description: "whether the system tenant is paused or not"
     type: boolean
 example:
   id: 1

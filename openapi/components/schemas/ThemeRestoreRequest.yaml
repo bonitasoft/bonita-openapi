@@ -1,4 +1,6 @@
 type: object
+deprecated: true
+description: "Since Bonita 7.13, theme management is deprecated"
 properties:
    type:
      description: theme type

@@ -24,7 +24,7 @@ This repository structure was inspired by https://github.com/Redocly/create-open
 == Live Documentation
 
 The api descriptor file can be used to render documentation sites. Those sites have different rendering and may show different parts of the specification file.
-That's the reason why it is interessting to test and evaluate differents sites and rendering.
+That's the reason why it is interesting to test and evaluate different sites and rendering.
 
 You 'll need to install the https://github.com/redocly/openapi-cli[openapi-cli] to be able to work on the specification.
 

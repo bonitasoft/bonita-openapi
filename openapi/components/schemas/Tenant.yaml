@@ -1,5 +1,6 @@
 type: object
-description: ""
+deprecated: true
+description: "Since Bonita 7.12, tenant management is deprecated"
 properties:
   id:
     description: "id of the tenant"
