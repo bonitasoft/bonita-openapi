@@ -16,6 +16,7 @@ features.openapi:
   noAutoAuth: true
   requiredPropsFirst: true
   pathInMiddlePanel: true
+  hideDownloadButton: true
 #  theme:
 #    colors:
 #      primary:
