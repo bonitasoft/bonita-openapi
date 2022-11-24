@@ -15,11 +15,13 @@ properties:
     description: "the connector name"
     type: string
   activationEvent:
-    description: "the name of hte event that activated the connector instance"
+    description: "the name of the event that activated the connector instance"
     type: string
+    enum: ["ON_ENTER","ON_FINISH"]
   state:
     description: "the connector state"
     type: string
+    enum: ["TO_BE_EXECUTED", "EXECUTING", "TO_RE_EXECUTE", "DONE", "FAILED", "SKIPPED"]
   containerId:
     description: "the containing activity instance id"
     type: string
