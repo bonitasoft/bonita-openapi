@@ -20,8 +20,9 @@ properties:
     description: "count of active flow nodes if parameter n=activeFlowNodes is given"
     type: string
   state:
-    description: "state: an enum that represent the state of the process instances, it can be INITIALIZING, STARTED, SUSPENDED, CANCELLED, ABORTED, COMPLETING, COMPLETED, ERROR, ABORTING"
+    description: "state: an enum that represent the state of the process instances"
     type: string
+    enum: ["initializing", "started", "suspended", "cancelled", "aborted", "completing", "completed", "error", "aborting"]
   rootCaseId:
     description: "the identifier of the container of the case"
     type: string
