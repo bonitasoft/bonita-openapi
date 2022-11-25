@@ -16,7 +16,6 @@ jobs:
         with:
           node-version: 16
       - run: npm install
-      - run: npm run build
       - run: npm run package
       - name: 42Crunch REST API Static Security Testing
         env:
