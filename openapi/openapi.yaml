@@ -4,7 +4,7 @@ info:
     name: GPL-v2.0
     url: 'http://www.gnu.org/licenses/gpl-2.0.txt'
   version: 0.0.10
-  title: Bonita HTTP API
+  title: Bonita REST API
   description:
     # Ignore IDE warnings
     $ref: './intro.md'
