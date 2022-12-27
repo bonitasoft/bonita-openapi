@@ -85,7 +85,7 @@ A GitHub action is used to automate the link:.github/workflows/release.yml[relea
 The workflow is triggered when pushing a branch with the following pattern `release/<version>`.
 The `version` should match the `info.version` attribute in link:openapi/openapi.yaml[] file.
 
-A GitHub release is created with the `yaml` specification file and the `json` postman collection attached.
+A GitHub release is created with the `yaml` specification file, the `json` postman collection and the static documentation zip attached.
 Release note must be filled manually.
 
 == How to contribute
