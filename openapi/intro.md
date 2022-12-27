@@ -1,3 +1,9 @@
+<p> 
+<a download="openapi.yaml" href="./openapi.yaml" target="_blank" class="btn-download">Download OpenAPI specification</a>
+<a download="postman.json" href="./postman.json" target="_blank" class="btn-download">Download Postman collection</a>
+</p>
+
+<hr>
 
 The REST API lets you access the data with HTTP requests; it is useful when implementing rich web forms / pages for a good user experience.
 
@@ -11,7 +17,7 @@ Users can manage processes and tasks, and perform administrative activities.
 
 ### API Extensions
 
-You can create [Rest API Extensions](rest-api-extensions.md) to extend the Rest API by adding missing ressources (not provided by the Rest API).
+You can create [Rest API Extensions](rest-api-extensions.md) to extend the Rest API by adding missing resources (not provided by the Rest API).
 It is possible for an extension to interact with the engine (via the API) or with any other external service (for example a database, a directory, or a web service).
 
 ### Create a resource

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta description="{{{templateOptions.metaDescription}}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+      <style>
+      @import url(//fonts.googleapis.com/css?family=Roboto:400,700);
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 14px;
+        color: #333;
+      }
+      .btn-download {
+          border:1px solid #32329f;
+          color:#32329f;
+          font-weight:normal;
+          margin-left:0.5em;padding:4px 8px 4px;
+          display:inline-block;
+          -webkit-text-decoration:none;
+          text-decoration:none;cursor:pointer;
+      }
+    </style>
+  {{{redocHead}}}
+{{#unless disableGoogleFont}}<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">{{/unless}}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=123456abcdef"></script>
+  <script>function gtag() { dataLayer.push(arguments) }; window.dataLayer = window.dataLayer || []; gtag('js', new Date()); gtag('config', '123456abcdef')</script>
+</head>
+  <body>
+    {{{redocHTML}}}
+  </body>
+</html>
