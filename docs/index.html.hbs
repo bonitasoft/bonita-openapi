@@ -31,5 +31,9 @@
 </head>
   <body>
     {{{redocHTML}}}
+  <script>
+      // Add version to page title for SEO
+      document.title = `{{title}} - ${__redoc_state.spec.data.info.version}`
+  </script>
   </body>
 </html>
