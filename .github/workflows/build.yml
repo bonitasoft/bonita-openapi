@@ -50,6 +50,8 @@ jobs:
     if: ${{ success() && github.event_name == 'pull_request' }}
     needs: build
     runs-on: ubuntu-22.04
+    permissions:
+      pull-requests: write # surge-preview creates or updates PR comments about the deployment status
     steps:
       - uses: bonitasoft/actions/packages/surge-preview-tools@v2
         id: surge-preview-tools
