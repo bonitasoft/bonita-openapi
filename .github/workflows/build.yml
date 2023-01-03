@@ -1,21 +1,27 @@
-name: build
+name: Build
 
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+    paths:
+      - 'docs/**/*'
+      - 'openapi/**/*'
+      - '.github/workflows/deploy-preview.yml'
+      - '.redocly.yml'
+      - 'package.json'
 
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install
+      - run: npm ci
       - run: npm run package
       - name: 42Crunch REST API Static Security Testing
         env:
@@ -30,3 +36,37 @@ jobs:
         with:
           name: openapi.yaml
           path: dist/openapi.yaml
+      - name: Get package version
+        if: github.event.action != 'closed' && github.event_name == 'pull_request'
+        id: package-version
+        run: echo "current-version=$(cat ./package.json | jq '.version' | tr -d '"')" >> $GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v3
+        if: github.event.action != 'closed' && github.event_name == 'pull_request'
+        with:
+          name: bonita-openapi-site
+          path: dist/bonita-openapi-${{ steps.package-version.outputs.current-version}}
+          retention-days: 5
+  deployPreview:
+    if: ${{ success() && github.event_name == 'pull_request' }}
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: bonitasoft/actions/packages/surge-preview-tools@v2
+        id: surge-preview-tools
+        with:
+          surge-token: ${{ secrets.SURGE_TOKEN_DOC }}
+      - name: Download site artefact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: bonita-openapi-site
+          path: ./bonita-openapi
+      - name: Publish preview
+        uses: afc163/surge-preview@v1
+        if: steps.surge-preview-tools.outputs.can-run-surge-command == 'true'
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN_DOC }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          dist: bonita-openapi
+          failOnError: true
+          teardown: true
+          build: echo "site already built"
