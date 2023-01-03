@@ -9,8 +9,8 @@ info:
     # Ignore IDE warnings
     $ref: './intro.md'
   x-logo:
-    url: images/logo_bonitasoft_white.png
-    backgroundColor: "#003355"
+    url: images/bonitasoft-logo.svg
+    backgroundColor: "#19465f"
     altText: "Bonita API"
     href: "https://documentation.bonitasoft.com/bonita/latest/rest-api-overview"
 servers:
