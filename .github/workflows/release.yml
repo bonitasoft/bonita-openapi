@@ -1,4 +1,5 @@
 name: Release
+run-name: Release ${{inputs.release}} by @${{github.actor}}
 
 on:
   workflow_dispatch:
@@ -19,16 +20,17 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Update version
+        run: npm version ${{github.event.inputs.releases}} --git-tag-version false
       - name: Build
         run: |
           npm ci
           npm run package
-      - name: Release version
+      - name: Push tag and commit release
         id: newversion
         run: |
           git config --global user.email "bonita-ci@bonitasoft.com"
           git config --global user.name "Bonita CI"
-          npm version ${{github.event.inputs.releases}} --git-tag-version false
           VERSION=$(cat ./package.json | jq '.version' | tr -d '"')
           sed -i "s/version:.*/version: $VERSION/" openapi/openapi.yaml
           git add package.json package-lock.json openapi/openapi.yaml
