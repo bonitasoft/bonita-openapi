@@ -28,7 +28,6 @@ jobs:
         id: newversion
         run: |
           NEWRELEASETAG=$(npm version ${{github.event.inputs.releases}} --git-tag-version false  -m "Release %s")
-          git add package.json package-lock.json openapi/openapi.yaml  
           echo "release-tag=$NEWRELEASETAG" >> $GITHUB_OUTPUT
       - name: Update openapi.yaml
         uses: mikefarah/yq@4.30.6
