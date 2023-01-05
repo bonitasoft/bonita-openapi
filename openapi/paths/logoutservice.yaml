@@ -23,8 +23,8 @@ get:
   x-codeSamples:
     - lang: "Shell"
       label: "Curl"
-      source:
-        $ref: '../code_samples/curl/logoutservice/get.bash'
+      source: |
+        curl -b saved_cookies.txt -X GET --url 'http://localhost:8080/bonita/logoutservice?redirect=false'
   responses:
     '200':
       description: "Success "
