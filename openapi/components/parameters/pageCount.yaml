@@ -8,4 +8,5 @@ schema:
   type: integer
   minimum: 1
   default: 20
+  format: int32
 style: form

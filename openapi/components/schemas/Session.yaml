@@ -13,10 +13,10 @@ properties:
     description: conf
     type: string
   is_technical_user:
-    description: 'is technical user: true|false'
+    description: "is technical user: true|false"
     type: boolean
   is_guest_user:
-    description: 'is technical user: true|false'
+    description: "is technical user: true|false"
     type: boolean
   version:
     description: bonita version

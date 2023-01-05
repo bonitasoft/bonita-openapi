@@ -70,11 +70,11 @@ post:
         application/json:
           schema:
             $ref: '../components/schemas/ProfessionalContactData.yaml'
-      description: '"Success "'
+      description: ""Success ""
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '403':
-        description: 'Contact information for this user already exists'
+        description: "Contact information for this user already exists"
     '400':
       $ref: '../components/responses/BadRequest.yaml'
     '5XX':

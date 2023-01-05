@@ -12,12 +12,16 @@ put:
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     - description: definition ID
       in: path
       name: definitionId
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   requestBody:
     content:
       application/json:

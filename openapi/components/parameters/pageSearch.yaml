@@ -1,8 +1,10 @@
-description: 'can search on attributes'
+description: "can search on attributes"
 explode: true
 in: query
 name: s
 required: false
 schema:
   type: string
+  maxLength: 250
+  pattern: '^[A-Za-z0-9%]{0,250}$'
 style: form

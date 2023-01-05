@@ -360,24 +360,24 @@ paths:
   #   AUTH/LOGIN API
   #  =======================
   /loginservice:
-    $ref: "./paths/loginservice.yaml"
+    $ref: './paths/loginservice.yaml'
   /logoutservice:
-    $ref: "./paths/logoutservice.yaml"
+    $ref: './paths/logoutservice.yaml'
   #  =======================
   #   APPLICATION API
   #  =======================
   /API/living/application:
-    $ref: "./paths/API@living@application.yaml"
+    $ref: './paths/API@living@application.yaml'
   '/API/living/application/{id}':
-    $ref: "./paths/API@living@application@{id}.yaml"
+    $ref: './paths/API@living@application@{id}.yaml'
   /services/application/import:
-    $ref: "./paths/services@application@import.yaml"
+    $ref: './paths/services@application@import.yaml'
   /portal/applicationsUpload:
-    $ref: "./paths/portal@applicationsUpload.yaml"
+    $ref: './paths/portal@applicationsUpload.yaml'
   /API/living/application-menu:
-    $ref: "./paths/API@living@application-menu.yaml"
+    $ref: './paths/API@living@application-menu.yaml'
   /API/living/application-menu/{id}:
-    $ref: "./paths/API@living@application-menu@{id}.yaml"
+    $ref: './paths/API@living@application-menu@{id}.yaml'
   /API/living/application-page:
     $ref: './paths/API@living@application-page.yaml'
   /API/living/application-page/{id}:
@@ -399,9 +399,9 @@ paths:
   /API/accessControl/bdm:
     $ref: './paths/API@accessControl@bdm.yaml'
   /portal/bdmAccessControlUpload:
-    $ref: "./paths/portal@bdmAccessControlUpload.yaml"
+    $ref: './paths/portal@bdmAccessControlUpload.yaml'
   /services/bdmAccessControl/install:
-    $ref: "./paths/services@bdmAccessControl@install.yaml"
+    $ref: './paths/services@bdmAccessControl@install.yaml'
   #  =======================
   #   BPM API
   #  =======================
@@ -615,7 +615,7 @@ paths:
   /portal/pageUpload:
     $ref: './paths/portal@pageUpload.yaml'
   /portal/fileUpload:
-    $ref: "./paths/portal@fileUpload.yaml"
+    $ref: './paths/portal@fileUpload.yaml'
   /API/portal/page:
     $ref: './paths/API@portal@page.yaml'
   /API/portal/page/{id}:
@@ -644,32 +644,32 @@ paths:
   /API/system/i18ntranslation:
     $ref: './paths/API@system@i18ntranslation.yaml'
   /API/system/session/unusedId:
-    $ref: "./paths/API@system@session@unusedId.yaml"
+    $ref: './paths/API@system@session@unusedId.yaml'
   /API/system/tenant/{id}:
-    $ref: "./paths/API@system@tenant@{id}.yaml"
+    $ref: './paths/API@system@tenant@{id}.yaml'
   /API/system/license/unusedid:
-    $ref: "./paths/API@system@license@unusedid.yaml"
+    $ref: './paths/API@system@license@unusedid.yaml'
   /APIv2/service/install:
     $ref: './paths/APIv2@service@install.yaml'
   #  =======================
   #   TENANT API
   #  =======================
   /API/tenant/bdm:
-    $ref: "./paths/API@tenant@bdm.yaml"
+    $ref: './paths/API@tenant@bdm.yaml'
   #  =======================
   #   ORGANIZATION API
   #  =======================
   /portal/organizationUpload:
-    $ref: "./paths/portal@organizationUpload.yaml"
+    $ref: './paths/portal@organizationUpload.yaml'
   /services/organization/import:
-    $ref: "./paths/services@organization@import.yaml"
+    $ref: './paths/services@organization@import.yaml'
   #  =======================
   #   PROFILES API
   #  =======================
   /portal/profilesUpload:
-    $ref: "./paths/portal@profilesUpload.yaml"
+    $ref: './paths/portal@profilesUpload.yaml'
   /services/profile/import:
-    $ref: "./paths/services@profile@import.yaml"
+    $ref: './paths/services@profile@import.yaml'
 
 # TODO : upload endpoints
 #  /portal/processUpload, supports only .bar files
@@ -683,6 +683,6 @@ paths:
 components:
   securitySchemes:
     bonita_auth:
-      $ref: "components/securitySchemes/bonita_auth.yaml"
+      $ref: 'components/securitySchemes/bonita_auth.yaml'
     bonita_token:
-      $ref: "components/securitySchemes/bonita_token.yaml"
+      $ref: 'components/securitySchemes/bonita_token.yaml'

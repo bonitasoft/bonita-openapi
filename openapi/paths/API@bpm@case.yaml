@@ -91,7 +91,7 @@ delete:
         schema:
           type: array
           items:
-            description: 'ProcessInstance id'
+            description: "ProcessInstance id"
             type: string
   responses:
     '200':

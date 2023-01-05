@@ -4,4 +4,4 @@ audit:
       discovery:
         search:
           - 'dist/openapi.yaml'
-       
+          - '!openapi/**'

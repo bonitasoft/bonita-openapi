@@ -18,6 +18,8 @@ get:
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9%\_\-\.]{0,250}$'
       style: form
       example: 'case_id%3d1001'
   responses:

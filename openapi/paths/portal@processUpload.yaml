@@ -18,6 +18,8 @@ post:
         text/plain:
            schema:
               type: string
+              maxLength: 250
+              pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
               example: tmp_11199343585454336281.bar
     '401':
       $ref: '../components/responses/Unauthorized.yaml'

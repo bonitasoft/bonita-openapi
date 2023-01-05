@@ -38,11 +38,14 @@ post:
           description: Session cookie
           schema:
             type: string
+            pattern: '([^;]+);?'
             example: JSESSIONID=C5385BFEE2969D9E46F0160C1952B0F1; Path=/bonita; HttpOnly; SameSite=Lax
         X-Bonita-API-Token:
           description: X-Bonita-API-Token - CSRF token (also present in the cookie response)
           schema:
             type: string
+            maxLength: 250
+            pattern: '^[A-Za-z0-9\-]{0,250}$'
           example: ed27cbeb-9953-4d77-b5a2-1f62a6c2e0bb
     '401':
       $ref: '../components/responses/Unauthorized.yaml'

@@ -1,4 +1,4 @@
-description:  ![](https://img.shields.io/badge/edition-subscription-blue)
+description:  "![](https://img.shields.io/badge/edition-subscription-blue)"
 type: object
 properties:
   themeId:

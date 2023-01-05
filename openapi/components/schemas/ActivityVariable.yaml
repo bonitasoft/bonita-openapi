@@ -4,15 +4,21 @@ properties:
   tenantId:
     description: "The ID of the tenant where the current user is logged in (technical information)"
     type: string
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   tenantId_string:
     description: "number (since 7.0.1)"
     type: string
   id:
     description: "The identifier of the variable"
     type: string
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   id_string:
     description: "number (since 7.0.1)"
     type: string
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   name:
     description: "The name of the activity variable"
     type: string
