@@ -1,12 +1,17 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - release/*
+  workflow_dispatch:
+    inputs:
+      releases:
+        type: choice
+        description: Choose the release type to do (Following SemVer)
+        options: [ patch, minor, major]
 
 jobs:
-  build:
+  release:
+    permissions:
+      contents: write
     name: Release pipeline
     runs-on: ubuntu-22.04
     steps:
@@ -14,27 +19,36 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install
-      - run: npm run package
-
-
-      - name: Extract version
-        shell: bash
-        run: echo "##[set-output name=version;]$(echo ${GITHUB_REF#refs/heads/} | sed 's/release\///g')"
-        id: extract_version
-
+      - name: Build
+        run: | 
+          npm ci
+          npm run package
+      - uses: chrisdickinson/setup-yq@latest
+      - name: Release version
+        id: newversion
+        run: |
+          NEWRELEASETAG=$(npm version ${{github.event.inputs.releases}} --git-tag-version false  -m "Release %s")
+          echo "release-tag=$NEWRELEASETAG" >> $GITHUB_OUTPUT
+      - name: Update openapi.yaml
+        uses: mikefarah/yq@4.30.6
+        with:
+          cmd: newVersion=$(cat ./package.json | jq '.version' | tr -d '"'); yq eval -i ".info.version = \"$newVersion\"" openapi/openapi.yaml
+      - name: Push release commit and tag
+        run: |          
+          git add package.json package-lock.json openapi/openapi.yaml
+          git commit -m "Release ${{steps.newversion.outputs.release-tag}}"
+          git tag ${{steps.newversion.outputs.release-tag}}
+          git push origin ${{github.ref}} ${{steps.newversion.outputs.release-tag}}
       - name: Create Release
         id: create_release
         uses: actions/create-release@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: ${{ steps.extract_version.outputs.version }}
-          release_name: Release ${{ steps.extract_version.outputs.version }}
-          body: "TODO"
+          tag_name: ${{ steps.newversion.outputs.release-tag }}
+          release_name: Release ${{ steps.newversion.outputs.release-tag }}
           draft: false
           prerelease: false
-
       - name: Upload OpenAPI YAML Release Asset
         id: upload-yaml-release-asset
         uses: actions/upload-release-asset@v1
