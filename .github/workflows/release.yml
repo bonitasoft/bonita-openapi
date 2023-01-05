@@ -26,6 +26,8 @@ jobs:
       - name: Release version
         id: newversion
         run: |
+          git config --global user.email "bonita-ci@bonitasoft.com"
+          git config --global user.name "Bonita CI"
           NEWRELEASETAG=$(npm version ${{github.event.inputs.releases}} --git-tag-version false  -m "Release %s")
           sed -i "s/version:.*/version: $(cat ./package.json | jq '.version' | tr -d '"')/" openapi/openapi.yaml
           git add package.json package-lock.json openapi/openapi.yaml
