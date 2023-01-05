@@ -12,12 +12,16 @@ get:
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     - description: Name of the process parameter to return
       in: path
       name: name
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.\s]{0,250}$'
   responses:
     '200':
       description: "Success "
@@ -51,12 +55,16 @@ put:
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     - description: Name of the process parameter to return
       in: path
       name: name
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   requestBody:
     content:
       application/json:

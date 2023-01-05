@@ -27,11 +27,11 @@ jobs:
         env:
           CRUNCH_API_TOKEN: ${{ secrets.CRUNCH_API_TOKEN }}
         if: ${{ env.CRUNCH_API_TOKEN != '' }}
-        uses: 42Crunch/api-security-audit-action@v3.3.1
+        uses: 42Crunch/api-security-audit-action@v3
         with:
           api-token: ${{ env.CRUNCH_API_TOKEN }}
           ignore-failures: true
-          upload-to-code-scanning: true
+          upload-to-code-scanning: false
       - uses: actions/upload-artifact@v3
         with:
           name: openapi.yaml

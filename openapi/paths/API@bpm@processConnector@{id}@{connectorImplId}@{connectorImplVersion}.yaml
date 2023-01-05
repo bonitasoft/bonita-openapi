@@ -12,18 +12,24 @@ put:
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     - description: ID of the Process Connector implementation to update
       in: path
       name: connectorImplId
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     - description: Version of the Process Connector implementation to update
       in: path
       name: connectorImplVersion
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   requestBody:
     content:
       application/json:

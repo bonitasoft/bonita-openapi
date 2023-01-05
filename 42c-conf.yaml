@@ -3,5 +3,6 @@ audit:
     main:
       discovery:
         search:
-          - 'dist/openapi.yaml'
-       
+          - 'dist/*.yaml'
+          - '!dist/bonita-*'
+          - '!openapi/**'

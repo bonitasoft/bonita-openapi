@@ -12,6 +12,8 @@ get:
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   responses:
     '200':
       description: "Success "
@@ -43,6 +45,8 @@ delete:
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'

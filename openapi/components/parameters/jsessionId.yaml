@@ -4,5 +4,6 @@ description: |
   To call the REST API, you must first log on with a user registered in the Engine database. Please refer to the __[Login API](#operation/login)__ operations section.
 schema:
   type: string
+  pattern: '^[a-zA-Z0-9!_:\-\.]*$'
 style: form
 explode: true

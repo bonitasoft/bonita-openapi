@@ -12,6 +12,8 @@ get:
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   responses:
     '200':
       description: "Success "
@@ -43,6 +45,8 @@ put:
       required: true
       schema:
         type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   requestBody:
     content:
       application/json:
@@ -50,7 +54,7 @@ put:
           $ref: '../components/schemas/UpdateTaskByIdRequest.yaml'
         example:
           state: "completed"
-    description: 'Task fields to update (forbidden fields are : `caseId`, `processId`, `name`, `executedBy`, `type`, `id`, `reached_state_date`, `last_update_date`)'
+    description: "Task fields to update (forbidden fields are : `caseId`, `processId`, `name`, `executedBy`, `type`, `id`, `reached_state_date`, `last_update_date`)"
     required: true
   responses:
     '200':

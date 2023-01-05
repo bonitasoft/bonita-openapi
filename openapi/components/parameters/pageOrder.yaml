@@ -1,9 +1,11 @@
-description: 'can order on attributes'
+description: "can order on attributes"
 explode: true
 in: query
 name: o
 required: false
 schema:
   type: string
+  maxLength: 250
+  pattern: '^[A-Za-z0-9%]{0,250}$'
 style: form
 example: myProp%20ASC

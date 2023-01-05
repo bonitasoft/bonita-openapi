@@ -17,7 +17,7 @@ properties:
      format: password
      type: string
    icon:
-     description: ' bonita icon path (ie. /default/icon_user.png)'
+     description: " bonita icon path (ie. /default/icon_user.png)"
      type: string
    title:
      description: user title

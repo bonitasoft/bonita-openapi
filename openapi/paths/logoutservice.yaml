@@ -16,6 +16,8 @@ get:
       required: false
       schema:
         type: string
+        maxLength: 5
+        pattern: '^(?:tru|fals)e$'
       style: form
       example:
         redirect: "false"

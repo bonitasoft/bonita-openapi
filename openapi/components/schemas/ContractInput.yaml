@@ -1,7 +1,7 @@
 type: object
 properties:
   description:
-    description: 'input description'
+    description: "input description"
     type: string
   name:
     description: "input name"
@@ -10,7 +10,7 @@ properties:
     description: "true if input contains multiple values"
     type: string
   type:
-    $ref: "./ContractInputType.yaml"   
+    $ref: './ContractInputType.yaml'
   inputs:
     type: array
     items:

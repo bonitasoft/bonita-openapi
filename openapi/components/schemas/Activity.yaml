@@ -6,6 +6,8 @@ properties:
   id:
     type: string
     description: "the activity id"
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   type:
     $ref: './ActivityType.yaml'
   name:
@@ -35,30 +37,45 @@ properties:
     $ref: './ActivityPriority.yaml'
   processId:
     type: string
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     description: "the process definition id of the process instance which define this activity"
   parentCaseId:
     type: string
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     description: "the immediate containing process instance id (long, a.k.a process instance id)"
   rootCaseId:
     type: string
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     description: "the top/root process instance id (long, a.k.a case id). In case of an event sub process, `parentCaseId` will the id of the process instance called while `rootCaseId` will be the one from the caller process instance"
   rootContainerId:
     type: string
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     description: "same as rootCaseId"
   executedBy:
     type: string
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     description: "the id of the user who performed this activity. The activity has to be a human task otherwise its value will be 0"
   executedBySubstitute:
     type: string
     description: "the id of the user who did actually performed the activity when it has been done in the name of someone else. Value is 0 otherwise"
   actorId:
     type: string
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     description: "the id of the actor that can execute this activity, null otherwise"
   assigned_id:
     type: string
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
     description: "the user id that this activity is assigned to, or 0 if it is unassigned"
   assigned_date:
     type: string
+    pattern: '^\d{4}-\d{2}-\d{2}\s\d+:\d+:\d+\.\d+$'
     description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current activity was assigned, for example '2014-10-17 16:05:42.626'"
 example:
   "displayDescription": "validate expense request"
