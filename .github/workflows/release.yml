@@ -28,13 +28,14 @@ jobs:
         run: |
           git config --global user.email "bonita-ci@bonitasoft.com"
           git config --global user.name "Bonita CI"
-          NEWRELEASETAG=$(npm version ${{github.event.inputs.releases}} --git-tag-version false  -m "Release %s")
-          sed -i "s/version:.*/version: $(cat ./package.json | jq '.version' | tr -d '"')/" openapi/openapi.yaml
+          npm version ${{github.event.inputs.releases}} --git-tag-version false
+          VERSION=$(cat ./package.json | jq '.version' | tr -d '"')
+          sed -i "s/version:.*/version: $VERSION/" openapi/openapi.yaml
           git add package.json package-lock.json openapi/openapi.yaml
-          git commit -m "Release $NEWRELEASETAG"
-          git tag $NEWRELEASETAG
-          git push origin ${{github.ref}} $NEWRELEASETAG
-          echo "release-tag=$NEWRELEASETAG" >> $GITHUB_OUTPUT
+          git commit -m "Release $VERSION"
+          git tag $VERSION
+          git push origin ${{github.ref}} $VERSION
+          echo "release-tag=$VERSION" >> $GITHUB_OUTPUT
       - name: Create Release
         id: create_release
         uses: actions/create-release@latest
@@ -53,7 +54,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           asset_path: dist/openapi.yaml
-          asset_name: bonita-openapi-${{ steps.extract_version.outputs.version }}.yaml
+          asset_name: bonita-openapi-${{ steps.newversion.outputs.release-tag }}.yaml
           asset_content_type: text/x-yaml
 
       - name: Upload Postman Collection Release Asset
@@ -64,7 +65,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           asset_path: dist/postman.json
-          asset_name: bonita-postman-collection-${{ steps.extract_version.outputs.version }}.json
+          asset_name: bonita-postman-collection-${{ steps.newversion.outputs.release-tag }}.json
           asset_content_type: application/json
 
       - name: Upload Rest APIs documentation site
@@ -74,6 +75,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: dist/bonita-openapi-${{ steps.extract_version.outputs.version }}.zip
-          asset_name: bonita-openapi-${{ steps.extract_version.outputs.version }}.zip
+          asset_path: dist/bonita-openapi-${{ steps.newversion.outputs.release-tag }}.zip
+          asset_name: bonita-openapi-${{ steps.newversion.outputs.release-tag }}.zip
           asset_content_type: application/zip
