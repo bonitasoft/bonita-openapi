@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 18
       - name: Build
-        run: | 
+        run: |
           npm ci
           npm run package
       - name: Release version
