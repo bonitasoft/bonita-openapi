@@ -18,7 +18,7 @@ get:
     - $ref: '../components/parameters/pageSearch.yaml'
   responses:
     '200':
-      description: "Success "
+      description: "Success"
       headers:
         Content-Range:
           schema:
@@ -70,7 +70,7 @@ post:
         application/json:
           schema:
             $ref: '../components/schemas/ProfessionalContactData.yaml'
-      description: ""Success ""
+      description: "Success"
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '403':

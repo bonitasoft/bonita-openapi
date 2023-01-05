@@ -4,7 +4,7 @@ properties:
     description: user id
     type: string
   enabled:
-    description: "if "true", user is active."
+    description: 'if "true", user is active.'
     type: string
   userName:
     description: user name

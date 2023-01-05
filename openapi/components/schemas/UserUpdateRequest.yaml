@@ -1,7 +1,7 @@
 type: object
 properties:
    enabled:
-     description: "if "true", user will be activated."
+     description: 'if "true", user will be activated.'
      type: string
    userName:
      description: user name
