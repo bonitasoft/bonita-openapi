@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
-    <meta description="{{{templateOptions.metaDescription}}}">
+    <title>{{title}} - {{templateOptions.version}}</title>
+    <meta description="{{templateOptions.metaDescription}}">
+    <link rel="canonical" href="$SITE_URL/{{templateOptions.version}}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="images/favicon.png">
       <style>
@@ -26,14 +27,10 @@
     </style>
   {{{redocHead}}}
 {{#unless disableGoogleFont}}<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">{{/unless}}
-  <script async src="https://www.googletagmanager.com/gtag/js?id=123456abcdef"></script>
-  <script>function gtag() { dataLayer.push(arguments) }; window.dataLayer = window.dataLayer || []; gtag('js', new Date()); gtag('config', '123456abcdef')</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=$GA_KEY"></script>
+  <script>function gtag() { dataLayer.push(arguments) }; window.dataLayer = window.dataLayer || []; gtag('js', new Date()); gtag('config', '$GA_KEY')</script>
 </head>
   <body>
     {{{redocHTML}}}
-  <script>
-      // Add version to page title for SEO
-      document.title = `{{title}} - ${__redoc_state.spec.data.info.version}`
-  </script>
   </body>
 </html>
