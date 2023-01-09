@@ -21,23 +21,24 @@ jobs:
         with:
           node-version: 18
       - name: Update version
-        run: npm version ${{github.event.inputs.releases}} --git-tag-version false
+        id: newversion
+        run: |
+          npm version ${{github.event.inputs.releases}} --git-tag-version false
+          VERSION=$(cat ./package.json | jq '.version' | tr -d '"')
+          sed -i "s/version:.*/version: $VERSION/" openapi/openapi.yaml
+          echo "release-tag=$VERSION" >> $GITHUB_OUTPUT
       - name: Build
         run: |
           npm ci
           npm run package
       - name: Push tag and commit release
-        id: newversion
         run: |
           git config --global user.email "bonita-ci@bonitasoft.com"
           git config --global user.name "Bonita CI"
-          VERSION=$(cat ./package.json | jq '.version' | tr -d '"')
-          sed -i "s/version:.*/version: $VERSION/" openapi/openapi.yaml
           git add package.json package-lock.json openapi/openapi.yaml
-          git commit -m "Release $VERSION"
-          git tag $VERSION
-          git push origin ${{github.ref}} $VERSION
-          echo "release-tag=$VERSION" >> $GITHUB_OUTPUT
+          git commit -m "Release ${{ steps.newversion.outputs.release-tag }}"
+          git tag ${{ steps.newversion.outputs.release-tag }}
+          git push origin ${{github.ref}} ${{ steps.newversion.outputs.release-tag }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@latest
