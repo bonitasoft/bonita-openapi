@@ -7,13 +7,13 @@
 
 The REST API lets you access the data with HTTP requests; it is useful when implementing rich web forms / pages for a good user experience.
 
+An open source [java client](https://github.com/bonitasoft/bonita-java-client) is implemented above the HTTP API. It is available on [Maven central](https://search.maven.org/search?q=g:%22org.bonitasoft.web%22%20AND%20a:%22bonita-java-client%22).
+
 If your application is using a technology other than Java, you can integrate it with the Bonita solution using the Web REST API. This API provides
 access to all Bonita objects (like processes, tasks, users, connectors etc.), to execute operations on them (create, retrieve, update, delete).
 You can use these operations to create a workflow with Bonita and integrate it into your application. The Bonita Engine remains responsible for executing
 the workflow logic (connectors, gateways with conditions, messages, timers etc.) while your application gives access to the workflow.
 Users can manage processes and tasks, and perform administrative activities.
-
-![diagram of architecture of a REST client integrated with Bonita](images/rest_overview_v2.png)
 
 ### API Extensions
 
