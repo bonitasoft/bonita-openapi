@@ -12,7 +12,7 @@ info:
     url: images/bonitasoft-logo.svg
     backgroundColor: "#19465f"
     altText: "Bonita API"
-    href: "https://documentation.bonitasoft.com/bonita/latest/rest-api-overview"
+    href: "/"
 servers:
   - url: 'https://localhost:8080/bonita'
   - url: 'https://bonita.localhost/bonita'
