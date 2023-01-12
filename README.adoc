@@ -107,4 +107,13 @@ We would love you to contribute, pull requests are welcome!
 Have a look to link:DEV.md[] guidelines and don't forget to sign our Contributor Licensing Agreements when opening a pull request.
 This repository uses https://guides.github.com/introduction/flow/[Github flow], so pull requests should target the `master` branch.
 
-When you open a pull request, keep in mind to add labels to help the release-note content writing automatically.
+When you open a pull request, keep in mind to add labels to help the release-note content writing automatically. Labels available:
+
+|===
+|Release note section| Github PR label
+|New Features 🎉| enhancement
+|Bug fixes 🛠| bug
+|Other Changes| *
+|===
+
+:INFO: If you don't want to see your PR in the release-note, you need to add one of this labels: `dependencies`, `github_actions` or `ignore-for-release-notes`.
