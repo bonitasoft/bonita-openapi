@@ -84,11 +84,36 @@ https://swagger.io/docs/specification/basic-structure/
 A GitHub action is used to automate the link:.github/workflows/release.yml[release workflow].
 The workflow is triggered by user action and you need to choose the release type (following semver).
 
+:NOTE: This action will automatically update the version (field `version` in `package.json`,`package-lock.json` and `openapi.yaml`)
+
 A GitHub release is created with the `yaml` specification file, the `json` postman collection and the static documentation zip attached.
 Release note must be filled manually.
+
+:TIP: You can edit the latest release description and click on `Generate releases notes` button to help you to generate a description including the changelog.
+
+NOTE: Use `patch` release if the release content don't include any breaking changes
+
+== After a release
+
+To deploy your newest release on the documentation site, you need to:
+
+* On https://github.com/bonitasoft/bonita-rest-documentation-site/blob/master/cli/restdoc-site.cfg.json[rest documentation config], add the released version for each compatible Bonita version.
+* Open a PR and asked for a review.
+* Follow updates on your PR, and also to update `openApiLatestVersion:` in `antora.yml` file for each https://github.com/bonitasoft/bonita-doc/[Bonita documentation content] corresponding branches.
 
 == How to contribute
 
 We would love you to contribute, pull requests are welcome!
 Have a look to link:DEV.md[] guidelines and don't forget to sign our Contributor Licensing Agreements when opening a pull request.
 This repository uses https://guides.github.com/introduction/flow/[Github flow], so pull requests should target the `master` branch.
+
+When you open a pull request, keep in mind to add labels to help the release-note content writing automatically. Labels available are :
+
+|===
+|Release note section| Github PR label
+|New Features 🎉| enhancement
+|Bug fixes 🛠| bug
+|Other Changes| *
+|===
+
+:INFO: If you don't want to see your PR in the release-note, you need to add one of this labels: `dependencies`, `github_actions` or `ignore-for-release-notes`.
