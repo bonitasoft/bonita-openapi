@@ -17,7 +17,7 @@ Users can manage processes and tasks, and perform administrative activities.
 
 ### API Extensions
 
-You can create [Rest API Extensions](rest-api-extensions.md) to extend the Rest API by adding missing resources (not provided by the Rest API).
+You can create [Rest API Extensions](https://documentation.bonitasoft.com/bonita/latest/api/rest-api-extensions) to extend the Rest API by adding missing resources (not provided by the Rest API).
 It is possible for an extension to interact with the engine (via the API) or with any other external service (for example a database, a directory, or a web service).
 
 ### Create a resource
@@ -99,7 +99,7 @@ Example
 The required object is specified with a set of filters in the request URL. The URL parameters must be URL-encoded.
 
 Results are returned in a paged list, so you have to specify the page (counting from zero), and the number of results per page (count), additionally you can define a sort key (order). You can see the total number of matching results in the HTTP response header Content-Range.
-If you are searching for business data using a custom query, there must be a [count query in the BDM](define-and-deploy-the-bdm.md). If there is no count query, results from a custom query on business data cannot be paged properly (the header Content-Range will be absent).
+If you are searching for business data using a custom query, there must be a [count query in the BDM](https://documentation.bonitasoft.com/bonita/latest/data/define-and-deploy-the-bdm). If there is no count query, results from a custom query on business data cannot be paged properly (the header Content-Range will be absent).
 For business data default queries, the count query is defined automatically.
 
 The available filters are the attributes of the item plus some specific filters defined by each item.
@@ -119,7 +119,7 @@ For a GET method that retrieves more than one instance of a resource, you can sp
 * o: order of presentation of values in response: must be either `attributeName ASC` or `attributeName DESC`. The final order parameter value must be URL encoded.
 * f: list of filters, specified as `attributeName=attributeValue`. To filter on more than one attribute, specify an f parameters for each attribute. The final filter parameter value must be URL encoded.
   The attributes you can filter on are specific to the resource.
-* s: search on name or search indexes. The matching policy depends on the configuration of [word-based search](using-list-and-search-methods.md).
+* s: search on name or search indexes. The matching policy depends on the configuration of [word-based search](https://documentation.bonitasoft.com/bonita/latest/api/using-list-and-search-method).
   For example, if word-based search is enabled, `s=Valid` returns matches containing the string "valid" at the start of any word in the attribute value word,
   such as "Valid address", "Not a valid address", and "Validated request" but not "Invalid request".
   If word-based search is disabled, `s=Valid` returns matches containing the string "valid" at the start of the attribute value, such as "Valid address" or "Validated request" but not "Not a valid address" or "Invalid request".
