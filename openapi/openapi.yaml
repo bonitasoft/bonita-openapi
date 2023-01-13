@@ -14,8 +14,8 @@ info:
     altText: "Bonita API"
     href: "/"
 servers:
-  - url: 'https://localhost:8080/bonita'
-  - url: 'https://bonita.localhost/bonita'
+  - url: http://localhost:8080/bonita
+    description: Sample url for a local development server.
 security:
   - bonita_auth: [ ]
     bonita_token: [ ]
