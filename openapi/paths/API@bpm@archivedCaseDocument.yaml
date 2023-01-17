@@ -10,7 +10,7 @@ get:
     * `sourceObjectId="id"`: search for documents by specifying the original document id.
       This is useful if you know the id of a ProcessInstanceDocument and you wish to retrieve all its previous versions..
     * `caseId="id"`: search for documents with the specified open process instance id.
-    * `archivedProcessInstanceId="id"`: search for documents with the specified archived process instance id.
+    * `archivedCaseId="id"`: search for documents with the specified archived process instance id.
     * `submittedBy="id"`: search for documents that were submitted by the user with the specified identifier.
     * `name="string"`: search for documents with names that contain _string_.
       Depending on the setting for [word-based search](https://documentation.bonitasoft.com/bonita/latest/api/using-list-and-search-methods#word_based_search), the search returns documents with _string_ at the start of the name or the start of a word in the name.
