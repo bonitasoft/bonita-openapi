@@ -8,7 +8,7 @@ properties:
    displayName:
      description: "display name"
      type: string
-   t:
+   parent_group_id:
      description: "the id of the parent group of this group (empty if the group has no parent)"
      type: string
    description:
