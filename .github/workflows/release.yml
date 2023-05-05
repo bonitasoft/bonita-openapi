@@ -45,9 +45,8 @@ jobs:
 
       - name: Prepare artifacts to release
         run: |
-          mv dist/openapi.yaml dist-final/bonita-openapi-${{ steps.newversion.outputs.release-tag }}.yaml
-          mv dist/postman.json dist-final/bonita-postman-collection-${{ steps.newversion.outputs.release-tag }}.json
-          mv dist/bonita-openapi-${{ steps.newversion.outputs.release-tag }}.zip dist-final/bonita-openapi-${{ steps.newversion.outputs.release-tag }}.zip
+          mv dist/openapi.yaml dist/bonita-openapi-${{ steps.newversion.outputs.release-tag }}.yaml
+          mv dist/postman.json dist/bonita-postman-collection-${{ steps.newversion.outputs.release-tag }}.json
 
       - name: Create Release
         id: create_release
@@ -55,4 +54,4 @@ jobs:
         with:
           tag: ${{ steps.newversion.outputs.release-tag }}
           name: Release ${{ steps.newversion.outputs.release-tag }}
-          artifacts: dist-final/*
+          artifacts: dist/*
