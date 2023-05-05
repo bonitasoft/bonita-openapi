@@ -15,6 +15,9 @@ properties:
   parent_path:
     description: "the path of the parent group of this group (empty if the group has no parent)"
     type: string
+  parent_group_id:
+    description: "the id of the parent group of this group (empty if the group has no parent)"
+    type: string
   path:
     description: "the full path of the group (including its parent path)"
     type: string
