@@ -55,3 +55,12 @@ jobs:
           tag: ${{ steps.newversion.outputs.release-tag }}
           name: Release ${{ steps.newversion.outputs.release-tag }}
           artifacts: dist/*
+          
+      - name: Open Bonita Java Client PR
+        id: open_client_pr
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GH_PERSONNAL_ACCES_TOKEN }}
+          repository: bonitasoft/bonita-java-client
+          event-type: new-bonita-openapi-spec-release
+          client-payload: '{"spec_version": "${{steps.newversion.outputs.release-tag}}"}'
