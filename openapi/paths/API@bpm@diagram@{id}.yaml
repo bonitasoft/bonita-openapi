@@ -22,9 +22,8 @@ get:
       content:
         application/xml:
           schema:
-            type: object
-            description: Raw XML file containing the diagram definition
-            additionalProperties: true
+            type: string
+            description: BPMN XML representation of the process definition
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '403':
