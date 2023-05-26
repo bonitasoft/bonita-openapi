@@ -3,7 +3,7 @@ info:
   license:
     name: GPL-v2.0
     url: 'http://www.gnu.org/licenses/gpl-2.0.txt'
-  version: 0.0.13
+  version: 0.0.14
   title: Bonita API
   description:
     # Ignore IDE warnings
