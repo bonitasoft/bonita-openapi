@@ -1,11 +1,11 @@
 type: object
 properties:
-   assignedId:
-     description: assignedId of the HumanTask
+   assigned_id:
+     description: The id of the user to assign this Human task to
      type: string
    state:
      description: state of the HumanTask
      type: string
 example:
-   assignedId: "new_user_id"
+   assigned_id: "1234"
    state: "new_state"
