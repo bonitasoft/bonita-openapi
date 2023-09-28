@@ -37,6 +37,8 @@ put:
   summary: Update the current Tenant
   description: |
     Pause or resume the current tenant.
+    
+    Warning: Since Bonita 7.16, Pause or resume tenant is deprecated. Maintenance API should be used instead.
   operationId: updateSystemTenant
   parameters:
     - description: ID of the tenant
