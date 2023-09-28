@@ -1,14 +1,14 @@
 type: object
 properties:
   maintenanceState:
-    description: user id
+    description: maintenance state
     type: string
     enum: [ ENABLED,DISABLED ]
   maintenanceMessage:
-    description: user name
+    description: maintenance message
     type: string
   maintenanceMessageActive:
-    description: the session id
+    description: is maintenance message active
     type: boolean
 example:
   maintenanceState: "DISABLED"

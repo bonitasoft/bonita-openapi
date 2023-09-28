@@ -38,7 +38,7 @@ put:
       application/json:
         schema:
           $ref: '../components/schemas/MaintenanceDetails.yaml'
-    description: Partial Tenant description
+    description: Maintenance details; One or all attributes can be updated
     required: true
   responses:
     '200':
