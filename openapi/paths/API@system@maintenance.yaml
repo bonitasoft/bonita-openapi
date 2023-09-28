@@ -29,7 +29,6 @@ put:
   tags:
     - Maintenance
   summary: Update the maintenance details
-  deprecated: true
   description: |
     Update maintenance details
   operationId: updateMaintenanceDetails
