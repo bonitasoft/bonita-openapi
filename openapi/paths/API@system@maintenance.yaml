@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Maintenance
+  summary: Get the maintenance details
+  description: |
+    Returns maintenance details of the platform
+  operationId: getMaintenanceDetails
+  x-codeSamples:
+    - lang: "Shell"
+      label: "Curl"
+      source: |
+        curl -b saved_cookies.txt -X GET --url 'http://localhost:8080/bonita/API/system/maintenance'
+  responses:
+    '200':
+      description: "Success "
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/MaintenanceDetails.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
