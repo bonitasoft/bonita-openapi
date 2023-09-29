@@ -39,7 +39,7 @@ put:
   description: |
     Pause or resume the current tenant.
     
-    Warning: Since Bonita 9.0, Pause or resume tenant is deprecated. Maintenance API should be used instead.
+    Warning: Since Bonita 9.0, system/tenant API resource is deprecated. use system/maintenance instead to enable the maintenance mode which has the same behavior as pausing the tenant.
   operationId: updateSystemTenant
   parameters:
     - description: ID of the tenant
