@@ -113,6 +113,7 @@ x-tagGroups:
       - I18nlocale
       - I18ntranslation
       - Session
+      - Maintenance
       - SystemTenant
 
   - name: Other
@@ -647,6 +648,8 @@ paths:
     $ref: './paths/API@system@session@unusedId.yaml'
   /API/system/tenant/{id}:
     $ref: './paths/API@system@tenant@{id}.yaml'
+  /API/system/maintenance:
+    $ref: './paths/API@system@maintenance.yaml'
   /API/system/license/unusedid:
     $ref: './paths/API@system@license@unusedid.yaml'
   /APIv2/service/install:
