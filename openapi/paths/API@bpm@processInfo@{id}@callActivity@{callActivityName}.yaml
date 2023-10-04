@@ -17,6 +17,14 @@ get:
         type: string
         maxLength: 250
         pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    - description: Name of call activity that is part of the process
+      in: path
+      name: callActivityName
+      required: true
+      schema:
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   responses:
     '200':
       description: "Success "
