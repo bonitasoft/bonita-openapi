@@ -21,6 +21,10 @@ example:
   childProcessDefinitionId: "123"
   childProcessName: "Process 1"
   openProcessInstances:
-    "1", "2", "56"
+    - "1"
+    - "2"
+    - "56"
   archivedProcessInstances:
-    "5", "6", "9"
+    - "5"
+    - "6"
+    - "9"
