@@ -45,8 +45,11 @@ post:
   tags:
     - ApplicationPage
   summary: Create an application page
+  deprecated: true
   description: |
     Create an application page
+
+    Warning: as of 9.0.0, creating an application page using this API is deprecated.
   operationId: createApplicationPage
   requestBody:
     content:

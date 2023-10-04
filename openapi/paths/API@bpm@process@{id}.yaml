@@ -35,8 +35,11 @@ put:
   tags:
     - Process
   summary: Update the Process by ID
+  deprecated: true
   description: |
     Update the Process for the given ID
+
+    Warning: as of 9.0.0, updating a process using this API is deprecated.
   operationId: updateProcessById
   parameters:
     - description: ID of the Process to return

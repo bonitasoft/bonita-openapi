@@ -43,8 +43,11 @@ post:
   tags:
     - Profile
   summary: Create the Profile
+  deprecated: true
   description: |
     Create the Profile
+
+    Warning: as of 9.0.0, creating profiles using this API is deprecated.
   operationId: createProfile
   requestBody:
     content:

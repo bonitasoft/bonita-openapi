@@ -27,8 +27,11 @@ post:
   tags:
     - BDM
   summary: Install a BDM
+  deprecated: true
   description: |
     Install a BDM
+
+    Warning: as of 9.0.0, importing a BDM using this API is deprecated.
   operationId: installBDM
   requestBody:
     content:

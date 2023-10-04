@@ -3,8 +3,11 @@ post:
     - Application
     - Upload
   summary: Upload a living application
+  deprecated: true
   description: |
     Upload application
+
+    Warning: as of 9.0.0, uploading a living application using the portal is deprecated.
   operationId: uploadApplication
   requestBody:
     content:

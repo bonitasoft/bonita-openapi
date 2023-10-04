@@ -3,8 +3,11 @@ post:
     - Profile
     - Upload
   summary: Upload profiles
+  deprecated: true
   description: |
     Upload profiles
+
+    Warning: as of 9.0.0, uploading profiles using the portal is deprecated.
   operationId: uploadprofiles
   requestBody:
     content:

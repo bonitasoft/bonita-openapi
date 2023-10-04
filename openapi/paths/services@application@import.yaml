@@ -2,8 +2,11 @@ post:
   tags:
     - Application
   summary: Import a living application
+  deprecated: true
   description: |
     Import a single application
+
+    Warning: as of 9.0.0, importing a living application using this service is deprecated.
   operationId: importApplication
   requestBody:
     content:

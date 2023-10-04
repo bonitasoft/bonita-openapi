@@ -7,7 +7,6 @@ get:
 
     - can search on `displayName`,`description`
     - can filter on `createdBy`,`contentType`
-
   operationId: searchPages
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
@@ -42,9 +41,11 @@ post:
   tags:
     - Page
   summary: Create the Page
+  deprecated: true
   description: |
-    Upload the page content using the `portal/pageUpload` . This returns a temporary file name that can be used as input for this operation.
+    Upload the page content using the `portal/pageUpload`. This returns a temporary file name that can be used as input for this operation.
 
+    Warning: as of 9.0.0, creating a page using this API is deprecated.
   operationId: createPage
   requestBody:
     content:

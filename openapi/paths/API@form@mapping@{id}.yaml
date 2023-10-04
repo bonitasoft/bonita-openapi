@@ -2,10 +2,13 @@ put:
   tags:
     - FormMapping
   summary: Update the FormMapping by ID
+  deprecated: true
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Update the FormMapping for the given ID
+
+    Warning: as of 9.0.0, updating a Form Mapping using this API is deprecated.
   operationId: updateFormMappingById
   parameters:
     - description: ID of the FormMapping to return

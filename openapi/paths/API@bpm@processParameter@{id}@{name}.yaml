@@ -43,10 +43,13 @@ put:
   tags:
     - ProcessParameter
   summary: Update the ProcessParameter by ID
+  deprecated: true
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Update the ProcessParameter for the given ID
+
+    Warning: as of 9.0.0, importing a Process parameter using this API is deprecated.
   operationId: updateProcessParameterById
   parameters:
     - description: ID of the process to get parameter from

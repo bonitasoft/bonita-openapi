@@ -2,9 +2,12 @@ post:
   tags:
     - Process
     - Upload
+  deprecated: true
   summary: Upload a bar file
   description: |
     Upload a bar file
+
+    Warning: as of 9.0.0, uploading a bar file using the portal is deprecated.
   operationId: uploadProcess
   requestBody:
     content:

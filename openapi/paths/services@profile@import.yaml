@@ -2,8 +2,11 @@ post:
   tags:
     - Profile
   summary: Import profiles
+  deprecated: true
   description: |
     Import profiles
+
+    Warning: as of 9.0.0, importing profiles using this service is deprecated.
   operationId: importProfiles
   requestBody:
     content:

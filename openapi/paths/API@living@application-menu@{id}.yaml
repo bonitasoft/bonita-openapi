@@ -71,8 +71,12 @@ delete:
 put:
   tags:
     - ApplicationMenu
-  summary: Update a application menu by ID
-  description: Update a application menu for the given ID
+  summary: Update an application menu by ID
+  deprecated: true
+  description: |
+    Update an application menu for the given ID
+
+    Warning: as of 9.0.0, updating an application menu item using this API is deprecated.
   operationId: updateApplicationMenuById
   parameters:
     - description: ID of the application menu to return
