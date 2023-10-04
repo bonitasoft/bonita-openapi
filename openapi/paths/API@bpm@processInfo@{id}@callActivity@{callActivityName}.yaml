@@ -1,15 +1,15 @@
 get:
   tags:
-    - ProcessInfo
-  summary: Finds the ProcessInfo by ID
+    - CallActivityProcessInstanceInfo
+  summary: Finds the ProcessInstances related to the process with ID and related to the call activity with name
   description: |
-    Since 2022.2
+    Since 2023.1
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
-    Returns the single ProcessInfo for the given ID
-  operationId: getProcessCaseCounters
+    Returns the process instances related to the process with ID and related to the call activity with name
+  operationId: searchCallActivityProcessInstances
   parameters:
-    - description: ID of the ProcessInfo to return
+    - description: ID of the related process definition
       in: path
       name: id
       required: true
@@ -23,13 +23,13 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/ProcessInfo.yaml'
+            type: array
+            items:
+              $ref: '../components/schemas/CallActivityProcessInstance.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '403':
       $ref: '../components/responses/Forbidden.yaml'
-    '400':
-      $ref: '../components/responses/BadRequest.yaml'
     '404':
       $ref: '../components/responses/NotFound.yaml'
     '5XX':
