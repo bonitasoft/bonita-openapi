@@ -63,6 +63,7 @@ x-tagGroups:
       - Process
       - Diagram
       - ProcessInfo
+      - CallActivityProcessInstanceInfo
       - ProcessParameter
       - ProcessResolutionProblem
       - ProcessSupervisor
@@ -251,7 +252,10 @@ tags:
     description: Diagram
   - name: ProcessInfo
     x-displayName: ProcessInfo
-    description: ProcessInfo
+    description:
+  - name: CallActivityProcessInstanceInfo
+    x-displayName: CallActivityProcessInstanceInfo
+    description: List of process instances that are related to call activity
   - name: FlowNode
     x-displayName: FlowNode
     description: FlowNode
