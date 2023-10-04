@@ -510,6 +510,8 @@ paths:
     $ref: './paths/API@bpm@process@{id}@instantiation.yaml'
   /API/bpm/processInfo/{id}:
     $ref: './paths/API@bpm@processInfo@{id}.yaml'
+  /API@bpm@processInfo@{id}@callActivity@{callActivityName}:
+    $ref: './paths/API@bpm@processInfo@{id}@callActivity@{callActivityName}.yaml'
   /API/bpm/processConnector/{id}/{connectorImplId}/{connectorImplVersion}:
     $ref: './paths/API@bpm@processConnector@{id}@{connectorImplId}@{connectorImplVersion}.yaml'
   /API/bpm/diagram/{id}:
