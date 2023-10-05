@@ -21,9 +21,17 @@ properties:
    
        theme id for the application
      type: string
+   layoutId:
+     description: |
+       ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+       
+       layout id for the application
+     type: string
 example:
    version: "1.0"
    profileId: "2"
    token: "myapp"
    displayName: "My app"
    description: "My application description"
+   themeId: "2"
+   layoutId: "17"
