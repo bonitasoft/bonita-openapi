@@ -2,10 +2,13 @@ post:
   tags:
     - Application
   summary: Upload an application configuration file
+  deprecated: true
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Upload an application configuration file in the `bconf` format.
+
+    Warning: as of 9.0.0, uploading an application configuration file using this API is deprecated.
   operationId: uploadApplicationConfiguration
   requestBody:
     content:
