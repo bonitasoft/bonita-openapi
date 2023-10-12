@@ -2,8 +2,11 @@ get:
   tags:
     - SystemTenant
   summary: Get the current Tenant
+  deprecated: true
   description: |
     Pause and resume tenant services in order to do maintenance on a tenant.
+
+    Warning: since Bonita 9.0.0, /API/system/tenant API resource is deprecated. Use /API/system/maintenance instead to retrieve the maintenance state.
   operationId: getSystemTenant
   parameters:
     - description: ID of the tenant
@@ -38,8 +41,8 @@ put:
   deprecated: true
   description: |
     Pause or resume the current tenant.
-    
-    Warning: Since Bonita 9.0, system/tenant API resource is deprecated. Use system/maintenance instead to enable the maintenance mode (same behavior as pausing the tenant).
+
+    Warning: since Bonita 9.0.0, /API/system/tenant API resource is deprecated. Use /API/system/maintenance instead to enable the maintenance mode (same behavior as pausing the tenant).
   operationId: updateSystemTenant
   parameters:
     - description: ID of the tenant
