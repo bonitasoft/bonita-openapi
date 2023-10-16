@@ -4,6 +4,8 @@ put:
   summary: Update the Process Connector by Process ID
   deprecated: true
   description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
     Update the ProcessConnector for the given ID
 
     Warning: as of 9.0.0, updating a Process Connector using this API is deprecated.

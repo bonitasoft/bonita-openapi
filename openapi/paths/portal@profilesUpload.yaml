@@ -5,6 +5,8 @@ post:
   summary: Upload profiles
   deprecated: true
   description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
     Upload profiles
 
     Warning: as of 9.0.0, uploading profiles using the portal is deprecated.

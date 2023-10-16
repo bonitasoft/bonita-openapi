@@ -45,6 +45,8 @@ post:
   summary: Create the Profile
   deprecated: true
   description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
     Create the Profile
 
     Warning: as of 9.0.0, creating profiles using this API is deprecated.
