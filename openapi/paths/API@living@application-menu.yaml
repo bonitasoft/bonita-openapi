@@ -43,8 +43,11 @@ post:
   tags:
     - ApplicationMenu
   summary: New application menu item
+  deprecated: true
   description: |
     Create an application menu item
+
+    Warning: as of 9.0.0, creating an application menu item using this API is deprecated.
   operationId: createApplicationMenu
   requestBody:
     description: A partial representation of an application menu in JSON

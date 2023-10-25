@@ -35,9 +35,11 @@ put:
   tags:
     - Page
   summary: Update the Page by ID
+  deprecated: true
   description: |
     Use the PUT method to update an existing custom page. To update a custom page, upload the new page content using the pageUpload servlet, which returns a temporary file name, and then call this API with the temporary file name.
 
+    Warning: as of 9.0.0, updating a page using this API is deprecated.
   operationId: updatePageById
   parameters:
     - description: ID of the Page to return

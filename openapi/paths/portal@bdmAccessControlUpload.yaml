@@ -3,10 +3,13 @@ post:
     - BDMAccessControl
     - Upload
   summary: Upload a BDM Access Control
+  deprecated: true
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Upload BDM Access Control
+
+    Warning: as of 9.0.0, uploading a BDM Access Control using the portal is deprecated.
   operationId: uploadBDMAccessControl
   requestBody:
     content:

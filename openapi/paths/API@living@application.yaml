@@ -42,9 +42,12 @@ get:
 post:
   tags:
     - Application
-  summary: Create a living applications
+  summary: Create a living application
+  deprecated: true
   description: |
     Create a living applications
+
+    Warning: as of 9.0.0, creating a living application using this API is deprecated.
   operationId: createApplication
   requestBody:
     content:

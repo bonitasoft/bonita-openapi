@@ -35,8 +35,13 @@ put:
   tags:
     - Profile
   summary: Update the Profile by ID
+  deprecated: true
   description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
     Update the Profile for the given ID
+
+    Warning: as of 9.0.0, updating a profile using this API is deprecated.
   operationId: updateProfileById
   parameters:
     - description: ID of the Profile to return

@@ -3,8 +3,11 @@ post:
     - Page
     - Upload
   summary: Upload a Page
+  deprecated: true
   description: |
     Upload Page
+
+    Warning: as of 9.0.0, uploading a page using the portal is deprecated.
   operationId: uploadPage
   requestBody:
     content:

@@ -2,10 +2,13 @@ post:
   tags:
     - BDMAccessControl
   summary: Import a BDM Access Control
+  deprecated: true
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Import a BDM Access Control
+
+    Warning: as of 9.0.0, importing a BDM Access Control using this service is deprecated.
   operationId: importBDMAccessControl
   requestBody:
     content:

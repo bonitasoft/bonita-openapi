@@ -43,9 +43,12 @@ post:
   tags:
     - Process
   summary: Create the Process
+  deprecated: true
   description: |
     Create the Process.
     A process resource is created using the content of a .bar file that has previously been uploaded, using the [processUpload servlet](#operation/uploadProcess), to get the process archive path.
+
+    Warning: as of 9.0.0, creating a process using this API is deprecated.
   operationId: createProcess
   requestBody:
     content:

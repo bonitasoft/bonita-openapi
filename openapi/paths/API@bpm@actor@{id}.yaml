@@ -35,8 +35,11 @@ put:
   tags:
     - Actor
   summary: Update the Actor by ID
+  deprecated: true
   description: |
     Update the Actor for the given ID
+
+    Warning: as of 9.0.0, updating an Actor using this API is deprecated.
   operationId: updateActorById
   parameters:
     - description: ID of the Actor to return
