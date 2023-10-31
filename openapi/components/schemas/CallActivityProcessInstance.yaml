@@ -1,5 +1,5 @@
 type: object
-description: "Retrieves the information of the process instance that was instantiated by the call activity. The information will be the ID and name of the process definition, as well as lists of open and archived process instances."
+description: "Retrieves the process instances that was instantiated by the call activity. The information returned are the ID and the name of the process definition, as well as the list of open and archived process instances."
 properties:
   childProcessDefinitionId:
     description: "process definition identifier"
@@ -9,12 +9,12 @@ properties:
     type: string
   openProcessInstances:
     type: array
-    description: "List of ids of process instances that were launched by the call activity that are still open. This list will not be present if there are no open process instances."
+    description: "If any, list of ids of process instances that were launched by the call activity that are still open.."
     items:
       type: string
   archivedProcessInstances:
     type: array
-    description: "list of sourceObjectIds of process instances that were launched by the call activity that have been archived. This list will not be present if there are no archived process instances."
+    description: "If any, list of ids of process instances that were launched by the call activity that have been archived."
     items:
       type: string
 example:

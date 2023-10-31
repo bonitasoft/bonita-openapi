@@ -252,7 +252,7 @@ tags:
     description: Diagram
   - name: ProcessInfo
     x-displayName: ProcessInfo
-    description: Information about the number of flownodes related to process
+    description: Information about the states of flownodes related to process
   - name: CallActivityProcessInstanceInfo
     x-displayName: CallActivityProcessInstanceInfo
     description: List of process instances that are related to call activity
