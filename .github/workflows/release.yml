@@ -58,7 +58,7 @@ jobs:
           
       - name: Open Bonita Java Client PR
         id: open_client_pr
-        uses: peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: bonitasoft/bonita-java-client
