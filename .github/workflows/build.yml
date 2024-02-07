@@ -23,7 +23,7 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: npm run package
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: openapi.yaml
           path: dist/openapi.yaml
@@ -31,7 +31,7 @@ jobs:
         if: github.event.action != 'closed' && github.event_name == 'pull_request'
         id: package-version
         run: echo "current-version=$(cat ./package.json | jq '.version' | tr -d '"')" >> $GITHUB_OUTPUT
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: github.event.action != 'closed' && github.event_name == 'pull_request'
         with:
           name: bonita-openapi-site
