@@ -8,7 +8,7 @@
     "test": "redocly lint",
     "yaml": "copyfiles -u 2 docs/images/* dist/bonita-openapi-$npm_package_version/images/ && redocly bundle -o dist/openapi.yaml -f",
     "postman": "node_modules/.bin/openapi2postmanv2 -s dist/openapi.yaml -o dist/postman.json -p",
-    "static": "redoc-cli build ./dist/openapi.yaml -t docs/index.html.hbs --templateOptions.version \"$npm_package_version\" --cdn -o ./dist/bonita-openapi-$npm_package_version/index.html && copyfiles -u 1 dist/openapi.yaml dist/bonita-openapi-$npm_package_version && copyfiles -u 1 dist/postman.json dist/bonita-openapi-$npm_package_version",
+    "static": "redocly build-docs ./dist/openapi.yaml -t docs/index.html.hbs --templateOptions.version \"$npm_package_version\" -o ./dist/bonita-openapi-$npm_package_version/index.html && copyfiles -u 1 dist/openapi.yaml dist/bonita-openapi-$npm_package_version && copyfiles -u 1 dist/postman.json dist/bonita-openapi-$npm_package_version",
     "package": "npm run clean && npm run test && npm run yaml && npm run postman && npm run static && cd dist/bonita-openapi-$npm_package_version && zip -r ../bonita-openapi-$npm_package_version.zip *"
   },
   "license": "GPL v2.0",
@@ -16,7 +16,6 @@
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "openapi-to-postmanv2": "^4.21.0",
-    "@redocly/cli": "1.12.2",
-    "redoc-cli": "^0.13.21"
+    "@redocly/cli": "^1.12.2"
   }
 }

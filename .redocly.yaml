@@ -3,21 +3,21 @@
 apis:
   main@v1:
     root: ./openapi/openapi.yaml
-lint:
-  extends:
-    - recommended
-  rules:
-    no-unused-components: warn
-features.openapi:
-  htmlTemplate: ./docs/index.html.hbs
-  showConsole: true
-  pagination: section
-  menuToggle: true
-  noAutoAuth: true
-  requiredPropsFirst: true
-  pathInMiddlePanel: true
-  hideDownloadButton: true
-  theme:
-    colors:
-      primary:
-        main: "#32329f"
+extends:
+  - recommended
+rules:
+  no-unused-components: warn
+theme:
+  openapi:
+    htmlTemplate: ./docs/index.html.hbs
+    showConsole: true
+    pagination: section
+    menuToggle: true
+    noAutoAuth: true
+    requiredPropsFirst: true
+    pathInMiddlePanel: true
+    hideDownloadButton: true
+    theme:
+      colors:
+        primary:
+          main: "#32329f"
