@@ -1,0 +1,54 @@
+allOf:
+  - $ref: ./Application.yaml
+  - type: object
+    description: Contains the meta information of a legacy Bonita Living Application.
+    properties:
+      homePageId:
+        description: id of the application page used as the home page
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+      layoutId:
+        description: id of the layout used by the application
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+      themeId:
+        description: id of the theme used by the application
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+example:
+  - id: "305"
+    advanced: false
+    creationDate: "1411548289900"
+    icon: ""
+    createdBy": "1"
+    profileId: "2"
+    description: "My application description"
+    token: "myapp"
+    state: "DEACTIVATED"
+    displayName: "My app"
+    updatedBy: "1"
+    visibility: "ALL"
+    editable: true
+    lastUpdateDate: "1411548289900"
+    version: "1.0"
+    homePageId: "26"
+    themeId: "1"
+    layoutId: "3"
+  - id: "306"
+    advanced: true
+    creationDate: "1411548289900"
+    icon: ""
+    createdBy": "1"
+    profileId: "2"
+    description: "My advanced application description"
+    token: "myadvapp"
+    state: "ACTIVATED"
+    displayName: "My advanced app"
+    updatedBy: "1"
+    visibility: "ALL"
+    editable: true
+    lastUpdateDate: "1411548289900"
+    version: "1.0"

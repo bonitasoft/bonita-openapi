@@ -1,5 +1,14 @@
 type: object
+discriminator:
+  propertyName: advanced
+  mapping:
+    false: ./LegacyApplication.yaml
+    true: ./AdvancedApplication.yaml
 properties:
+  advanced:
+    description: true for an advanced application, false for a legacy application
+    type: boolean
+    default: false
   createdBy:
     description: Author user ID
     type: string
@@ -14,11 +23,6 @@ properties:
   displayName:
     description: display name of the application
     type: string
-  homePageId:
-    description: id of the application page used as the home page
-    type: string
-    maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   id:
     description: id of the application
     type: string
@@ -41,17 +45,17 @@ properties:
   version:
     description: version of the application
     type: string
-example:
-  id: "305"
-  creationDate: "1411548289900"
-  iconPath: ""
-  createdBy": "1"
-  profileId: "2"
-  description: "My application description"
-  token: "myapp"
-  state: "DEACTIVATED"
-  displayName: "My app"
-  updatedBy: "1"
-  lastUpdateDate: "1411548289900"
-  version: "1.0"
-  homePageId: "-1"
+  state:
+    description: application state
+    type: string
+    enum: [ ACTIVATED, DEACTIVATED ]
+  visibility:
+    description: visibility of the Application. This value is purely indicative, changing it in the application object won't change the accessibility to the actual application.
+    enum: [ ALL, TECHNICAL_USER, RESTRICTED ]
+    x-enumDescriptions:
+      ALL: Everyone can use the application
+      TECHNICAL_USER: Only the technical user can use the application
+      RESTRICTED: Access to the application is determined by the user profile
+  editable:
+    description: Indicates whether the application can be modified
+    type: boolean

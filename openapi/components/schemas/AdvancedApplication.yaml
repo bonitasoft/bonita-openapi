@@ -1,0 +1,20 @@
+allOf:
+  - $ref: ./Application.yaml
+  - type: object
+    description: Contains the meta information of an advanced Bonita Living Application.
+example:
+  id: "306"
+  advanced: true
+  creationDate: "1411548289900"
+  icon: ""
+  createdBy": "1"
+  profileId: "2"
+  description: "My advanced application description"
+  token: "myadvapp"
+  state: "ACTIVATED"
+  displayName: "My advanced app"
+  updatedBy: "1"
+  visibility: "ALL"
+  editable: true
+  lastUpdateDate: "1411548289900"
+  version: "1.0"

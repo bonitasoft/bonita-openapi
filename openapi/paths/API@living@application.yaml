@@ -5,9 +5,9 @@ get:
   description: |
     Finds living applications with pagination params and filters
 
-    - can order on `id`,`creationDate`, `createdBy`, `profileId`, `token`, `displayName`, `updatedBy`, `lastUpdateDate`, `version`
-    - can search on `token`, `displayName`, `version`
-    - can filter on `token`, `displayName`, `version`, `profileId`, `creationDate`, `createdBy`, `updatedBy` , `lastUpdateDate`, `userId`
+    - can order on `id`,`creationDate`, `createdBy`, `profileId`, `token`, `displayName`, `updatedBy`, `lastUpdateDate`, `version`, `advanced`
+    - can search on `token`, `displayName`, `version`, `advanced`
+    - can filter on `token`, `displayName`, `version`, `advanced`, `profileId`, `creationDate`, `createdBy`, `updatedBy` , `lastUpdateDate`, `userId`
 
   operationId: searchApplications
   parameters:
