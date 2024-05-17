@@ -1,61 +1,66 @@
-type: object
-discriminator:
-  propertyName: advanced
-  mapping:
-    false: ./LegacyApplication.yaml
-    true: ./AdvancedApplication.yaml
-properties:
+oneOf:
+  - $ref: ./AdvancedApplication.yaml
+  - $ref: ./LegacyApplication.yaml
+$defs:
+  baseApplication:
+    properties:
+      # advanced is in the children schemas to ensure it uses the correct constant value
+      createdBy:
+        description: Author user ID
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+      creationDate:
+        description: creation date of the application
+        type: string
+      description:
+        description: description of the application
+        type: string
+      displayName:
+        description: display name of the application
+        type: string
+      id:
+        description: id of the application
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+      lastUpdateDate:
+        description: last update date of the application
+        type: string
+      profileId:
+        description: profile authorized to access this application
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+      token:
+        description: token of the application used to build the application URL
+        type: string
+      updatedBy:
+        description: Last updating user ID
+        type: string
+      version:
+        description: version of the application
+        type: string
+      state:
+        description: application state
+        type: string
+        enum: [ ACTIVATED, DEACTIVATED ]
+      visibility:
+        description: visibility of the Application. This value is purely indicative, changing it in the application object won't change the accessibility to the actual application.
+        enum: [ ALL, TECHNICAL_USER, RESTRICTED ]
+        x-enumDescriptions:
+          ALL: Everyone can use the application
+          TECHNICAL_USER: Only the technical user can use the application
+          RESTRICTED: Access to the application is determined by the user profile
+      editable:
+        description: Indicates whether the application can be modified
+        type: boolean
+examples:
   advanced:
-    description: true for an advanced application, false for a legacy application
-    type: boolean
-    default: false
-  createdBy:
-    description: Author user ID
-    type: string
-    maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
-  creationDate:
-    description: creation date of the application
-    type: string
-  description:
-    description: description of the application
-    type: string
-  displayName:
-    description: display name of the application
-    type: string
-  id:
-    description: id of the application
-    type: string
-    maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
-  lastUpdateDate:
-    description: last update date of the application
-    type: string
-  profileId:
-    description: profile authorized to access this application
-    type: string
-    maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
-  token:
-    description: token of the application used to build the application URL
-    type: string
-  updatedBy:
-    description: Last updating user ID
-    type: string
-  version:
-    description: version of the application
-    type: string
-  state:
-    description: application state
-    type: string
-    enum: [ ACTIVATED, DEACTIVATED ]
-  visibility:
-    description: visibility of the Application. This value is purely indicative, changing it in the application object won't change the accessibility to the actual application.
-    enum: [ ALL, TECHNICAL_USER, RESTRICTED ]
-    x-enumDescriptions:
-      ALL: Everyone can use the application
-      TECHNICAL_USER: Only the technical user can use the application
-      RESTRICTED: Access to the application is determined by the user profile
-  editable:
-    description: Indicates whether the application can be modified
-    type: boolean
+    summary: Advanced application
+    value:
+      $ref: ./AdvancedApplication.yaml#/example
+  legacy:
+    summary: Legacy application
+    value:
+      $ref: ./LegacyApplication.yaml#/example
