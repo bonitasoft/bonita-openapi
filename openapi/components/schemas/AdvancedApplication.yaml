@@ -1,12 +1,15 @@
+title: Advanced application
+description: Contains the meta information of an advanced Bonita Living Application.
 allOf:
-  - $ref: ./Application.yaml#/$defs/baseApplication
   - type: object
-    description: Contains the meta information of an advanced Bonita Living Application.
     properties:
       advanced:
         description: true for an advanced application
         type: boolean
-        const: false
+        enum: [ true ]
+  - $ref: ./AbstractApplication.yaml
+  - type: object
+    description: Contains the meta information of an advanced Bonita Living Application.
 example:
   id: "306"
   advanced: true

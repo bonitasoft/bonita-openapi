@@ -20,8 +20,6 @@ get:
         application/json:
           schema:
             $ref: '../components/schemas/Application.yaml'
-          examples:
-            $ref: '../components/schemas/Application.yaml#/examples'
       description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'

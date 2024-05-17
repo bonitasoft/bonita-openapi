@@ -1,12 +1,16 @@
+title: Legacy application
+description: Contains the meta information of a legacy Bonita Living Application.
 allOf:
-  - $ref: ./Application.yaml#/$defs/baseApplication
   - type: object
-    description: Contains the meta information of a legacy Bonita Living Application.
     properties:
       advanced:
         description: false for a legacy application
         type: boolean
-        const: false
+        enum: [ false ]
+  - $ref: ./AbstractApplication.yaml
+  - type: object
+    description: Contains the meta information of a legacy Bonita Living Application.
+    properties:
       homePageId:
         description: id of the application page used as the home page
         type: string
