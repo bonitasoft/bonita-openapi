@@ -91,7 +91,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/Application.yaml'
+            $ref: '../components/schemas/LegacyApplication.yaml'
       description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
