@@ -60,7 +60,7 @@ jobs:
         id: open_client_pr
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.BONITA_CI_PAT }}
           repository: bonitasoft/bonita-java-client
           event-type: new-bonita-openapi-spec-release
           client-payload: '{"spec_version": "${{steps.newversion.outputs.release-tag}}"}'
