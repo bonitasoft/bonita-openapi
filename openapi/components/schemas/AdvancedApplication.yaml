@@ -12,7 +12,7 @@ allOf:
     description: Contains the meta information of an advanced Bonita Living Application.
 example:
   id: "306"
-  advanced: true
+  advanced: "true"
   creationDate: "1411548289900"
   icon: ""
   createdBy": "1"
@@ -23,6 +23,6 @@ example:
   displayName: "My advanced app"
   updatedBy: "1"
   visibility: "ALL"
-  editable: true
+  editable: "true"
   lastUpdateDate: "1411548289900"
   version: "1.0"
