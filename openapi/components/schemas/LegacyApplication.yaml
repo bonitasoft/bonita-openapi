@@ -28,7 +28,7 @@ allOf:
         pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
 example:
   id: "305"
-  advanced: false
+  advanced: "false"
   creationDate: "1411548289900"
   icon: ""
   createdBy": "1"
@@ -39,7 +39,7 @@ example:
   displayName: "My app"
   updatedBy: "1"
   visibility: "ALL"
-  editable: true
+  editable: "true"
   lastUpdateDate: "1411548289900"
   version: "1.0"
   homePageId: "26"
