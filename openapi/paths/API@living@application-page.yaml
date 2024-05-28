@@ -26,7 +26,7 @@ get:
             format: int64
           description: The total number of matching items
       content:
-        ApplicationPage/json:
+        application/json:
           schema:
             type: array
             items:
