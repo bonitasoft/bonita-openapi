@@ -3,7 +3,7 @@ description: Contains the meta information of a legacy Bonita Living Application
 allOf:
   - type: object
     properties:
-      advanced:
+      link:
         description: false for a legacy application
         type: boolean
         enum: [ false ]
@@ -28,7 +28,7 @@ allOf:
         pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
 example:
   id: "305"
-  advanced: "false"
+  link: "false"
   creationDate: "1411548289900"
   icon: ""
   createdBy": "1"

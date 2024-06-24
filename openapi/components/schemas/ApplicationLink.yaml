@@ -1,26 +1,26 @@
-title: Advanced application
-description: Contains the meta information of an advanced Bonita Living Application.
+title: Application Link
+description: Contains the meta information of a Bonita Living Application Link.
 allOf:
   - type: object
     properties:
-      advanced:
-        description: true for an advanced application
+      link:
+        description: true for an application link
         type: boolean
         enum: [ true ]
   - $ref: ./AbstractApplication.yaml
   - type: object
-    description: Contains the meta information of an advanced Bonita Living Application.
+    description: Contains the meta information of a Bonita Living Application Link.
 example:
   id: "306"
-  advanced: "true"
+  link: "true"
   creationDate: "1411548289900"
   icon: ""
   createdBy": "1"
   profileId: "2"
-  description: "My advanced application description"
+  description: "My application link description"
   token: "myadvapp"
   state: "ACTIVATED"
-  displayName: "My advanced app"
+  displayName: "My app link"
   updatedBy: "1"
   visibility: "ALL"
   editable: "true"

@@ -5,9 +5,9 @@ get:
   description: |
     Finds living applications with pagination params and filters
 
-    - can order on `id`,`creationDate`, `createdBy`, `profileId`, `token`, `displayName`, `updatedBy`, `lastUpdateDate`, `version`, `advanced`
-    - can search on `token`, `displayName`, `version`, `advanced`
-    - can filter on `token`, `displayName`, `version`, `advanced`, `profileId`, `creationDate`, `createdBy`, `updatedBy` , `lastUpdateDate`, `userId`
+    - can order on `id`,`creationDate`, `createdBy`, `profileId`, `token`, `displayName`, `updatedBy`, `lastUpdateDate`, `version`, `link`
+    - can search on `token`, `displayName`, `version`, `link`
+    - can filter on `token`, `displayName`, `version`, `link`, `profileId`, `creationDate`, `createdBy`, `updatedBy` , `lastUpdateDate`, `userId`
 
   operationId: searchApplications
   parameters:
@@ -33,22 +33,22 @@ get:
               $ref: '../components/schemas/Application.yaml'
           example:
             - id: "306"
-              advanced: "true"
+              link: "true"
               creationDate: "1411548289900"
               icon: ""
               createdBy": "1"
               profileId: "2"
-              description: "My advanced application description"
+              description: "My application link description"
               token: "myadvapp"
               state: "ACTIVATED"
-              displayName: "My advanced app"
+              displayName: "My app link"
               updatedBy: "1"
               visibility: "ALL"
               editable: "true"
               lastUpdateDate: "1411548289900"
               version: "1.0"
             - id: "305"
-              advanced: "false"
+              link: "false"
               creationDate: "1411548289900"
               icon: ""
               createdBy": "1"
