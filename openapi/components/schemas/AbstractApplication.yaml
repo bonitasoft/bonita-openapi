@@ -1,6 +1,6 @@
 type: object
 properties:
-  # advanced is in the children schemas to ensure it uses the correct constant value
+  # link is in the children schemas to ensure it uses the correct constant value
   createdBy:
     description: Author user ID
     type: string
