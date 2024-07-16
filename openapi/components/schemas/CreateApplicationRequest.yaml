@@ -1,5 +1,10 @@
 type: object
 properties:
+  link:
+    description: true for an application link, false for a legacy application
+    type: boolean
+    default: "false"
+    enum: [ true, false ]
   description:
     description: description of the application
     type: string
@@ -16,6 +21,7 @@ properties:
     description: version of the application
     type: string
 example:
+  link: "false"
   version: "1.0"
   profileId: "2"
   token: "myapp"

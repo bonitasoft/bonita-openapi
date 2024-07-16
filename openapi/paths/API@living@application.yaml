@@ -79,7 +79,7 @@ post:
   summary: Create a living application
   deprecated: true
   description: |
-    Create a living applications
+    Create a living application (legacy application or application link).
 
     Warning: as of 9.0.0, creating a living application using this API is deprecated.
   operationId: createApplication
@@ -95,7 +95,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/LegacyApplication.yaml'
+            $ref: '../components/schemas/Application.yaml'
       description: "Success "
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
