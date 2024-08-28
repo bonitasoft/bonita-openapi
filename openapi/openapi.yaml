@@ -119,6 +119,10 @@ x-tagGroups:
   - name: Other
     tags:
       - RestAPIextensions
+
+  - name: Upload
+    tags:
+      - FormFileUpload
 tags:
   - name: Activity
     x-displayName: Activity
@@ -355,6 +359,9 @@ tags:
       REST API extensions can be used to query business data, Bonita Engine APIs, or an external information system (such as a database, web service, LDAP directory...). They also help to keep a clean separation between the front-end (forms, pages, and interfaces visible to users) and the back-end (processes).
     externalDocs:
       url: https://documentation.bonitasoft.com/bonita/latest/rest-api-extensions
+  - name: FormFileUpload
+    x-displayName: Form file upload
+    description: Supports any type of files, used to upload a file before submitting a process or task form with a document in its contract.
 
 paths:
   #  =======================
@@ -673,6 +680,11 @@ paths:
     $ref: './paths/portal@profilesUpload.yaml'
   /services/profile/import:
     $ref: './paths/services@profile@import.yaml'
+  #  =======================
+  #   UPLOAD
+  #  =======================
+  /API/formFileUpload:
+    $ref: './paths/API@formFileUpload.yaml'
 
 # TODO : upload endpoints
 #  /portal/processUpload, supports only .bar files
@@ -681,7 +693,6 @@ paths:
 #  /portal/connectorImplementation, supports only .zip files (not available in Community edition)
 #  /portal/reportUpload, supports any type of file (not available in Community edition)
 #  /portal/resourceUpload, supports only .jar files (not available in Community edition)
-#  /API/formFileUpload, supports any type of files, used to upload a file before submitting a process or task form with a document in its contract
 
 components:
   securitySchemes:
