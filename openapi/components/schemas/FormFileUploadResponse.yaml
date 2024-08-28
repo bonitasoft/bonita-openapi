@@ -1,0 +1,16 @@
+type: object
+description: "Form file upload response"
+properties:
+  filename:
+    description: "file name"
+    type: string
+  tempPath:
+    description: "temporary path of a file"
+    type: string
+  contentType:
+    description: "response content type"
+    type: string
+example:
+  filename: "66c5d4e99167e.pdf"
+  tempPath: "885efa7d-c639-4076-ba5d-04a7fbfc1d11.pdf"
+  contentType: "application/pdf"

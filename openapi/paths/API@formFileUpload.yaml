@@ -1,0 +1,28 @@
+post:
+  tags:
+    - FormFileUpload
+  summary: Upload a file
+  description: |
+    Supports any type of files, used to upload a file before submitting a process or task form with a document in its contract
+
+  operationId: formFileUpload
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          $ref: '../components/schemas/FormFileUploadRequest.yaml'
+  responses:
+    '200':
+      description: "Success"
+      content:
+        text/plain:
+          schema:
+            $ref: '../components/schemas/FormFileUploadResponse.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

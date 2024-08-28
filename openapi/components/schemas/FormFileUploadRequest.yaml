@@ -1,0 +1,6 @@
+type: object
+description: "A file to upload"
+properties:
+  file:
+    type: string
+    format: binary
