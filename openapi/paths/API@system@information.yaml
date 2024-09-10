@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Information
+  summary: Get the system information
+  description: |
+    Returns system information details of the platform.
+    Requires to be logged in as a user having the Admin profile.
+  operationId: getSystemInformation
+  x-codeSamples:
+    - lang: "Shell"
+      label: "Curl"
+      source: |
+        curl -b saved_cookies.txt -X GET --url 'http://localhost:8080/bonita/API/system/information'
+  responses:
+    '200':
+      description: "Success"
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/SystemInformation.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

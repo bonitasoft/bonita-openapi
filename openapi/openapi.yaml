@@ -98,6 +98,7 @@ x-tagGroups:
       - PlatformTenant
       - Tenant
       - License
+      - Information
 
   - name: Portal
     tags:
@@ -274,6 +275,11 @@ tags:
   - name: I18ntranslation
     x-displayName: I18nTranslation
     description: I18nTranslation
+  - name: Information
+    x-displayName: Information
+    description: |
+      Handle the platform information.
+      This Web REST API is available since version 10.2 (2024.3). Most of the information returned is only for Subscription editions.
   - name: License
     x-displayName: License
     description: |
@@ -657,6 +663,8 @@ paths:
     $ref: './paths/API@system@tenant@{id}.yaml'
   /API/system/maintenance:
     $ref: './paths/API@system@maintenance.yaml'
+  /API/system/information:
+    $ref: './paths/API@system@information.yaml'
   /API/system/license/unusedid:
     $ref: './paths/API@system@license@unusedid.yaml'
   /APIv2/service/install:
