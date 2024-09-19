@@ -2,13 +2,15 @@ get:
   tags:
     - License
   summary: Get the platform License
+  deprecated: true
   description: |
     Returns the current platform License.
     This requires a platform session. Log in using the platform login service.
+    Warning: Since Bonita 10.2 (2024.3), this API is deprecated: use the API `GET /system/information` instead.
   operationId: getPlatformLicense
   responses:
     '200':
-      description: "Success "
+      description: "Success"
       content:
         application/json:
           schema:

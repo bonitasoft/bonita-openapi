@@ -1,0 +1,62 @@
+type: object
+description: ""
+properties:
+  licenseStartDate:
+    description: "date in milliseconds timestamp since Epoch - first day (included) of license file validity - Subscription editions only"
+    type: string
+  duration:
+    description: "number of days for license file validity - Subscription editions only"
+    type: string
+  licenseExpirationDate:
+    description: "date in milliseconds timestamp since Epoch - last day (included) of license file validity - Subscription editions only"
+    type: string
+  numberOfCPUCores:
+    description: "number of CPUs allowed by the license, if license mode is CPU-based - Subscription editions only"
+    type: string
+  edition:
+    description: "name of the Bonita edition enabled by the license - Community & Subscription editions"
+    type: string
+  subscriptionType:
+    description: "type of the Subscription the customer has purchased with Bonitasoft - Subscription editions only"
+    type: string
+  licenseMode:
+    description: "available mode enabled by the license - Subscription editions only"
+    type: string
+  managedAppsLimit:
+    description: "number of managed apps provisioned for in a Bonita Central environment - Subscription editions only"
+    type: integer
+    format: int64
+  licensee:
+    description: "Owner of the license - Subscription editions only"
+    type: string
+  contactInfo:
+    description: "E-mail address of the owner of the license - Subscription editions only"
+    type: string
+  expirationDate:
+    description: "License expiration date in milliseconds timestamp since Epoch - Subscription editions only"
+    type: integer
+    format: int64
+  activeFeatures:
+    description: "List of active features that the license allow access to (separated by comma) - Subscription editions only"
+    type: string
+
+  requestKey:
+    description: |
+      request key to use to generate a new license on the customer portal.  
+      
+      If you have a subscription that specifies case-counter licensing, additional fields are present:
+    type: string
+  subscriptionStartPeriod:
+    description: "date in milliseconds timestamp since Epoch - first day (included) of current period for number of process instances provisioned - Subscription editions only"
+    type: string
+  subscriptionEndPeriod:
+    description: "date in milliseconds timestamp since Epoch - last day (included) of current period for number of process instances provisioned - Subscription editions only"
+    type: string
+  caseCounterLimit:
+    description: "number of maximum process instances that can be started - Community & Subscription editions"
+    type: integer
+    format: int64
+  caseCounter:
+    description: "number of consumed process instances - Community & Subscription editions"
+    type: integer
+    format: int64
