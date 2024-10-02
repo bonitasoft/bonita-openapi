@@ -52,6 +52,32 @@ post:
               - "Expected input [ticket_account] is missing"
               - "Expected input [ticket_description] is missing"
               - "Expected input [ticket_subject] is missing"
+    '429':
+      description: Case creation limit reached (Community 2024.3+ only)
+      headers:
+        Retry-After:
+          schema:
+            type: string
+            format: date-time
+            description: Date when case counter will be refilled
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:	
+                type: number
+                description: The response status code
+              description:
+                type: string
+                description: The status description
+              reasonPhrase:
+                type: string
+                description: The detail of the reason
+          example:
+            code: 429
+            description: Unable to start the process with ID 5524355418393634511
+            reasonPhrase: Case creation limit reached.
     '5XX':
       $ref: '../components/responses/ServerError.yaml'
   x-codegen-request-body-name: body
