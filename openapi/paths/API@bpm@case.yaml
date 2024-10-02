@@ -73,6 +73,28 @@ post:
       $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
+    '429':
+      description: Case creation limit reached (Community 2024.3+ only)
+      headers:
+        Retry-After:
+            schema:
+              type: string
+              format: date-time
+            description: Date when case counter will be refilled
+      content:
+        application/json:
+          schema: 
+            type: object
+            properties:
+              message:
+                type: string
+                description: The error message
+              exception:
+                type: string
+                description: The exception type
+          example:
+            message: Error occurred when starting process 5524355418393634511. Case creation limit reached.
+            exception: org.bonitasoft.web.toolkit.client.common.exception.api.APITooManyRequestException
     '5XX':
       $ref: '../components/responses/ServerError.yaml'
   x-codegen-request-body-name: body
