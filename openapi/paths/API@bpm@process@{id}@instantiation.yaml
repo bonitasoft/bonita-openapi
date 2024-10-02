@@ -59,7 +59,7 @@ post:
           schema:
             type: string
             format: date-time
-            description: Date when case counter will be refilled
+          description: Date when case counter will be refilled
       content:
         application/json:
           schema:

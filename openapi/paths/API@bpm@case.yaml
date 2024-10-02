@@ -75,10 +75,11 @@ post:
       $ref: '../components/responses/BadRequest.yaml'
     '429':
       description: Case creation limit reached (Community 2024.3+ only)
-      Retry-After:
-          schema:
-            type: string
-            format: date-time
+      headers:
+        Retry-After:
+            schema:
+              type: string
+              format: date-time
             description: Date when case counter will be refilled
       content:
         application/json:
