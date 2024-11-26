@@ -1,0 +1,40 @@
+type: object
+description: "A failure that happened during a BPM instance (flow node, process) execution that led to the instance being in a failed state."
+properties:
+  id:
+    description: "the failure id"
+    type: string
+  flowNodeInstanceId:
+    description: "the id of the flow node instance in which the failure occurred"
+    type: string
+  caseId:
+    description: "the id of the process instance in which that failure occurred"
+    type: string
+  processDefinitionId:
+    description: "the process id that is associated with the flow node or case instance of the failure"
+    type: string
+  scope:
+    description: "the scope of the failure (General information, Operation, Event, Iteration, Connector, Data initialization, Actor mapping, Outgoing transition, or UNKNOWN)"
+    type: string
+  context:
+    description: "Context of the failure"
+    type: string
+  errorMessage:
+    description: "the message of the exception"
+    type: string
+  stackTrace:
+    description: "the stack trace of the exception"
+    type: string
+  failureDate:
+    description: "the date when the failure occurred in milliseconds since epoch"
+    type: string
+example:
+  id: "456"
+  caseId: "1"
+  processDefinitionId: "45"
+  flowNodeInstanceId: "70"
+  scope: "Operation"
+  context: "expression::setvariable_decision"
+  errorMessage: "Error while executing operations"
+  stackTrace: "Exception in thread 'main' org.bonitasoft.engine.core.process.instance.api.exceptions.SActivityStateExecutionException"
+  failureDate: "1732564534177"
