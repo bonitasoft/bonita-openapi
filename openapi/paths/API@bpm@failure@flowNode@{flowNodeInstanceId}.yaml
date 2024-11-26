@@ -1,0 +1,36 @@
+get:
+  tags:
+    - Failure
+  summary: Retrieve the failures of a flownode instance by it's ID
+  description: |
+    Returns the most recent failures for the given flownode ID
+  operationId: getBPMFailuresByFlowNodeInstanceId
+  parameters:
+    - description: The identifier of the flownode instance from which to retrieve the failures
+      in: path
+      name: flowNodeInstanceId
+      required: true
+      schema:
+        type: string
+        maxLength: 250
+        pattern: '^[0-9\_\-\.]{0,250}$'
+    - $ref: '../components/parameters/pageCount.yaml'
+  responses:
+    '200':
+      description: "Success "
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/BPMFailure.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
