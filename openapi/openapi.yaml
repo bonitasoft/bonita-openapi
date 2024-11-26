@@ -560,9 +560,9 @@ paths:
     $ref: './paths/API@bpm@archivedFlowNode.yaml'
   /API/bpm/archivedFlowNode/{id}:
     $ref: './paths/API@bpm@archivedFlowNode@{id}.yaml'
-  /API/bpm/failure/flowNode{flowNodeInstanceId}:
+  /API/bpm/failure/flowNode/{flowNodeInstanceId}:
     $ref: './paths/API@bpm@failure@flowNode@{flowNodeInstanceId}.yaml'
-  /API/bpm/achivedFailure/flowNode{flowNodeInstanceId}:
+  /API/bpm/achivedFailure/flowNode/{flowNodeInstanceId}:
     $ref: './paths/API@bpm@archivedFailure@flowNode@{flowNodeInstanceId}.yaml'
   /API/bpm/timerEventTrigger:
     $ref: './paths/API@bpm@timerEventTrigger.yaml'
