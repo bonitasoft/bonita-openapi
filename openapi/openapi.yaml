@@ -571,9 +571,9 @@ paths:
     $ref: './paths/API@bpm@failure@case@{caseId}.yaml'
   /API/bpm/achivedFailure/case/{caseId}:
     $ref: './paths/API@bpm@archivedFailure@case@{caseId}.yaml'
-  /API/bpm/failure/case/{caseId}/childCases:
+  /API/bpm/failure/case/{rootCaseId}/childCases:
     $ref: './paths/API@bpm@failure@case@{rootCaseId}@childCases.yaml'
-  /API/bpm/achivedFailure/case/{caseId}/childCases:
+  /API/bpm/achivedFailure/case/{rootCaseId}/childCases:
     $ref: './paths/API@bpm@archivedFailure@case@{rootCaseId}@childCases.yaml'
   /API/bpm/timerEventTrigger:
     $ref: './paths/API@bpm@timerEventTrigger.yaml'
