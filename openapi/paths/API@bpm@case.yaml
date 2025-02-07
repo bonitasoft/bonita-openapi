@@ -7,11 +7,13 @@ get:
 
     You can filter on:
 
-    * `processDefinitionId`: The process derfinition ID
+    * `processDefinitionId`: The process definition ID
+    * `rootCaseId`: the root process instance ID (since version 10.3 - 2025.1)
     * `name`: the process name
     * `started_by`: the ID of the user who started the process
     * `team_manager_id`: allow to retrieve the process instances in which all users with this manager ID ar involved)
     * `supervisor_id`: allow the retrived the process instances of all processes the user with this ID is supervisor of) beware you cannot use team_manager_id and supervisor_id at the same time
+    * `searchIndex1Value`, `searchIndex2Value`, `searchIndex3Value`, `searchIndex4Value`, `searchIndex5Value`: the value of the corresponding search index (since version 10.3 - 2025.1)
 
   operationId: searchProcessInstances
   parameters:

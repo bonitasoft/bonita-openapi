@@ -1,16 +1,16 @@
 get:
   tags:
-    - ArchivedFailure
-  summary: Retrieve the archived failures of an archived flownode instance by it's sourceObjectID
+    - Failure
+  summary: Retrieve the archived failures of an archived case (process instance) by it's sourceObjectID
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
     
-    Returns the most recent failures for the given archived flownode sourceObjectID
-  operationId: getArchivedBPMFailuresByFlowNodeInstanceId
+    Returns the most recent archived failures for the given archived case sourceObjectID
+  operationId: getArchivedBPMFailuresByCaseId
   parameters:
-    - description: The original identifier (sourceObjectID) of the flownode instance from which to retrieve the failures
+    - description: The original identifier (sourceObjectID) of the case from which to retrieve the failures
       in: path
-      name: flowNodeInstanceId
+      name: caseId
       required: true
       schema:
         type: string
