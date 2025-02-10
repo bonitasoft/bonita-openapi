@@ -6,7 +6,7 @@
     "start": "redocly preview-docs openapi/openapi.yaml",
     "clean": "rm -rf dist/*",
     "test": "redocly lint",
-    "yaml": "copyfiles -u 2 docs/images/* dist/bonita-openapi-$npm_package_version/images/ && redocly bundle -o dist/openapi.yaml -f",
+    "yaml": "copyfiles -u 2 docs/images/* dist/bonita-openapi-$npm_package_version/images/ && redocly bundle openapi/openapi.yaml -o dist/openapi.yaml -f",
     "postman": "node_modules/.bin/openapi2postmanv2 -s dist/openapi.yaml -o dist/postman.json -p",
     "static": "redocly build-docs ./dist/openapi.yaml -t docs/index.html.hbs --templateOptions.version \"$npm_package_version\" -o ./dist/bonita-openapi-$npm_package_version/index.html && copyfiles -u 1 dist/openapi.yaml dist/bonita-openapi-$npm_package_version && copyfiles -u 1 dist/postman.json dist/bonita-openapi-$npm_package_version",
     "package": "npm run clean && npm run test && npm run yaml && npm run postman && npm run static && cd dist/bonita-openapi-$npm_package_version && zip -r ../bonita-openapi-$npm_package_version.zip *"
