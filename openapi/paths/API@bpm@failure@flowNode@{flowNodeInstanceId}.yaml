@@ -3,6 +3,8 @@ get:
     - Failure
   summary: Retrieve the failures of a flownode instance by it's ID
   description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+    
     Returns the most recent failures for the given flownode ID
   operationId: getBPMFailuresByFlowNodeInstanceId
   parameters:

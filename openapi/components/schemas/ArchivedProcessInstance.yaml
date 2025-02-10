@@ -17,6 +17,7 @@ allOf: # Combines the ProcessInstance and the inline model
       start: "2014-10-22 10:56:53.415"
       state: "completed"
       rootCaseId: "3"
+      callerId": "-1"
       started_by: "4"
       archivedDate: "2014-10-22 10:57:00.299"
       processDefinitionId: "6054482369194211518"

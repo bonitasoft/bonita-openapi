@@ -65,6 +65,9 @@ properties:
   searchIndex5Value:
     description: "the 5th search index value (from 6.5, in Subscription editions only)"
     type: string
+  callerId:
+    description: "the identifier of the BPM entity who started the process. E.g. the call activity instance Id if it was started by a call activity or -1 if it was started by a user (since version 10.3 - 2025.1)"
+    type: string
 example:
   id: 1
   end_date": ""
@@ -74,6 +77,7 @@ example:
   activeFlowNodes": "9"
   state": "started"
   rootCaseId": "1"
+  callerId": "-1"
   started_by": 989
   processDefinitionId": "5777042023671752656"
   last_update_date": "2014-11-27 17:55:00.906"

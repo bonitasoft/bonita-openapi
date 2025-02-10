@@ -4,6 +4,9 @@ properties:
   caseId:
     description: "the id of the process instance in which that failure occurred"
     type: string
+  rootCaseId:
+    description: "the id of the root process instance in which that failure occurred"
+    type: string
   context:
     description: "Context of the failure"
     type: string
@@ -29,7 +32,8 @@ properties:
     description: "the stack trace of the exception"
     type: string
 example:
-  caseId: "1"
+  caseId: "2"
+  rootCaseId: "1"
   context: "expression::setvariable_decision"
   errorMessage: "Error while executing operations"
   failureDate: "1732564534177"

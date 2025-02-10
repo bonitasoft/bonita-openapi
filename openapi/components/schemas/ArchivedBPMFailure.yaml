@@ -7,6 +7,9 @@ properties:
   caseId:
     description: "the id of the process instance in which that failure occurred"
     type: string
+  rootCaseId:
+    description: "the id of the root process instance in which that failure occurred"
+    type: string
   context:
     description: "Context of the failure"
     type: string
@@ -36,7 +39,8 @@ properties:
     type: string
 example:
   archivedDate: "1732564904376"
-  caseId: "1"
+  caseId: "10"
+  rootCaseId: "9"
   context: "expression::setvariable_decision"
   errorMessage: "Error while executing operations"
   failureDate: "1732564534177"

@@ -264,11 +264,14 @@ tags:
     description: FlowNode
   - name: Failure
     x-displayName: BPM Failure
-    description: Failure leading a BPM entity instance to a failed state
+    description: |
+      Failure leading a BPM entity instance to a failed state
+      This Web REST API is available in **Enterprise editions only**, since version 10.3 (2025.1).
   - name: ArchivedFailure
     x-displayName: Archived BPM Failure
-    description: Archived version of the Failure leading a BPM entity instance to a failed state
-
+    description: |
+      Archived version of the Failure leading a BPM entity instance to a failed state.
+      This Web REST API is available in **Enterprise editions only**, since version 10.3 (2025.1).
   - name: FormMappingBDM
     x-displayName: FormMappingBDM
     description: FormMappingBDM
@@ -564,6 +567,14 @@ paths:
     $ref: './paths/API@bpm@failure@flowNode@{flowNodeInstanceId}.yaml'
   /API/bpm/achivedFailure/flowNode/{flowNodeInstanceId}:
     $ref: './paths/API@bpm@archivedFailure@flowNode@{flowNodeInstanceId}.yaml'
+  /API/bpm/failure/case/{caseId}:
+    $ref: './paths/API@bpm@failure@case@{caseId}.yaml'
+  /API/bpm/achivedFailure/case/{caseId}:
+    $ref: './paths/API@bpm@archivedFailure@case@{caseId}.yaml'
+  /API/bpm/failure/case/{rootCaseId}/childCases:
+    $ref: './paths/API@bpm@failure@case@{rootCaseId}@childCases.yaml'
+  /API/bpm/achivedFailure/case/{rootCaseId}/childCases:
+    $ref: './paths/API@bpm@archivedFailure@case@{rootCaseId}@childCases.yaml'
   /API/bpm/timerEventTrigger:
     $ref: './paths/API@bpm@timerEventTrigger.yaml'
   /API/bpm/timerEventTrigger/{id}:
