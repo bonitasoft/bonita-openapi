@@ -14,6 +14,7 @@ get:
     * `version`: the connector version (since version 10.3 - 2025.1)
     * `connectorId`: the connector definition ID (since version 10.3 - 2025.1)
     * `activationEvent`: the container event on which the connector is instanciated: either `ON_ENTER` or `ON_FINISH` (since version 10.3 - 2025.1)
+
   operationId: searchConnectorInstances
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
