@@ -3,8 +3,18 @@ get:
     - ConnectorInstance
   summary: Finds ConnectorInstances
   description: |
-    Finds ConnectorInstances with pagination params and filters.
-    Retrieve a list of connector instances attached to a process or a flow node.
+    Finds ConnectorInstances attached to a process or a flow node with pagination params and filters.
+
+    You can filter on:
+
+    * `containerId`: the process instance or flow node instance ID
+    * `state`: the connector state `TO_BE_EXECUTED`, `EXECUTING`, `TO_RE_EXECUTE`, `DONE`, `FAILED`, `SKIPPED`
+    * `containerType`: the type of container: either `flowNode` or `process` (since version 10.3 - 2025.1)
+    * `name`: the connector name (since version 10.3 - 2025.1)
+    * `version`: the connector version (since version 10.3 - 2025.1)
+    * `connectorId`: the connector definition ID (since version 10.3 - 2025.1)
+    * `activationEvent`: the container event on which the connector is instanciated: either `ON_ENTER` or `ON_FINISH` (since version 10.3 - 2025.1)
+
   operationId: searchConnectorInstances
   parameters:
     - $ref: '../components/parameters/pageIndex.yaml'
