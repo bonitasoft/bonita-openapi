@@ -28,7 +28,7 @@ properties:
     description: "creation date (format: `2014-12-31 15:17:24.736`)"
     type: string
   created_by_user_id:
-    description: "id of the user who created the group (-1 if the group was created by the tenant admin or by an organisation import)"
+    description: "id of the user who created the group (-1 if the group was created by the technical admin or by an organisation import)"
     type: string
   last_update_date:
     description: "last update date (format: `2014-12-31 15:17:24.736`)"

@@ -9,7 +9,7 @@ properties:
   state:
     $ref: './TenantResourceState.yaml'
   lastUpdatedBy:
-    description: "If `lastUpdatedBy: -1` it means that the access control were last installed or updated by tenant_technical_user."
+    description: "If `lastUpdatedBy: -1` it means that the access control were last installed or updated by technical admin."
     type: string
   lastUpdateDate:
     description: "Last date when the access control were installed or updated."
