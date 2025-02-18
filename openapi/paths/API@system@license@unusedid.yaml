@@ -3,7 +3,7 @@ get:
     - License
   summary: Get the current server license
   description: |
-    Returns license information for the current server. Requires to be logged in as a tenant technical administrator.
+    Returns license information for the current server. Requires to be logged in as a technical administrator.
     The same information can be retrieved as a user having simply the Admin profile through the API `GET /system/information`.
   operationId: getLicense
   responses:

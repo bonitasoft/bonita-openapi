@@ -10,9 +10,6 @@ properties:
     type: string
     format: password
     description: the password
-  tenant:
-    type: string
-    description: the user tenant
   redirect:
     type: string
     default: "false"

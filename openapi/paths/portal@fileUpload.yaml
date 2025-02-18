@@ -6,8 +6,8 @@ post:
   description: |
     Upload file.
 
-    **NOTE:** If this file is a BDM zip, to do this, your tenant services need to be paused.
-    In Enterprise editions, if you have an access control file installed on your tenant, you need to delete it before installing or updating your BDM.
+    **NOTE:** If this file is a BDM zip, to do this, Maintenance mode needs to be enabled.
+    In Enterprise editions, if you have an access control file installed, you need to delete it before installing or updating your BDM.
   operationId: uploadFile
   requestBody:
     content:

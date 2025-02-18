@@ -7,9 +7,6 @@ properties:
   content:
     description: "the comment content"
     type: string
-  tenantId:
-    description: "the id of the tenant the comment is associated to"
-    type: string
   processInstanceId:
     description: "the process instance (case) the comment is associated to"
     type: string
@@ -21,7 +18,6 @@ properties:
     type: string
 example:
   content: "Need to review the last inputs of this case"
-  tenantId: "1"
   id: "20005"
   processInstanceId: "1"
   postDate: "2016-06-16 14:51:33.053"

@@ -200,17 +200,17 @@ tags:
     description: |
       Show status or install or update the Business Data Model.
 
-      Installing or updating a BDM on your tenant needs to be done in two successive steps:
+      Installing or updating a BDM needs to be done in two successive steps:
 
       1. Upload a BDM file
       2. Install/Update the previously uploaded file
 
-      **To do this, your tenant services need to be paused.**
+      **To do this, the maintenance mode needs to be enabled.**
 
-      **In Enterprise editions, if you have an access control file installed on your tenant, you need to delete it before installing or updating your BDM.**
+      **In Enterprise editions, if you have an access control file installed, you need to delete it before installing or updating your BDM.**
   - name: BDMAccessControl
     x-displayName: BDMAccessControl
-    description: BDM Access control is available to protect the tenant BDM. You can use this API to get the access control status (lastUpdatedBy, lastUpdateDate...).
+    description: BDM Access control is available to protect the BDM. You can use this API to get the access control status (lastUpdatedBy, lastUpdateDate...).
   - name: BusinessDataQuery
     x-displayName: BusinessDataQuery
     description: BDM Rest APIs allow to query Bonita Business Data.
