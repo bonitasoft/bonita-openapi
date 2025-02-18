@@ -97,8 +97,6 @@ x-tagGroups:
     tags:
       - PlatformAuthentication
       - Platform
-      - PlatformTenant
-      - Tenant
       - License
       - Information
 
@@ -117,7 +115,6 @@ x-tagGroups:
       - I18ntranslation
       - Session
       - Maintenance
-      - SystemTenant
 
   - name: Other
     tags:
@@ -312,9 +309,6 @@ tags:
   - name: Platform
     x-displayName: Platform
     description: The Platform API resources require a platform session. In order to get one, log in as the platform administrator using the platform login service.
-  - name: PlatformTenant
-    x-displayName: PlatformTenant
-    description: PlatformTenant
   - name: Process
     x-displayName: Process
     description: Deploy and manage process definitions. In addition, you can instantiate a process, which will create a new process instance (case).
@@ -348,15 +342,9 @@ tags:
   - name: Session
     x-displayName: Session
     description: Session
-  - name: SystemTenant
-    x-displayName: SystemTenant
-    description: SystemTenant
   - name: Task
     x-displayName: Task
     description: Task
-  - name: Tenant
-    x-displayName: Tenant
-    description: Handle the tenants (**Enterprise editions only**). This requires a platform session. Log in using the platform login service.
   - name: Theme
     x-displayName: Theme
     description: Theme
@@ -638,10 +626,6 @@ paths:
     $ref: './paths/platformlogoutservice.yaml'
   /API/platform/platform/unusedid:
     $ref: './paths/platform@platform@unusedid.yaml'
-  /API/platform/tenant:
-    $ref: './paths/API@platform@tenant.yaml'
-  /API/platform/tenant/{id}:
-    $ref: './paths/API@platform@tenant@{id}.yaml'
   /API/platform/license:
     $ref: './paths/API@platform@license.yaml'
 
@@ -683,8 +667,6 @@ paths:
     $ref: './paths/API@system@i18ntranslation.yaml'
   /API/system/session/unusedId:
     $ref: './paths/API@system@session@unusedId.yaml'
-  /API/system/tenant/{id}:
-    $ref: './paths/API@system@tenant@{id}.yaml'
   /API/system/maintenance:
     $ref: './paths/API@system@maintenance.yaml'
   /API/system/information:
