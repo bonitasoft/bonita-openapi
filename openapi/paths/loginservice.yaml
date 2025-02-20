@@ -51,10 +51,6 @@ post:
           schema:
             type: string
           example: ed27cbeb-9953-4d77-b5a2-1f62a6c2e0bb
-      content: #Mandatory for Client generation (to avoid a void response type and be able to read the response headers)
-        text/plain:
-          schema:
-            type: string
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '403':
