@@ -22,7 +22,7 @@ security:
 x-tagGroups:
   - name: Authentication
     tags:
-      - PortalAuthentication
+      - Authentication
       - PlatformAuthentication
   - name: Application
     tags:
@@ -189,9 +189,9 @@ tags:
   - name: ArchivedUserTask
     x-displayName: ArchivedUserTask
     description: ArchivedUserTask
-  - name: PortalAuthentication
-    x-displayName: Portal Authentication
-    description: Portal Authentication
+  - name: Authentication
+    x-displayName: Authentication
+    description: Authentication
   - name: PlatformAuthentication
     x-displayName: Platform Authentication
     description: Platform Authentication

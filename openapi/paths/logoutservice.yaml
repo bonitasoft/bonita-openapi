@@ -1,7 +1,6 @@
 get:
   tags:
     - Authentication
-    - PortalAuthentication
   summary: Logout the current user
   description: |
     Logout the current user from the system
