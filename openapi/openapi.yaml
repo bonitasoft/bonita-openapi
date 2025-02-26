@@ -19,6 +19,7 @@ servers:
 security:
   - bonita_auth: [ ]
     bonita_token: [ ]
+  - bearer_auth: [ ]
 x-tagGroups:
   - name: Authentication
     tags:
@@ -714,3 +715,5 @@ components:
       $ref: 'components/securitySchemes/bonita_auth.yaml'
     bonita_token:
       $ref: 'components/securitySchemes/bonita_token.yaml'
+    bearer_auth:
+        $ref: 'components/securitySchemes/bearer_auth.yaml'
