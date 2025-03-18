@@ -8,7 +8,7 @@ on:
     paths:
       - 'docs/**/*'
       - 'openapi/**/*'
-      - '.github/workflows/deploy-preview.yml'
+      - '.github/workflows/build.yml'
       - '.redocly.yml'
       - 'package.json'
 
