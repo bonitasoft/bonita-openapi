@@ -64,7 +64,7 @@ properties:
   last_update_date:
     description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when this flow node was last updated, for example '2014-10-17 16:05:42.626)"
     type: string
-  parentTaskId":
+  parentTaskId:
     description: "in case of a subtask, the parent task id "
     type: string
 example:
