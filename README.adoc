@@ -21,6 +21,10 @@ We make use of https://swagger.io/docs/specification/openapi-extensions/[extensi
 
 This repository structure was inspired by https://github.com/Redocly/create-openapi-repo.
 
+== Pre-requisites
+
+See [developer's documentation](DEV.md) for more details about the pre-requisites to work on this project.
+
 == Live Documentation
 
 The api descriptor file can be used to render documentation sites. Those sites have different rendering and may show different parts of the specification file.

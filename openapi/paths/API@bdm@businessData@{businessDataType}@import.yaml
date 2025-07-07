@@ -1,0 +1,70 @@
+post:
+  tags:
+    - Business Data Operations
+  summary: Import Business Data by bulk
+  description: |
+
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+    
+    Allows to import business data in bulk by uploading a file containing the data, in CSV format.
+    
+    Example CSV file content:
+    ```csv
+    firstName,lastName,department, dptReference
+    "John","Doe","Engineering", 14
+    "Jane","Smith", "Marketing", 17
+    ```
+    
+    Field separator can be comma (`,`) or semicolon (`;`). Space characters around the separator will be ignored (trimmed).
+    
+    The first line of the CSV file is considered as the header, and must contain the field names, with the exact same upper/lower case.
+    
+    String Fields must be enclosed in double quotes (`"`), numeric / boolean fields must not.
+
+
+  operationId: importBusinessData
+  parameters:
+    - description: Business Data Type
+      in: path
+      name: businessDataType
+      required: true
+      schema:
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+      example: com.company.model.Employee
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            dataset:
+              type: string
+              format: binary
+
+  responses:
+    '200':
+      description: "Success"
+      content:
+        application/json:
+          schema:
+            type: object
+            description: |
+              An object containing: 
+              * the list of IDs of all the newly created Business Data, under the name of "createdIds"
+              * the list of unknown fields, provided as an array of names, under the name of "unknownFields"
+            example:
+              createdIds: [198, 199]
+              unknownFields: [ "department" ]
+
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
