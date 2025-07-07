@@ -21,9 +21,7 @@ get:
       name: persistenceId
       required: true
       schema:
-        type: string
-        maxLength: 250
-        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+        type: number
       example: 1
   responses:
     '200':
@@ -34,6 +32,112 @@ get:
             $ref: '../components/schemas/BusinessData.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+
+put:
+  tags:
+    - Business Data Operations
+  summary: Update an existing Business Data
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+    
+    Update an existing Business Data.
+    Any input fields that are NOT part of the business data type will be simply ignored, and returned in the response,
+    as an informative list.
+
+  operationId: updateBusinessData
+  parameters:
+    - description: The Business Data type to update
+      in: path
+      name: businessDataType
+      required: true
+      schema:
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9_-.]{0,250}$'
+      example: com.company.model.Employee
+    - description: Business data ID
+      in: path
+      name: persistenceId
+      required: true
+      schema:
+        type: number
+      example: 1234
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+        example:
+          firstName: John
+          lastName: Wayne
+          activity: actor
+          notAValidField: some value that will be ignored
+    description: |
+      The flat JSON object representing the fields of the business data to update. The fields to provide depends on the business data type.
+      Any field not provided will be left unchanged.
+    required: true
+  responses:
+    '200':
+      description: "Success"
+      content:
+        application/json:
+          schema:
+            type: object
+            description: |
+              The list of unknown fields passed as inputs, provided as an array of names, under the name of "unknownFields"
+            example:
+              unknownFields: [ "notAValidField" ]
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+
+delete:
+  tags:
+    - Business Data Operations
+  summary: Delete an existing Business Data
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+    
+    Delete an existing Business Data.
+
+  operationId: deleteBusinessData
+  parameters:
+    - description: The Business Data type to delete
+      in: path
+      name: businessDataType
+      required: true
+      schema:
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+      example: com.company.model.Employee
+    - description: Business data ID to delete
+      in: path
+      name: persistenceId
+      required: true
+      schema:
+        type: number
+      example: 1234
+  responses:
+    '204':
+      description: The Business Data was successfully deleted
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
     '404':

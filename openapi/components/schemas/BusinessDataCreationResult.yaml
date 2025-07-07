@@ -1,0 +1,8 @@
+type: object
+description: |
+  An object containing: 
+  * the ID of the newly created Business Data, under the name of "newBusinessDataId"
+  * any unknown fields, provided as an array of names, under the name of "unknownFields"
+example:
+  "newBusinessDataId": 1988
+  "unknownFields" : [ "notAValidField" ]
