@@ -35,7 +35,7 @@ jobs:
         if: github.event.action != 'closed' && github.event_name == 'pull_request'
         with:
           name: bonita-openapi-site
-          path: dist/bonita-openapi-${{ steps.package-version.outputs.current-version}}
+          path: dist/bonita-openapi-${{ steps.package-version.outputs.current-version}}.zip
           retention-days: 5
   deployPreview:
     if: ${{ success() && github.event_name == 'pull_request' }}
