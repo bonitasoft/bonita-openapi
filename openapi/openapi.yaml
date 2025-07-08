@@ -35,6 +35,7 @@ x-tagGroups:
     tags:
       - BDM
       - BusinessDataQuery
+      - Business Data Operations
       - BDMAccessControl
   - name: BPM
     tags:
@@ -212,6 +213,9 @@ tags:
   - name: BDMAccessControl
     x-displayName: BDMAccessControl
     description: BDM Access control is available to protect the BDM. You can use this API to get the access control status (lastUpdatedBy, lastUpdateDate...).
+  - name: Business Data Operations
+    x-displayName: Business Data Operations
+    description: BDM Rest APIs allow to create / update / delete / import in bulk Bonita Business Data.
   - name: BusinessDataQuery
     x-displayName: BusinessDataQuery
     description: BDM Rest APIs allow to query Bonita Business Data.
@@ -402,6 +406,8 @@ paths:
   #  =======================
   /API/bdm/businessData/{businessDataType}:
     $ref: './paths/API@bdm@businessData@{businessDataType}.yaml'
+  /API/bdm/businessData/{businessDataType}/import:
+    $ref: './paths/API@bdm@businessData@{businessDataType}@import.yaml'
   /API/bdm/businessData/{businessDataType}/findByIds:
     $ref: './paths/API@bdm@businessData@{businessDataType}@findByIds.yaml'
   /API/bdm/businessData/{businessDataType}/{persistenceId}:

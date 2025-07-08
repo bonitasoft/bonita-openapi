@@ -27,7 +27,7 @@ put:
       application/json:
         schema:
            $ref: '../components/schemas/CustomUserValueUpdateRequest.yaml'
-    description: Custom user defition Value
+    description: Custom user definition Value
     required: true
   responses:
     '200':

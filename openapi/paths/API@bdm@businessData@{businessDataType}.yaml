@@ -71,3 +71,58 @@ get:
       $ref: '../components/responses/NotFound.yaml'
     '5XX':
       $ref: '../components/responses/ServerError.yaml'
+
+post:
+  tags:
+    - Business Data Operations
+  summary: Create new Business Data
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+    
+    Create (Insert) new Business Data.
+    Obviously, all mandatory fields of the given business data type must be provided in the request body, to ensure data integrity.
+    Any input fields that are NOT part of the business data type will be simply ignored, and returned in the response,
+    as an informative list.
+
+  operationId: insertBusinessData
+  parameters:
+    - description: The Business Data type to create
+      in: path
+      name: businessDataType
+      required: true
+      schema:
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+      example: com.company.model.Employee
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+        example:
+          firstName: John
+          lastName: Doe
+          age: 30
+          department: Engineering
+          notAValidField: some value that will be ignored
+    description: |
+      The flat JSON object representing the business data to create. The fields to provide depends on the business data type.
+    required: true
+  responses:
+    '200':
+      description: "Success"
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/BusinessDataCreationResult.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
