@@ -5,27 +5,27 @@ properties:
     description: "actor member id"
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   actor_id:
     description: "id of the actor for this mapping"
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   role_id:
     description: "id of role, or -1 if the member type is not role"
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   group_id:
     description: "id of group, or -1 if the member type is not group"
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   user_id:
     description: "id of user, or -1 if the member type is not user"
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
 example:
   id: '206'
   actor_id: '2'

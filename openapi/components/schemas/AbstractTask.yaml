@@ -4,7 +4,7 @@ properties:
     description: the task id
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   type:
     description: the task type
     type: string
@@ -41,32 +41,32 @@ properties:
     description: the process definition id of the process instance which define this task
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   parentCaseId:
     description: the immediate containing process instance id (case id)
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   parentTaskId:
     description: the parent Task id
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   rootCaseId:
     description: the top/root process instance id (case id). In case of an "event sub process" `parentCaseId` will the id of the process instance called while `rootCaseId` will be the one from the caller process instance
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   rootContainerId:
     description: same as rootCaseId
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   executedBy:
     description: the id of the user who performed this task. The task has to be a human task otherwise its value will be 0
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   executedBySubstitute:
     description: the id of the user who did actually performed the task when it has been done in the name of someone else. Value is 0 otherwise
     type: string
@@ -74,12 +74,12 @@ properties:
     description: the id of the actor that can execute this task null otherwise
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   assigned_id:
     description: the user id that this task is assigned to or 0 if it is unassigned
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   assigned_date:
     description: the date ('yyyy-MM-dd HH:mm:ss.SSS') when the current task was assigned for example '2014-10-17 16:05:42.626'
     type: string

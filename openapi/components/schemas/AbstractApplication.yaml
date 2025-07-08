@@ -5,7 +5,7 @@ properties:
     description: Author user ID
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   creationDate:
     description: creation date of the application
     type: string
@@ -19,7 +19,7 @@ properties:
     description: id of the application
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   lastUpdateDate:
     description: last update date of the application
     type: string
@@ -27,7 +27,7 @@ properties:
     description: profile authorized to access this application
     type: string
     maxLength: 250
-    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+    pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   token:
     description: token of the application used to build the application URL
     type: string

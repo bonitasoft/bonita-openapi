@@ -14,7 +14,7 @@ get:
       schema:
         type: string
         maxLength: 250
-        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+        pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   responses:
     '200':
       description: |
@@ -54,7 +54,7 @@ put:
       schema:
         type: string
         maxLength: 250
-        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+        pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   requestBody:
     content:
       application/json:
@@ -90,7 +90,7 @@ delete:
       schema:
         type: string
         maxLength: 250
-        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+        pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   responses:
     '200':
       $ref: '../components/responses/OK.yaml'

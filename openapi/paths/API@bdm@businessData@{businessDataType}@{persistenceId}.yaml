@@ -14,7 +14,7 @@ get:
       schema:
         type: string
         maxLength: 250
-        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+        pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
       example: com.company.model.Employee
     - description: Business data ID
       in: path
@@ -59,7 +59,7 @@ put:
       schema:
         type: string
         maxLength: 250
-        pattern: '^[A-Za-z0-9_-.]{0,250}$'
+        pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
       example: com.company.model.Employee
     - description: Business data ID
       in: path
@@ -122,7 +122,7 @@ delete:
       schema:
         type: string
         maxLength: 250
-        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+        pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
       example: com.company.model.Employee
     - description: Business data ID to delete
       in: path

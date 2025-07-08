@@ -14,7 +14,7 @@ get:
       schema:
         type: string
         maxLength: 250
-        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+        pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
       example: com.company.model.Employee
     - description: list of persistenceIds (comma separated)
       in: query
@@ -23,7 +23,7 @@ get:
       schema:
         type: string
         maxLength: 250
-        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+        pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
       example: 1,3,56
 
   responses:

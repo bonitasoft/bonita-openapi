@@ -13,7 +13,7 @@ get:
       schema:
         type: string
         maxLength: 250
-        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+        pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
     - description: The name of the variable to retrieve
       in: path
       name: variableName
@@ -21,7 +21,7 @@ get:
       schema:
         type: string
         maxLength: 250
-        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+        pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
   responses:
     '200':
       description: "Success "

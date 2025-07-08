@@ -31,7 +31,7 @@ post:
       schema:
         type: string
         maxLength: 250
-        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+        pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
       example: com.company.model.Employee
   requestBody:
     content:

@@ -24,7 +24,7 @@ post:
           schema:
             type: string
             maxLength: 250
-            pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+            pattern: '^[A-Za-z0-9_\-\.]{0,250}$'
             example: tmp_profiles_data.xml
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
