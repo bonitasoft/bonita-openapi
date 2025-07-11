@@ -21,7 +21,9 @@ get:
       name: persistenceId
       required: true
       schema:
-        type: number
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
       example: 1
   responses:
     '200':
@@ -88,11 +90,7 @@ put:
       content:
         application/json:
           schema:
-            type: object
-            description: |
-              The list of unknown fields passed as inputs, provided as an array of names, under the name of "unknownFields"
-            example:
-              unknownFields: [ "notAValidField" ]
+            $ref: '../components/schemas/BusinessDataUpdateResult.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '403':
