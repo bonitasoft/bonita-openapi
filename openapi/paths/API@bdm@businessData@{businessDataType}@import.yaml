@@ -10,16 +10,16 @@ post:
     
     Example CSV file content:
     ```csv
-    firstName,lastName,department, dptReference
-    "John","Doe","Engineering", 14
-    "Jane","Smith", "Marketing", 17
+    firstName,lastName,department, dptReference, dateOfBirth, dateOfBirthWithTime, meetingDateAndTimeWithTimezone, otherDateAndTimeWithTimezone
+    "John","Doe","Engineering", 14, "1907-05-26", "1907-05-26T01:59:42", "2025-11-29T10:15:00+01:00", "2025-11-29T10:15:00Z"
+    "Jane","Smith", "Marketing", 17, "1977-03-24", "1977-03-24T17:40:00", "2025-07-19T09:00:00+01:00", "2025-07-19T09:00:00Z"
     ```
     
     Field separator can be comma (`,`) or semicolon (`;`). Space characters around the separator will be ignored (trimmed).
     
     The first line of the CSV file is considered as the header, and must contain the field names, with the exact same upper/lower case.
     
-    String Fields must be enclosed in double quotes (`"`), numeric / boolean fields must not.
+    String fields must be enclosed in double quotes (`"`), numeric / boolean fields must not. Date fields must be strings in ISO 8601 format (e.g., `2023-10-01T12:00:00Z`).
 
 
   operationId: importBusinessData

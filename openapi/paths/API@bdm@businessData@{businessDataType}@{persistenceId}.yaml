@@ -69,7 +69,7 @@ put:
       required: true
       schema:
         type: number
-      example: 1234
+      example: "1234"
   requestBody:
     content:
       application/json:
@@ -79,10 +79,21 @@ put:
           firstName: John
           lastName: Wayne
           activity: actor
+          dateOfBirth: "1907-05-26"
+          dateOfBirthWithTime: "1907-05-26T01:59:42"
+          meetingDateAndTimeWithTimezone: "2025-11-29T10:15:30+01:00"
+          otherDateAndTimeWithTimezone: "2025-11-29T10:15:30Z"
           notAValidField: some value that will be ignored
     description: |
-      The flat JSON object representing the fields of the business data to update. The fields to provide depends on the business data type.
+      The flat JSON object representing the fields of the business data to update.
+      
+      The fields to provide depends on the business data type.
+      
       Any field not provided will be left unchanged.
+      
+      Any unknown field will be ignored and return in the response, under the name "unknownFields".
+      
+      String fields must be enclosed in double quotes (`"`), numeric / boolean fields must not. Date fields must be strings in ISO 8601 format (e.g., `2023-10-01T12:00:00Z`).
     required: true
   responses:
     '200':
