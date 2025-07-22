@@ -87,7 +87,7 @@ put:
     description: |
       The flat JSON object representing the fields of the business data to update.
       
-      The fields to provide depends on the business data type.
+      The fields to provide depend on the business data type.
       
       Any field not provided will be left unchanged.
       
