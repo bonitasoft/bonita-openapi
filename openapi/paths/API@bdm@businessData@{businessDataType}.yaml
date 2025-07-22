@@ -105,9 +105,22 @@ post:
           lastName: Doe
           age: 30
           department: Engineering
+          activity: developer
+          dateOfBirth: "1977-05-26"
+          dateOfBirthWithTime: "1977-05-26T01:59:42"
+          meetingDateAndTimeWithTimezone: "2025-11-29T10:15:30+01:00"
+          otherDateAndTimeWithTimezone: "2025-11-29T10:15:30Z"
           notAValidField: some value that will be ignored
     description: |
-      The flat JSON object representing the business data to create. The fields to provide depends on the business data type.
+      The flat JSON object representing the fields of the business data to create.
+      
+      The fields to provide depend on the business data type.
+      
+      Any nullable field not provided will be left blank.
+      
+      Any unknown field will be ignored and return in the response, under the name "unknownFields".
+      
+      String fields must be enclosed in double quotes (`"`), numeric / boolean fields must not. Date fields must be strings in ISO 8601 format (e.g., `2023-10-01T12:00:00Z`).
     required: true
   responses:
     '200':
