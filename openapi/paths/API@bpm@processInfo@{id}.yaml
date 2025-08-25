@@ -7,7 +7,7 @@ get:
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
     Returns the single ProcessInfo for the given ID
-  operationId: getProcessInfoById
+  operationId: getProcessCaseCounters
   parameters:
     - description: ID of the ProcessInfo to return
       in: path

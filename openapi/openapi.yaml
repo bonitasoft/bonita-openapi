@@ -65,6 +65,7 @@ x-tagGroups:
       - Process
       - Diagram
       - ProcessInfo
+      - CallActivityProcessInstanceInfo
       - ProcessParameter
       - ProcessResolutionProblem
       - ProcessSupervisor
@@ -260,7 +261,10 @@ tags:
     description: Diagram
   - name: ProcessInfo
     x-displayName: ProcessInfo
-    description: ProcessInfo
+    description: Information about the states of flownodes related to process
+  - name: CallActivityProcessInstanceInfo
+    x-displayName: CallActivityProcessInstanceInfo
+    description: List of process instances that are related to call activity
   - name: FlowNode
     x-displayName: FlowNode
     description: FlowNode
@@ -530,6 +534,8 @@ paths:
     $ref: './paths/API@bpm@process@{id}@instantiation.yaml'
   /API/bpm/processInfo/{id}:
     $ref: './paths/API@bpm@processInfo@{id}.yaml'
+  /API@bpm@processInfo@{id}@callActivity@{callActivityName}:
+    $ref: './paths/API@bpm@processInfo@{id}@callActivity@{callActivityName}.yaml'
   /API/bpm/processConnector/{id}/{connectorImplId}/{connectorImplVersion}:
     $ref: './paths/API@bpm@processConnector@{id}@{connectorImplId}@{connectorImplVersion}.yaml'
   /API/bpm/diagram/{id}:
