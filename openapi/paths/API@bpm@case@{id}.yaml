@@ -38,6 +38,42 @@ get:
       $ref: '../components/responses/NotFound.yaml'
     '5XX':
       $ref: '../components/responses/ServerError.yaml'
+put:
+  tags:
+    - ProcessInstance
+  summary: Update the ProcessInstance by ID
+  description: |
+    Cancel the ProcessInstance for the given ID.
+  operationId: updateProcessInstanceById
+  parameters:
+    - description: ID of the ProcessInstance to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/ProcessInstanceUpdateRequest.yaml'
+    description: Cancel the ProcessInstance.
+    required: true
+  responses:
+    '200':
+      $ref: '../components/responses/OK.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
 delete:
   tags:
     - ProcessInstance
