@@ -1,7 +1,7 @@
 type: object
 properties:
    state:
-     description: state of the ProcessInstance
+     description: state of the ProcessInstance (the only supported value is: cancelled)
      type: string
 example:
    state: "cancelled"
