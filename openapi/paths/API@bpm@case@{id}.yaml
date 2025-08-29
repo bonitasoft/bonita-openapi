@@ -46,7 +46,7 @@ put:
     Cancel the ProcessInstance for the given ID.
   operationId: updateProcessInstanceById
   parameters:
-    - description: ID of the ProcessInstance to return
+    - description: ID of the ProcessInstance to update
       in: path
       name: id
       required: true
