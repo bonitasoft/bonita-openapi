@@ -43,7 +43,7 @@ put:
     - ProcessInstance
   summary: Update the ProcessInstance by ID
   description: |
-    Only the state of a ProcessInstance (with the given ID) can be updated in order to cancel it.
+    Only the state of a ProcessInstance (with the given ID) can be updated in order to cancel it (since version 10.3 - 2025.1).
   operationId: updateProcessInstanceById
   parameters:
     - description: ID of the ProcessInstance to update
