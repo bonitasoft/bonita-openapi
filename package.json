@@ -1,6 +1,6 @@
 {
   "name": "bonita-web-api",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Open API Specification for Bonita Platform.",
   "scripts": {
     "start": "redocly preview-docs openapi/openapi.yaml",
