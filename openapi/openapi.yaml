@@ -115,6 +115,7 @@ x-tagGroups:
     tags:
       - I18nlocale
       - I18ntranslation
+      - Log
       - Session
       - Maintenance
 
@@ -344,6 +345,11 @@ tags:
   - name: Role
     x-displayName: Role
     description: Role
+  - name: Log
+    x-displayName: Log
+    description: |
+      Access log entries recorded by the Bonita Engine during execution. Logs capture actions performed on the platform such as process deployments, task executions, or configuration changes.
+      This Web REST API is available in **Enterprise editions only**.
   - name: Session
     x-displayName: Session
     description: Session
@@ -668,6 +674,10 @@ paths:
   #  =======================
   #   SYSTEM API
   #  =======================
+  /API/system/log:
+    $ref: './paths/API@system@log.yaml'
+  '/API/system/log/{id}':
+    $ref: './paths/API@system@log@{id}.yaml'
   /API/system/i18nlocale:
     $ref: './paths/API@system@i18nlocale.yaml'
   /API/system/i18ntranslation:

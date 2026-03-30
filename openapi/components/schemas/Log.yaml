@@ -1,0 +1,36 @@
+type: object
+description: |
+  A log entry recorded by the Bonita Engine during execution. Logs capture actions performed on the platform such as process deployments, task executions, or configuration changes.
+  This Web REST API is available in **Enterprise editions only**.
+properties:
+  id:
+    type: string
+    description: "the log id"
+    maxLength: 250
+    pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+  creation_date:
+    type: string
+    description: "the date ('yyyy-MM-dd HH:mm:ss.SSS') when this log was created, for example '2024-10-17 16:05:42.626'"
+  createdBy:
+    type: string
+    description: "the name of the user who triggered the logged action"
+  severity:
+    $ref: './LogSeverityLevel.yaml'
+  message:
+    type: string
+    description: "the log message describing the action"
+  action_scope:
+    type: string
+    description: "the scope of the logged action"
+  icon:
+    type: string
+    description: "the icon path for this log entry"
+example:
+  "id": "1024"
+  "creation_date": "2024-10-17 16:05:42.626"
+  "createdBy": "walter.bates"
+  "severity": "INTERNAL"
+  "message": "Creating a new Process definition"
+  "action_scope": "7714320429509736190"
+  "action_type": "PROCESS_DEFINITION_CREATED"
+  "icon": "/default/log.png"

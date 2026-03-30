@@ -1,0 +1,39 @@
+get:
+  tags:
+    - Log
+  summary: Finds the Log by ID
+  description: |
+    Returns the single Log for the given ID.
+    This Web REST API is available in **Enterprise editions only**.
+  operationId: getLogById
+  parameters:
+    - description: ID of the Log to return
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+        maxLength: 250
+        pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
+  x-codeSamples:
+    - lang: "Shell"
+      label: "Curl"
+      source: |
+        curl -b saved_cookies.txt -X GET --url 'http://localhost:8080/bonita/API/system/log/1024'
+  responses:
+    '200':
+      description: "Success "
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Log.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
