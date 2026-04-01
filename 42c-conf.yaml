@@ -1,8 +1,0 @@
-audit:
-  branches:
-    main:
-      discovery:
-        search:
-          - 'dist/*.yaml'
-          - '!dist/bonita-*'
-          - '!openapi/**'

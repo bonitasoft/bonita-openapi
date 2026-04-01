@@ -3,14 +3,22 @@ name: Build
 on:
   push:
     branches: [ master ]
+    paths:
+      - '.github/workflows/build.yml'
+      - 'docs/**'
+      - 'openapi/**'
+      - '.redocly.yml'
+      - 'package.json'
+      - 'package-lock.json'
   pull_request:
     branches: [ master ]
     paths:
-      - 'docs/**/*'
-      - 'openapi/**/*'
       - '.github/workflows/build.yml'
+      - 'docs/**'
+      - 'openapi/**'
       - '.redocly.yml'
       - 'package.json'
+      - 'package-lock.json'
 
 jobs:
 
