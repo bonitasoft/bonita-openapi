@@ -1,0 +1,47 @@
+get:
+  tags:
+    - Log
+  summary: Finds Logs
+  description: |
+    Finds Logs with pagination params and filters. The search returns an array of log entries.
+    This Web REST API is available in **Enterprise editions only**.
+
+    - can filter on `action_scope`, `action_type`, `createdBy`, `message`, `severity` value
+    - can search by text on `action_scope`, `action_type`, `createdBy`, `message`, `severity`
+    - can order on `action_scope`, `action_type`, `creation_date`, `createdBy`, `message`, `severity`
+
+  operationId: searchLogs
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  x-codeSamples:
+    - lang: "Shell"
+      label: "Curl"
+      source: |
+        curl -b saved_cookies.txt -X GET --url 'http://localhost:8080/bonita/API/system/log?p=0&c=10&o=creation_date+DESC'
+  responses:
+    '200':
+      description: "Success "
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/Log.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

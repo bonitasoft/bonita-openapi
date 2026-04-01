@@ -1,0 +1,5 @@
+type: string
+description: "the severity level of the log"
+enum:
+  - BUSINESS
+  - INTERNAL
