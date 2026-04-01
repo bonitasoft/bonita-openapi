@@ -1,0 +1,92 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [ opened, labeled ]
+  issue_comment:
+    types: [ created ]
+
+jobs:
+  claude-review:
+    # Only run when:
+    # 1. PR is created
+    # 2. Comment on PR contains "@claude review"
+    # 3. Label "ask-claude-review" is added to PR
+    if: |
+      (
+        (github.event_name == 'pull_request' && github.event.action == 'opened') ||
+        (github.event_name == 'issue_comment' && github.event.issue.pull_request && contains(github.event.comment.body, '@claude review')) ||
+        (github.event_name == 'pull_request' && github.event.action == 'labeled' && github.event.label.name == 'ask-claude-review')
+      ) && github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
+
+    steps:
+      - name: Get PR number
+        id: pr-number
+        run: |
+          if [ "${{ github.event_name }}" == "issue_comment" ]; then
+            echo "pr_number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+          else
+            echo "pr_number=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Code Review
+        id: claude-review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ORGANIZATION_ANTHROPIC_API_KEY }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ steps.pr-number.outputs.pr_number }}
+
+            Please review this pull request and provide feedback on:
+            - Code quality and best practices
+            - Potential bugs or issues
+            - Performance considerations
+            - Security concerns
+            - Test coverage
+
+            Use the repository's CLAUDE.md for guidance on style and conventions. Be constructive and helpful in your feedback.
+
+            POST YOUR REVIEW BY UPDATING AN EXISTING CODE REVIEW COMMENT if exists, or by CREATING A NEW COMMENT otherwise:
+
+            Step 1 - Find existing Claude review comment (REQUIRED):
+            COMMENT_ID=$(gh pr view ${{ steps.pr-number.outputs.pr_number }} --json comments --jq '.comments[] | select(.body | contains("## Claude Code Review")) | .id' | head -1)
+
+            Step 2 - Create your review markdown:
+            - Start with "## Claude Code Review" header (REQUIRED for identification)
+            - Add timestamp: "**Last updated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            - Include review counter if updating: "**Review iteration:** #N"
+            - Then provide your detailed review
+
+            Step 3 - ALWAYS update existing comment if it exists (MANDATORY):
+            if [ -n "$COMMENT_ID" ]; then
+              gh pr comment ${{ steps.pr-number.outputs.pr_number }} --edit-last --body "<your-review-markdown>"
+              echo "✓ Updated existing review comment ID: $COMMENT_ID"
+            else
+              gh pr comment ${{ steps.pr-number.outputs.pr_number }} --body "<your-review-markdown>"
+              echo "✓ Created initial review comment"
+            fi
+
+            IMPORTANT RULES:
+            1. NEVER create a new Claude Code Review comment if one exists - ALWAYS edit the existing one
+            2. Always start with "## Claude Code Review" for identification
+            3. Include timestamp to show when review was last updated
+            4. Prevent unwanted GitHub auto-linking and mentions:
+               - For numbers that should NOT link to issues/PRs: Insert a zero-width space after "#" (use "#&#8203;<number>" instead of "#<number>")
+               - For text with "@" that should NOT tag users: Insert a zero-width space after "@" (use "@&#8203;<text>" instead of "@<text>")
+               - Only use plain "#<number>" when intentionally referencing an issue/PR
+               - Only use plain "@<username>" when intentionally tagging a user
+
+          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
+          claude_args: '--allowed-tools "Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*)"'
