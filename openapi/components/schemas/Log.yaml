@@ -10,7 +10,8 @@ properties:
     pattern: '^[A-Za-z0-9\_\-\.]{0,250}$'
   creation_date:
     type: string
-    description: "the UTC date and time in ISO-8601 format ('yyyy-MM-ddTHH:mm:ssZ) when this log was created, for example '2024-10-17T16:05:42Z'"
+    format: date-time
+    description: "the UTC date and time in ISO-8601 format ('yyyy-MM-ddTHH:mm:ssZ') when this log was created, for example '2024-10-17T16:05:42Z'"
   createdBy:
     type: string
     description: "the name of the user who triggered the logged action"
