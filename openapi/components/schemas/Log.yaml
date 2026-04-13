@@ -11,7 +11,7 @@ properties:
   creation_date:
     type: string
     format: date-time
-    description: "the UTC date and time in ISO-8601 format ('yyyy-MM-ddTHH:mm:ssZ') when this log was created, for example '2024-10-17T16:05:42Z'"
+    description: "the UTC date and time in ISO-8601 format ('yyyy-MM-ddTHH:mm:ss.SSSZ') when this log was created, for example '2024-10-17T16:05:42.626Z'"
   createdBy:
     type: string
     description: "the name of the user who triggered the logged action"
@@ -28,7 +28,7 @@ properties:
     description: "the icon path for this log entry"
 example:
   "id": "1024"
-  "creation_date": "2024-10-17T16:05:42Z"
+  "creation_date": "2024-10-17T16:05:42.626Z"
   "createdBy": "walter.bates"
   "severity": "INTERNAL"
   "message": "Creating a new Process definition"
