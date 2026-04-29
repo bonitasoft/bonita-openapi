@@ -1,0 +1,20 @@
+type: object
+description: |
+  A node in the recursive composition tree of a BDM business object. Each node holds the
+  qualified name of a composed object and the list of its own composed children, allowing
+  arbitrarily deep composition hierarchies to be expressed.
+required:
+  - qualifiedName
+  - compositions
+properties:
+  qualifiedName:
+    description: Fully qualified Java class name of the composed business object.
+    type: string
+  compositions:
+    description: Direct composition children of this object, or an empty list if none.
+    type: array
+    items:
+      $ref: './CompositionNode.yaml'
+example:
+  qualifiedName: "com.company.model.Address"
+  compositions: []

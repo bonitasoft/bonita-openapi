@@ -1,0 +1,80 @@
+put:
+  tags:
+    - DataRetention
+  summary: Update a retention rule by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Updates the `referenceDate` and/or `retentionDays` of an existing retention rule. The
+    `dataClassName` of an existing rule cannot be changed and is ignored if present in the
+    request body.
+
+    Requires the `DATA_RETENTION` feature to be active in the platform license.
+    Available since Bonita 11.0.
+  operationId: updateRetentionRuleById
+  parameters:
+    - description: Numeric ID of the retention rule to update (the `id` field returned by `DataRetentionConfig`).
+      in: path
+      name: ruleId
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9]+$'
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/RetentionRuleUpdateRequest.yaml'
+  responses:
+    '200':
+      description: Retention rule updated
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/DataRetentionConfig.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body
+delete:
+  tags:
+    - DataRetention
+  summary: Delete a retention rule by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Deletes the retention rule with the given ID. Existing BDM object instances of the underlying
+    type are not deleted by this operation; only the retention rule itself is removed.
+
+    Requires the `DATA_RETENTION` feature to be active in the platform license.
+    Available since Bonita 11.0.
+  operationId: deleteRetentionRuleById
+  parameters:
+    - description: Numeric ID of the retention rule to delete (the `id` field returned by `DataRetentionConfig`).
+      in: path
+      name: ruleId
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9]+$'
+  responses:
+    '204':
+      $ref: '../components/responses/NoContent.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

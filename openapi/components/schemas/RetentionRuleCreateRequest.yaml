@@ -1,0 +1,26 @@
+type: object
+description: |
+  Body of `POST /API/retention/rule`. Defines a new data retention rule for the BDM object
+  type identified by `dataClassName`. All three fields are required.
+required:
+  - dataClassName
+  - referenceDate
+  - retentionDays
+properties:
+  dataClassName:
+    description: |
+      Fully qualified Java class name of the BDM object type this rule applies to. Note the uppercase `N`.
+
+      The corresponding field returned in the `DataRetentionConfig` response of this endpoint and of `PUT /API/retention/rule/{ruleId}`, `GET /API/retention/object` is named `dataClassname` (lowercase `n`).
+    type: string
+  referenceDate:
+    $ref: './ReferenceDate.yaml'
+  retentionDays:
+    description: Duration of the retention period, in days. Must be strictly positive.
+    type: integer
+    format: int32
+    minimum: 1
+example:
+  dataClassName: "com.company.model.ContratClient"
+  referenceDate: "LAST_UPDATE"
+  retentionDays: 365
