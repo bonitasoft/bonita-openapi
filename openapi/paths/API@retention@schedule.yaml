@@ -1,0 +1,26 @@
+get:
+  tags:
+    - DataRetention
+  summary: Get the data retention schedule
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Returns the cron expression that triggers the data retention job. The expression is configured
+    via the `bonita.runtime.retention.schedule.cron` platform property and is read-only at runtime.
+
+    Requires the `DATA_RETENTION` feature to be active in the platform license.
+    Available since Bonita 11.0.
+  operationId: getRetentionSchedule
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/RetentionSchedule.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

@@ -1,0 +1,12 @@
+type: object
+description: |
+  Schedule on which the data retention service runs. The cron expression is configured via the
+  `bonita.runtime.retention.schedule.cron` platform property.
+required:
+  - cronExpression
+properties:
+  cronExpression:
+    description: Cron expression that defines when the data retention job is triggered.
+    type: string
+example:
+  cronExpression: "0 0 2 * * 6"

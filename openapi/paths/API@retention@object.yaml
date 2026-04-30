@@ -1,0 +1,31 @@
+get:
+  tags:
+    - DataRetention
+  summary: List BDM business objects with their retention rules
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Returns the list of all business objects defined in the deployed Business Data Model (BDM),
+    each enriched with its composition tree and the retention rule that may apply to it.
+
+    The full list is returned in a single response — pagination is not applied because the
+    BDM is a bounded set defined at deployment time.
+
+    Requires the `DATA_RETENTION` feature to be active in the platform license.
+    Available since Bonita 11.0.
+  operationId: findObjectsWithRetentionRules
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/BusinessObjectWithRetentionRule.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

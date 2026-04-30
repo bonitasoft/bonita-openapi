@@ -1,0 +1,38 @@
+type: object
+description: |
+  A data retention rule configured for a specific BDM object type. It defines when and how
+  BDM object instances of a given Java type are automatically deleted by the data retention service.
+required:
+  - id
+  - dataClassname
+  - referenceDate
+  - retentionDays
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    description: Identifier of the retention rule. Serialized as a string to avoid JavaScript precision loss on large `long` values.
+    type: string
+  dataClassname:
+    description: Fully qualified Java class name of the BDM object type this rule applies to. Note the lowercase `n` (the create-rule request body uses `dataClassName` instead).
+    type: string
+  referenceDate:
+    $ref: './ReferenceDate.yaml'
+  retentionDays:
+    description: Duration of the retention period, in days. Always strictly positive — enforced by the engine on create and update.
+    type: integer
+    format: int32
+    minimum: 1
+  createdAt:
+    description: Creation timestamp of this retention rule, in epoch milliseconds. Serialized as a string to avoid JavaScript precision loss.
+    type: string
+  updatedAt:
+    description: Last update timestamp of this retention rule, in epoch milliseconds. Serialized as a string to avoid JavaScript precision loss.
+    type: string
+example:
+  id: "1"
+  dataClassname: "com.company.model.Request"
+  referenceDate: "CREATION"
+  retentionDays: 365
+  createdAt: "1777473415401"
+  updatedAt: "1777473415401"

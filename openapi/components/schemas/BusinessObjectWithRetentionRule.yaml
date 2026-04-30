@@ -1,0 +1,35 @@
+type: object
+description: |
+  A business object defined in the Business Data Model (BDM) along with its optional data
+  retention rule and composition tree.
+
+  The `dataRetentionRule` field is `null` when no retention rule has been configured for this
+  business object.
+required:
+  - qualifiedName
+  - compositions
+  - dataRetentionRule
+properties:
+  qualifiedName:
+    description: Fully qualified Java class name of the business object.
+    type: string
+  compositions:
+    description: Direct composition children of this business object as a recursive tree.
+    type: array
+    items:
+      $ref: './CompositionNode.yaml'
+  dataRetentionRule:
+    type: object
+    nullable: true
+    allOf:
+      - $ref: './DataRetentionConfig.yaml'
+example:
+  qualifiedName: "com.company.model.Request"
+  compositions: []
+  dataRetentionRule:
+    id: "1"
+    dataClassname: "com.company.model.Request"
+    referenceDate: "CREATION"
+    retentionDays: 365
+    createdAt: "1777473415401"
+    updatedAt: "1777473415401"

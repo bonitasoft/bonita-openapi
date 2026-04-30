@@ -1,0 +1,20 @@
+type: object
+description: |
+  Body of `PUT /API/retention/rule/{ruleId}`. Replaces the mutable fields of an existing
+  retention rule. This is a full replacement of `referenceDate` and `retentionDays`, not a
+  partial update — both fields must be provided on every call. The `dataClassName` of an
+  existing rule cannot be changed.
+required:
+  - referenceDate
+  - retentionDays
+properties:
+  referenceDate:
+    $ref: './ReferenceDate.yaml'
+  retentionDays:
+    description: Duration of the retention period, in days. Must be strictly positive.
+    type: integer
+    format: int32
+    minimum: 1
+example:
+  referenceDate: "CREATION"
+  retentionDays: 730

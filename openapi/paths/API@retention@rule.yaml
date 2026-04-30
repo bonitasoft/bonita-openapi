@@ -1,0 +1,41 @@
+post:
+  tags:
+    - DataRetention
+  summary: Create a retention rule
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Creates a data retention rule for a BDM business object type. Once created, the data retention
+    service will automatically delete instances of `dataClassName` whose `referenceDate` is older
+    than `retentionDays` days.
+
+    Only one retention rule can exist per BDM class name. Posting a second rule for a
+    `dataClassName` that already has one returns `409 Conflict`.
+
+    Requires the `DATA_RETENTION` feature to be active in the platform license.
+    Available since Bonita 11.0.
+  operationId: createRetentionRule
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/RetentionRuleCreateRequest.yaml'
+  responses:
+    '201':
+      description: Retention rule created
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/DataRetentionConfig.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '409':
+      $ref: '../components/responses/Conflict.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body
