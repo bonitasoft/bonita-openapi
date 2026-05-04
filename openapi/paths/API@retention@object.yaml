@@ -8,7 +8,7 @@ get:
     Returns the list of all business object types defined in the deployed Business Data Model (BDM),
     each enriched with its composition tree and the retention rule that may apply to it.
 
-    The full list is returned in a single response — pagination is not applied because the
+    The full list is returned in a single response. Pagination is not applied because the
     BDM is a bounded set defined at deployment time.
 
     Requires the `DATA_RETENTION` feature to be active in the platform license.
