@@ -1,0 +1,9 @@
+type: string
+description: |
+  Date field on a BDM object instance used as the starting point of the retention period calculation.
+
+  - `CREATION`: retention is calculated from the creation date of the BDM object instance. The clock never resets.
+  - `LAST_UPDATE`: retention is calculated from the last modification date of the BDM object instance. The clock resets on every modification.
+enum:
+  - CREATION
+  - LAST_UPDATE
