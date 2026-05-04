@@ -24,11 +24,17 @@ properties:
     allOf:
       - $ref: './DataRetentionConfig.yaml'
 example:
-  qualifiedName: "com.company.model.Request"
-  compositions: []
+  qualifiedName: "com.company.model.Order"
+  compositions:
+    - qualifiedName: "com.company.model.OrderLine"
+      compositions:
+        - qualifiedName: "com.company.model.Product"
+          compositions: []
+    - qualifiedName: "com.company.model.Address"
+      compositions: []
   dataRetentionRule:
     id: "1"
-    dataClassname: "com.company.model.Request"
+    dataClassname: "com.company.model.Order"
     referenceDate: "CREATION"
     retentionDays: 365
     createdAt: "1777473415401"
