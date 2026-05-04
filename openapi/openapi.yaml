@@ -260,7 +260,7 @@ tags:
   - name: DataRetention
     x-displayName: Data Retention
     description: |
-      Configure how Bonita automatically deletes obsolete Business Data Model (BDM) instances. A retention rule applies to a specific BDM business object type and defines when its instances become eligible for deletion based on a reference date (creation or last update) and a retention period in days. The data retention service runs on a configurable cron schedule.
+      Configure how Bonita automatically deletes obsolete business data. A retention rule applies to a specific business object type and defines when its instances become eligible for deletion based on a reference date (creation or last update) and a retention period in days. The data retention service runs on a configurable cron schedule.
 
       This Web REST API is available in **Enterprise editions only**, since version 11.0.
   - name: Diagram

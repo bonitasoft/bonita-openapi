@@ -11,7 +11,7 @@ required:
   - dataRetentionRule
 properties:
   qualifiedName:
-    description: Fully qualified Java class name of the business object.
+    description: Fully qualified Java class name of the business object type.
     type: string
   compositions:
     description: Direct composition children of this business object as a recursive tree.
