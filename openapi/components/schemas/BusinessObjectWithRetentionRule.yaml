@@ -1,10 +1,10 @@
 type: object
 description: |
-  A business object defined in the Business Data Model (BDM) along with its optional data
+  A business object type defined in the Business Data Model (BDM) along with its optional data
   retention rule and composition tree.
 
   The `dataRetentionRule` field is `null` when no retention rule has been configured for this
-  business object.
+  business object type.
 required:
   - qualifiedName
   - compositions
@@ -14,7 +14,7 @@ properties:
     description: Fully qualified Java class name of the business object type.
     type: string
   compositions:
-    description: Direct composition children of this business object as a recursive tree.
+    description: Direct composition children of this business object type as a recursive tree.
     type: array
     items:
       $ref: './CompositionNode.yaml'

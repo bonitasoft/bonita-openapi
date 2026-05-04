@@ -1,11 +1,11 @@
 get:
   tags:
     - DataRetention
-  summary: List BDM business objects with their retention rules
+  summary: List business object types with their retention rules
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
-    Returns the list of all business objects defined in the deployed Business Data Model (BDM),
+    Returns the list of all business object types defined in the deployed Business Data Model (BDM),
     each enriched with its composition tree and the retention rule that may apply to it.
 
     The full list is returned in a single response — pagination is not applied because the

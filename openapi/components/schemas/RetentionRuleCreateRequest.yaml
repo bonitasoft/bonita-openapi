@@ -1,6 +1,6 @@
 type: object
 description: |
-  Body of `POST /API/retention/rule`. Defines a new data retention rule for the BDM object
+  Body of `POST /API/retention/rule`. Defines a new data retention rule for the business object
   type identified by `dataClassName`. All three fields are required.
 required:
   - dataClassName
@@ -9,7 +9,7 @@ required:
 properties:
   dataClassName:
     description: |
-      Fully qualified Java class name of the BDM object type this rule applies to. Note the uppercase `N`.
+      Fully qualified Java class name of the business object type this rule applies to. Note the uppercase `N`.
 
       The corresponding field returned in the `DataRetentionConfig` response of this endpoint and of `PUT /API/retention/rule/{ruleId}`, `GET /API/retention/object` is named `dataClassname` (lowercase `n`).
     type: string

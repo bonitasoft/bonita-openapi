@@ -1,7 +1,7 @@
 type: object
 description: |
-  A data retention rule configured for a specific BDM object type. It defines when and how
-  BDM object instances of a given Java type are automatically deleted by the data retention service.
+  A data retention rule configured for a specific business object type. It defines when and how
+  business data of that type are automatically deleted by the data retention service.
 required:
   - id
   - dataClassname
@@ -14,7 +14,7 @@ properties:
     description: Identifier of the retention rule. Serialized as a string to avoid JavaScript precision loss on large `long` values.
     type: string
   dataClassname:
-    description: Fully qualified Java class name of the BDM object type this rule applies to. Note the lowercase `n` (the create-rule request body uses `dataClassName` instead).
+    description: Fully qualified Java class name of the business object type this rule applies to. Note the lowercase `n` (the create-rule request body uses `dataClassName` instead).
     type: string
   referenceDate:
     $ref: './ReferenceDate.yaml'

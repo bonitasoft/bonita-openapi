@@ -5,9 +5,9 @@ post:
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
-    Creates a data retention rule for a BDM business object type. Once created, the data retention
-    service will automatically delete instances of `dataClassName` whose `referenceDate` is older
-    than `retentionDays` days.
+    Creates a data retention rule for a business object type. Once created, the data retention
+    service will automatically delete business data of `dataClassName` whose `referenceDate` is
+    older than `retentionDays` days.
 
     Only one retention rule can exist per BDM class name. Posting a second rule for a
     `dataClassName` that already has one returns `409 Conflict`.
