@@ -18,7 +18,7 @@ get:
     '200':
       description: |
         Successful operation. The full list of business object types is returned in a single
-        response — no pagination is applied and no `Content-Range` header is set.
+        response. No pagination is applied and no `Content-Range` header is set.
       content:
         application/json:
           schema:
