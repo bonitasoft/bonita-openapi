@@ -17,7 +17,7 @@ properties:
     description: "name of the Bonita edition enabled by the license - Community & Subscription editions"
     type: string
   subscriptionType:
-    description: "type of the Subscription the customer has purchased with Bonitasoft - Subscription editions only"
+    description: "type of the Subscription the customer has purchased with Ofelia - Subscription editions only"
     type: string
   licenseMode:
     description: "available mode enabled by the license - Subscription editions only"
