@@ -9,7 +9,7 @@ info:
     # Ignore IDE warnings
     $ref: './intro.md'
   x-logo:
-    url: images/bonitasoft-logo.svg
+    url: images/ofelia-logo.svg
     backgroundColor: "#19465f"
     altText: "Bonita API"
     href: "/"
@@ -382,7 +382,7 @@ tags:
 
       REST API extensions can be used to query business data, Bonita Engine APIs, or an external information system (such as a database, web service, LDAP directory...). They also help to keep a clean separation between the front-end (forms, pages, and interfaces visible to users) and the back-end (processes).
     externalDocs:
-      url: https://documentation.bonitasoft.com/bonita/latest/rest-api-extensions
+      url: https://documentation.ofelia.com/bonita/latest/rest-api-extensions
   - name: FormFileUpload
     x-displayName: Form file upload
     description: Supports any type of files, used to upload a file before submitting a process or task form with a document in its contract.
