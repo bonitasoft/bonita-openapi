@@ -9,7 +9,7 @@ info:
     # Ignore IDE warnings
     $ref: './intro.md'
   x-logo:
-    url: images/bonitasoft-logo.svg
+    url: images/ofelia-logo.svg
     backgroundColor: "#19465f"
     altText: "Bonita API"
     href: "/"
