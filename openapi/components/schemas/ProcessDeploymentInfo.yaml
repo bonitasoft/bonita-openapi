@@ -1,8 +1,8 @@
 type: object
 description: |
-  Deployment information of a process, as embedded under the `rootProcessInfo` field of a
-  delegated task. It describes the process behind the root case that triggered the task, not
-  the child case the task may directly belong to.
+  Deployment information of a process: its name, version, activation and configuration state,
+  and deployment metadata. This is a general-purpose embedding shape, not delegation-specific;
+  it currently appears under the `rootProcessInfo` field of a delegated task.
 
   The internal deployment-info row id is intentionally not exposed; callers identify the process
   through `processId`. The `processId` and `deployedBy` long ids are serialized as strings to
