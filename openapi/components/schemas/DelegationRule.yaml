@@ -28,11 +28,13 @@ properties:
     description: The user receiving visibility and execution rights on the delegator's tasks.
     $ref: './DelegationUser.yaml'
   startDate:
-    description: Start of the delegation period, inclusive, in epoch milliseconds. Serialized as a string to avoid JavaScript precision loss.
-    type: string
+    description: Start of the delegation period, inclusive, in milliseconds since epoch.
+    type: integer
+    format: int64
   endDate:
-    description: End of the delegation period, inclusive, in epoch milliseconds. Serialized as a string to avoid JavaScript precision loss.
-    type: string
+    description: End of the delegation period, inclusive, in milliseconds since epoch.
+    type: integer
+    format: int64
   processes:
     description: |
       Process whitelist for this rule. Each entry is a process name; a name covers every deployed
@@ -47,8 +49,9 @@ properties:
     description: The user who last created or modified this rule (the delegator on self-service, or an administrator).
     $ref: './DelegationUser.yaml'
   lastUpdatedAt:
-    description: Timestamp of the last modification, in epoch milliseconds. Serialized as a string to avoid JavaScript precision loss.
-    type: string
+    description: Timestamp of the last modification, in milliseconds since epoch.
+    type: integer
+    format: int64
 example:
   id: "1"
   delegator:
@@ -79,8 +82,8 @@ example:
     lastConnection: null
     managerUserId: "0"
     enabled: true
-  startDate: "1780524000000"
-  endDate: "1780696799999"
+  startDate: 1780524000000
+  endDate: 1780696799999
   processes:
     - "Vacation request"
   status: "active"
@@ -98,4 +101,4 @@ example:
     lastConnection: 1780576504806
     managerUserId: "0"
     enabled: true
-  lastUpdatedAt: "1780576300586"
+  lastUpdatedAt: 1780576300586

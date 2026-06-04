@@ -12,8 +12,9 @@ description: |
   without a second round-trip.
 
   All long id fields are serialized as strings to avoid JavaScript precision loss. Date fields
-  (`dueDate`, `assignedDate`, `reachedStateDate`, `lastUpdateDate`) are serialized as numeric
-  epoch milliseconds and may be `null`.
+  (`dueDate`, `assignedDate`, `reachedStateDate`, `lastUpdateDate`, `delegationStart`,
+  `delegationEnd`) are numeric, in milliseconds since epoch; some (such as `dueDate` and
+  `assignedDate`) may be `null`.
 required:
   - id
   - name
@@ -112,11 +113,13 @@ properties:
     description: The user the task is surfaced to through delegation (the delegate).
     $ref: './DelegationUser.yaml'
   delegationStart:
-    description: Start of the delegation period, inclusive, in epoch milliseconds. Serialized as a string (unlike the numeric task date fields above), mirroring engine output. Same value as the delegation rule's `startDate`.
-    type: string
+    description: Start of the delegation period, inclusive, in milliseconds since epoch. Same value as the delegation rule's `startDate`.
+    type: integer
+    format: int64
   delegationEnd:
-    description: End of the delegation period, inclusive, in epoch milliseconds. Serialized as a string (unlike the numeric task date fields above), mirroring engine output. Same value as the delegation rule's `endDate`.
-    type: string
+    description: End of the delegation period, inclusive, in milliseconds since epoch. Same value as the delegation rule's `endDate`.
+    type: integer
+    format: int64
   rootProcessInfo:
     description: Deployment information of the process behind the root case that triggered the task, not the child case the task may directly belong to.
     $ref: './ProcessDeploymentInfo.yaml'
@@ -141,8 +144,8 @@ example:
   executedBy: "0"
   executedBySubstitute: "0"
   flownodeDefinitionId: "7537946595085140972"
-  delegationStart: "1780524000000"
-  delegationEnd: "1780696799999"
+  delegationStart: 1780524000000
+  delegationEnd: 1780696799999
   delegator:
     id: "1"
     firstName: "Walter"
