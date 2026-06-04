@@ -5,14 +5,14 @@ get:
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 
-    Searches the human tasks the current user can act on through an active delegation rule. Only
+    Searches the human tasks a user can act on through an active delegation rule. Only
     tasks covered by an `active` rule are returned: scheduled and expired rules yield nothing.
-    Tasks remain assigned to the delegator; the delegate gains visibility and execution rights
+    Tasks should be assigned to the delegator and remain assigned to them; the delegate gains visibility and execution rights
     without reassignment.
 
     - can order on `dueDate`, `priority`, `reachedStateDate`
     - can search (`s`) on the task name and display name
-    - can filter on `delegateId` (must be numeric; scopes results to a delegate, enforced against the session user unless the caller is an administrator) and on `rootProcessName` (narrows results to a specific root process)
+    - can filter on `delegateId` (must be numeric; scopes results to a delegate, enforced against the session user by (dynamic) authorization rules unless the caller is an administrator) and on `rootProcessName` (narrows results to a specific root process)
 
     Available in Enterprise editions only, since Bonita 2026.2.
   operationId: searchDelegatedTasks

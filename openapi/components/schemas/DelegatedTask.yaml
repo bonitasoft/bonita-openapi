@@ -1,6 +1,6 @@
 type: object
 description: |
-  A human task that the current user is allowed to act on through an active delegation rule,
+  A human task that a user is allowed to act on through an active delegation rule,
   returned by `GET /API/delegation/task`.
 
   The task is still assigned to the delegator; delegation grants the delegate visibility and
