@@ -1,8 +1,8 @@
 type: object
 description: |
   Deployment information of a process, as embedded under the `rootProcessInfo` field of a
-  delegated task. It describes the root process whose deployment was started, even when the
-  task lives inside a subprocess.
+  delegated task. It describes the process behind the root case that triggered the task, not
+  the child case the task may directly belong to.
 
   The internal deployment-info row id is intentionally not exposed; callers identify the process
   through `processId`. The `processId` and `deployedBy` long ids are serialized as strings to
@@ -47,11 +47,11 @@ properties:
     type: integer
     format: int64
   activationState:
-    description: Activation state of the process (e.g. `ENABLED`, `DISABLED`).
-    type: string
+    description: Activation state of the process.
+    $ref: './ActivationState.yaml'
   configurationState:
-    description: Configuration state of the process (e.g. `RESOLVED`, `UNRESOLVED`).
-    type: string
+    description: Configuration state of the process.
+    $ref: './ConfigurationState.yaml'
   iconPath:
     description: Path to the process icon, or `null` when none is set.
     type: string

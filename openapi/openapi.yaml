@@ -269,6 +269,10 @@ tags:
     description: |
       Delegate human tasks from one user (the delegator) to another (the delegate) for a bounded period and a whitelist of processes. Delegation grants the delegate visibility and execution rights on the delegator's tasks without reassigning them: ownership and the audit trail are preserved. A user can hold at most one delegation rule at a time, and a rule's status (scheduled, active, expired) is derived from its date range.
 
+      Id fields are sent as numeric `int64` in request bodies but returned as strings in responses, to avoid JavaScript precision loss on large `long` values; this is intentional and documented per field.
+
+      There is no `GET /API/delegation/rule/{ruleId}`: the engine does not expose a single-rule read, so fetch a rule through the search endpoint (`GET /API/delegation/rule`) filtered by `id`. This is a known API gap, not a spec omission.
+
       This Web REST API is available in **Enterprise editions only**, since version 2026.2.
   - name: Diagram
     x-displayName: Diagram

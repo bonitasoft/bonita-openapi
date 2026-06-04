@@ -38,6 +38,7 @@ properties:
       Process whitelist for this rule. Each entry is a process name; a name covers every deployed
       version of that process. Always contains at least one entry.
     type: array
+    minItems: 1
     items:
       type: string
   status:

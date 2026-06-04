@@ -45,7 +45,7 @@ get:
 post:
   tags:
     - Delegation
-  summary: Create a delegation rule
+  summary: Create or replace a delegation rule
   description: |
     ![edition](https://img.shields.io/badge/edition-entreprise-blue)
 

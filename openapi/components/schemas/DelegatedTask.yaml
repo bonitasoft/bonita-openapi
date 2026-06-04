@@ -112,13 +112,13 @@ properties:
     description: The user the task is surfaced to through delegation (the delegate).
     $ref: './DelegationUser.yaml'
   delegationStart:
-    description: Start of the delegation period, inclusive, in epoch milliseconds. Serialized as a string. Same value as the delegation rule's `startDate`.
+    description: Start of the delegation period, inclusive, in epoch milliseconds. Serialized as a string (unlike the numeric task date fields above), mirroring engine output. Same value as the delegation rule's `startDate`.
     type: string
   delegationEnd:
-    description: End of the delegation period, inclusive, in epoch milliseconds. Serialized as a string. Same value as the delegation rule's `endDate`.
+    description: End of the delegation period, inclusive, in epoch milliseconds. Serialized as a string (unlike the numeric task date fields above), mirroring engine output. Same value as the delegation rule's `endDate`.
     type: string
   rootProcessInfo:
-    description: Deployment information of the root process the task belongs to.
+    description: Deployment information of the process behind the root case that triggered the task, not the child case the task may directly belong to.
     $ref: './ProcessDeploymentInfo.yaml'
 example:
   id: "2"
