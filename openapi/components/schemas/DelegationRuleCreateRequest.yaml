@@ -1,0 +1,47 @@
+type: object
+description: |
+  Body of `POST /API/delegation/rule`. Defines a new delegation rule.
+
+  `delegatorId` is optional: when omitted it is resolved from the current session
+  (self-service creation). An administrator creating a rule on behalf of another user provides
+  `delegatorId` explicitly.
+
+  The values must satisfy: `endDate` strictly after `startDate`, `delegateId` different from the
+  delegator, and a non-empty `processes` list. A violation is reported as `400`.
+
+  A user can hold at most one delegation rule: posting a rule for a delegator who already has one
+  replaces the existing rule (upsert).
+required:
+  - delegateId
+  - startDate
+  - endDate
+  - processes
+properties:
+  delegatorId:
+    description: Id of the user whose tasks are delegated. Optional; resolved from the session when omitted.
+    type: integer
+    format: int64
+  delegateId:
+    description: Id of the user receiving access. Must differ from the delegator.
+    type: integer
+    format: int64
+  startDate:
+    description: Start of the delegation period, inclusive, in epoch milliseconds.
+    type: integer
+    format: int64
+  endDate:
+    description: End of the delegation period, inclusive, in epoch milliseconds. Must be strictly after `startDate`.
+    type: integer
+    format: int64
+  processes:
+    description: Process whitelist. Each entry is a process name covering every deployed version. Must contain at least one entry.
+    type: array
+    items:
+      type: string
+example:
+  delegatorId: 1
+  delegateId: 2
+  startDate: 1780524000000
+  endDate: 1780696799999
+  processes:
+    - "Vacation request"

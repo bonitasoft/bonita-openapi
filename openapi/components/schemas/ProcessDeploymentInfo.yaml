@@ -1,0 +1,71 @@
+type: object
+description: |
+  Deployment information of a process, as embedded under the `rootProcessInfo` field of a
+  delegated task. It describes the root process whose deployment was started, even when the
+  task lives inside a subprocess.
+
+  The internal deployment-info row id is intentionally not exposed; callers identify the process
+  through `processId`. The `processId` and `deployedBy` long ids are serialized as strings to
+  avoid JavaScript precision loss, while date fields are serialized as numeric epoch milliseconds.
+required:
+  - processId
+  - name
+  - version
+  - activationState
+  - configurationState
+properties:
+  processId:
+    description: Identifier of the process definition. Serialized as a string to avoid JavaScript precision loss.
+    type: string
+  name:
+    description: Technical name of the process.
+    type: string
+  version:
+    description: Version of the process.
+    type: string
+  displayName:
+    description: Human-readable name of the process.
+    type: string
+    nullable: true
+  description:
+    description: Description of the process.
+    type: string
+    nullable: true
+  displayDescription:
+    description: Human-readable description of the process.
+    type: string
+    nullable: true
+  deploymentDate:
+    description: Deployment timestamp of the process, in epoch milliseconds.
+    type: integer
+    format: int64
+  deployedBy:
+    description: Id of the user who deployed the process. Serialized as a string.
+    type: string
+  lastUpdateDate:
+    description: Timestamp of the last update of the deployment information, in epoch milliseconds.
+    type: integer
+    format: int64
+  activationState:
+    description: Activation state of the process (e.g. `ENABLED`, `DISABLED`).
+    type: string
+  configurationState:
+    description: Configuration state of the process (e.g. `RESOLVED`, `UNRESOLVED`).
+    type: string
+  iconPath:
+    description: Path to the process icon, or `null` when none is set.
+    type: string
+    nullable: true
+example:
+  name: "Vacation request"
+  version: "1.0"
+  displayDescription: ""
+  deploymentDate: 1780576273140
+  deployedBy: "1"
+  configurationState: "RESOLVED"
+  activationState: "ENABLED"
+  processId: "5270206374128493046"
+  displayName: "Vacation request"
+  lastUpdateDate: 1780576574182
+  iconPath: null
+  description: ""

@@ -1,0 +1,78 @@
+type: object
+description: |
+  User embedded in a delegation rule or a delegated task (delegator, delegate or last updater).
+
+  This is the engine `User` model serialized directly, so its field names (`userName`,
+  `managerUserId`, `creationDate`, ...) differ from the legacy snake_case `User` schema returned
+  by the `/API/identity/user` endpoints. The long id fields (`id`, `createdBy`, `managerUserId`)
+  are serialized as strings to avoid JavaScript precision loss, while the date fields
+  (`creationDate`, `lastUpdate`, `lastConnection`) are serialized as numeric epoch milliseconds.
+required:
+  - id
+  - userName
+  - firstName
+  - lastName
+  - enabled
+properties:
+  id:
+    description: User id. Serialized as a string to avoid JavaScript precision loss on large `long` values.
+    type: string
+  userName:
+    description: Login name of the user.
+    type: string
+  firstName:
+    description: First name of the user.
+    type: string
+    nullable: true
+  lastName:
+    description: Last name of the user.
+    type: string
+    nullable: true
+  title:
+    description: Civility title of the user.
+    type: string
+    nullable: true
+  jobTitle:
+    description: Job title of the user.
+    type: string
+    nullable: true
+  iconId:
+    description: Id of the icon row used as avatar, or `null` when no icon is set. Serialized as a string when present.
+    type: string
+    nullable: true
+  managerUserId:
+    description: Id of this user's manager, or `0` when none. Serialized as a string.
+    type: string
+  createdBy:
+    description: Id of the user who created this account (`-1` for system-created accounts). Serialized as a string.
+    type: string
+  creationDate:
+    description: Creation timestamp of the user account, in epoch milliseconds.
+    type: integer
+    format: int64
+  lastUpdate:
+    description: Last update timestamp of the user account, in epoch milliseconds.
+    type: integer
+    format: int64
+  lastConnection:
+    description: Last connection timestamp, in epoch milliseconds, or `null` if the user never logged in.
+    type: integer
+    format: int64
+    nullable: true
+  enabled:
+    description: Whether the user account is enabled.
+    type: boolean
+example:
+  id: "2"
+  firstName: "Michael"
+  lastName: "Scott"
+  userName: "michael.scott"
+  iconId: null
+  title: null
+  jobTitle: null
+  creationDate: 1780477806557
+  createdBy: "-1"
+  lastUpdate: 1780477806557
+  lastConnection: null
+  managerUserId: "0"
+  enabled: true

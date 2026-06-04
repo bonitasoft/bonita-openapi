@@ -1,0 +1,14 @@
+type: string
+description: |
+  Lifecycle status of a delegation rule, derived at query time from the rule's `startDate` /
+  `endDate` compared against the current time. There is no stored activation flag.
+
+  - `scheduled`: `startDate` is in the future. The delegate does not yet have access.
+  - `active`: the current time is within `[startDate, endDate]`. The delegate has access.
+  - `expired`: `endDate` is in the past. The delegate no longer has access.
+
+  Serialized in lowercase.
+enum:
+  - scheduled
+  - active
+  - expired
