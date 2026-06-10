@@ -1,0 +1,32 @@
+type: object
+description: |
+  A group of deployed processes that share the same `(name, displayName)` pair, with the list of
+  their deployed versions. Returned by `GET /API/bpm/processName`, which collapses the process
+  deployment information into one entry per distinct name and display name.
+required:
+  - name
+  - displayName
+  - versions
+properties:
+  name:
+    description: Technical name shared by every version in this group.
+    type: string
+  displayName:
+    description: Human-readable name shared by every version in this group. May be `null` when the processes have no display name set.
+    type: string
+    nullable: true
+  versions:
+    description: |
+      Deployed versions of the process sharing this name and display name. When an `activationState`
+      filter is supplied, only the versions in that state are listed. Always contains at least one entry.
+    type: array
+    minItems: 1
+    items:
+      type: string
+example:
+  name: "InvoiceApproval"
+  displayName: "Invoice Approval"
+  versions:
+    - "1.0"
+    - "1.1"
+    - "2.0"

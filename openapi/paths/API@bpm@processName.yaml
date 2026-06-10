@@ -1,0 +1,47 @@
+get:
+  tags:
+    - Process
+  summary: Search process names
+  description: |
+    Searches process deployment information grouped by `(name, displayName)`, returning one entry per
+    distinct name and display name, each carrying the list of its deployed versions.
+
+    - can order on `displayName` or `name` (default is `displayName ASC`). A single sort clause is
+      applied: a compound order such as `displayName ASC, name DESC` is rejected with a `400`.
+    - can search (`s`) on `name`, `displayName` or `version`. The term selects which groups are
+      returned; it is not applied per version, so a returned group lists all of its versions allowed
+      by the `activationState` filter, even those that did not individually match the term.
+    - can filter on `activationState` with the value `ENABLED` or `DISABLED`. An unknown value is
+      rejected with a `400`; other filter keys are ignored.
+
+    The `Content-Range` header reports the total number of groups, not the number of versions.
+  operationId: searchProcessNames
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  responses:
+    '200':
+      description: Successful operation
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching groups
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/ProcessName.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
