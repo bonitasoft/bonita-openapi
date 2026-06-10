@@ -1,0 +1,38 @@
+type: object
+description: |
+  Body of `PUT /API/delegation/rule/{ruleId}`. Replaces the mutable fields of an existing
+  delegation rule. This is a full replacement, not a partial update: every field must be
+  provided on each call. The delegator of an existing rule cannot be changed.
+
+  The values must satisfy: `endDate` strictly after `startDate`, `delegateId` different from the
+  delegator, and a non-empty `processes` list. A violation is reported as `400`.
+required:
+  - delegateId
+  - startDate
+  - endDate
+  - processes
+properties:
+  delegateId:
+    description: Id of the user receiving access. Must differ from the delegator.
+    type: integer
+    format: int64
+  startDate:
+    description: Start of the delegation period, inclusive, in epoch milliseconds.
+    type: integer
+    format: int64
+  endDate:
+    description: End of the delegation period, inclusive, in epoch milliseconds. Must be strictly after `startDate`.
+    type: integer
+    format: int64
+  processes:
+    description: Process whitelist. Each entry is a process name covering every deployed version. Must contain at least one entry.
+    type: array
+    minItems: 1
+    items:
+      type: string
+example:
+  delegateId: 2
+  startDate: 1780524000000
+  endDate: 1780696799999
+  processes:
+    - "Vacation request"

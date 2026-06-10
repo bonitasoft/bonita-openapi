@@ -1,0 +1,104 @@
+type: object
+description: |
+  A task delegation rule: a user (the delegator) grants another user (the delegate) the ability
+  to see and execute the delegator's human tasks during a bounded period, for a whitelist of
+  processes.
+
+  Delegation is not reassignment: tasks stay assigned to the delegator, and the delegate only
+  gains visibility and execution rights through dedicated views. A user can hold at most one
+  delegation rule at a time.
+required:
+  - id
+  - delegator
+  - delegate
+  - startDate
+  - endDate
+  - processes
+  - status
+  - lastUpdatedBy
+  - lastUpdatedAt
+properties:
+  id:
+    description: Identifier of the delegation rule. Serialized as a string to avoid JavaScript precision loss on large `long` values.
+    type: string
+  delegator:
+    description: The user whose tasks are delegated.
+    $ref: './DelegationUser.yaml'
+  delegate:
+    description: The user receiving visibility and execution rights on the delegator's tasks.
+    $ref: './DelegationUser.yaml'
+  startDate:
+    description: Start of the delegation period, inclusive, in milliseconds since epoch.
+    type: integer
+    format: int64
+  endDate:
+    description: End of the delegation period, inclusive, in milliseconds since epoch.
+    type: integer
+    format: int64
+  processes:
+    description: |
+      Process whitelist for this rule. Each entry is a process name; a name covers every deployed
+      version of that process. Always contains at least one entry.
+    type: array
+    minItems: 1
+    items:
+      type: string
+  status:
+    $ref: './DelegationStatus.yaml'
+  lastUpdatedBy:
+    description: The user who last created or modified this rule (the delegator on self-service, or an administrator).
+    $ref: './DelegationUser.yaml'
+  lastUpdatedAt:
+    description: Timestamp of the last modification, in milliseconds since epoch.
+    type: integer
+    format: int64
+example:
+  id: "1"
+  delegator:
+    id: "1"
+    firstName: "Walter"
+    lastName: "Bates"
+    userName: "walter.bates"
+    iconId: null
+    title: null
+    jobTitle: null
+    creationDate: 1780477756657
+    createdBy: "-1"
+    lastUpdate: 1780477756657
+    lastConnection: 1780576504806
+    managerUserId: "0"
+    enabled: true
+  delegate:
+    id: "2"
+    firstName: "Michael"
+    lastName: "Scott"
+    userName: "michael.scott"
+    iconId: null
+    title: null
+    jobTitle: null
+    creationDate: 1780477806557
+    createdBy: "-1"
+    lastUpdate: 1780477806557
+    lastConnection: null
+    managerUserId: "0"
+    enabled: true
+  startDate: 1780524000000
+  endDate: 1780696799999
+  processes:
+    - "Vacation request"
+  status: "active"
+  lastUpdatedBy:
+    id: "1"
+    firstName: "Walter"
+    lastName: "Bates"
+    userName: "walter.bates"
+    iconId: null
+    title: null
+    jobTitle: null
+    creationDate: 1780477756657
+    createdBy: "-1"
+    lastUpdate: 1780477756657
+    lastConnection: 1780576504806
+    managerUserId: "0"
+    enabled: true
+  lastUpdatedAt: 1780576300586

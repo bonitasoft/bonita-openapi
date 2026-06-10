@@ -1,0 +1,189 @@
+type: object
+description: |
+  A human task that a user is allowed to act on through an active delegation rule,
+  returned by `GET /API/delegation/task`.
+
+  The task is still assigned to the delegator; delegation grants the delegate visibility and
+  execution rights but does not reassign ownership. The shape aligns with the legacy human-task
+  REST format (modernised to camelCase): `processDefinitionId` is exposed as `processId`,
+  `parentProcessInstanceId` as `parentCaseId`, `rootContainerId` as `rootCaseId`,
+  `expectedEndDate` as `dueDate` and `claimedDate` as `assignedDate`. The delegator, delegate
+  and delegation window are added on top so the front-end can render the delegation context
+  without a second round-trip.
+
+  All long id fields are serialized as strings to avoid JavaScript precision loss. Date fields
+  (`dueDate`, `assignedDate`, `reachedStateDate`, `lastUpdateDate`, `delegationStart`,
+  `delegationEnd`) are numeric, in milliseconds since epoch; some (such as `dueDate` and
+  `assignedDate`) may be `null`.
+required:
+  - id
+  - name
+  - displayName
+  - state
+  - type
+  - priority
+  - processId
+  - parentCaseId
+  - rootCaseId
+  - actorId
+  - assigneeId
+  - executedBy
+  - executedBySubstitute
+  - flownodeDefinitionId
+  - delegator
+  - delegate
+  - delegationStart
+  - delegationEnd
+  - rootProcessInfo
+properties:
+  id:
+    description: Identifier of the task instance. Serialized as a string to avoid JavaScript precision loss.
+    type: string
+  name:
+    description: Technical name of the task.
+    type: string
+  displayName:
+    description: Human-readable name of the task.
+    type: string
+    nullable: true
+  description:
+    description: Description of the task.
+    type: string
+    nullable: true
+  displayDescription:
+    description: Human-readable description of the task.
+    type: string
+    nullable: true
+  state:
+    description: Current state of the task (e.g. `ready`).
+    type: string
+  type:
+    description: Flow node type (e.g. `USER_TASK`).
+    type: string
+  priority:
+    description: Priority of the task (e.g. `NORMAL`).
+    type: string
+    nullable: true
+  dueDate:
+    description: Expected end date of the task, in epoch milliseconds, or `null` when none is set. (Maps to the engine `expectedEndDate`.)
+    type: integer
+    format: int64
+    nullable: true
+  assignedDate:
+    description: Date the task was claimed by its assignee, in epoch milliseconds, or `null` when unassigned. (Maps to the engine `claimedDate`.)
+    type: integer
+    format: int64
+    nullable: true
+  reachedStateDate:
+    description: Date the task reached its current state, in epoch milliseconds.
+    type: integer
+    format: int64
+  lastUpdateDate:
+    description: Date the task was last updated, in epoch milliseconds.
+    type: integer
+    format: int64
+  processId:
+    description: Identifier of the process definition. Serialized as a string. (Maps to the engine `processDefinitionId`.)
+    type: string
+  parentCaseId:
+    description: Identifier of the immediate containing process instance. Serialized as a string. (Maps to the engine `parentProcessInstanceId`.)
+    type: string
+  rootCaseId:
+    description: Identifier of the root process instance. Serialized as a string. (Maps to the engine `rootContainerId`.)
+    type: string
+  actorId:
+    description: Id of the actor that can execute this task. Serialized as a string.
+    type: string
+  assigneeId:
+    description: Id of the user this task is assigned to, or `0` if unassigned. Serialized as a string.
+    type: string
+  executedBy:
+    description: Id of the user who performed the task, or `0` if not yet executed. Serialized as a string.
+    type: string
+  executedBySubstitute:
+    description: Id of the user who performed the task on behalf of someone else, or `0` otherwise. Serialized as a string.
+    type: string
+  flownodeDefinitionId:
+    description: Identifier of the flow node definition. Serialized as a string.
+    type: string
+  delegator:
+    description: The user whose task this is (the delegator).
+    $ref: './DelegationUser.yaml'
+  delegate:
+    description: The user the task is surfaced to through delegation (the delegate).
+    $ref: './DelegationUser.yaml'
+  delegationStart:
+    description: Start of the delegation period, inclusive, in milliseconds since epoch. Same value as the delegation rule's `startDate`.
+    type: integer
+    format: int64
+  delegationEnd:
+    description: End of the delegation period, inclusive, in milliseconds since epoch. Same value as the delegation rule's `endDate`.
+    type: integer
+    format: int64
+  rootProcessInfo:
+    description: Deployment information of the process behind the root case that triggered the task, not the child case the task may directly belong to.
+    $ref: './ProcessDeploymentInfo.yaml'
+example:
+  id: "2"
+  name: "Validate request"
+  displayName: "Validate request"
+  description: null
+  displayDescription: null
+  state: "ready"
+  type: "USER_TASK"
+  priority: "NORMAL"
+  dueDate: null
+  assignedDate: 1780576627723
+  reachedStateDate: 1780576595140
+  lastUpdateDate: 1780576627723
+  processId: "5270206374128493046"
+  parentCaseId: "1"
+  rootCaseId: "1"
+  actorId: "1"
+  assigneeId: "1"
+  executedBy: "0"
+  executedBySubstitute: "0"
+  flownodeDefinitionId: "7537946595085140972"
+  delegationStart: 1780524000000
+  delegationEnd: 1780696799999
+  delegator:
+    id: "1"
+    firstName: "Walter"
+    lastName: "Bates"
+    userName: "walter.bates"
+    iconId: null
+    title: null
+    jobTitle: null
+    creationDate: 1780477756657
+    createdBy: "-1"
+    lastUpdate: 1780477756657
+    lastConnection: 1780576504806
+    managerUserId: "0"
+    enabled: true
+  delegate:
+    id: "2"
+    firstName: "Michael"
+    lastName: "Scott"
+    userName: "michael.scott"
+    iconId: null
+    title: null
+    jobTitle: null
+    creationDate: 1780477806557
+    createdBy: "-1"
+    lastUpdate: 1780477806557
+    lastConnection: null
+    managerUserId: "0"
+    enabled: true
+  rootProcessInfo:
+    name: "Vacation request"
+    version: "1.0"
+    displayDescription: ""
+    deploymentDate: 1780576273140
+    deployedBy: "1"
+    configurationState: "RESOLVED"
+    activationState: "ENABLED"
+    processId: "5270206374128493046"
+    displayName: "Vacation request"
+    lastUpdateDate: 1780576574182
+    iconPath: null
+    description: ""

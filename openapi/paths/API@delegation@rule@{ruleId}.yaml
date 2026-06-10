@@ -1,0 +1,74 @@
+put:
+  tags:
+    - Delegation
+  summary: Update a delegation rule by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Replaces the `delegateId`, `startDate`, `endDate` and `processes` of an existing delegation
+    rule. The delegator of the rule cannot be changed.
+
+    Available in Enterprise editions only, since Bonita 2026.2.
+  operationId: updateDelegationRuleById
+  parameters:
+    - description: Numeric ID of the delegation rule to update (the `id` field returned by `DelegationRule`).
+      in: path
+      name: ruleId
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9]+$'
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/DelegationRuleUpdateRequest.yaml'
+  responses:
+    '200':
+      description: Delegation rule updated
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/DelegationRule.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
+  x-codegen-request-body-name: body
+delete:
+  tags:
+    - Delegation
+  summary: Delete a delegation rule by ID
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Deletes the delegation rule with the given ID. This is the only deactivation mechanism: there
+    is no soft delete or activation flag. Deleting a rule does not affect the underlying tasks,
+    which remain assigned to the delegator.
+
+    Available in Enterprise editions only, since Bonita 2026.2.
+  operationId: deleteDelegationRuleById
+  parameters:
+    - description: Numeric ID of the delegation rule to delete (the `id` field returned by `DelegationRule`).
+      in: path
+      name: ruleId
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9]+$'
+  responses:
+    '204':
+      $ref: '../components/responses/NoContent.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'
