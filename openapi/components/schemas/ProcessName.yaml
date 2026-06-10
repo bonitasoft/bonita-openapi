@@ -12,9 +12,8 @@ properties:
     description: Technical name shared by every version in this group.
     type: string
   displayName:
-    description: Human-readable name shared by every version in this group. May be `null` when the processes have no display name set.
+    description: Human-readable name shared by every version in this group. Defaults to the process technical name when no display name was set at deployment.
     type: string
-    nullable: true
   versions:
     description: |
       Deployed versions of the process sharing this name and display name. When an `activationState`
