@@ -8,9 +8,8 @@ get:
 
     - can order on `displayName` or `name` (default is `displayName ASC`). A single sort clause is
       applied: a compound order such as `displayName ASC, name DESC` is rejected with a `400`.
-    - can search (`s`) on `name`, `displayName` or `version`. The term selects which groups are
-      returned; it is not applied per version, so a returned group lists all of its versions allowed
-      by the `activationState` filter, even those that did not individually match the term.
+    - can search (`s`) on `name` or `displayName`. The term selects which groups are returned; a
+      returned group always lists all of its versions allowed by the `activationState` filter.
     - can filter on `activationState` with the value `ENABLED` or `DISABLED`. An unknown value is
       rejected with a `400`; other filter keys are ignored.
 
