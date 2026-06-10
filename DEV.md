@@ -4,7 +4,7 @@
 
 ### Install
 
-1. Install [Node JS](https://nodejs.org/). The version used is mentioned in [Github Actions build file](./.github/workflows/build.yml)
+1. Install [Node JS](https://nodejs.org/). The required version is pinned in [`.nvmrc`](./.nvmrc) (run `nvm use` to switch to it); the minimum supported version is enforced via `engines` in [`package.json`](./package.json).
 2. Clone this repo and run `npm install` in the repo root.
 
 ### Usage

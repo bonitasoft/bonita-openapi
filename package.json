@@ -13,6 +13,9 @@
   },
   "license": "GPL v2.0",
   "private": false,
+  "engines": {
+    "node": "^20.20.2"
+  },
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "openapi-to-postmanv2": "^6.0.1",
