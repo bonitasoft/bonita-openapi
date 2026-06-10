@@ -15,7 +15,7 @@ This repository defines the **Bonita Platform web API** using the OpenAPI v3 spe
 - **Generate Postman collection:** `npm run postman` (requires bundled spec in dist/)
 - **Full build (lint + bundle + postman + static docs + zip):** `npm run package`
 
-Node.js 18 is used in CI.
+Node.js 20 is used in CI (major version pinned in `.nvmrc`; minimum `^20.20.2` enforced via `engines` in `package.json`).
 
 ## Repository Structure
 
