@@ -572,6 +572,8 @@ paths:
     $ref: './paths/API@bpm@process@{id}@contract.yaml'
   /API/bpm/process/{id}/instantiation:
     $ref: './paths/API@bpm@process@{id}@instantiation.yaml'
+  /API/bpm/processName:
+    $ref: './paths/API@bpm@processName.yaml'
   /API/bpm/processInfo/{id}:
     $ref: './paths/API@bpm@processInfo@{id}.yaml'
   /API/bpm/processConnector/{id}/{connectorImplId}/{connectorImplVersion}:
