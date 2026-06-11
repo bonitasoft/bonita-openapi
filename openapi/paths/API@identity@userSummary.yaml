@@ -3,7 +3,7 @@ get:
     - User
   summary: Finds User summaries
   description: |
-    Finds a paginated, lightweight projection of users (`id`, `userName`, `firstName`, `lastName`, `jobTitle`),
+    Finds a paginated, lightweight projection of users (`id`, `userName`, `firstname`, `lastname`, `job_title`),
     intended for user pickers and similar listings without exposing the full `identity/user` payload.
 
     - `p` / `c`: pagination params (page index and page size)
