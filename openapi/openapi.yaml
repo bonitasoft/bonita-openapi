@@ -667,6 +667,8 @@ paths:
     $ref: './paths/API@identity@user.yaml'
   /API/identity/user/{id}:
     $ref: './paths/API@identity@user@{id}.yaml'
+  /API/identity/userSummary:
+    $ref: './paths/API@identity@userSummary.yaml'
 
   #  =======================
   #   PLATFORM API

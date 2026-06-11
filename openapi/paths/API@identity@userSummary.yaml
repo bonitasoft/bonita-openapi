@@ -1,0 +1,46 @@
+get:
+  tags:
+    - User
+  summary: Finds User summaries
+  description: |
+    Finds a paginated, lightweight projection of users (`id`, `userName`, `firstName`, `lastName`, `jobTitle`),
+    intended for user pickers and similar listings without exposing the full `identity/user` payload.
+
+    - `p` / `c`: pagination params (page index and page size)
+    - can search (`s`) on a free-text term matched by the engine across user attributes
+    - can order (`o`) on `username` (default `username ASC`), `firstname` or `lastname`. One or more
+      comma-separated sort clauses are applied in order (e.g. `lastname,firstname`). An optional `ASC` or
+      `DESC` direction may follow each field. Unknown fields or malformed clauses return `400`.
+    - can filter (`f`) only on `enabled` with a boolean value (e.g. `enabled=true`). Any other filter key
+      or a non-boolean value returns `400`. `enabled` is filter-only and is not part of the returned projection.
+
+  operationId: searchUserSummaries
+  parameters:
+    - $ref: '../components/parameters/pageIndex.yaml'
+    - $ref: '../components/parameters/pageCount.yaml'
+    - $ref: '../components/parameters/pageFilter.yaml'
+    - $ref: '../components/parameters/pageOrder.yaml'
+    - $ref: '../components/parameters/pageSearch.yaml'
+  responses:
+    '200':
+      description: "Success "
+      headers:
+        Content-Range:
+          schema:
+            type: integer
+            format: int64
+          description: The total number of matching items
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/UserSummary.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

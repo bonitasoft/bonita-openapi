@@ -1,0 +1,26 @@
+type: object
+description: |
+  Lightweight projection of a User returned by the `identity/userSummary` resource:
+  only the id, user name, first name, last name and job title.
+properties:
+  id:
+    description: user id
+    type: string
+  userName:
+    description: user name
+    type: string
+  firstName:
+    description: user first name
+    type: string
+  lastName:
+    description: user last name
+    type: string
+  jobTitle:
+    description: user job title. Optional on a user, `null` when unset.
+    type: string
+    nullable: true
+required:
+  - id
+  - userName
+  - firstName
+  - lastName
