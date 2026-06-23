@@ -1,0 +1,22 @@
+# See https://redoc.ly/docs/cli/configuration/ for more information.
+# https://github.com/Redocly/redoc#redoc-options-object
+apis:
+  main@v1:
+    root: ./openapi/openapi.yaml
+extends:
+  - recommended
+rules:
+  no-unused-components: warn
+openapi:
+  htmlTemplate: ./docs/index.html.hbs
+  showConsole: true
+  pagination: section
+  menuToggle: true
+  noAutoAuth: true
+  requiredPropsFirst: true
+  pathInMiddlePanel: true
+  hideDownloadButton: true
+  theme:
+    colors:
+      primary:
+        main: "#5C1932"
