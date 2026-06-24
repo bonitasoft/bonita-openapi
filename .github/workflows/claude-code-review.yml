@@ -42,7 +42,7 @@ jobs:
 
       - name: Run Claude Code Review
         id: claude-review
-        uses: anthropics/claude-code-action@9dd8b95a392eb34b6f5fb56cf5a64cb735912d4b # v1.0.150
+        uses: anthropics/claude-code-action@74eedf1a1892082d619c3edb66b9402da6520e7f # v1.0.156
         with:
           anthropic_api_key: ${{ secrets.ORGANIZATION_ANTHROPIC_API_KEY }}
           prompt: |
