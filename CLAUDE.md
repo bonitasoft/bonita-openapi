@@ -27,7 +27,7 @@ Node.js 20 is used in CI (major version pinned in `.nvmrc`; minimum `^20.20.2` e
 - `openapi/templates/` — Scaffolding templates for new endpoints (see "Adding a New Endpoint" below)
 - `openapi/intro.md` — API introduction (referenced from openapi.yaml description)
 - `docs/` — Static doc assets (HTML template in `index.html.hbs`, images)
-- `.redocly.yaml` — Redocly CLI config; lint rules extend `recommended`, `no-unused-components` set to warn
+- `redocly.yaml` — Redocly CLI config; lint rules extend `recommended`, `no-unused-components` set to warn
 
 ## Adding a New Endpoint
 

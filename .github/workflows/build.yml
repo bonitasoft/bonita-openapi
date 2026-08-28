@@ -7,7 +7,7 @@ on:
       - '.github/workflows/build.yml'
       - 'docs/**'
       - 'openapi/**'
-      - '.redocly.yml'
+      - 'redocly.yaml'
       - 'package.json'
       - 'package-lock.json'
   pull_request:
@@ -16,7 +16,7 @@ on:
       - '.github/workflows/build.yml'
       - 'docs/**'
       - 'openapi/**'
-      - '.redocly.yml'
+      - 'redocly.yaml'
       - 'package.json'
       - 'package-lock.json'
 
