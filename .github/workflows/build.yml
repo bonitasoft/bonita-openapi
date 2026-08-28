@@ -5,18 +5,20 @@ on:
     branches: [ master ]
     paths:
       - '.github/workflows/build.yml'
+      - '.nvmrc'
       - 'docs/**'
       - 'openapi/**'
-      - '.redocly.yml'
+      - 'redocly.yaml'
       - 'package.json'
       - 'package-lock.json'
   pull_request:
     branches: [ master ]
     paths:
       - '.github/workflows/build.yml'
+      - '.nvmrc'
       - 'docs/**'
       - 'openapi/**'
-      - '.redocly.yml'
+      - 'redocly.yaml'
       - 'package.json'
       - 'package-lock.json'
 

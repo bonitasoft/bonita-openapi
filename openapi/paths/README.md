@@ -29,7 +29,7 @@ In addition, Redocly recommends placing path parameters within `{}` curly braces
 
 * Quickly see a list of all paths.  Many people think in terms of the "number" of "endpoints" (paths), and not the "number" of "operations" (paths * http methods).
 
-* Only the "file-per-path" option is semantically correct with the OpenAPI Specification 3.0.2.  However, Redocly's openapi-cli will build valid bundles for any of the other options too.
+* Only the "file-per-path" option is semantically correct with the OpenAPI Specification 3.0.2.  However, Redocly CLI will build valid bundles for any of the other options too.
 
 
 #### Drawbacks
@@ -102,4 +102,4 @@ file: /paths/customers/{id}/timeline/{messageId}/get.yaml
         $ref: ../../../../../components/headers/Rate-Limit-Remaining.yaml
 
 ```
-Notice the `../../../../../` in the ref which requires some attention to formulate correctly.  While openapi-cli has a linter which suggests possible refs when there is a mistake, this is still a net drawback for APIs with deep paths.
+Notice the `../../../../../` in the ref which requires some attention to formulate correctly.  While Redocly CLI has a linter which suggests possible refs when there is a mistake, this is still a net drawback for APIs with deep paths.

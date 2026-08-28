@@ -36,10 +36,10 @@ good place to start.
 Update this contribution guide if you
 adjust the file/folder organization.
 
-The `.redocly.yaml` controls settings for various
+The `redocly.yaml` controls settings for various
 tools including the lint tool and the reference
 docs engine.  Open it to find examples and
-[read the docs](https://redoc.ly/docs/cli/configuration/)
+[read the docs](https://redocly.com/docs/cli/configuration)
 for more information.
 
 

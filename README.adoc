@@ -30,7 +30,7 @@ See [developer's documentation](DEV.md) for more details about the pre-requisite
 The api descriptor file can be used to render documentation sites. Those sites have different rendering and may show different parts of the specification file.
 That's the reason why it is interesting to test and evaluate different sites and rendering.
 
-You 'll need to install the https://github.com/redocly/openapi-cli[openapi-cli] to be able to work on the specification.
+You'll need to install the https://github.com/Redocly/redocly-cli[Redocly CLI] to be able to work on the specification.
 
 === Redoc Preview
 
