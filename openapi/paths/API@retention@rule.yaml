@@ -12,6 +12,9 @@ post:
     Only one retention rule can exist per BDM class name. Posting a second rule for a
     `dataClassName` that already has one returns `409 Conflict`.
 
+    Since Bonita 11.0.4, returns `403 Forbidden` when data retention is disabled on the engine
+    (see `GET /API/retention/status`).
+
     Requires the `DATA_RETENTION` feature to be active in the platform license.
     Available since Bonita 11.0.
   operationId: createRetentionRule

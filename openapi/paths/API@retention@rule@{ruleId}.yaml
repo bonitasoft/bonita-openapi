@@ -7,6 +7,9 @@ put:
 
     Updates the `referenceDate` and `retentionDays` of an existing retention rule.
 
+    Since Bonita 11.0.4, returns `403 Forbidden` when data retention is disabled on the engine
+    (see `GET /API/retention/status`).
+
     Requires the `DATA_RETENTION` feature to be active in the platform license.
     Available since Bonita 11.0.
   operationId: updateRetentionRuleById
@@ -51,6 +54,9 @@ delete:
 
     Deletes the retention rule with the given ID. Existing BDM object instances of the underlying
     type are not deleted by this operation; only the retention rule itself is removed.
+
+    Since Bonita 11.0.4, returns `403 Forbidden` when data retention is disabled on the engine
+    (see `GET /API/retention/status`).
 
     Requires the `DATA_RETENTION` feature to be active in the platform license.
     Available since Bonita 11.0.

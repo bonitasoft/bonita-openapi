@@ -1,0 +1,32 @@
+get:
+  tags:
+    - DataRetention
+  summary: Get the data retention status
+  description: |
+    ![edition](https://img.shields.io/badge/edition-entreprise-blue)
+
+    Tells whether data retention is enabled on the engine. It is configured via the
+    `bonita.runtime.retention.enabled` platform property (default `true`); changing it requires
+    a restart.
+
+    When data retention is disabled, BDM changes are not tracked, the data retention job does not
+    run and no business data is deleted. Retention rules can still be read, but creating, updating
+    or deleting one returns `403 Forbidden`: clients can call this endpoint to switch to a
+    read-only mode.
+
+    Requires the `DATA_RETENTION` feature to be active in the platform license.
+    Available since Bonita 11.0.4.
+  operationId: getRetentionStatus
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/RetentionStatus.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'
+    '403':
+      $ref: '../components/responses/Forbidden.yaml'
+    '5XX':
+      $ref: '../components/responses/ServerError.yaml'

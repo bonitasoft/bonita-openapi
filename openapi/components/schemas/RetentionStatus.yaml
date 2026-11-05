@@ -1,0 +1,14 @@
+type: object
+description: |
+  Whether data retention is enabled on the engine. It is configured via the
+  `bonita.runtime.retention.enabled` platform property.
+required:
+  - enabled
+properties:
+  enabled:
+    description: |
+      `true` if data retention is enabled. When `false`, the data retention job does not run and
+      retention rules are read-only.
+    type: boolean
+example:
+  enabled: true
