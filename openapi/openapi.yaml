@@ -261,7 +261,7 @@ tags:
   - name: DataRetention
     x-displayName: Data Retention
     description: |
-      Configure how Bonita automatically deletes obsolete business data. A retention rule applies to a specific business object type and defines when its instances become eligible for deletion based on a reference date (creation or last update) and a retention period in days. The data retention service runs on a configurable cron schedule. Since version 11.0.4, data retention can be disabled on the engine with the `bonita.runtime.retention.enabled` platform property: retention rules are then read-only.
+      Configure how Bonita automatically deletes obsolete business data. A retention rule applies to a specific business object type and defines when its instances become eligible for deletion based on a reference date (creation or last update) and a retention period in days. The data retention service runs on a configurable cron schedule. Since version 11.0.4, data retention can be disabled on the engine with the `bonita.runtime.retention.enabled` platform property: the data retention job then does not run, no business data is deleted, and retention rules are read-only.
 
       This Web REST API is available in **Enterprise editions only**, since version 11.0.
   - name: Delegation
