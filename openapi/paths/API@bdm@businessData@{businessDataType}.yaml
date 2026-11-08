@@ -57,10 +57,10 @@ get:
           description: The total number of matching items
       content:
         application/json:
+          # The result shape depends on the Bonita version and the query: a JSON array of results, or - since
+          # Bonita 11.0.0 for single-result/scalar queries - a single JSON object (e.g. { "value": 10 }).
           schema:
-            type: array
-            items:
-              $ref: '../components/schemas/AnyValue.yaml'
+            $ref: '../components/schemas/AnyValue.yaml'
     '401':
       $ref: '../components/responses/Unauthorized.yaml'
     '403':

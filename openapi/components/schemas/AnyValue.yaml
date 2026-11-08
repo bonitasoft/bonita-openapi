@@ -1,3 +1,1 @@
-nullable: true
-type: object
 description: Can be any value - string, number, boolean, array or object or null depending on your query.
